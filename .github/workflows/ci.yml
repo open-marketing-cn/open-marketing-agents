@@ -51,4 +51,5 @@ jobs:
           tar -xzf "$RUNNER_TEMP/gitleaks.tar.gz" -C "$RUNNER_TEMP" gitleaks
           "$RUNNER_TEMP/gitleaks" version
       - name: Scan complete Git history
-        run: "$RUNNER_TEMP/gitleaks" git . --config .gitleaks.toml --redact --no-banner
+        run: |
+          "$RUNNER_TEMP/gitleaks" git . --config .gitleaks.toml --redact --no-banner
