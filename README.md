@@ -135,6 +135,6 @@ Just One API 的官方文档列出了小红书、抖音、淘宝/天猫、京东
 
 ## 发布边界
 
-仓库先在 `Jeorrysyd/open-marketing-workbench` 私有审计：检查工作树、完整 Git 历史、构建产物、许可证、安装包和敏感信息。审计通过且至少有一个真实验证 Agent 后，才会转公开并发布 `v0.1.0`。
+仓库当前在 `open-marketing-cn/open-marketing-workbench` 进行私有审计：检查工作树、完整 Git 历史、构建产物、许可证、安装包和敏感信息。审计通过且至少有一个真实验证 Agent 后，才会转公开并发布 `v0.1.0`。
 
 这份 README 只描述仓库中已经存在的机制；候选数量、共创意向或 GitHub Star 不是产品效果。

@@ -16,7 +16,7 @@ const marketingSkills: CatalogSource = {
 
 const openMarketing: CatalogSource = {
   label: 'Open Marketing',
-  url: 'https://github.com/Jeorrysyd/open-marketing-workbench',
+  url: 'https://github.com/open-marketing-cn/open-marketing-workbench',
   license: 'CC BY 4.0',
   mode: 'original'
 };
