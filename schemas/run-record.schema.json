@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://open-marketing.local/schemas/run-record.schema.json",
+  "title": "Open Marketing RunRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "runId",
+    "agentId",
+    "agentVersion",
+    "createdAt",
+    "task",
+    "inputSources",
+    "rawDataPaths",
+    "outputs",
+    "citations",
+    "assumptions",
+    "missingInputs",
+    "status",
+    "review"
+  ],
+  "properties": {
+    "runId": { "type": "string" },
+    "agentId": { "type": "string" },
+    "agentVersion": { "type": "string" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "task": { "type": "string" },
+    "inputSources": { "type": "array", "items": { "type": "object" } },
+    "rawDataPaths": { "type": "array", "items": { "type": "string" } },
+    "outputs": { "type": "array", "items": { "type": "string" } },
+    "citations": { "type": "array", "items": { "type": "object" } },
+    "assumptions": { "type": "array", "items": { "type": "string" } },
+    "missingInputs": { "type": "array", "items": { "type": "string" } },
+    "status": { "enum": ["stopped_missing_input", "running", "completed", "failed"] },
+    "failure": { "type": ["object", "null"] },
+    "review": {
+      "type": "object",
+      "required": ["state"],
+      "properties": {
+        "state": { "enum": ["pending", "approved", "changes_requested", "rejected"] },
+        "reviewerRole": { "type": ["string", "null"] },
+        "reviewedAt": { "type": ["string", "null"], "format": "date-time" },
+        "note": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

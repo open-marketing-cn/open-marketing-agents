@@ -1,0 +1,12 @@
+{
+  "id": "consumer-language-insight",
+  "name": "消费者语言洞察 Agent",
+  "version": "0.1.0-alpha.1",
+  "status": "pending_validation",
+  "target": "codex",
+  "installable": false,
+  "permissionVersion": "0.1.0-alpha.1",
+  "reason": "尚未完成至少一位真实中国营销从业者的脱敏任务验证",
+  "optionalSkills": ["justoneapi-connector"],
+  "requiredSkills": ["required-source-plan", "required-evidence-coding"]
+}

@@ -1,0 +1,17 @@
+node_modules/
+.svelte-kit/
+build/
+src-tauri/target/
+src-tauri/gen/
+dist/
+.open-marketing/
+.env
+.env.local
+.env.*.local
+.DS_Store
+npm-debug.log*
+coverage/
+*.tsbuildinfo
+*.log
+*.dmg
+*.app

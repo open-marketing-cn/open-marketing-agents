@@ -1,0 +1,52 @@
+name: Agent 提案
+description: 提议一个可独立完成营销任务的 Agent
+title: "[Agent] "
+labels: ["agent-proposal", "needs-triage"]
+body:
+  - type: textarea
+    id: user-task
+    attributes:
+      label: 谁在什么任务中需要它？
+      description: 写真实角色和工作情境，不写宽泛画像。
+    validations: { required: true }
+  - type: textarea
+    id: inputs
+    attributes:
+      label: 用户必须提供什么数据？
+      description: 区分必需、可选、公开来源和需要授权的来源。
+    validations: { required: true }
+  - type: textarea
+    id: action
+    attributes:
+      label: Agent 做什么，不能做什么？
+    validations: { required: true }
+  - type: textarea
+    id: output
+    attributes:
+      label: 交付什么？
+      description: 写文件、表格或字段，而不是“提供洞察”。
+    validations: { required: true }
+  - type: textarea
+    id: human-gate
+    attributes:
+      label: 人工确认点
+      description: 谁决定事实、策略、预算、发布或最终结论？
+    validations: { required: true }
+  - type: textarea
+    id: validation
+    attributes:
+      label: 怎样才算验证通过？
+    validations: { required: true }
+  - type: input
+    id: sources
+    attributes:
+      label: 来源与许可证
+      placeholder: https://... — MIT
+    validations: { required: true }
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 数据确认
+      options:
+        - label: 我不会提交客户数据、真实账号、Token、头像、群聊截图或原始媒体
+          required: true

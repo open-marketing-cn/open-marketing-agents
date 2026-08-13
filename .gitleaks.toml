@@ -1,0 +1,18 @@
+title = "Open Marketing gitleaks configuration"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Only documented placeholders are allowed"
+paths = [
+  '''(^|/)node_modules/''',
+  '''(^|/)src-tauri/target/''',
+  '''(^|/)build/''',
+  '''(^|/)\.svelte-kit/'''
+]
+regexes = [
+  '''your_token''',
+  '''JUSTONEAPI_TOKEN=$''',
+  '''random@developer\.example\.org'''
+]

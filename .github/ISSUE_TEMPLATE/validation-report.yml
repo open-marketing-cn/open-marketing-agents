@@ -1,0 +1,40 @@
+name: 验证报告
+description: 提交一个脱敏的真实营销任务验证
+title: "[Validation] "
+labels: ["validation"]
+body:
+  - type: input
+    id: agent
+    attributes: { label: Agent ID 与内容版本 }
+    validations: { required: true }
+  - type: input
+    id: target
+    attributes: { label: 目标工具与版本, placeholder: "Codex ..." }
+    validations: { required: true }
+  - type: input
+    id: role
+    attributes: { label: 验证者角色（脱敏） }
+    validations: { required: true }
+  - type: input
+    id: industry
+    attributes: { label: 行业或品类 }
+    validations: { required: true }
+  - type: textarea
+    id: task
+    attributes: { label: 测试任务和提供的脱敏资料 }
+    validations: { required: true }
+  - type: textarea
+    id: result
+    attributes: { label: 交付物是否有用？为什么？ }
+    validations: { required: true }
+  - type: input
+    id: date
+    attributes: { label: 验证日期, placeholder: "YYYY-MM-DD" }
+    validations: { required: true }
+  - type: checkboxes
+    id: permission
+    attributes:
+      label: 公开授权
+      options:
+        - label: 验证者允许公开以上脱敏角色、行业、任务、日期和结论
+          required: true

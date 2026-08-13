@@ -1,0 +1,25 @@
+name: 数据连接器提案
+description: 提议一个只负责读取/写入数据的连接器
+title: "[Connector] "
+labels: ["connector", "security-review"]
+body:
+  - type: input
+    id: service
+    attributes: { label: 服务或平台, placeholder: "服务名和官网" }
+    validations: { required: true }
+  - type: textarea
+    id: fields
+    attributes: { label: 读取或写入哪些字段？ }
+    validations: { required: true }
+  - type: textarea
+    id: auth
+    attributes: { label: 凭证、费用与权限, description: "Token 放在哪里？谁付费？是否有写入权限？" }
+    validations: { required: true }
+  - type: textarea
+    id: privacy
+    attributes: { label: 数据、隐私和平台条款风险 }
+    validations: { required: true }
+  - type: textarea
+    id: degradation
+    attributes: { label: 用户拒绝可选权限或服务不可用时怎样降级？ }
+    validations: { required: true }

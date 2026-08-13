@@ -1,0 +1,29 @@
+Open Marketing Content License Notice
+
+Copyright 2026 Open Marketing contributors.
+
+Except where a file states otherwise, original Open Marketing Agent cards,
+playbooks, validation templates, methods, examples, and other non-code content
+are licensed under the Creative Commons Attribution 4.0 International License
+(CC BY 4.0).
+
+You are free to share and adapt that content for any purpose, including
+commercially, provided that you give appropriate credit, provide a link to the
+license, indicate if changes were made, and do not suggest endorsement by the
+authors or Open Marketing.
+
+Attribution example:
+
+  Adapted from Open Marketing by Open Marketing contributors,
+  licensed under CC BY 4.0. Changes were made.
+
+Full legal code:
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Human-readable summary:
+https://creativecommons.org/licenses/by/4.0/
+
+Third-party content remains under its original license. See
+THIRD_PARTY_NOTICES.md and source notes inside each package. Trademarks,
+personal data, customer materials, and external API responses are not licensed
+by this notice.
