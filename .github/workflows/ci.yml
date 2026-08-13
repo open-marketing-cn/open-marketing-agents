@@ -12,10 +12,10 @@ jobs:
   verify:
     runs-on: macos-14
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -26,6 +26,29 @@ jobs:
       - run: npm ci
       - run: npm run verify
       - run: cargo test --manifest-path src-tauri/Cargo.toml
-      - uses: gitleaks/gitleaks-action@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install pinned Gitleaks
+        shell: bash
+        run: |
+          set -euo pipefail
+          version="8.29.1"
+          case "$(uname -m)" in
+            arm64)
+              archive="gitleaks_${version}_darwin_arm64.tar.gz"
+              checksum="69836c841d7e648fb30ff4846f8c3587855c5754ed02b8510caaf6008f65d177"
+              ;;
+            x86_64)
+              archive="gitleaks_${version}_darwin_x64.tar.gz"
+              checksum="2cd739c684bf3f543f4f37774075c276e40a72bb16c4c5bb9dfd27bf4a4465a7"
+              ;;
+            *)
+              echo "Unsupported macOS architecture: $(uname -m)" >&2
+              exit 1
+              ;;
+          esac
+          url="https://github.com/gitleaks/gitleaks/releases/download/v${version}/${archive}"
+          curl --fail --location --silent --show-error "$url" --output "$RUNNER_TEMP/gitleaks.tar.gz"
+          printf '%s  %s\n' "$checksum" "$RUNNER_TEMP/gitleaks.tar.gz" | shasum -a 256 --check
+          tar -xzf "$RUNNER_TEMP/gitleaks.tar.gz" -C "$RUNNER_TEMP" gitleaks
+          "$RUNNER_TEMP/gitleaks" version
+      - name: Scan complete Git history
+        run: "$RUNNER_TEMP/gitleaks" git . --config .gitleaks.toml --redact --no-banner
