@@ -25,15 +25,16 @@
 <style>
   .status-pill {
     align-items: center;
-    background: var(--signal-soft);
+    background: var(--amber-soft);
     border: 1px solid transparent;
-    color: var(--signal-ink);
+    border-radius: 3px;
+    color: var(--amber);
     display: inline-flex;
-    font-size: 11px;
-    font-weight: 650;
-    gap: 5px;
+    font-size: 9px;
+    font-weight: 700;
+    gap: 4px;
     letter-spacing: .02em;
-    padding: 4px 7px;
+    padding: 4px 6px;
     white-space: nowrap;
   }
 
@@ -43,7 +44,7 @@
   }
 
   .status-pill.ready {
-    background: var(--moss-soft);
-    color: var(--moss);
+    background: var(--green-soft);
+    color: var(--green);
   }
 </style>
