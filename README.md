@@ -1,166 +1,69 @@
 # Open Marketing Agents
 
-> 一个由中国营销人共同维护的本地 AI 营销工作台。
+> 面向中国市场营销人的本地 Agent 目录与安装器。
 
-我们想把散落在各处的营销 Agent、Skill 和真实工作方法，按照 **Insights → Strategy → Creation → Adaptation → Delivery → Performance** 整理起来。每一项能力都要讲清楚：谁来用、需要什么资料、会交付什么、不能判断什么、哪一步必须由人决定，以及谁真的用过。
+Open Marketing Agents 按照 **Insights → Strategy → Creation → Adaptation → Delivery → Performance** 整理营销 Agent 和 Skill，帮助使用者了解每项能力需要什么输入、会交付什么、有哪些限制，以及是否经过真实任务验证。
 
-Open Marketing 由 [Interflow（互通有无）](https://github.com/open-marketing-cn) 发起。项目当前处于 **v0.1 alpha / 公开前整理阶段**：房子的结构已经搭出来，但第一批“家具”还在验证，暂时没有任何 Agent 被标记为可安装。
+项目由 [Interflow（互通有无）](https://github.com/open-marketing-cn) 发起，目前处于 `v0.1.0-alpha.1`。仓库代码已经公开，但还没有发布可供普通用户安装的正式版本。
 
-## 这件事是怎么开始的
-
-这个项目从小红书上的一个问题开始：为什么不能有一个给中国品牌用的 all-in-one AI 营销工作台？
-
-这条内容带来了品牌营销、SEO、投放、电商、Agency、Consulting、品牌主，以及 AI 产品开发者和创始人的关注。大家关心的理由并不相同：
-
-- 营销人想更快完成工作，更好地给老板交差、服务客户；
-- Agency 和 Consulting 团队想把依赖个人经验的交付流程做得更稳定；
-- 独立开发者和 AI 产品团队会做产品，但缺少营销方法、真实场景和用户反馈；
-- 品牌主想看到从洞察到复盘的工作怎样连接起来，而不是继续购买彼此孤立的 AI 工具。
-
-这也是 Open Marketing 选择共创的原因：没有一个人、一个团队能同时懂完中国市场所有行业、平台和营销岗位。
-
-## 房子长什么样
-
-| 工作空间 | 要解决的问题 | 典型交付物 |
-|---|---|---|
-| 01 · Insights 洞察研究 | 从品牌、消费者、竞品、搜索和平台信息中找证据 | 消费者语言、证据卡、问题清单 |
-| 02 · Strategy 营销策略 | 把证据转成可讨论的选择 | 策略假设、目标、优先级 |
-| 03 · Creation 内容创作 | 形成可审阅的创意和内容 | 脚本、文案、视觉需求 |
-| 04 · Adaptation 渠道适配 | 按平台和人群调整内容 | 小红书、抖音、微信等渠道版本 |
-| 05 · Delivery 上线交付 | 检查素材、权限、负责人和发布条件 | 交付清单、人工确认记录 |
-| 06 · Performance 结果复盘 | 记录真实结果和下一轮改进 | 复盘、失败记录、学习记录 |
-
-这六个工作空间目前是 Agent 的分类和入口，还不是一条已经自动跑通的营销流水线。只有前后两个 Agent 都经过真实验证，而且上一个交付物能稳定成为下一个的输入，它们才会被连接成 Workflow。
-
-## 目前做到哪里了
+## 当前状态
 
 - 6 个营销工作空间；
 - 48 个 Agent 候选；
 - 40 个 Skill 候选；
-- 一个 Mac-first 的本地 Agent 商店原型，可检测 Codex，并管理安装、更新和卸载；
-- 第一个深度整理的任务包：[`消费者语言洞察 Agent`](catalog/packages/consumer-language-insight/SKILL.md)；
-- 候选状态、来源、许可证、权限、人工确认和验证记录的展示机制；
-- **0 个可安装 Agent、0 份真实从业者验证记录。**
+- Mac-first 本地桌面应用，可检测 Codex 并管理 Agent 的安装、更新和卸载；
+- 第一个完整任务包：[`消费者语言洞察 Agent`](catalog/packages/consumer-language-insight/SKILL.md)；
+- 当前可安装 Agent：**0**。
 
-候选数量不是效果。首个真实验证完成以前，界面和安装器都会拒绝安装。
+所有候选在完成技术检查和真实从业者验证前都不能安装。
 
-## 为什么不能把市面上的 Agent 全部搬进来
+## 营销工作空间
 
-目前最难的不是继续收集，而是判断什么值得留下：
+| 工作空间 | 范围 |
+|---|---|
+| Insights | 市场、消费者、竞品、搜索和平台信息 |
+| Strategy | 目标、定位、策略选择和优先级 |
+| Creation | 文案、脚本、视觉和内容生产 |
+| Adaptation | 不同平台、渠道和人群的内容适配 |
+| Delivery | 素材检查、人工确认和上线交付 |
+| Performance | 结果记录、复盘和下一轮学习 |
 
-1. 企业内部真正好用的 Agent 往往依赖客户资料、内部 SOP、系统权限和合规要求，不能直接公开；
-2. 开源 Agent 和 Skill 很多，但质量差异很大，同一个任务可能有二三十个相似版本；
-3. 一个人自己跑通的工作流，不一定已经被整理成别人也能使用的版本；
-4. 营销老手、开发者和不同行业的人，对同一个结果的评分可能完全不同；
-5. AI 可以做结构和基础检查，但不能代替真实从业者判断结果是否能用于工作。
+六个工作空间目前用于组织和查找 Agent，不代表营销流程已经自动打通。只有相邻 Agent 都通过真实验证，而且前一个交付物可以稳定成为后一个的输入，才会组成 Workflow。
 
-所以 Open Marketing 不做“提示词收藏夹”。一个候选必须经过技术检查、同任务测试和真人验证，才能进入可安装状态。
-
-## 第一轮共创提案：先把一件家具验证清楚
-
-当前建议先做 **中国市场**，跨境营销暂缓；先从 **Insights** 开始，具体任务是“消费者语言洞察”。这部分会在首轮核心维护组讨论后确认。
-
-我们不会先把 Insight 房间装满。第一轮只验证当前的消费者语言洞察 Agent：
-
-1. 选 3 个不同中国消费品品类的脱敏任务；
-2. 使用明确、可复查的公开表达与购买/使用评论；
-3. 完成 Codex 技术测试、权限与安全检查；
-4. 邀请不同经验和岗位的真实营销人试用；
-5. 从任务完成度、证据可追溯性、行业可用性、修改成本、人工判断边界和隐私安全几个维度记录结果；
-6. 公开通过项、失败项和需要修改的地方；
-7. 通过后再开放安装，并用同一套方法横向比较其他洞察 Agent。
-
-如果这轮提案通过，希望留下三个可复用资产：
-
-- 1 个真正可安装的 Agent；
-- 1 套公开的验证与评分方法；
-- 至少 3 份不同行业的脱敏验证记录。
-
-## 什么算“一件能用的家具”
-
-可以是一个 Agent、一个 Skill，也可以是一段已经跑通的营销 SOP。但它至少要附带：
-
-- 谁在什么工作中使用；
-- 使用者必须提供哪些资料；
-- Agent / Skill 会做什么，不会做什么；
-- 最终交付什么文件或字段；
-- 哪一步必须由人确认；
-- 一个可公开的脱敏测试任务；
-- 来源、许可证和你做过的修改；
-- 你真实使用后的评价，而不只是 AI 给出的自评分。
-
-只有一个很长的 Prompt、没有使用场景和验证记录，不会直接进入仓库。
-
-## 你可以怎么参与
-
-不需要会写代码，也不要只留一句“我愿意共创”。请选择一个具体工作包：
-
-| 参与方式 | 你需要带来什么 | 会留下什么 |
-|---|---|---|
-| 贡献 Agent / Skill | 自己真实用过的能力、使用方法和脱敏样例 | 候选包、来源和作者记录 |
-| 贡献营销方法 | 一段已跑通的 SOP，以及输入、动作、人工决定和交付物 | 可复用的 Agent / Skill 合同 |
-| 真实试用 | 一个脱敏任务、必要资料和真实反馈 | 验证记录、失败项和评分 |
-| 技术测评 | 安装、运行、安全、权限、更新或兼容性检查 | 测试结果和修复 Issue |
-| 维护与评审 | 复核提案、验证记录、许可证和版本变化 | Review、发布记录和维护责任 |
-| 文档与传播 | 把方法写清楚、演示真实用法、整理失败经验 | 文档、案例和公开内容 |
-
-正式路径：
-
-```text
-Issue 提案
-→ 补齐任务、输入、交付物和人工确认
-→ 脱敏样例
-→ 安全与技术测试
-→ 真实从业者验证
-→ 维护者审核
-→ 合并、署名并开放安装
-```
-
-开始前请阅读 [`CONTRIBUTING.md`](CONTRIBUTING.md)、[`GOVERNANCE.md`](GOVERNANCE.md) 和 [`SECURITY.md`](SECURITY.md)。
-
-## 贡献者会得到什么
-
-已经确定的部分：
-
-- 每一项被采用的 Agent、Skill、验证、文档和维护贡献都会保留 Git 记录与署名；
-- 持续贡献者可以承担某个工作包的评审和维护责任；
-- 核心维护者参与项目会、版本讨论和验证标准的制定；
-- 项目公开更新会优先展示真实贡献者、使用案例和失败经验。
-
-仍在讨论、尚未成为规则的部分：
-
-- 贡献者是否可以提前试用尚未公开的候选能力；
-- Maintainer 的晋级条件和权限边界；
-- 特别成熟的付费 Skill 或商业合作是否放在开源核心之外单独提供；
-- 项目会和公开直播的固定频率。
-
-Open Marketing 的开源核心会遵守许可证，不把已经公开的核心内容变成“贡献后才能使用”。贡献者的额外回报会优先放在署名、维护权、提前参与、传播和合作机会，而不是制造一个模糊的入群门槛。
-
-## 我们怎么避免最后只剩一个 Coffee Chat 群
-
-- 每次讨论尽量对应一个 Issue、测试、文档或决定；
-- 每个共创工作包都写清负责人、交付物和验收人；
-- 周会先看上周留下了什么，再决定下周做什么；
-- 公开的不只是进展，也包括卡点、被淘汰的候选和失败原因；
-- 围观完全可以，但“核心贡献者”来自可查的实际贡献，不来自群昵称。
-
-项目会以小红书、GitHub 和公开直播持续 Build in Public。具体时间以正式公告为准。
-
-## 状态必须看懂
+## Agent 状态
 
 | 状态 | 含义 | 能否安装 |
 |---|---|---|
-| 共创中 | 已登记来源和任务，仍在本土化、安全检查或补齐任务合同 | 否 |
-| 待验证 | 技术包已经形成，但没有完成真实中国营销任务验证 | 否 |
-| 可安装 | Codex 技术验证与真实从业者脱敏验证均通过 | 是 |
+| 共创中 | 正在补齐任务说明、本土化、来源或安全检查 | 否 |
+| 待验证 | 安装包和技术测试已完成，等待真实任务验证 | 否 |
+| 可安装 | 技术测试和真实从业者脱敏验证均已通过 | 是 |
 
-验证按“内容版本 × 目标工具 × 实际品类”记录，不能跨版本、跨工具或跨行业自动继承。
+验证按“内容版本 × 目标工具 × 实际品类”记录，不自动跨版本、工具或品类继承。
 
-## 本地开发（Mac）
+## 一个 Agent 必须说明什么
 
-要求：macOS 12+、Node.js 20+、Rust stable，以及已经安装并登录的 Codex。
+1. 谁在什么营销任务中使用；
+2. 需要哪些数据和来源；
+3. Agent 会执行什么；
+4. 哪些内容不能推断；
+5. 会交付哪些文件或字段；
+6. 哪一步必须由人确认；
+7. 怎样才算验证通过。
+
+缺少必需资料时，Agent 应停止并列出缺口，不能用未经确认的假设补齐事实。
+
+## 本地运行
+
+要求：
+
+- macOS 12 或更高版本；
+- Node.js 20 或更高版本；
+- Rust stable toolchain；
+- 已安装并登录 Codex。
 
 ```bash
+git clone https://github.com/open-marketing-cn/open-marketing-agents.git
+cd open-marketing-agents
 npm install
 npm run tauri:dev
 ```
@@ -180,30 +83,71 @@ npm run verify
 cargo test --manifest-path src-tauri/Cargo.toml
 ```
 
-## 数据、权限和人的决定
+构建 Mac 应用：
 
-- Open Marketing 桌面应用不需要模型 Key，Agent 由用户已登录的 Codex 执行；
-- 外部数据服务采用 BYOK，凭证只保存在用户本机；
-- 运行数据默认保存在当前项目的 `.open-marketing/`，不会提交进仓库；
+```bash
+npm run tauri:build
+```
+
+当前构建尚未完成 Apple Developer ID 签名和公证，不作为正式安装包发布。
+
+## 安装位置
+
+v0.1 只支持把 Agent 安装到 Codex 全局 Skill 目录：
+
+```text
+~/.codex/skills/open-marketing-<agent-id>/SKILL.md
+```
+
+Agent 依赖的 Skill 默认放在该 Agent 的 `references/skills/` 中。更新或卸载前会校验文件哈希；如果检测到用户修改，会先备份，不会静默覆盖。
+
+## 项目结构
+
+```text
+catalog/        Agent 和 Skill 任务包
+schemas/        Agent manifest 与运行记录 schema
+src/            Svelte 桌面界面
+src-tauri/      本地安装器
+.github/        Issue、PR 和 CI 配置
+docs/           审计与参考资料
+```
+
+## 参与贡献
+
+可以提交：
+
+- Agent 或 Skill 提案；
+- 脱敏的真实任务验证；
+- 数据连接器提案；
+- 安装器、界面、测试或文档改进；
+- Bug 和安全问题。
+
+提交前请阅读：
+
+- [`CONTRIBUTING.md`](CONTRIBUTING.md)
+- [`GOVERNANCE.md`](GOVERNANCE.md)
+- [`SECURITY.md`](SECURITY.md)
+- [`DCO.md`](DCO.md)
+
+所有提交都必须保留来源和许可证，只能使用虚构或完成脱敏的测试资料。
+
+## 数据与权限
+
+- 桌面应用不需要模型 Key，Agent 由用户已登录的 Codex 执行；
+- 外部数据服务采用 BYOK，凭证保存在用户本机；
+- 运行数据默认保存在当前项目的 `.open-marketing/`；
 - 不提交客户资料、真实账号、Token、原始媒体、群聊截图或真实商业结果；
 - 不自动发布、投放、私信、付款或修改平台后台；
-- 品牌判断、策略取舍、创意定稿、预算、发布和效果归因始终由人确认。
+- 品牌判断、策略、创意定稿、预算、发布和效果归因由人确认。
 
-## 开源来源与许可证
+## 来源与许可证
 
 - Agent 目录与安装体验参考 [Agency Agents](https://github.com/msitarzewski/agency-agents)（MIT）；
 - 营销 Skill 候选参考 [Marketing Skills](https://github.com/coreyhaines31/marketingskills)（MIT）；
-- 注册表、本地优先和能力包思路参考 [Open Design](https://github.com/nexu-io/open-design)（Apache-2.0）；
-- Open Marketing 代码使用 Apache-2.0；Agent 卡、Playbook 和方法文档使用 CC BY 4.0。
+- 注册表、本地优先和能力包思路参考 [Open Design](https://github.com/nexu-io/open-design)（Apache-2.0）。
 
-具体归属见 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)。上游项目成熟、Star 很多或来自熟人推荐，都不自动等于已经通过 Open Marketing 的真实验证。
-
-## 当前发布边界
-
-仓库仍在 `open-marketing-cn/open-marketing-agents` 进行公开前审计。至少一个 Agent 完成真实验证，并完成许可证、构建产物和敏感信息检查后，才会公开发布 `v0.1.0`。
-
-**这份 README 描述的是当前已经搭好的结构、第一轮验证计划和仍在讨论的共创机制。关注、入群或表达愿意共创，不等于产品已经验证，也不等于贡献已经发生。**
+Open Marketing Agents 代码使用 [Apache-2.0](LICENSE)，Agent 卡、Playbook 和方法文档使用 [CC BY 4.0](LICENSE-CONTENT)。第三方来源与修改说明见 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md)。
 
 ---
 
-English summary: Open Marketing is a Mac-first, local Agent workbench for China-market practitioners. It organizes marketing Agents and Skills from Insights to Performance, but only opens an Agent for installation after technical checks and real, anonymized practitioner validation.
+English summary: Open Marketing Agents is a Mac-first, local registry and installer for China-market marketing Agents. Packages remain blocked until they pass technical checks and anonymized, real-world practitioner validation.
