@@ -5,6 +5,10 @@
   "summaryZh": "从竞品网址和公开资料建立结构一致、保留来源的竞品画像，便于横向比较。",
   "growthStage": "zero_to_one",
   "workspace": "insights",
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "结构一致、保留来源的竞品画像", "previewImage": null, "previewLicense": null},
   "audiences": [
     "品牌策略人员",
     "产品营销人员",
@@ -53,7 +57,9 @@
     "authorUrl": "https://github.com/coreyhaines31",
     "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
     "license": "MIT",
-    "checkedAt": "2026-08-31"
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
   },
   "installation": {
     "codex": "npx skills add coreyhaines31/marketingskills -s competitor-profiling -a codex -y",

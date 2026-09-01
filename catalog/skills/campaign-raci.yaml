@@ -5,6 +5,10 @@
   "summaryZh": "把任务、交付物和决策映射到负责、批准、协作、知会角色，并暴露空缺与冲突。",
   "growthStage": "zero_to_one",
   "workspace": "operations",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "Campaign 决策责任表和冲突清单", "previewImage": null, "previewLicense": null},
   "audiences": [
     "Campaign 负责人",
     "跨部门市场团队",

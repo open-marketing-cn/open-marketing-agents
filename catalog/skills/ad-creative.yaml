@@ -5,6 +5,10 @@
   "summaryZh": "围绕平台、受众、产品、优惠与约束，生成广告钩子、标题、正文和可比较的创意变体。",
   "growthStage": "zero_to_one",
   "workspace": "creative",
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "广告钩子、文案变体和测试矩阵", "previewImage": null, "previewLicense": null},
   "audiences": [
     "投放与增长团队",
     "广告文案与设计人员",
@@ -54,7 +58,9 @@
     "authorUrl": "https://github.com/coreyhaines31",
     "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
     "license": "MIT",
-    "checkedAt": "2026-08-31"
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
   },
   "installation": {
     "codex": "npx skills add coreyhaines31/marketingskills -s ad-creative -a codex -y",

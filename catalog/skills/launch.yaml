@@ -5,6 +5,10 @@
   "summaryZh": "为产品、功能或品牌发布规划自有、借用和付费渠道，并按内部、Alpha、Beta、早期访问和正式发布分阶段。",
   "growthStage": "zero_to_one",
   "workspace": "media",
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "分阶段发布计划和渠道表", "previewImage": null, "previewLicense": null},
   "audiences": [
     "新品与产品营销负责人",
     "创业团队",
@@ -54,7 +58,9 @@
     "authorUrl": "https://github.com/coreyhaines31",
     "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
     "license": "MIT",
-    "checkedAt": "2026-08-31"
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
   },
   "installation": {
     "codex": "npx skills add coreyhaines31/marketingskills -s launch -a codex -y",

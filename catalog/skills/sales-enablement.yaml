@@ -1,0 +1,28 @@
+{
+  "id": "sales-enablement",
+  "titleZh": "把产品信息整理成销售能用的材料",
+  "originalName": "sales-enablement",
+  "summaryZh": "把产品事实、目标客户、异议、证明和销售流程整理成可交接的销售支持材料。",
+  "growthStage": "zero_to_one",
+  "workspace": "operations",
+  "audiences": ["产品营销人员", "销售负责人", "创始团队"],
+  "useCases": ["制作首版销售资料", "统一销售与营销口径", "为 Demo 或外联准备回答框架"],
+  "inputs": ["产品与客户事实", "目标客户和购买场景", "销售流程、常见异议和证明材料", "合规、品牌与团队使用限制"],
+  "outputs": ["销售支持材料结构", "Demo、外联和异议回答草稿", "客户问题与证明映射", "使用、审批和更新清单"],
+  "promptExamples": [
+    "请把这些产品事实整理成一份销售一页纸，不能补写没有证据的优势。",
+    "请根据 8 条客户异议生成回答框架，并标出需要销售补充的证明。",
+    "请把这份 Demo 流程改成销售可以照着走的讲解提纲和下一步动作。"
+  ],
+  "humanGate": "产品和销售负责人确认事实、承诺边界、案例授权、异议回答和对外版本。",
+  "cannotInfer": ["客户一定会成交", "没有证明的产品优势", "销售个人经验之外的客户意图", "自动发送外联或修改 CRM"],
+  "channels": ["销售沟通", "产品营销", "团队协作", "伙伴渠道"],
+  "source": {"type": "upstream", "repo": "https://github.com/coreyhaines31/marketingskills", "path": "skills/sales-enablement", "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58", "author": "Corey Haines", "authorUrl": "https://github.com/coreyhaines31", "avatarUrl": "https://github.com/coreyhaines31.png?size=96", "license": "MIT", "checkedAt": "2026-09-01", "githubStars": 46347, "githubStarsCheckedAt": "2026-09-01"},
+  "installation": {"codex": "npx skills add coreyhaines31/marketingskills -s sales-enablement -a codex -y", "claudeCode": "npx skills add coreyhaines31/marketingskills -s sales-enablement -a claude-code -y"},
+  "validation": {"spec": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对产品事实、异议、证明和交接结构。"}, "installation": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对上游独立安装命令与 Skill 路径。"}, "practice": {"status": "pending", "checkedAt": "2026-09-01", "noteZh": "尚未完成 Open Marketing 实战复核。"}},
+  "relatedSkillIds": ["product-marketing", "copywriting", "community-marketing"],
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github", "skills-sh"],
+  "card": {"outcomeZh": "销售一页纸、Demo 提纲和异议回答框架", "previewImage": null, "previewLicense": null}
+}

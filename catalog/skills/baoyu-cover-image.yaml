@@ -1,0 +1,28 @@
+{
+  "id": "baoyu-cover-image",
+  "titleZh": "把文章主题变成可制作的封面方案",
+  "originalName": "baoyu-cover-image",
+  "summaryZh": "根据文章主题、受众和渠道规格，形成可制作的封面构图、文字层级与视觉方向。",
+  "growthStage": "zero_to_one",
+  "workspace": "creative",
+  "audiences": ["内容运营人员", "品牌与设计团队", "独立创作者"],
+  "useCases": ["为文章或社媒制作封面", "把主题转成清晰的视觉方向", "检查封面是否适配发布渠道"],
+  "inputs": ["文章或内容主题", "目标受众与发布渠道", "品牌素材、字体和色彩约束", "尺寸、文字和版权限制"],
+  "outputs": ["封面构图与视觉方向", "标题和信息层级建议", "制作提示与规格", "发布前检查项"],
+  "promptExamples": [
+    "请为这篇文章设计三种封面方向，分别写清构图、标题层级和适用场景。",
+    "请把这份主题和品牌规范转成可交给设计师的封面制作说明。",
+    "请检查这张封面的文字、尺寸、对比度和版权风险，并列出修改项。"
+  ],
+  "humanGate": "内容或品牌负责人确认主题准确、素材可用、视觉方向符合品牌和渠道规范。",
+  "cannotInfer": ["图片素材的授权状态", "发布后的点击表现", "未提供的品牌规范", "设计工具中的最终像素结果"],
+  "channels": ["内容", "社媒", "公众号", "小红书"],
+  "source": {"type": "upstream", "repo": "https://github.com/JimLiu/baoyu-skills", "path": "skills/baoyu-cover-image", "commit": "6b7a2e417500561a5ecdd0b168332f4142584617", "author": "宝玉", "authorUrl": "https://github.com/JimLiu", "license": "MIT", "checkedAt": "2026-09-01", "githubStars": 25524, "githubStarsCheckedAt": "2026-09-01"},
+  "installation": {"codex": "npx skills add JimLiu/baoyu-skills -s baoyu-cover-image -a codex -y", "claudeCode": "npx skills add JimLiu/baoyu-skills -s baoyu-cover-image -a claude-code -y"},
+  "validation": {"spec": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对独立封面任务、规格和验收边界。"}, "installation": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对上游独立安装命令与 Skill 路径。"}, "practice": {"status": "pending", "checkedAt": "2026-09-01", "noteZh": "尚未完成 Open Marketing 实战复核。"}},
+  "relatedSkillIds": ["copywriting", "image", "ad-creative"],
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github", "skills-sh"],
+  "card": {"outcomeZh": "封面构图、标题层级和制作检查项", "previewImage": null, "previewLicense": null}
+}

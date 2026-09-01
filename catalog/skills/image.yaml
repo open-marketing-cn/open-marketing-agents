@@ -5,6 +5,10 @@
   "summaryZh": "根据图片目标选择生成、设计或优化方式，形成提示、规格、制作步骤和验收重点。",
   "growthStage": "zero_to_one",
   "workspace": "creative",
+  "featured": false,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "图片方向、制作提示和验收重点", "previewImage": null, "previewLicense": null},
   "audiences": [
     "内容与设计团队",
     "品牌营销人员",
@@ -54,7 +58,9 @@
     "authorUrl": "https://github.com/coreyhaines31",
     "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
     "license": "MIT",
-    "checkedAt": "2026-08-31"
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
   },
   "installation": {
     "codex": "npx skills add coreyhaines31/marketingskills -s image -a codex -y",

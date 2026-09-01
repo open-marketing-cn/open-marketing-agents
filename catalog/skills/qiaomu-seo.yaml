@@ -1,0 +1,28 @@
+{
+  "id": "qiaomu-seo",
+  "titleZh": "做一份搜索与 AI 搜索审计",
+  "originalName": "qiaomu-seo",
+  "summaryZh": "检查网站在传统搜索和 AI 搜索中的可见性、内容结构与技术问题，形成有优先级的改进报告。",
+  "growthStage": "zero_to_one",
+  "workspace": "media",
+  "audiences": ["品牌与网站负责人", "内容和 SEO 人员", "创业团队"],
+  "useCases": ["发布前检查网站搜索基础", "找出影响发现和理解的问题", "为 SEO 与 GEO 建立首轮 backlog"],
+  "inputs": ["网站 URL 或页面清单", "目标市场、语言和关键词", "业务目标与竞品范围", "可访问的分析或搜索数据"],
+  "outputs": ["搜索与 AI 搜索审计报告", "问题、证据和优先级清单", "内容与技术改进建议", "需要人工确认的数据缺口"],
+  "promptExamples": [
+    "请审计这个网站的 SEO 与 AI 搜索可见性，把每个问题附上页面证据和优先级。",
+    "请检查首页是否清楚回答品牌是谁、为谁解决什么问题，并给出可执行修改项。",
+    "请把这份审计结果整理成两周内能完成的 SEO/GEO backlog，区分快改和长期项。"
+  ],
+  "humanGate": "网站负责人确认业务优先级、技术改动范围、内容事实和上线排期。",
+  "cannotInfer": ["搜索排名保证", "AI 搜索引擎未来引用", "没有访问权限的技术问题", "业务结果一定来自 SEO 改动"],
+  "channels": ["网站", "搜索", "内容", "产品页"],
+  "source": {"type": "upstream", "repo": "https://github.com/joeseesun/qiaomu-seo", "path": "SKILL.md", "commit": "b892b70639ac2839e7fa61302ff54a60a6cc9b74", "author": "Joe Seesun", "authorUrl": "https://github.com/joeseesun", "license": "MIT", "checkedAt": "2026-09-01", "githubStars": 399, "githubStarsCheckedAt": "2026-09-01"},
+  "installation": {"codex": "npx skills add joeseesun/qiaomu-seo -a codex -y", "claudeCode": "npx skills add joeseesun/qiaomu-seo -a claude-code -y"},
+  "validation": {"spec": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对根目录 Skill、审计范围和输出边界。"}, "installation": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对上游独立安装命令与 Skill 路径。"}, "practice": {"status": "pending", "checkedAt": "2026-09-01", "noteZh": "尚未完成 Open Marketing 实战复核。"}},
+  "relatedSkillIds": ["analytics", "launch", "marketing-plan"],
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github", "skills-sh"],
+  "card": {"outcomeZh": "带证据、优先级和 backlog 的 SEO/GEO 审计", "previewImage": null, "previewLicense": null}
+}

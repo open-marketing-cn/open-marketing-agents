@@ -6,6 +6,7 @@
   "additionalProperties": false,
   "required": [
     "id", "titleZh", "originalName", "summaryZh", "growthStage", "workspace",
+    "featured", "visibility", "discoveredFrom", "card",
     "audiences", "useCases", "inputs", "outputs", "promptExamples", "humanGate",
     "cannotInfer", "channels", "source", "installation", "validation", "relatedSkillIds"
   ],
@@ -16,6 +17,19 @@
     "summaryZh": { "type": "string", "minLength": 10 },
     "growthStage": { "const": "zero_to_one" },
     "workspace": { "enum": ["insights", "strategy", "creative", "media", "operations"] },
+    "featured": { "type": "boolean" },
+    "visibility": { "enum": ["public", "candidate", "paused_internal", "withdrawn"] },
+    "discoveredFrom": { "$ref": "#/$defs/nonEmptyStringArray" },
+    "card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outcomeZh", "previewImage", "previewLicense"],
+      "properties": {
+        "outcomeZh": { "type": "string", "minLength": 10 },
+        "previewImage": { "type": ["string", "null"] },
+        "previewLicense": { "type": ["string", "null"] }
+      }
+    },
     "audiences": { "$ref": "#/$defs/nonEmptyStringArray" },
     "useCases": { "$ref": "#/$defs/nonEmptyStringArray" },
     "inputs": { "$ref": "#/$defs/nonEmptyStringArray" },
@@ -38,6 +52,8 @@
         "avatarUrl": { "type": "string" },
         "license": { "type": "string", "minLength": 2 },
         "checkedAt": { "type": "string", "format": "date" },
+        "githubStars": { "type": "integer", "minimum": 0 },
+        "githubStarsCheckedAt": { "type": "string", "format": "date" },
         "upstreamName": { "type": "string" },
         "upstreamRepo": { "type": "string", "format": "uri" },
         "upstreamPath": { "type": "string" },

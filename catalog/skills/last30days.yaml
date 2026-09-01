@@ -1,0 +1,46 @@
+{
+  "id": "last30days",
+  "titleZh": "把近 30 天的讨论整理成趋势证据",
+  "originalName": "last30days",
+  "summaryZh": "从公开网页、社媒和社区讨论中汇总近 30 天的信息，标注来源、时间范围和可验证的信号。",
+  "growthStage": "zero_to_one",
+  "workspace": "insights",
+  "audiences": ["品牌与市场研究人员", "创业团队", "内容与增长负责人"],
+  "useCases": ["新品或议题前快速扫描", "找近期讨论变化", "为策略会准备可追溯素材"],
+  "inputs": ["研究问题和关键词", "品牌、品类或竞品范围", "时间、地区与语言范围", "可用的公开来源或 API Key"],
+  "outputs": ["近 30 天趋势摘要", "原话、链接与日期表", "来源和覆盖范围说明", "无法确认的数据缺口"],
+  "promptExamples": [
+    "请研究近 30 天大家如何讨论这个品类，按主题整理原话、链接和日期。",
+    "只使用公开来源，找出这个品牌最近一周出现的新问题，并区分事实与推断。",
+    "请把这次趋势扫描整理成一页摘要，写清覆盖范围、证据和还需要验证的判断。"
+  ],
+  "humanGate": "研究负责人确认关键词、时间窗口、来源质量和哪些信号值得进入品牌决策。",
+  "cannotInfer": ["没有抓到的渠道正在发生什么", "讨论热度等于购买意愿", "公开帖子背后的真实身份", "实时数据的完整性"],
+  "channels": ["搜索", "社区", "社媒", "公开资料"],
+  "source": {
+    "type": "upstream",
+    "repo": "https://github.com/mvanhorn/last30days-skill",
+    "path": "skills/last30days/SKILL.md",
+    "commit": "fcebe321c22e5e97e3ef5712e4bc00f2b33bba37",
+    "author": "Michael Van Horn",
+    "authorUrl": "https://github.com/mvanhorn",
+    "license": "MIT",
+    "checkedAt": "2026-09-01",
+    "githubStars": 60807,
+    "githubStarsCheckedAt": "2026-09-01"
+  },
+  "installation": {
+    "codex": "npx skills add mvanhorn/last30days-skill -s last30days -a codex -y",
+    "claudeCode": "npx skills add mvanhorn/last30days-skill -s last30days -a claude-code -y"
+  },
+  "validation": {
+    "spec": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对独立路径、研究范围和网络能力说明。"},
+    "installation": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对上游独立安装命令与 Skill 路径。"},
+    "practice": {"status": "pending", "checkedAt": "2026-09-01", "noteZh": "尚未完成 Open Marketing 实战复核。"}
+  },
+  "relatedSkillIds": ["customer-research", "competitor-profiling"],
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github", "skills-sh"],
+  "card": {"outcomeZh": "近 30 天趋势摘要、原话与来源表", "previewImage": null, "previewLicense": null}
+}

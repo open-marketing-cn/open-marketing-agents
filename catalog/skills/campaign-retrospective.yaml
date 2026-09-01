@@ -5,6 +5,10 @@
   "summaryZh": "汇总版本、审批、上线证据、计划与实际结果，区分事实、解释和下一轮行动。",
   "growthStage": "zero_to_one",
   "workspace": "operations",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "发布交接、复盘事实和下一轮行动", "previewImage": null, "previewLicense": null},
   "audiences": [
     "Campaign 负责人",
     "品牌与增长团队",

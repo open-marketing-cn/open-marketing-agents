@@ -5,6 +5,10 @@
   "summaryZh": "根据页面目标、受众、产品事实与上下文，起草或重写首页、落地页、定价页等营销文案。",
   "growthStage": "zero_to_one",
   "workspace": "creative",
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "页面信息结构和营销文案草稿", "previewImage": null, "previewLicense": null},
   "audiences": [
     "品牌与内容人员",
     "增长与网站团队",
@@ -53,7 +57,9 @@
     "authorUrl": "https://github.com/coreyhaines31",
     "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
     "license": "MIT",
-    "checkedAt": "2026-08-31"
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
   },
   "installation": {
     "codex": "npx skills add coreyhaines31/marketingskills -s copywriting -a codex -y",

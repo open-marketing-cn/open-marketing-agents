@@ -5,6 +5,10 @@
   "summaryZh": "从业务问题出发定义事件、属性、命名、UTM、验证方法和数据质量检查。",
   "growthStage": "zero_to_one",
   "workspace": "media",
+  "featured": false,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "追踪计划、事件命名和数据检查", "previewImage": null, "previewLicense": null},
   "audiences": [
     "营销运营人员",
     "增长与数据团队",
@@ -55,7 +59,9 @@
     "authorUrl": "https://github.com/coreyhaines31",
     "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
     "license": "MIT",
-    "checkedAt": "2026-08-31"
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
   },
   "installation": {
     "codex": "npx skills add coreyhaines31/marketingskills -s analytics -a codex -y",

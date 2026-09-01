@@ -2,16 +2,15 @@
 
 > 面向品牌 0→1 的独立营销 Skill 精选目录。
 
-Open Marketing Skills 按 **洞察研究 → 品牌策略 → 创意内容 → 媒介与上线 → 运营协作** 组织可单独安装的 Agent Skills。网站不在站内运行 AI；它帮助普通营销人先看清输入、交付物、人工决定、来源和验证记录，再复制安装命令到 Codex 或 Claude Code。
+Open Marketing Skills 按 **洞察研究 → 品牌策略 → 创意内容 → 媒介增长 → 运营协作** 组织可单独安装的 Agent Skills。网站不在站内运行 AI；它帮助普通营销人先看清输入、交付物、人工决定、来源和验证记录，再复制安装命令到 Codex 或 Claude Code。
 
-## V1 当前状态
+## V2 当前状态
 
-- `20` 个公开 Skill，每个阶段 `4` 个；
-- `10` 个上游原版推荐、`2` 个中国化改编、`8` 个 Open Marketing 原创；
-- `20/20` 已在独立空白目录安装到 Codex 与 Claude Code；
-- `0/20` 标记为实战验证，等待真实营销人用脱敏任务复核；
-- `40` 个旧目录条目已进入 `catalog/intake/`，不会自动公开；
-- V1 不展示 Agent、Workflow、Connector，不登录、不保存模型 Key、不连接真实广告或协作账户。
+- `23` 个公开 Skill，全部是外部原版；其中 `4` 个来自 Cola 精选、`1` 个来自高星 GitHub Skill 集合；
+- 默认“精选”展示 `19` 个，全部目录展示通过资格检查的公开条目；
+- `23/23` 已核对独立安装命令，`0/23` 标记为实战验证，等待真实营销人用脱敏任务复核；
+- 原有 Open Marketing 原创与中国化改编内容保留在仓库，标记为 `paused_internal`，不会进入公开结果；
+- V2 不展示 Agent、Workflow、Connector，不登录、不保存模型 Key、不连接真实广告或协作账户。
 
 “技术安装已验证”和“真实营销任务已验证”是两个不同状态，网站会分别展示。
 
@@ -22,10 +21,10 @@ Open Marketing Skills 按 **洞察研究 → 品牌策略 → 创意内容 → �
 | 洞察研究 | 人们到底在说什么？ | 原话表、研究摘要、竞品画像、问题定义 |
 | 品牌策略 | 我们要为谁占据什么？ | 品牌底稿、定位、营销上下文、首轮 Campaign 策略 |
 | 创意内容 | 怎样把策略变成表达？ | 创意 Brief、页面文案、广告变体、图片制作说明 |
-| 媒介与上线 | 去哪里、怎么测、何时上？ | 渠道预算、实验方案、追踪计划、发布检查 |
+| 媒介增长 | 去哪里、怎么测、何时上？ | 渠道预算、实验方案、追踪计划、发布检查 |
 | 运营协作 | 谁在什么时候交付什么？ | 倒排表、RACI、素材日历、交接与复盘 |
 
-路线只是导航。`relatedSkillIds` 只推荐下一步，不会组合安装，也不会形成隐藏依赖。
+分类只是导航。`relatedSkillIds` 只推荐下一步，不会组合安装，也不会形成隐藏依赖。
 
 ## 安装一个 Skill
 
@@ -65,7 +64,7 @@ npx skills add open-marketing-cn/open-marketing-agents -s consumer-language-insi
 - `adapted`：许可证允许时维护独立中国化版本，保留 NOTICE、上游许可证、Commit 和改动；
 - `original`：Open Marketing 或贡献者原创，明确作者和内容许可证。
 
-没有许可证、找不到真实 `SKILL.md` 或安装失败的候选不会显示安装按钮。
+没有许可证、找不到真实 `SKILL.md` 或安装失败的候选不会显示安装按钮。GitHub Star 只作为来源快照和发现信号，不替代许可证、独立性与安装核验。
 
 ## 数据与生成
 
@@ -98,13 +97,13 @@ npm run dev
 npm run verify
 ```
 
-GitHub Pages 工作流在 `main` 更新后构建静态网站。旧 Tauri 安装器与 Agent 候选代码仍留在仓库作为非公开实验，不进入 V1 前台。
+GitHub Pages 工作流在 `main` 更新后构建静态网站。旧 Tauri 安装器与 Agent 候选代码仍留在仓库作为非公开实验，不进入 V2 前台。
 
 ## 项目结构
 
 ```text
-catalog/skills/       20 个公开 manifest
-catalog/intake/       候选与旧目录迁移记录
+catalog/skills/       公开与暂停的 manifest
+catalog/intake/       候选、外部发现快照与旧目录迁移记录
 skills/               本仓库维护的独立 Skill 包
 generated/            构建生成的 registry、更新与搜索数据
 schemas/              Skill manifest 等 schema

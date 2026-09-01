@@ -5,6 +5,10 @@
   "summaryZh": "把改动转成假设、单一变量、样本、指标、运行时间与停止条件，形成实验记录。",
   "growthStage": "zero_to_one",
   "workspace": "media",
+  "featured": false,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "测试假设、变体定义和判定规则", "previewImage": null, "previewLicense": null},
   "audiences": [
     "增长与投放团队",
     "网站与产品营销人员",
@@ -54,7 +58,9 @@
     "authorUrl": "https://github.com/coreyhaines31",
     "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
     "license": "MIT",
-    "checkedAt": "2026-08-31"
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
   },
   "installation": {
     "codex": "npx skills add coreyhaines31/marketingskills -s ab-testing -a codex -y",

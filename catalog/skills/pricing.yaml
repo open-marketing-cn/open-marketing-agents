@@ -1,0 +1,28 @@
+{
+  "id": "pricing",
+  "titleZh": "把产品价格与套餐写成可讨论方案",
+  "originalName": "pricing",
+  "summaryZh": "围绕价值、受众、竞品和成本约束，整理价格、套餐、收费方式与验证假设。",
+  "growthStage": "zero_to_one",
+  "workspace": "strategy",
+  "audiences": ["产品营销人员", "创业者", "商业与增长负责人"],
+  "useCases": ["设计首版价格与套餐", "检查价格页面的信息缺口", "为访谈或测试准备定价假设"],
+  "inputs": ["产品和服务范围", "目标客户与使用场景", "竞品价格和已有反馈", "成本、交付能力与商业限制"],
+  "outputs": ["价格与套餐选项", "价值和收费方式说明", "竞品与风险对照", "访谈、测试与调整建议"],
+  "promptExamples": [
+    "请根据这些客户场景设计三档套餐，写清每档服务边界和待验证假设。",
+    "请比较这份价格表与三个竞品的公开价格，区分事实、推断和信息缺口。",
+    "我们还没有足够成交数据，请把定价方案改成可拿去访谈的讨论稿。"
+  ],
+  "humanGate": "业务负责人确认真实价格、承诺边界、折扣规则、利润要求和是否进入测试。",
+  "cannotInfer": ["客户真实支付意愿", "价格变化带来的转化结果", "未公开的竞品条款", "税务或财务合规结论"],
+  "channels": ["产品营销", "产品页", "销售沟通", "电商"],
+  "source": {"type": "upstream", "repo": "https://github.com/coreyhaines31/marketingskills", "path": "skills/pricing", "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58", "author": "Corey Haines", "authorUrl": "https://github.com/coreyhaines31", "avatarUrl": "https://github.com/coreyhaines31.png?size=96", "license": "MIT", "checkedAt": "2026-09-01", "githubStars": 46347, "githubStarsCheckedAt": "2026-09-01"},
+  "installation": {"codex": "npx skills add coreyhaines31/marketingskills -s pricing -a codex -y", "claudeCode": "npx skills add coreyhaines31/marketingskills -s pricing -a claude-code -y"},
+  "validation": {"spec": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对价值、套餐、价格和验证假设。"}, "installation": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对上游独立安装命令与 Skill 路径。"}, "practice": {"status": "pending", "checkedAt": "2026-09-01", "noteZh": "尚未完成 Open Marketing 实战复核。"}},
+  "relatedSkillIds": ["product-marketing", "marketing-plan"],
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github", "skills-sh"],
+  "card": {"outcomeZh": "价格、套餐与下一轮验证假设", "previewImage": null, "previewLicense": null}
+}

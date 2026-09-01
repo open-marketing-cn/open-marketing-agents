@@ -5,6 +5,10 @@
   "summaryZh": "把 Campaign 策略转成受众张力、单一信息、必用证明、渠道规格、禁区和验收标准。",
   "growthStage": "zero_to_one",
   "workspace": "creative",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "创意 Brief 和必用信息检查表", "previewImage": null, "previewLicense": null},
   "audiences": [
     "品牌与创意负责人",
     "内容与设计团队",

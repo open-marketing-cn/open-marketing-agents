@@ -5,6 +5,10 @@
   "summaryZh": "围绕目标、受众、优惠和现状，规划平台选择、账户结构、定向、预算、竞价与优化边界。",
   "growthStage": "zero_to_one",
   "workspace": "media",
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "渠道选择、预算结构和优化边界", "previewImage": null, "previewLicense": null},
   "audiences": [
     "投放与增长人员",
     "首次购买媒体的品牌团队",
@@ -54,7 +58,9 @@
     "authorUrl": "https://github.com/coreyhaines31",
     "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
     "license": "MIT",
-    "checkedAt": "2026-08-31"
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
   },
   "installation": {
     "codex": "npx skills add coreyhaines31/marketingskills -s ads -a codex -y",

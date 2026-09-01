@@ -5,6 +5,10 @@
   "summaryZh": "把品牌事实、受众、定位、个性、价值观、目标与待确认项整理成一份独立底稿。",
   "growthStage": "zero_to_one",
   "workspace": "strategy",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "品牌事实、受众和待确认项底稿", "previewImage": null, "previewLicense": null},
   "audiences": [
     "品牌负责人",
     "创业团队",

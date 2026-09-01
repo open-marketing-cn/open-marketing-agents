@@ -3,6 +3,7 @@ import registryData from '../../generated/registry.json';
 export type WorkspaceId = 'insights' | 'strategy' | 'creative' | 'media' | 'operations';
 export type SourceType = 'upstream' | 'adapted' | 'original';
 export type ValidationStatus = 'passed' | 'pending' | 'failed';
+export type Visibility = 'public' | 'candidate' | 'paused_internal' | 'withdrawn';
 
 export type ValidationRecord = {
   status: ValidationStatus;
@@ -17,6 +18,14 @@ export type Skill = {
   summaryZh: string;
   growthStage: 'zero_to_one';
   workspace: WorkspaceId;
+  featured: boolean;
+  visibility: Visibility;
+  discoveredFrom: string[];
+  card: {
+    outcomeZh: string;
+    previewImage: string | null;
+    previewLicense: string | null;
+  };
   audiences: string[];
   useCases: string[];
   inputs: string[];
@@ -35,6 +44,8 @@ export type Skill = {
     avatarUrl?: string;
     license: string;
     checkedAt: string;
+    githubStars?: number;
+    githubStarsCheckedAt?: string;
     upstreamName?: string;
     upstreamRepo?: string;
     upstreamPath?: string;
@@ -72,6 +83,8 @@ export type Registry = {
 
 export const registry = registryData as Registry;
 
+export const publicSkills = registry.skills.filter((skill) => skill.visibility === 'public' && skill.source.type === 'upstream');
+
 export const WORKSPACES: Array<{
   id: WorkspaceId;
   number: string;
@@ -83,7 +96,7 @@ export const WORKSPACES: Array<{
   { id: 'insights', number: '01', name: '洞察研究', english: 'INSIGHTS', question: '人们到底在说什么？', output: '原话 · 研究 · 画像 · 问题' },
   { id: 'strategy', number: '02', name: '品牌策略', english: 'STRATEGY', question: '我们要为谁占据什么？', output: '底稿 · 定位 · 主张 · Campaign' },
   { id: 'creative', number: '03', name: '创意内容', english: 'CREATIVE', question: '怎样把策略变成表达？', output: 'Brief · 文案 · 广告 · 视觉' },
-  { id: 'media', number: '04', name: '媒介与上线', english: 'MEDIA', question: '去哪里、怎么测、何时上？', output: '渠道 · 预算 · 测试 · 追踪' },
+  { id: 'media', number: '04', name: '媒介增长', english: 'MEDIA', question: '去哪里、怎么测、何时上？', output: '渠道 · 预算 · 测试 · 追踪' },
   { id: 'operations', number: '05', name: '运营协作', english: 'OPERATIONS', question: '谁在什么时候交付什么？', output: '倒排 · RACI · 日历 · 复盘' }
 ];
 
@@ -95,4 +108,10 @@ export const SOURCE_LABELS: Record<SourceType, string> = {
 
 export function skillHref(id: string, base = '') {
   return `${base}/skills/${id}/`;
+}
+
+export function formatGithubStars(value?: number) {
+  if (value === undefined) return '';
+  if (value >= 1000) return `${(value / 1000).toFixed(value >= 10000 ? 0 : 1).replace('.0', '')}K`;
+  return String(value);
 }

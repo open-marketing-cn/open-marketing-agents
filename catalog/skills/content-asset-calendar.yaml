@@ -5,6 +5,10 @@
   "summaryZh": "把内容主题、渠道版本、素材规格、负责人、状态、审批和发布日期整理成可交接日历。",
   "growthStage": "zero_to_one",
   "workspace": "operations",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "内容素材日历和状态交接表", "previewImage": null, "previewLicense": null},
   "audiences": [
     "内容运营人员",
     "品牌与社媒团队",

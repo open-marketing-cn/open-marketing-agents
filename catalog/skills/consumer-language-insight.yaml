@@ -5,6 +5,10 @@
   "summaryZh": "从评论、访谈或公开表达中保留原话证据，整理痛点、场景、顾虑与待验证判断。",
   "growthStage": "zero_to_one",
   "workspace": "insights",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "消费者原话表、洞察卡和证据缺口", "previewImage": null, "previewLicense": null},
   "audiences": [
     "品牌负责人",
     "消费者洞察与策略人员",

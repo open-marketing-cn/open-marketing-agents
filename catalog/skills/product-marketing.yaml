@@ -5,6 +5,10 @@
   "summaryZh": "建立产品概览、目标受众、问题、竞争、差异、证明材料、异议与品牌声音的营销上下文。",
   "growthStage": "zero_to_one",
   "workspace": "strategy",
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "产品、人群、差异和证明的营销底稿", "previewImage": null, "previewLicense": null},
   "audiences": [
     "产品营销人员",
     "SaaS 与互联网团队",
@@ -53,7 +57,9 @@
     "authorUrl": "https://github.com/coreyhaines31",
     "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
     "license": "MIT",
-    "checkedAt": "2026-08-31"
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
   },
   "installation": {
     "codex": "npx skills add coreyhaines31/marketingskills -s product-marketing -a codex -y",

@@ -1,26 +1,91 @@
 {
   "generatedAt": "2026-08-31T16:10:45.519Z",
-  "policy": "只检查文本、路径、许可证和版本；不执行候选仓库脚本，不自动覆盖正式目录。",
+  "catalogVersion": "2026-09-01",
+  "policy": "上游更新只生成复审记录，不自动覆盖中文介绍或本仓库改编版。",
   "summary": {
-    "total": 10,
+    "total": 23,
     "current": 10,
-    "reviewRequired": 0,
+    "reviewRequired": 13,
     "blocked": 0
   },
   "sources": [
     {
-      "id": "ab-testing",
+      "id": "competitor-profiling",
       "repo": "https://github.com/coreyhaines31/marketingskills",
-      "path": "skills/ab-testing",
+      "path": "skills/competitor-profiling",
       "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
       "headCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
-      "checkedAt": "2026-08-31T16:10:43.480Z",
+      "checkedAt": "2026-08-31T16:10:44.419Z",
       "pathStatus": "ok",
       "pinnedLicense": "MIT",
       "currentLicense": "MIT",
       "riskFlags": [],
       "newRiskFlags": [],
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01"
+    },
+    {
+      "id": "customer-research",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/customer-research",
+      "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "headCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "checkedAt": "2026-08-31T16:10:44.857Z",
+      "pathStatus": "ok",
+      "pinnedLicense": "MIT",
+      "currentLicense": "MIT",
+      "riskFlags": [],
+      "newRiskFlags": [],
+      "reviewStatus": "current",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01"
+    },
+    {
+      "id": "last30days",
+      "repo": "https://github.com/mvanhorn/last30days-skill",
+      "path": "skills/last30days/SKILL.md",
+      "pinnedCommit": "fcebe321c22e5e97e3ef5712e4bc00f2b33bba37",
+      "githubStars": 60807,
+      "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "marketing-plan",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/marketing-plan",
+      "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "pricing",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/pricing",
+      "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "product-marketing",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/product-marketing",
+      "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "headCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "checkedAt": "2026-08-31T16:10:45.519Z",
+      "pathStatus": "ok",
+      "pinnedLicense": "MIT",
+      "currentLicense": "MIT",
+      "riskFlags": [],
+      "newRiskFlags": [],
+      "reviewStatus": "current",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01"
     },
     {
       "id": "ad-creative",
@@ -34,7 +99,107 @@
       "currentLicense": "MIT",
       "riskFlags": [],
       "newRiskFlags": [],
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01"
+    },
+    {
+      "id": "baoyu-cover-image",
+      "repo": "https://github.com/JimLiu/baoyu-skills",
+      "path": "skills/baoyu-cover-image",
+      "pinnedCommit": "6b7a2e417500561a5ecdd0b168332f4142584617",
+      "githubStars": 25524,
+      "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "copywriting",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/copywriting",
+      "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "headCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "checkedAt": "2026-08-31T16:10:44.628Z",
+      "pathStatus": "ok",
+      "pinnedLicense": "MIT",
+      "currentLicense": "MIT",
+      "riskFlags": [],
+      "newRiskFlags": [],
+      "reviewStatus": "current",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01"
+    },
+    {
+      "id": "gbro-cover-design",
+      "repo": "https://github.com/pyang5166/gbro-cover-design",
+      "path": "SKILL.md",
+      "pinnedCommit": "8d1a0a5487e9ee6539b2b0a471b58469aadfedd6",
+      "githubStars": 724,
+      "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "gzh-design",
+      "repo": "https://github.com/isjiamu/gzh-design-skill",
+      "path": "SKILL.md",
+      "pinnedCommit": "ba1f4175519b481cb3566616c9e5178705067904",
+      "githubStars": 3432,
+      "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "image",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/image",
+      "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "headCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "checkedAt": "2026-08-31T16:10:45.078Z",
+      "pathStatus": "ok",
+      "pinnedLicense": "MIT",
+      "currentLicense": "MIT",
+      "riskFlags": [],
+      "newRiskFlags": [],
+      "reviewStatus": "current",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01"
+    },
+    {
+      "id": "ip-as-logo",
+      "repo": "https://github.com/s1dashu/ip-as-logo-skill",
+      "path": "SKILL.md",
+      "pinnedCommit": "acb834c717bcd0a487c49732d08397ba280d690b",
+      "githubStars": 4680,
+      "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "mono-color",
+      "repo": "https://github.com/yanliudesign/mono-color-skill",
+      "path": "SKILL.md",
+      "pinnedCommit": "de607fedfff647eaf5400e0aa43085787d7d1fca",
+      "githubStars": 2133,
+      "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "ab-testing",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/ab-testing",
+      "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "headCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "checkedAt": "2026-08-31T16:10:43.480Z",
+      "pathStatus": "ok",
+      "pinnedLicense": "MIT",
+      "currentLicense": "MIT",
+      "riskFlags": [],
+      "newRiskFlags": [],
+      "reviewStatus": "current",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01"
     },
     {
       "id": "ads",
@@ -48,7 +213,9 @@
       "currentLicense": "MIT",
       "riskFlags": [],
       "newRiskFlags": [],
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01"
     },
     {
       "id": "analytics",
@@ -64,63 +231,9 @@
         "external-write"
       ],
       "newRiskFlags": [],
-      "reviewStatus": "current"
-    },
-    {
-      "id": "competitor-profiling",
-      "repo": "https://github.com/coreyhaines31/marketingskills",
-      "path": "skills/competitor-profiling",
-      "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
-      "headCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
-      "checkedAt": "2026-08-31T16:10:44.419Z",
-      "pathStatus": "ok",
-      "pinnedLicense": "MIT",
-      "currentLicense": "MIT",
-      "riskFlags": [],
-      "newRiskFlags": [],
-      "reviewStatus": "current"
-    },
-    {
-      "id": "copywriting",
-      "repo": "https://github.com/coreyhaines31/marketingskills",
-      "path": "skills/copywriting",
-      "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
-      "headCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
-      "checkedAt": "2026-08-31T16:10:44.628Z",
-      "pathStatus": "ok",
-      "pinnedLicense": "MIT",
-      "currentLicense": "MIT",
-      "riskFlags": [],
-      "newRiskFlags": [],
-      "reviewStatus": "current"
-    },
-    {
-      "id": "customer-research",
-      "repo": "https://github.com/coreyhaines31/marketingskills",
-      "path": "skills/customer-research",
-      "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
-      "headCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
-      "checkedAt": "2026-08-31T16:10:44.857Z",
-      "pathStatus": "ok",
-      "pinnedLicense": "MIT",
-      "currentLicense": "MIT",
-      "riskFlags": [],
-      "newRiskFlags": [],
-      "reviewStatus": "current"
-    },
-    {
-      "id": "image",
-      "repo": "https://github.com/coreyhaines31/marketingskills",
-      "path": "skills/image",
-      "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
-      "headCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
-      "checkedAt": "2026-08-31T16:10:45.078Z",
-      "pathStatus": "ok",
-      "pinnedLicense": "MIT",
-      "currentLicense": "MIT",
-      "riskFlags": [],
-      "newRiskFlags": [],
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01"
     },
     {
       "id": "launch",
@@ -136,21 +249,59 @@
         "external-write"
       ],
       "newRiskFlags": [],
-      "reviewStatus": "current"
+      "reviewStatus": "current",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01"
     },
     {
-      "id": "product-marketing",
+      "id": "qiaomu-seo",
+      "repo": "https://github.com/joeseesun/qiaomu-seo",
+      "path": "SKILL.md",
+      "pinnedCommit": "b892b70639ac2839e7fa61302ff54a60a6cc9b74",
+      "githubStars": 399,
+      "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "yao-geo-page-audit",
+      "repo": "https://github.com/yaojingang/yao-geo-skills",
+      "path": "skills/yao-geo-page-audit/SKILL.md",
+      "pinnedCommit": "201c0c45dcf09bb37bc46a467b4baf4d721db205",
+      "githubStars": 726,
+      "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "community-marketing",
       "repo": "https://github.com/coreyhaines31/marketingskills",
-      "path": "skills/product-marketing",
+      "path": "skills/community-marketing",
       "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
-      "headCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
-      "checkedAt": "2026-08-31T16:10:45.519Z",
-      "pathStatus": "ok",
-      "pinnedLicense": "MIT",
-      "currentLicense": "MIT",
-      "riskFlags": [],
-      "newRiskFlags": [],
-      "reviewStatus": "current"
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "emails",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/emails",
+      "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "sales-enablement",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/sales-enablement",
+      "pinnedCommit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+      "githubStars": 46347,
+      "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
     }
   ]
 }

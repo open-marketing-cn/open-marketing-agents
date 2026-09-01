@@ -1,6 +1,6 @@
 # Open Marketing Skills UI V2：外部精选、极简目录
 
-状态：待实施  
+状态：已实施，已补充外部来源发现与 Star 快照，待上线后收集真实任务验证
 日期：2026-09-01  
 范围：公开网站、外部 Skill 目录与详情页；不扩展 Agent、Workflow、MCP 或执行平台。
 
@@ -49,7 +49,7 @@ V2 首轮公开目录只展示 `source.type=upstream` 的独立 Skill。
 
 公开目录数量由资格决定，不由版式决定：
 
-- 默认“精选”页只展示 12–15 个编辑推荐。
+- 默认“精选”页通常控制在 12–15 个编辑推荐；本轮为保留 Cola 精选入口，暂为 19 个并支持分页。
 - “全部 Skill”收录所有通过来源、许可证和独立性检查的外部 Skill。
 - 每页显示 18 或 24 张卡片，避免首页无限拉长。
 - 完全同质的 Skill 只保留来源更透明、交付更具体、独立性更好的一个。
@@ -224,10 +224,13 @@ V2 只保留：
 | `Gingiris-1031/gingiris-skills` | `cd8ff37e56186f519081d0304420be5921d7fee3` | MIT；只选独立 specialist，排除 router、重复镜像和 Agent bundle |
 | `JimLiu/baoyu-skills` | `6b7a2e417500561a5ecdd0b168332f4142584617` | MIT；创意类候选，必须验证不安装其他 Skill 也能完成自身任务 |
 | `mvanhorn/last30days-skill` | `fcebe321c22e5e97e3ef5712e4bc00f2b33bba37` | MIT；真实路径为 `skills/last30days/SKILL.md`，网络能力和可选 Key 要在详情页说明 |
-| `s1dashu/ip-as-logo-skill` | `acb834c717bcd0a487c49732d08397ba280d690b` | MIT；独立根目录 `SKILL.md` |
-| `isjiamu/gzh-design-skill` | `ba1f4175519b481cb3566616c9e5178705067904` | AGPL-3.0-or-later；只推荐上游，不复制或改编 |
+| `s1dashu/ip-as-logo-skill` | `acb834c717bcd0a487c49732d08397ba280d6904` | MIT；Cola 精选；独立根目录 `SKILL.md` |
+| `isjiamu/gzh-design-skill` | `ba1f4175519b481cb3566616c9e5178705067904` | AGPL-3.0；Cola 精选；只推荐上游，不复制或改编 |
 | `joeseesun/qiaomu-seo` | `b892b70639ac2839e7fa61302ff54a60a6cc9b74` | MIT；独立根目录 `SKILL.md` |
 | `feichanggege/ecommerce-visual-copywriting-skill` | `38736d1ca30ee3b96d7015a16594e6c351ec3610` | MIT；独立根目录 `SKILL.md` |
+| `pyang5166/gbro-cover-design` | `8d1a0a5487e9ee6539b2b0a471b58469aadfedd6` | MIT；Cola 精选；完整包含 `references/` 与 `assets/` |
+| `yanliudesign/mono-color-skill` | `de607fedfff647eaf5400e0aa43085787d7d1fca` | MIT；Cola 精选；独立根目录 `SKILL.md` |
+| `yaojingang/yao-geo-skills` | `201c0c45dcf09bb37bc46a467b4baf4d721db205` | MIT；高星集合中的独立 specialist，仅选 `yao-geo-page-audit` |
 
 ### 4.2 只做候选，不直接公开
 
@@ -236,6 +239,7 @@ V2 只保留：
 | `wondelai/skills` | 仓库声明 MIT 且 Skill 结构完整，但多个 Skill 明确蒸馏商业书籍方法论，需要额外做内容来源与版权边界复核 |
 | Skillry | 有品牌故事、发布视频等适合营销的付费 Skill，但页面提供的是付费 ZIP/会员能力，没有公开 GitHub 路径和可核验内容许可证 |
 | Cola 中标记“License 未知”的条目 | 先进入候选；必须回到 GitHub 核验真实许可证，不能沿用目录标签 |
+| GEOHub、xhs-product-picker、cangjie-skill | 已建立外部发现记录，因运行时/资料版权/方法论边界仍需复核，先保留候选 |
 
 ### 4.3 只参考任务命名，不作为 Skill 来源
 
@@ -248,7 +252,7 @@ V2 只保留：
 
 ## 5. 拟纳入的外部 Skill 池
 
-以下是“适合品牌 0→1”的外部候选全集。进入正式目录前仍需逐个完成路径、许可证、独立安装、触发和输出核验。
+以下是“适合品牌 0→1”的外部候选全集。进入正式目录前仍需逐个完成路径、许可证、独立安装、触发和输出核验。当前发现快照见 `catalog/intake/external-discovery-2026-09-01.yaml`；公开条目额外保存 GitHub Star 与核验日期，Star 不作为单独上线依据。
 
 ### 5.1 洞察研究
 
@@ -290,7 +294,7 @@ V2 只保留：
 | `baoyu-article-illustrator` | baoyu-skills | 形成文章配图方案 |
 | `baoyu-xhs-images` | baoyu-skills | 形成小红书图卡 |
 | `baoyu-slide-deck` | baoyu-skills | 形成演示内容与视觉页 |
-| `gzh-design-skill` | isjiamu | 把 Markdown 转成公众号可粘贴 HTML |
+| `gzh-design` | isjiamu | 把 Markdown 转成公众号可粘贴 HTML |
 | `ecommerce-visual-copywriting` | feichanggege | 形成电商视觉策划、分镜和图内文案 |
 
 ### 5.4 媒介增长
@@ -308,6 +312,7 @@ V2 只保留：
 | `site-architecture` | marketingskills | 形成营销网站信息结构 |
 | `qiaomu-seo` | joeseesun | 形成搜索与 AI 搜索审计报告 |
 | `gingiris-seo-geo` | Gingiris | 形成 SEO/GEO 双路径计划 |
+| `yao-geo-page-audit` | YAO GEO Skills | 形成 GEO 审计报告、修复清单和证据台账 |
 | `gingiris-launch` | Gingiris | 形成 Product Hunt 等发布计划 |
 | `gingiris-kol-outreach` | Gingiris | 形成 KOL 筛选与外联计划 |
 
@@ -324,13 +329,13 @@ V2 只保留：
 
 ## 6. 默认“精选”页
 
-“全部 Skill”可以收录较多外部条目，但首页默认只推荐 15 个：
+“全部 Skill”可以收录较多外部条目，首页默认精选当前为 19 个：
 
 | 分类 | 默认精选 |
 | --- | --- |
 | 洞察 | `customer-research`、`competitor-profiling`、`last30days` |
 | 策略 | `product-marketing`、`marketing-plan`、`pricing` |
-| 创意 | `copywriting`、`ad-creative`、`baoyu-cover-image` |
+| 创意 | `copywriting`、`ad-creative`、`baoyu-cover-image`、`ip-as-logo`、`gzh-design`、`gbro-cover-design`、`mono-color` |
 | 媒介 | `ads`、`launch`、`qiaomu-seo` |
 | 运营 | `emails`、`community-marketing`、`sales-enablement` |
 
@@ -353,6 +358,8 @@ card:
   previewLicense: string | null
 source:
   type: upstream
+  githubStars: integer
+  githubStarsCheckedAt: YYYY-MM-DD
 ```
 
 V2 首页只读取：
@@ -378,7 +385,7 @@ V2 首页只读取：
 1. 暂停展示 original / adapted / Interflow 活动 Skill。
 2. 建立外部候选清单并补齐真实仓库、路径、Commit 和许可证。
 3. 对新增候选做静态安全检查和独立安装测试。
-4. 选出 15 个默认精选。
+4. 选出当前 19 个默认精选，并保留新增条目不自动晋级的人工规则。
 
 ### Phase 2：重做首页
 

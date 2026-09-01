@@ -5,6 +5,10 @@
   "summaryZh": "比较品类、竞品、人群问题和自身证明，形成定位领地、定位句、证明点与取舍。",
   "growthStage": "zero_to_one",
   "workspace": "strategy",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "定位领地、定位句和证明点", "previewImage": null, "previewLicense": null},
   "audiences": [
     "品牌策略人员",
     "创始人",

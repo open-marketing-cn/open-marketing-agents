@@ -5,6 +5,10 @@
   "summaryZh": "从不可移动的上线节点向前倒排策略、创意、制作、审批、追踪、交付和缓冲时间。",
   "growthStage": "zero_to_one",
   "workspace": "operations",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "上线倒排表、关键路径和缓冲安排", "previewImage": null, "previewLicense": null},
   "audiences": [
     "Campaign 项目经理",
     "品牌与市场运营人员",

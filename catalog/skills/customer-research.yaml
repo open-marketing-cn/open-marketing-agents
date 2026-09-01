@@ -5,6 +5,10 @@
   "summaryZh": "分析访谈、问卷、工单、评论与社区讨论，形成研究发现、客户语言和研究质量说明。",
   "growthStage": "zero_to_one",
   "workspace": "insights",
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "研究摘要、客户语言和证据质量说明", "previewImage": null, "previewLicense": null},
   "audiences": [
     "用户研究人员",
     "产品营销人员",
@@ -55,7 +59,9 @@
     "authorUrl": "https://github.com/coreyhaines31",
     "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
     "license": "MIT",
-    "checkedAt": "2026-08-31"
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
   },
   "installation": {
     "codex": "npx skills add coreyhaines31/marketingskills -s customer-research -a codex -y",

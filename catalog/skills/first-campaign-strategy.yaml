@@ -5,6 +5,10 @@
   "summaryZh": "围绕一个首发目标，把人群、问题、承诺、证明、渠道角色、假设和成功标准写成策略稿。",
   "growthStage": "zero_to_one",
   "workspace": "strategy",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "首轮 Campaign 策略和假设评分表", "previewImage": null, "previewLicense": null},
   "audiences": [
     "首次做品牌 Campaign 的团队",
     "品牌负责人",

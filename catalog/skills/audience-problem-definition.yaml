@@ -5,6 +5,10 @@
   "summaryZh": "把证据整理成优先人群、关键场景、待解决问题和需要继续验证的假设。",
   "growthStage": "zero_to_one",
   "workspace": "insights",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "优先人群、问题陈述和假设清单", "previewImage": null, "previewLicense": null},
   "audiences": [
     "创业者",
     "品牌与产品负责人",

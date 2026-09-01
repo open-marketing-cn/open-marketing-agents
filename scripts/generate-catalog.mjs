@@ -9,6 +9,15 @@ const downloadsDir = join(root, 'static', 'downloads');
 const workspaces = ['insights', 'strategy', 'creative', 'media', 'operations'];
 const sourceTypes = ['upstream', 'adapted', 'original'];
 const validationStatuses = ['passed', 'pending', 'failed'];
+const visibilityValues = ['public', 'candidate', 'paused_internal', 'withdrawn'];
+const defaultFeaturedIds = new Set([
+  'customer-research', 'competitor-profiling', 'last30days',
+  'product-marketing', 'marketing-plan', 'pricing',
+  'copywriting', 'ad-creative', 'baoyu-cover-image',
+  'ads', 'launch', 'qiaomu-seo',
+  'emails', 'community-marketing', 'sales-enablement',
+  'ip-as-logo', 'gzh-design', 'gbro-cover-design', 'mono-color'
+]);
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 function fail(message) { throw new Error(`[catalog] ${message}`); }
@@ -35,6 +44,8 @@ function validateManifest(skill, filename) {
   requireStringArray(skill.promptExamples, `${skill.id}.promptExamples`, 3);
   if (!skill.source || !sourceTypes.includes(skill.source.type)) fail(`${skill.id}.source.type is invalid`);
   for (const field of ['repo', 'path', 'commit', 'author', 'license', 'checkedAt']) requireString(skill.source[field], `${skill.id}.source.${field}`);
+  if (skill.source.githubStars !== undefined && (!Number.isInteger(skill.source.githubStars) || skill.source.githubStars < 0)) fail(`${skill.id}.source.githubStars must be a non-negative integer`);
+  if (skill.source.githubStarsCheckedAt !== undefined) requireString(skill.source.githubStarsCheckedAt, `${skill.id}.source.githubStarsCheckedAt`);
   if (!/^[a-f0-9]{7,40}$/.test(skill.source.commit)) fail(`${skill.id}.source.commit must be a commit SHA`);
   if (/unknown|pending|noassertion/i.test(skill.source.license)) fail(`${skill.id} cannot be public without a verified license`);
   for (const field of ['codex', 'claudeCode']) requireString(skill.installation?.[field], `${skill.id}.installation.${field}`);
@@ -42,6 +53,14 @@ function validateManifest(skill, filename) {
   validateStatus(skill.validation?.installation, `${skill.id}.validation.installation`);
   validateStatus(skill.validation?.practice, `${skill.id}.validation.practice`);
   if (!Array.isArray(skill.relatedSkillIds) || skill.relatedSkillIds.includes(skill.id)) fail(`${skill.id}.relatedSkillIds is invalid`);
+  if (skill.visibility !== undefined && !visibilityValues.includes(skill.visibility)) fail(`${skill.id}.visibility is invalid`);
+  if (skill.featured !== undefined && typeof skill.featured !== 'boolean') fail(`${skill.id}.featured must be boolean`);
+  if (skill.discoveredFrom !== undefined) requireStringArray(skill.discoveredFrom, `${skill.id}.discoveredFrom`);
+  if (skill.card !== undefined) {
+    requireString(skill.card.outcomeZh, `${skill.id}.card.outcomeZh`);
+    if (skill.card.previewImage !== null && skill.card.previewImage !== undefined) requireString(skill.card.previewImage, `${skill.id}.card.previewImage`);
+    if (skill.card.previewLicense !== null && skill.card.previewLicense !== undefined) requireString(skill.card.previewLicense, `${skill.id}.card.previewLicense`);
+  }
 }
 
 async function walk(dir) {
@@ -143,9 +162,17 @@ for (const skill of skills) {
 
 const catalogVersion = skills.map((skill) => skill.source.checkedAt).sort().at(-1);
 const buildCommit = /^[a-f0-9]{40}$/.test(process.env.GITHUB_SHA ?? '') ? process.env.GITHUB_SHA : null;
-const publicSkills = skills.map((skill) => ({
+const normalizedSkills = skills.map((skill) => ({
+  ...skill,
+  featured: skill.featured ?? defaultFeaturedIds.has(skill.id),
+  visibility: skill.visibility ?? (skill.source.type === 'upstream' ? 'public' : 'paused_internal'),
+  discoveredFrom: skill.discoveredFrom ?? ['github'],
+  card: skill.card ?? { outcomeZh: skill.summaryZh, previewImage: null, previewLicense: null },
+}));
+const publicSkills = normalizedSkills.filter((skill) => skill.visibility === 'public' && skill.source.type === 'upstream').map((skill) => ({
   ...skill,
   source: skill.source.type === 'upstream' || !buildCommit ? skill.source : { ...skill.source, commit: buildCommit },
+  relatedSkillIds: skill.relatedSkillIds.filter((relatedId) => normalizedSkills.some((related) => related.id === relatedId && related.visibility === 'public' && related.source.type === 'upstream')),
   installable: skill.validation.spec.status === 'passed' && skill.validation.installation.status === 'passed'
 }));
 const stats = {
@@ -158,19 +185,36 @@ const stats = {
 const registry = { product: 'Open Marketing Skills', growthStage: 'zero_to_one', catalogVersion, stats, skills: publicSkills };
 const searchIndex = publicSkills.map((skill) => ({
   id: skill.id, titleZh: skill.titleZh, originalName: skill.originalName, workspace: skill.workspace,
-  sourceType: skill.source.type, installable: skill.installable,
-  text: [skill.titleZh, skill.originalName, skill.summaryZh, ...skill.audiences, ...skill.useCases, ...skill.inputs, ...skill.outputs, ...skill.channels, skill.source.author].join(' ').toLocaleLowerCase('zh-CN')
+  sourceType: skill.source.type, installable: skill.installable, featured: skill.featured,
+  text: [skill.titleZh, skill.originalName, skill.summaryZh, skill.card.outcomeZh, ...skill.audiences, ...skill.useCases, ...skill.inputs, ...skill.outputs, ...skill.channels, skill.source.author].join(' ').toLocaleLowerCase('zh-CN')
 }));
 await writeFile(join(generatedDir, 'registry.json'), `${JSON.stringify(registry, null, 2)}\n`);
 await writeFile(join(generatedDir, 'search-index.json'), `${JSON.stringify(searchIndex, null, 2)}\n`);
-try {
-  await stat(join(generatedDir, 'updates.json'));
-} catch {
-  const updates = {
-    catalogVersion,
-    policy: '上游更新只生成复审记录，不自动覆盖中文介绍或本仓库改编版。',
-    sources: publicSkills.map((skill) => ({ id: skill.id, repo: skill.source.repo, path: skill.source.path, pinnedCommit: skill.source.commit, checkedAt: skill.source.checkedAt, reviewStatus: 'pending_remote_review' }))
-  };
-  await writeFile(join(generatedDir, 'updates.json'), `${JSON.stringify(updates, null, 2)}\n`);
-}
+let previousUpdates = null;
+try { previousUpdates = JSON.parse(await readFile(join(generatedDir, 'updates.json'), 'utf8')); } catch {}
+const previousSources = new Map((previousUpdates?.sources ?? []).map((source) => [source.id, source]));
+const updateSources = publicSkills.map((skill) => ({
+  ...previousSources.get(skill.id),
+  id: skill.id,
+  repo: skill.source.repo,
+  path: skill.source.path,
+  pinnedCommit: skill.source.commit,
+  githubStars: skill.source.githubStars,
+  githubStarsCheckedAt: skill.source.githubStarsCheckedAt,
+  checkedAt: previousSources.get(skill.id)?.checkedAt ?? skill.source.checkedAt,
+  reviewStatus: previousSources.get(skill.id)?.reviewStatus ?? 'pending_remote_review'
+}));
+const updates = {
+  generatedAt: previousUpdates?.generatedAt ?? new Date().toISOString(),
+  catalogVersion,
+  policy: '上游更新只生成复审记录，不自动覆盖中文介绍或本仓库改编版。',
+  summary: {
+    total: updateSources.length,
+    current: updateSources.filter((item) => item.reviewStatus === 'current').length,
+    reviewRequired: updateSources.filter((item) => item.reviewStatus === 'review_required' || item.reviewStatus === 'pending_remote_review').length,
+    blocked: updateSources.filter((item) => item.reviewStatus === 'block_installation').length
+  },
+  sources: updateSources
+};
+await writeFile(join(generatedDir, 'updates.json'), `${JSON.stringify(updates, null, 2)}\n`);
 console.log(`Generated ${stats.total} skills: ${stats.bySource.upstream} upstream, ${stats.bySource.adapted} adapted, ${stats.bySource.original} original.`);

@@ -64,6 +64,8 @@ for (const skill of upstream) {
     pathStatus: pathMissing ? 'missing' : 'ok',
     pinnedLicense: skill.source.license,
     currentLicense,
+    githubStars: repo.stargazers_count,
+    githubStarsCheckedAt: new Date().toISOString().slice(0, 10),
     riskFlags,
     newRiskFlags,
     reviewStatus: pathMissing ? 'block_installation' : licenseChanged ? 'block_installation' : updateAvailable || newRiskFlags.length ? 'review_required' : 'current'
