@@ -1,0 +1,83 @@
+{
+  "id": "copywriting",
+  "titleZh": "写出清楚、具体、可行动的营销页面",
+  "originalName": "copywriting",
+  "summaryZh": "根据页面目标、受众、产品事实与上下文，起草或重写首页、落地页、定价页等营销文案。",
+  "growthStage": "zero_to_one",
+  "workspace": "creative",
+  "audiences": [
+    "品牌与内容人员",
+    "增长与网站团队",
+    "创业者"
+  ],
+  "useCases": [
+    "从空白起草落地页",
+    "重写不清楚的主页",
+    "改进标题、价值主张和行动按钮"
+  ],
+  "inputs": [
+    "页面类型与唯一目标",
+    "目标受众",
+    "产品或服务事实",
+    "可用证明与行动指引"
+  ],
+  "outputs": [
+    "页面信息结构",
+    "标题、副标题与正文草稿",
+    "CTA 文案",
+    "缺失事实与需要确认的问题"
+  ],
+  "promptExamples": [
+    "请为这个新品写一版首发落地页，优先说清楚人群、问题、价值和证据。",
+    "请重写这个首页首屏，避免空话，并给出三个明确的标题方向。",
+    "请检查这版产品页是否只写功能没有写用户结果，再给一版可审稿修改稿。"
+  ],
+  "humanGate": "品牌或产品负责人确认事实、主张、证据、价格、品牌声音和最终上线版本。",
+  "cannotInfer": [
+    "未提供的产品效果",
+    "虚构客户评价",
+    "未经确认的价格和优惠",
+    "文案上线后的转化表现"
+  ],
+  "channels": [
+    "官网",
+    "落地页",
+    "产品页"
+  ],
+  "source": {
+    "type": "upstream",
+    "repo": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/copywriting",
+    "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+    "author": "Corey Haines",
+    "authorUrl": "https://github.com/coreyhaines31",
+    "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+    "license": "MIT",
+    "checkedAt": "2026-08-31"
+  },
+  "installation": {
+    "codex": "npx skills add coreyhaines31/marketingskills -s copywriting -a codex -y",
+    "claudeCode": "npx skills add coreyhaines31/marketingskills -s copywriting -a claude-code -y"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已核对页面文案输入、原则、结构和边界。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "尚未完成 Open Marketing 实战复核。"
+    }
+  },
+  "relatedSkillIds": [
+    "image",
+    "ab-testing"
+  ]
+}

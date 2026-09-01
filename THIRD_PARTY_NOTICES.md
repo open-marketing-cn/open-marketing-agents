@@ -1,6 +1,6 @@
 # Third-party notices
 
-Open Marketing 的本土化目录和桌面实现借鉴以下开源项目。来源登记不代表上游作者认可 Open Marketing，也不代表候选已完成验证。
+Open Marketing 的 Skill 目录和保留的桌面实验借鉴以下开源项目。来源登记不代表上游作者认可 Open Marketing，也不代表候选已完成实战验证。
 
 ## Agency Agents
 
@@ -15,7 +15,15 @@ Open Marketing 的本土化目录和桌面实现借鉴以下开源项目。来�
 - Repository: https://github.com/coreyhaines31/marketingskills
 - License: MIT
 - Copyright: 2025 Corey Haines
-- Use: 40 个营销 Skill 候选的来源与方法参考；逐步进行中国语境改写、合并和真实验证。
+- Use: V1 中 10 个 `upstream` Skill 直接推荐原作者目录，不把其 `SKILL.md` 复制进本仓库。具体 Skill 路径与核验 Commit 见 `catalog/skills/`。
+
+## Brand Skills
+
+- Repository: https://github.com/cofoundy/brand-skills
+- License: MIT
+- Copyright: 2026 Cofoundy SAC
+- Pinned commit: `c50d6c9988e22b39031266924ae7d87f643e34bf`
+- Use: `brand-context-cn` 和 `brand-positioning-cn` 的上游来源。Open Marketing 移除了共享 `brand.yaml` 与其他 Skill 前置条件，改为两个可单独安装的中文版本。完整通知与许可证保存在各自安装包的 `NOTICE.md` 和 `LICENSE.upstream`。
 
 ## Open Design
 
@@ -30,4 +38,4 @@ Open Marketing 的本土化目录和桌面实现借鉴以下开源项目。来�
 - MCP: https://github.com/justoneapi/justoneapi-mcp
 - Role: 用户自备凭证的外部数据连接器候选。它不是 Open Marketing 的一部分，受其自身条款、费用和隐私政策约束。
 
-上游许可证文本保留在各自仓库。Open Marketing 公开发行前会再次核对实际复制文件、版权声明和许可证兼容性。
+上游原版许可证文本保留在其仓库；发生复制与修改的改编版在安装包内保留许可证和版权通知。定时复审不会自动覆盖正式目录。

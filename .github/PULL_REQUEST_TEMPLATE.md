@@ -5,7 +5,7 @@
 ## 数据、系统动作与人工决定
 
 - 所需数据/来源：
-- Agent/Skill 做什么：
+- Skill 做什么：
 - 不能推断什么：
 - 必须由谁确认：
 
@@ -20,11 +20,11 @@
 - [ ] 已列出所有上游来源和许可证
 - [ ] 只包含脱敏或明确虚构的数据
 - [ ] 没有真实账号、Token、客户路径、群聊截图或原始媒体
-- [ ] 新权限已在清单和界面中披露
+- [ ] Skill 能单独安装、触发和产出，不依赖另一个 Skill
+- [ ] 上游原版没有复制；改编版保留 NOTICE、许可证与原始 Commit
 - [ ] 已使用 `git commit -s` 签署 DCO
 
 ## 检查
 
 - [ ] `npm run verify`
-- [ ] `cargo test --manifest-path src-tauri/Cargo.toml`
-- [ ] 在 Codex 上完成安装/调用/更新/卸载测试（如适用）
+- [ ] 在空白 Codex 与 Claude Code 中只安装当前 Skill 并完成触发测试

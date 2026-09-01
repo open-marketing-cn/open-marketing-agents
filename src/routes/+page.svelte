@@ -1,357 +1,165 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import {
-    ArrowDownToLine,
-    ArrowUpRight,
-    BarChart3,
-    ChevronRight,
-    CircleAlert,
-    Database,
-    ExternalLink,
-    FileOutput,
-    FlaskConical,
-    FolderSearch,
-    Info,
-    Laptop,
-    Layers3,
-    LayoutGrid,
-    LockKeyhole,
-    PenTool,
-    Rocket,
-    Search,
-    ShieldCheck,
-    Sparkles,
-    Target,
-    X
-  } from '@lucide/svelte';
-  import { CATALOG, canInstall, searchCatalog } from '$lib/catalog';
-  import { detectCodex, installPackage, openCodex } from '$lib/bridge';
-  import StatusPill from '$lib/StatusPill.svelte';
-  import { WORKSPACES, type CatalogPackage, type CodexStatus, type WorkspaceId } from '$lib/types';
-  import '../app.css';
+  import { ArrowDown, ArrowRight, Search, ShieldCheck, Sparkles } from '@lucide/svelte';
+  import SiteHeader from '$lib/SiteHeader.svelte';
+  import SkillCard from '$lib/SkillCard.svelte';
+  import { registry, SOURCE_LABELS, WORKSPACES, type SourceType, type WorkspaceId } from '$lib/skills';
 
-  const AGENTS = CATALOG.filter((item) => item.kind === 'agent');
-  const CHANNELS = [...new Set(AGENTS.flatMap((item) => item.channels))].sort((a, b) => a.localeCompare(b, 'zh-CN'));
-  const INDUSTRIES = [...new Set(AGENTS.flatMap((item) => item.industries))].sort((a, b) => a.localeCompare(b, 'zh-CN'));
-
-  const VIEW_META: Record<WorkspaceId | 'all', { number: string; english: string; chinese: string; description: string; output: string }> = {
-    all: { number: '00', english: 'Agent Store', chinese: '全部 Agent', description: '按营销任务、平台和行业挑选可安装到 Codex 的 Agent。', output: 'Agent 任务包 / 内置 Skill' },
-    insights: { number: '01', english: 'Insights', chinese: '市场调研', description: '从品牌、竞品、消费者、搜索和平台变化中整理可追溯证据。', output: '市场资料包 / 证据与判断卡' },
-    strategy: { number: '02', english: 'Strategy', chinese: '营销策略', description: '把已确认的问题、目标、人群和证据组织成可执行的营销选择。', output: '营销项目底稿 / 策略任务书' },
-    creation: { number: '03', english: 'Creation', chinese: '创意与内容', description: '形成内容角度、信息结构、文案初稿和可供审稿的创意交付物。', output: '创意任务书 / 内容母稿' },
-    adaptation: { number: '04', english: 'Adaptation', chinese: '平台适配', description: '把已确认内容改写成适合不同平台、场景和素材规格的版本。', output: '平台版本 / 内容与物料清单' },
-    delivery: { number: '05', english: 'Delivery', chinese: '推进与发布', description: '准备达人、投放、发布和上线前需要的任务、素材与确认。', output: '执行任务包 / 上线前检查' },
-    performance: { number: '06', english: 'Performance', chinese: '效果与学习', description: '归集真实结果、记录限制与失败，形成下一轮可验证的改进。', output: '结果复盘 / 学习记录' }
-  };
-
+  const channels = [...new Set(registry.skills.flatMap((skill) => skill.channels))].sort((a, b) => a.localeCompare(b, 'zh-CN'));
   let query = $state('');
-  let workspace = $state<WorkspaceId | 'all'>('insights');
-  let statusFilter = $state<'all' | CatalogPackage['status']>('all');
-  let channelFilter = $state('all');
-  let industryFilter = $state('all');
-  let selected = $state<CatalogPackage>(AGENTS.find((item) => item.workspace === 'insights') ?? AGENTS[0]);
-  let codexStatus = $state<CodexStatus | null>(null);
-  let detecting = $state(false);
-  let detailOpen = $state(false);
-  let installOpen = $state(false);
-  let installationMessage = $state('');
-  let selectedOptionalSkills = $state<string[]>([]);
+  let workspace = $state<WorkspaceId | 'all'>('all');
+  let source = $state<SourceType | 'all'>('all');
+  let channel = $state('all');
+  let validation = $state<'all' | 'installable' | 'practice'>('all');
 
-  let activeView = $derived(VIEW_META[workspace]);
-  let visiblePackages = $derived.by(() =>
-    searchCatalog(AGENTS, query, workspace, 'agent', statusFilter).filter((item) =>
-      (channelFilter === 'all' || item.channels.includes(channelFilter)) &&
-      (industryFilter === 'all' || item.industries.includes(industryFilter))
-    )
-  );
-  let groupedPackages = $derived(
-    WORKSPACES.map((stage) => ({ stage, items: visiblePackages.filter((item) => item.workspace === stage.id) }))
-      .filter((group) => group.items.length > 0)
-  );
-  let packageCounts = $derived({
-    agents: AGENTS.length,
-    visible: visiblePackages.length,
-    installable: AGENTS.filter((item) => canInstall(item)).length
+  let filteredSkills = $derived.by(() => {
+    const needle = query.trim().toLocaleLowerCase('zh-CN');
+    return registry.skills.filter((skill) => {
+      if (workspace !== 'all' && skill.workspace !== workspace) return false;
+      if (source !== 'all' && skill.source.type !== source) return false;
+      if (channel !== 'all' && !skill.channels.includes(channel)) return false;
+      if (validation === 'installable' && !skill.installable) return false;
+      if (validation === 'practice' && skill.validation.practice.status !== 'passed') return false;
+      if (!needle) return true;
+      return [skill.titleZh, skill.originalName, skill.summaryZh, ...skill.audiences, ...skill.useCases, ...skill.inputs, ...skill.outputs, ...skill.channels]
+        .join(' ')
+        .toLocaleLowerCase('zh-CN')
+        .includes(needle);
+    });
   });
 
-  onMount(() => refreshCodex());
-
-  async function refreshCodex() {
-    detecting = true;
-    try {
-      codexStatus = await detectCodex();
-    } finally {
-      detecting = false;
-    }
-  }
-
-  function chooseWorkspace(nextWorkspace: WorkspaceId | 'all') {
-    workspace = nextWorkspace;
-    detailOpen = false;
-  }
-
-  function selectPackage(item: CatalogPackage) {
-    selected = item;
-    installationMessage = '';
-    detailOpen = true;
-  }
-
-  function openInstall() {
-    selectedOptionalSkills = selected.bundledSkills.filter((skill) => !skill.required).map((skill) => skill.id);
-    installOpen = true;
-  }
-
-  async function confirmInstall() {
-    const result = await installPackage({
-      packageId: selected.id,
-      optionalSkillIds: selectedOptionalSkills,
-      permissionVersion: selected.version
-    });
-    installationMessage = result.message;
-    if (result.status !== 'blocked') installOpen = false;
-  }
-
-  function toggleOptionalSkill(skillId: string) {
-    selectedOptionalSkills = selectedOptionalSkills.includes(skillId)
-      ? selectedOptionalSkills.filter((id) => id !== skillId)
-      : [...selectedOptionalSkills, skillId];
+  function chooseWorkspace(id: WorkspaceId) {
+    workspace = workspace === id ? 'all' : id;
+    document.querySelector('#catalog')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 </script>
 
 <svelte:head>
-  <title>Open Marketing — 营销 Agent 商店</title>
-  <meta name="description" content="Open Marketing，面向中国营销人的本地 Agent 商店。" />
+  <title>Open Marketing Skills｜品牌 0→1 独立 Skill 精选</title>
+  <meta name="description" content="围绕洞察、策略、创意、媒介与运营，精选来源透明、可独立安装的品牌 0→1 营销 Skill。" />
 </svelte:head>
 
-<div class="workbench-shell">
-  <aside class="workspace-sidebar">
-    <div class="sidebar-brand" data-tauri-drag-region>
-      <strong>Open Marketing</strong>
-      <span>Marketing Agent Store</span>
-    </div>
+<div class="page-shell">
+  <SiteHeader />
 
-    <button class="workspace-switch" type="button" onclick={() => chooseWorkspace('all')}>
-      <span class="workspace-monogram">OM</span>
-      <span><b>营销 Agent 商店</b><small>由 Interflow 发起</small></span>
-      <ChevronRight size={15} />
-    </button>
+  <main>
+    <section class="hero-section">
+      <div class="hero-copy">
+        <div class="eyebrow"><span></span> OPEN MARKETING SKILLS · V1</div>
+        <h1>一条品牌 0→1 路线<br /><em>{registry.stats.total} 个能单独开工的 Skill</em></h1>
+        <p class="hero-lead">从消费者洞察到 Campaign 复盘。每次只装一个，输入清楚、交付具体、来源透明，人保留最后决定。</p>
+        <div class="hero-actions">
+          <a class="button button-primary button-large" href="#catalog">开始选 Skill <ArrowDown size={18} /></a>
+          <a class="text-link" href="https://github.com/open-marketing-cn/open-marketing-agents/tree/main/docs/plans" target="_blank" rel="noreferrer">看公开收录规则 <ArrowRight size={16} /></a>
+        </div>
+      </div>
 
-    <nav class="sidebar-nav" aria-label="Agent 商店导航">
-      <button class:active={workspace === 'all'} type="button" onclick={() => chooseWorkspace('all')}>
-        <LayoutGrid size={17} />
-        <span>全部 Agent<small>{packageCounts.agents} 个候选</small></span>
-      </button>
-      {#each WORKSPACES as item, index}
-        <button class:active={workspace === item.id} type="button" onclick={() => chooseWorkspace(item.id)}>
-          {#if index === 0}<Search size={17} />
-          {:else if index === 1}<Target size={17} />
-          {:else if index === 2}<PenTool size={17} />
-          {:else if index === 3}<Layers3 size={17} />
-          {:else if index === 4}<Rocket size={17} />
-          {:else}<BarChart3 size={17} />{/if}
-          <span>{VIEW_META[item.id].english}<small>{VIEW_META[item.id].chinese}</small></span>
-        </button>
-      {/each}
-    </nav>
-
-    <section class="sidebar-status">
-      <span>Codex status</span>
-      <strong>{codexStatus?.cliFound ? '已检测到 Codex' : '未检测到 Codex'}</strong>
-      <small>{codexStatus?.message ?? '网页预览不会读取你的电脑。'}</small>
-      <button type="button" onclick={refreshCodex}>{detecting ? '检测中…' : '重新检测'}</button>
+      <div class="hero-board" aria-label="品牌 0 到 1 五阶段概览">
+        <div class="board-head"><span>BRAND BUILDING MAP</span><b>0 → 1</b></div>
+        <ol>
+          {#each WORKSPACES as item}
+            <li class={`workspace-${item.id}`}>
+              <span>{item.number}</span>
+              <div><strong>{item.name}</strong><small>{item.output}</small></div>
+              <b>{registry.stats.byWorkspace[item.id]}</b>
+            </li>
+          {/each}
+        </ol>
+        <div class="board-foot"><ShieldCheck size={16} /> 独立安装 · 来源核验 · 人工决策</div>
+      </div>
     </section>
 
-    <div class="sidebar-foot">
-      <ShieldCheck size={14} />
-      <span>本地优先。不自动发布、投放、私信或调整预算。</span>
-    </div>
-  </aside>
-
-  <section class="workbench-main">
-    <header class="workbench-topbar" data-tauri-drag-region>
-      <div>
-        <span>OPEN MARKETING · 营销工作阶段</span>
-        <h1>{activeView.english}</h1>
+    <section class="growth-section" aria-labelledby="growth-title">
+      <div class="section-kicker"><span>01</span><p id="growth-title">先选品牌成长阶段</p></div>
+      <div class="growth-grid">
+        <article class="growth-card active">
+          <div><b>0→1</b><span>现在开放</span></div>
+          <h2>从机会到第一次完整上线</h2>
+          <p>找到人群与问题，建立定位，产出创意，完成上线与第一轮学习。</p>
+          <a href="#path">进入这条路线 <ArrowRight size={17} /></a>
+        </article>
+        <article class="growth-card future">
+          <div><b>1→10</b><span>后续开放</span></div>
+          <h2>从有效尝试到可复制增长</h2>
+          <p>放大有效渠道、内容和转化机制，建立稳定节奏与增长模型。</p>
+        </article>
+        <article class="growth-card future">
+          <div><b>10→∞</b><span>后续开放</span></div>
+          <h2>从单点增长到品牌系统</h2>
+          <p>跨市场、跨团队扩张，在规模化中保持品牌一致与组织能力。</p>
+        </article>
       </div>
-      <div class="topbar-actions">
-        <label>
-          <span>Current scope</span>
-          <select value={workspace} onchange={(event) => chooseWorkspace((event.currentTarget as HTMLSelectElement).value as WorkspaceId | 'all')}>
-            <option value="all">全部 Agent</option>
-            {#each WORKSPACES as item}<option value={item.id}>{VIEW_META[item.id].english} · {VIEW_META[item.id].chinese}</option>{/each}
-          </select>
-        </label>
-        <div class="topbar-codex" class:connected={codexStatus?.cliFound}>
-          <span><Database size={14} />Codex</span>
-          <strong>{codexStatus?.cliFound ? codexStatus.cliVersion ?? '已连接' : '待连接'}</strong>
-        </div>
-      </div>
-    </header>
+    </section>
 
-    <div class="workbench-scroll">
-      <section class="room-card">
-        <nav class="stage-rail" aria-label="营销六阶段">
-          {#each WORKSPACES as item, index}
-            <button class:active={workspace === item.id} type="button" onclick={() => chooseWorkspace(item.id)}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <strong>{VIEW_META[item.id].english}</strong>
-              <small>{VIEW_META[item.id].chinese}</small>
-            </button>
-          {/each}
-        </nav>
-
-        <div class="room-context">
-          <div class="room-title">
-            <span>{activeView.number} / AGENT ROOM</span>
-            <h2>{activeView.english}<i></i>{activeView.chinese}</h2>
-            <p>{activeView.description}</p>
-          </div>
-          <dl>
-            <div><dt>当前范围</dt><dd>{workspace === 'all' ? '全部营销 Agent' : activeView.chinese}</dd></div>
-            <div><dt>候选 Agent</dt><dd>{packageCounts.visible} 个</dd></div>
-            <div><dt>标准交付物</dt><dd>{activeView.output}</dd></div>
-            <div><dt>安装目标</dt><dd>Codex 全局 Skill 目录</dd></div>
-          </dl>
-        </div>
-      </section>
-
-      <section class="agent-dock">
-        <header class="dock-heading">
-          <div>
-            <span>AGENT DOCK</span>
-            <h3>{workspace === 'all' ? '营销 Agent 商店' : `${activeView.chinese} Agent`}</h3>
-            <p>单独挑选和安装；Skill 随 Agent 进入 Codex，不单独占用商店入口。</p>
-          </div>
-          {#if workspace !== 'all'}
-            <button type="button" onclick={() => chooseWorkspace('all')}><Sparkles size={15} />查看全部 Agent</button>
-          {/if}
-        </header>
-
-        <div class="dock-filters">
-          <label class="dock-search"><Search size={15} /><input bind:value={query} placeholder="搜索营销任务、平台或行业" aria-label="搜索 Agent" /></label>
-          <label><select bind:value={channelFilter} aria-label="平台筛选"><option value="all">全部平台</option>{#each CHANNELS as item}<option value={item}>{item}</option>{/each}</select></label>
-          <label><select bind:value={industryFilter} aria-label="行业筛选"><option value="all">全部行业</option>{#each INDUSTRIES as item}<option value={item}>{item}</option>{/each}</select></label>
-          <label><select bind:value={statusFilter} aria-label="状态筛选"><option value="all">全部状态</option><option value="installable">可安装</option><option value="pending_validation">待验证</option><option value="cocreating">共创中</option></select></label>
-        </div>
-
-        <div class="agent-groups" aria-live="polite">
-          {#if groupedPackages.length === 0}
-            <div class="empty-state"><FolderSearch size={28} /><strong>没有符合当前筛选的 Agent</strong><p>清除一个筛选条件，或切换到全部 Agent。</p></div>
-          {:else}
-            {#each groupedPackages as group}
-              <section class="agent-group">
-                <header><div><strong>{VIEW_META[group.stage.id].chinese}</strong><span>{group.items.length} Agents</span></div><small>{VIEW_META[group.stage.id].english}</small></header>
-                <div class="agent-grid">
-                  {#each group.items as item (item.id)}
-                    <button class="agent-card" type="button" onclick={() => selectPackage(item)}>
-                      <StatusPill status={item.status} />
-                      <strong>{item.name}</strong>
-                      <p>{item.shortDescription}</p>
-                      <div class="card-tags">{#each item.channels.slice(0, 2) as channel}<span>{channel}</span>{/each}</div>
-                      <footer><span>{item.outputs[0] ?? '营销交付物'}</span><ChevronRight size={15} /></footer>
-                    </button>
-                  {/each}
-                </div>
-              </section>
-            {/each}
-          {/if}
-        </div>
-      </section>
-    </div>
-  </section>
-</div>
-
-{#if detailOpen}
-  <div class="detail-backdrop" role="presentation" onclick={(event) => event.currentTarget === event.target && (detailOpen = false)}>
-    <div class="agent-detail-panel" role="dialog" aria-modal="true" aria-labelledby="agent-detail-title">
-      <header>
-        <span>{VIEW_META[selected.workspace].number} · {VIEW_META[selected.workspace].english} · v{selected.version}</span>
-        <button type="button" aria-label="关闭 Agent 详情" onclick={() => (detailOpen = false)}><X size={18} /></button>
-      </header>
-
-      <div class="detail-title">
-        <StatusPill status={selected.status} />
-        <h2 id="agent-detail-title">{selected.name}</h2>
-        <p>{selected.shortDescription}</p>
-        <div>{#each selected.channels as channel}<span>{channel}</span>{/each}{#each selected.industries as industry}<span>{industry}</span>{/each}</div>
-      </div>
-
-      {#if installationMessage}<div class="inline-message"><Info size={15} />{installationMessage}</div>{/if}
-
-      <section class="detail-task"><Sparkles size={17} /><div><span>它解决什么</span><strong>{selected.task}</strong></div></section>
-
-      <section class="detail-io">
-        <div><Database size={15} /><span>开始前要提供</span><ul>{#each selected.requiredInputs as input}<li>{input}</li>{/each}</ul></div>
-        <div><FileOutput size={15} /><span>你会拿到</span><ul>{#each selected.outputs as output}<li>{output}</li>{/each}</ul></div>
-      </section>
-
-      <section class="human-gate"><ShieldCheck size={18} /><div><span>人工确认点</span><strong>{selected.humanGate}</strong></div></section>
-
-      <details open>
-        <summary>安装内容与权限 <span>{selected.bundledSkills.length} 个内置 Skill</span></summary>
-        <div class="detail-block">
-          {#if selected.bundledSkills.length === 0}<p class="muted">当前候选还没有完成依赖 Skill 的整理。</p>{/if}
-          {#each selected.bundledSkills as skill}<div class="dependency"><span>{skill.required ? '必需' : '可选'}</span><div><b>{skill.name}</b><small>{skill.description}</small></div></div>{/each}
-          {#each selected.permissions as permission}<div class="permission"><LockKeyhole size={14} /><div><b>{permission.label}<em>{permission.required ? '必需' : '可选'}</em></b><small>{permission.detail}</small></div></div>{/each}
-        </div>
-      </details>
-
-      <details>
-        <summary>不能替你判断 <span>{selected.cannotInfer.length} 项</span></summary>
-        <div class="detail-block limit-list">{#each selected.cannotInfer as limit}<div><CircleAlert size={14} />{limit}</div>{/each}</div>
-      </details>
-
-      <details>
-        <summary>验证记录 <span>{selected.validation.length} 条</span></summary>
-        <div class="detail-block">
-          {#if selected.validation.length === 0}<div class="validation-empty"><FlaskConical size={18} /><p><b>还没有真实验证记录</b><span>{selected.maturityNote}</span></p></div>{/if}
-          {#each selected.validation as record}<div class="validation-record"><b>{record.role} · {record.industry}</b><p>{record.task}</p><small>{record.date} · {record.target} · {record.conclusion}</small></div>{/each}
-        </div>
-      </details>
-
-      <details>
-        <summary>来源与许可证 <span>{selected.sources.length} 个来源</span></summary>
-        <div class="detail-block source-list">{#each selected.sources as source}<a href={source.url} target="_blank" rel="noreferrer"><span><b>{source.label}</b><small>{source.license} · {source.mode === 'adapted' ? '本土化改编' : source.mode === 'original' ? '原创' : '仅参考'}</small></span><ExternalLink size={14} /></a>{/each}</div>
-      </details>
-
-      <div class="codex-card"><Laptop size={19} /><div><b>Codex 优先</b><span>{codexStatus?.message ?? '网页预览不会读取你的电脑。'}</span><code>{codexStatus?.skillsDirectory ?? '~/.codex/skills'}</code></div></div>
-
-      <footer>
-        <small>{canInstall(selected) ? '安装前可取消不需要的可选 Skill。' : '必须由真实中国营销从业者完成脱敏任务验证后才能安装。'}</small>
+    <section class="path-section" id="path" aria-labelledby="path-title">
+      <div class="section-heading">
         <div>
-          {#if codexStatus?.desktopFound}<button class="secondary-button" type="button" onclick={openCodex}>打开 Codex<ArrowUpRight size={14} /></button>{/if}
-          {#if canInstall(selected)}<button class="primary-button" type="button" onclick={openInstall}><ArrowDownToLine size={16} />安装到 Codex</button>
-          {:else}<button class="primary-button" type="button" disabled><LockKeyhole size={16} />暂不可安装</button>{/if}
+          <div class="section-kicker"><span>02</span><p>按 0→1 路线选择</p></div>
+          <h2 id="path-title">你现在卡在哪一步？</h2>
         </div>
-      </footer>
-    </div>
-  </div>
-{/if}
+        <p>路线只帮助导航。点击一个阶段筛选，Skill 之间没有强制依赖。</p>
+      </div>
 
-{#if installOpen}
-  <div class="modal-backdrop" role="presentation" onclick={(event) => event.currentTarget === event.target && (installOpen = false)}>
-    <div class="install-modal" role="dialog" aria-modal="true" aria-labelledby="install-title">
-      <button class="modal-close" aria-label="关闭" onclick={() => (installOpen = false)}><X size={18} /></button>
-      <span class="eyebrow">INSTALL TO CODEX · 全局</span>
-      <h2 id="install-title">{selected.name}</h2>
-      <p>安装后会在 Codex 的技能列表中显示一个 Agent。它依赖的 Skill 会放在 Agent 内部，不占用顶层列表。</p>
-      <div class="install-path"><code>~/.codex/skills/open-marketing-{selected.id}/</code></div>
+      <div class="path-rail">
+        {#each WORKSPACES as item, index}
+          <button class:active={workspace === item.id} class={`path-stop workspace-${item.id}`} type="button" onclick={() => chooseWorkspace(item.id)}>
+            <span class="path-number">{item.number}</span>
+            <span class="path-dot" aria-hidden="true"></span>
+            <span class="path-copy"><b>{item.name}</b><small>{item.question}</small><em>{item.output}</em></span>
+            <span class="path-count">{registry.stats.byWorkspace[item.id]} SKILLS</span>
+          </button>
+          {#if index < WORKSPACES.length - 1}<span class="path-arrow" aria-hidden="true">→</span>{/if}
+        {/each}
+      </div>
+    </section>
 
-      {#if selected.bundledSkills.length > 0}
-        <h3>内置 Skill</h3>
-        <div class="skill-options">
-          {#each selected.bundledSkills as skill}
-            <label class:required={skill.required}>
-              <input type="checkbox" checked={skill.required || selectedOptionalSkills.includes(skill.id)} disabled={skill.required} onchange={() => toggleOptionalSkill(skill.id)} />
-              <span><b>{skill.name}</b><small>{skill.description}</small></span>
-              <em>{skill.required ? '必需' : '可选'}</em>
-            </label>
-          {/each}
+    <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
+      <div class="catalog-heading">
+        <div>
+          <div class="section-kicker"><span>03</span><p>独立 Skill 目录</p></div>
+          <h2 id="catalog-title">直接看你会拿到什么</h2>
         </div>
+        <div class="catalog-stat"><strong>{filteredSkills.length}</strong><span>个结果</span><small>目录版本 {registry.catalogVersion}</small></div>
+      </div>
+
+      <div class="filter-panel">
+        <label class="search-field">
+          <Search size={18} />
+          <span class="sr-only">搜索任务、输出或渠道</span>
+          <input bind:value={query} type="search" placeholder="搜任务、输出、渠道，例如：竞品 / Brief / 小红书" />
+        </label>
+        <label><span>阶段</span><select bind:value={workspace}><option value="all">全部五阶段</option>{#each WORKSPACES as item}<option value={item.id}>{item.number} {item.name}</option>{/each}</select></label>
+        <label><span>渠道</span><select bind:value={channel}><option value="all">全部渠道</option>{#each channels as item}<option value={item}>{item}</option>{/each}</select></label>
+        <label><span>验证</span><select bind:value={validation}><option value="all">全部状态</option><option value="installable">安装已验证</option><option value="practice">实战已验证</option></select></label>
+      </div>
+
+      <div class="source-filters" aria-label="按来源类型筛选">
+        <button class:active={source === 'all'} type="button" onclick={() => (source = 'all')}>全部来源 <span>{registry.stats.total}</span></button>
+        {#each Object.entries(SOURCE_LABELS) as [id, label]}
+          <button class:active={source === id} type="button" onclick={() => (source = id as SourceType)}>{label} <span>{registry.stats.bySource[id as SourceType]}</span></button>
+        {/each}
+      </div>
+
+      {#if filteredSkills.length}
+        <div class="skill-grid">{#each filteredSkills as skill (skill.id)}<SkillCard {skill} />{/each}</div>
+      {:else}
+        <div class="empty-state"><Sparkles size={24} /><h3>暂时没有完全匹配的 Skill</h3><p>试试减少筛选，或换一个更具体的交付物名称。</p><button type="button" onclick={() => { query = ''; workspace = 'all'; source = 'all'; channel = 'all'; validation = 'all'; }}>清空筛选</button></div>
       {/if}
+    </section>
 
-      <div class="permission-confirm"><ShieldCheck size={20} /><div><b>你正在确认 v{selected.version} 的权限说明</b><span>以后如果新增权限，Open Marketing 会再次征求确认。</span></div></div>
-      <div class="modal-actions"><button class="secondary-button" onclick={() => (installOpen = false)}>取消</button><button class="primary-button" onclick={confirmInstall}><ArrowDownToLine size={16} />确认安装</button></div>
-    </div>
-  </div>
-{/if}
+    <section class="selection-rule">
+      <div><span>WHAT “CURATED” MEANS</span><h2>精选，不等于搬运。</h2></div>
+      <ul>
+        <li><b>01</b><span><strong>来源透明</strong>作者、路径、Commit、许可证和核验日期都可查。</span></li>
+        <li><b>02</b><span><strong>任务具体</strong>先写输入、输出和人要做的决定，再写它有多聪明。</span></li>
+        <li><b>03</b><span><strong>独立安装</strong>related 只推荐下一步，不形成隐藏依赖或组合包。</span></li>
+        <li><b>04</b><span><strong>验证分层</strong>技术安装通过才能安装；真实任务通过才有实战徽章。</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand-lockup light"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span><strong>OPEN MARKETING</strong><small>BRAND 0→1 SKILLS</small></span></div>
+    <p>V1 只收录独立 Skill。没有登录、没有模型 Key、不会连接或修改真实营销账户。</p>
+    <a href="https://github.com/open-marketing-cn/open-marketing-agents" target="_blank" rel="noreferrer">在 GitHub 查看与贡献 <ArrowRight size={16} /></a>
+  </footer>
+</div>

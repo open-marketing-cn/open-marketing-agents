@@ -1,0 +1,90 @@
+{
+  "id": "brand-positioning-cn",
+  "titleZh": "找到可被证据支撑的品牌位置",
+  "originalName": "brand-positioning-cn",
+  "summaryZh": "比较品类、竞品、人群问题和自身证明，形成定位领地、定位句、证明点与取舍。",
+  "growthStage": "zero_to_one",
+  "workspace": "strategy",
+  "audiences": [
+    "品牌策略人员",
+    "创始人",
+    "新品负责人"
+  ],
+  "useCases": [
+    "新品进入拥挤品类时找差异",
+    "重写过宽或空泛的定位",
+    "为首轮 Campaign 确定核心信息"
+  ],
+  "inputs": [
+    "品牌事实与业务约束",
+    "优先人群和问题证据",
+    "竞品画像",
+    "可验证的产品或服务证明"
+  ],
+  "outputs": [
+    "positioning-territories.md 定位领地比较",
+    "positioning-statement.md 定位句",
+    "proof-points.md 证明点与证据缺口",
+    "trade-offs.md 明确不做什么"
+  ],
+  "promptExamples": [
+    "请基于这份竞品画像和用户研究，提出三个定位领地，并写清每个领地的证据与风险。",
+    "请把我们的定位句改到具体可证明，不能用领先、高端、创新这类空词。",
+    "请做一张二维竞品定位图，但先让我确认坐标含义和数据来源。"
+  ],
+  "humanGate": "品牌负责人选择要占据的定位领地、接受的取舍，以及哪些证明点可以公开使用。",
+  "cannotInfer": [
+    "消费者已经认同该定位",
+    "定位一定能带来销售",
+    "未经证据支持的领先性",
+    "商标与广告法合规结论"
+  ],
+  "channels": [
+    "品牌策略",
+    "Campaign",
+    "销售沟通"
+  ],
+  "source": {
+    "type": "adapted",
+    "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+    "path": "skills/brand-positioning-cn",
+    "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+    "author": "Cofoundy / Open Marketing",
+    "authorUrl": "https://github.com/cofoundy",
+    "avatarUrl": "https://github.com/cofoundy.png?size=96",
+    "license": "MIT",
+    "checkedAt": "2026-08-31",
+    "upstreamName": "brand-positioning",
+    "changesZh": "取消 brand.yaml 前置条件；增加中国品牌常见空泛词检查、证据编码、广告表达风险提醒和独立交付文件。",
+    "upstreamRepo": "https://github.com/cofoundy/brand-skills",
+    "upstreamPath": "skills/brand-positioning",
+    "upstreamCommit": "c50d6c9988e22b39031266924ae7d87f643e34bf",
+    "upstreamAuthor": "Cofoundy"
+  },
+  "installation": {
+    "codex": "npx skills add open-marketing-cn/open-marketing-agents -s brand-positioning-cn -a codex -y",
+    "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s brand-positioning-cn -a claude-code -y",
+    "download": "downloads/brand-positioning-cn.zip"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "独立读取用户资料，不要求 brand-context 或其他 Skill。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "等待中国品牌定位任务验证。"
+    }
+  },
+  "relatedSkillIds": [
+    "first-campaign-strategy",
+    "creative-brief"
+  ]
+}

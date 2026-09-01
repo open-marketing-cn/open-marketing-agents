@@ -1,0 +1,1731 @@
+{
+  "product": "Open Marketing Skills",
+  "growthStage": "zero_to_one",
+  "catalogVersion": "2026-08-31",
+  "stats": {
+    "total": 20,
+    "byWorkspace": {
+      "insights": 4,
+      "strategy": 4,
+      "creative": 4,
+      "media": 4,
+      "operations": 4
+    },
+    "bySource": {
+      "upstream": 10,
+      "adapted": 2,
+      "original": 8
+    },
+    "installable": 20,
+    "practiceValidated": 0
+  },
+  "skills": [
+    {
+      "id": "audience-problem-definition",
+      "titleZh": "把目标人群和真问题说清楚",
+      "originalName": "audience-problem-definition",
+      "summaryZh": "把证据整理成优先人群、关键场景、待解决问题和需要继续验证的假设。",
+      "growthStage": "zero_to_one",
+      "workspace": "insights",
+      "audiences": [
+        "创业者",
+        "品牌与产品负责人",
+        "市场研究人员"
+      ],
+      "useCases": [
+        "品牌 0→1 确定第一批人群",
+        "缩小过宽的目标市场",
+        "把洞察转成问题定义"
+      ],
+      "inputs": [
+        "产品或服务说明",
+        "已有用户研究或行为证据",
+        "竞争替代方案",
+        "当前业务限制"
+      ],
+      "outputs": [
+        "audience-priority.md 优先人群表",
+        "problem-statements.md 问题陈述",
+        "assumption-log.md 假设与验证清单"
+      ],
+      "promptExamples": [
+        "请根据这些访谈，把首发人群从五类缩到一到两类，并说明取舍证据。",
+        "请把这些消费者痛点改写成问题陈述，区分场景、触发、当前替代和理想结果。",
+        "请检查我们写的 ICP 哪些是事实、哪些是想象，并生成下一轮验证问题。"
+      ],
+      "humanGate": "业务负责人决定优先服务谁、暂时放弃谁，以及哪些未经验证的假设允许进入下一轮测试。",
+      "cannotInfer": [
+        "目标人群一定会购买",
+        "总体市场规模",
+        "未提供的付费意愿",
+        "问题优先级背后的公司战略"
+      ],
+      "channels": [
+        "用户研究",
+        "策略工作坊",
+        "产品需求"
+      ],
+      "source": {
+        "type": "original",
+        "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+        "path": "skills/audience-problem-definition",
+        "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+        "author": "Open Marketing",
+        "authorUrl": "https://github.com/open-marketing-cn",
+        "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+        "license": "CC-BY-4.0",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add open-marketing-cn/open-marketing-agents -s audience-problem-definition -a codex -y",
+        "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s audience-problem-definition -a claude-code -y",
+        "download": "downloads/audience-problem-definition.zip"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "独立输入、输出与人工决策边界已定义。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "等待脱敏品牌 0→1 任务验证。"
+        }
+      },
+      "relatedSkillIds": [
+        "brand-positioning-cn",
+        "product-marketing"
+      ],
+      "installable": true
+    },
+    {
+      "id": "competitor-profiling",
+      "titleZh": "把竞品公开资料做成可比画像",
+      "originalName": "competitor-profiling",
+      "summaryZh": "从竞品网址和公开资料建立结构一致、保留来源的竞品画像，便于横向比较。",
+      "growthStage": "zero_to_one",
+      "workspace": "insights",
+      "audiences": [
+        "品牌策略人员",
+        "产品营销人员",
+        "创业团队"
+      ],
+      "useCases": [
+        "进入新品类前做竞品扫描",
+        "建立竞品对照底稿",
+        "为定位讨论准备事实"
+      ],
+      "inputs": [
+        "竞品网址列表",
+        "需要比较的维度",
+        "市场和时间范围",
+        "允许使用的公开数据源"
+      ],
+      "outputs": [
+        "每个竞品一份 Markdown 画像",
+        "来源链接与抓取日期",
+        "可比字段汇总",
+        "缺失与不确定信息"
+      ],
+      "promptExamples": [
+        "请根据这 6 个官网做竞品画像，统一比较受众、承诺、价格、证据和渠道。",
+        "请先只记录公开事实，再单独列出对这三个竞品的判断，不要混在一起。",
+        "请把这些竞品页面整理成可复用的资料卡，并标注今天无法确认的字段。"
+      ],
+      "humanGate": "策略负责人确认竞品范围、比较口径和哪些判断可以进入定位决策。",
+      "cannotInfer": [
+        "竞品真实销量",
+        "未公开的投放金额",
+        "内部战略意图",
+        "网页变化之外的市场因果"
+      ],
+      "channels": [
+        "官网",
+        "搜索",
+        "公开资料"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/competitor-profiling",
+        "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s competitor-profiling -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s competitor-profiling -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已核对输入网址、结构化画像和来源保留要求。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "尚未完成 Open Marketing 实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "brand-positioning-cn",
+        "first-campaign-strategy"
+      ],
+      "installable": true
+    },
+    {
+      "id": "consumer-language-insight",
+      "titleZh": "把消费者原话整理成洞察卡",
+      "originalName": "consumer-language-insight",
+      "summaryZh": "从评论、访谈或公开表达中保留原话证据，整理痛点、场景、顾虑与待验证判断。",
+      "growthStage": "zero_to_one",
+      "workspace": "insights",
+      "audiences": [
+        "品牌负责人",
+        "消费者洞察与策略人员",
+        "创业团队"
+      ],
+      "useCases": [
+        "新品定位前整理消费者语言",
+        "从电商评论和访谈中找共性问题",
+        "为创意 Brief 准备可追溯证据"
+      ],
+      "inputs": [
+        "明确的品牌或品类范围",
+        "目标市场与时间窗口",
+        "至少一组评论、访谈或公开表达",
+        "需要回答的研究问题"
+      ],
+      "outputs": [
+        "consumer-quotes.csv 消费者原话表",
+        "insight-cards.md 洞察卡",
+        "evidence-gaps.md 样本限制与补数建议"
+      ],
+      "promptExamples": [
+        "请把这 80 条小红书评论整理成消费者原话洞察卡，保留链接和发布日期。",
+        "我在做一个睡眠新品，请从这些访谈记录里区分场景、痛点、顾虑和未满足需求。",
+        "请检查这批电商评论能支持哪些判断，哪些只能当假设，并列出下一轮补数建议。"
+      ],
+      "humanGate": "营销负责人必须确认样本是否足够、哪些判断可进入策略，以及是否继续补充新的平台或购买评论。",
+      "cannotInfer": [
+        "市场规模或人群比例",
+        "真实购买因果",
+        "整个平台或整体市场结论",
+        "未提供的身份、销量与商业关系"
+      ],
+      "channels": [
+        "小红书",
+        "抖音",
+        "电商评论",
+        "访谈"
+      ],
+      "source": {
+        "type": "original",
+        "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+        "path": "skills/consumer-language-insight",
+        "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+        "author": "Open Marketing",
+        "authorUrl": "https://github.com/open-marketing-cn",
+        "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+        "license": "CC-BY-4.0",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add open-marketing-cn/open-marketing-agents -s consumer-language-insight -a codex -y",
+        "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s consumer-language-insight -a claude-code -y",
+        "download": "downloads/consumer-language-insight.zip"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "独立 SKILL.md 与两份内部 reference 已核对。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "等待脱敏中国消费品牌任务验证。"
+        }
+      },
+      "relatedSkillIds": [
+        "brand-context-cn",
+        "creative-brief"
+      ],
+      "installable": true
+    },
+    {
+      "id": "customer-research",
+      "titleZh": "把用户研究整理成可用证据",
+      "originalName": "customer-research",
+      "summaryZh": "分析访谈、问卷、工单、评论与社区讨论，形成研究发现、客户语言和研究质量说明。",
+      "growthStage": "zero_to_one",
+      "workspace": "insights",
+      "audiences": [
+        "用户研究人员",
+        "产品营销人员",
+        "创始团队"
+      ],
+      "useCases": [
+        "分析已有访谈或问卷",
+        "设计新一轮用户访谈",
+        "从评论和社区中提取客户语言"
+      ],
+      "inputs": [
+        "研究目标",
+        "已有访谈、问卷、评论或工单",
+        "目标人群范围",
+        "时间与样本限制"
+      ],
+      "outputs": [
+        "研究摘要",
+        "客户语言与主题表",
+        "JTBD 或人物画像草稿",
+        "研究质量与缺口说明"
+      ],
+      "promptExamples": [
+        "请分析这 12 份访谈记录，整理客户任务、痛点、替代方案和原话证据。",
+        "我要访谈第一批付费用户，请为我设计招募条件、问题清单和记录模板。",
+        "请从这些支持工单中找出反复出现的使用阻力，并区分频率证据和推测。"
+      ],
+      "humanGate": "研究负责人确认样本代表性、问题是否带有诱导，以及哪些发现足以进入产品或营销决策。",
+      "cannotInfer": [
+        "未覆盖人群的态度",
+        "市场总体比例",
+        "用户陈述与真实行为之间的因果",
+        "不存在于材料中的事实"
+      ],
+      "channels": [
+        "访谈",
+        "问卷",
+        "社区",
+        "客服工单",
+        "评论"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/customer-research",
+        "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s customer-research -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s customer-research -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已核对真实 SKILL.md、研究模式和质量边界。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "尚未完成 Open Marketing 实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "consumer-language-insight",
+        "audience-problem-definition"
+      ],
+      "installable": true
+    },
+    {
+      "id": "brand-context-cn",
+      "titleZh": "建立一份可复用的品牌底稿",
+      "originalName": "brand-context-cn",
+      "summaryZh": "把品牌事实、受众、定位、个性、价值观、目标与待确认项整理成一份独立底稿。",
+      "growthStage": "zero_to_one",
+      "workspace": "strategy",
+      "audiences": [
+        "品牌负责人",
+        "创业团队",
+        "代理商策略与客户团队"
+      ],
+      "useCases": [
+        "新品牌启动前统一口径",
+        "接手旧项目时整理已有资料",
+        "为后续策略和创意建立同一底稿"
+      ],
+      "inputs": [
+        "品牌与产品事实",
+        "目标人群证据",
+        "现有定位或主张",
+        "品牌个性、价值观与业务目标"
+      ],
+      "outputs": [
+        "brand-context.md 品牌底稿",
+        "source-register.md 来源登记",
+        "decision-queue.md 待负责人确认项"
+      ],
+      "promptExamples": [
+        "请把这些零散品牌资料整理成一份可交接的品牌底稿，不确定的内容不要补成事实。",
+        "我们准备从 0 启动一个新品牌，请逐项问我受众、定位、个性、价值观和目标。",
+        "请检查这份品牌底稿里的冲突、缺口和过期信息，生成负责人确认清单。"
+      ],
+      "humanGate": "品牌负责人确认最终品牌事实、主张、价值观、目标，以及哪些假设可以暂时进入工作底稿。",
+      "cannotInfer": [
+        "未经确认的品牌使命",
+        "真实消费者认知",
+        "法律可用的品牌承诺",
+        "公司内部未公开的业务目标"
+      ],
+      "channels": [
+        "品牌底稿",
+        "策略工作坊",
+        "团队协作"
+      ],
+      "source": {
+        "type": "adapted",
+        "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+        "path": "skills/brand-context-cn",
+        "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+        "author": "Cofoundy / Open Marketing",
+        "authorUrl": "https://github.com/cofoundy",
+        "avatarUrl": "https://github.com/cofoundy.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-08-31",
+        "upstreamName": "brand-context",
+        "changesZh": "移除共享 brand.yaml 与其他 Skill 前置依赖；改为单 Skill 内完成来源登记、中文提问、缺口标记和人工确认。",
+        "upstreamRepo": "https://github.com/cofoundy/brand-skills",
+        "upstreamPath": "skills/brand-context",
+        "upstreamCommit": "c50d6c9988e22b39031266924ae7d87f643e34bf",
+        "upstreamAuthor": "Cofoundy"
+      },
+      "installation": {
+        "codex": "npx skills add open-marketing-cn/open-marketing-agents -s brand-context-cn -a codex -y",
+        "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s brand-context-cn -a claude-code -y",
+        "download": "downloads/brand-context-cn.zip"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已改成不读取其他 Skill 的单目录安装包。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "等待中国品牌底稿任务验证。"
+        }
+      },
+      "relatedSkillIds": [
+        "brand-positioning-cn",
+        "creative-brief"
+      ],
+      "installable": true
+    },
+    {
+      "id": "brand-positioning-cn",
+      "titleZh": "找到可被证据支撑的品牌位置",
+      "originalName": "brand-positioning-cn",
+      "summaryZh": "比较品类、竞品、人群问题和自身证明，形成定位领地、定位句、证明点与取舍。",
+      "growthStage": "zero_to_one",
+      "workspace": "strategy",
+      "audiences": [
+        "品牌策略人员",
+        "创始人",
+        "新品负责人"
+      ],
+      "useCases": [
+        "新品进入拥挤品类时找差异",
+        "重写过宽或空泛的定位",
+        "为首轮 Campaign 确定核心信息"
+      ],
+      "inputs": [
+        "品牌事实与业务约束",
+        "优先人群和问题证据",
+        "竞品画像",
+        "可验证的产品或服务证明"
+      ],
+      "outputs": [
+        "positioning-territories.md 定位领地比较",
+        "positioning-statement.md 定位句",
+        "proof-points.md 证明点与证据缺口",
+        "trade-offs.md 明确不做什么"
+      ],
+      "promptExamples": [
+        "请基于这份竞品画像和用户研究，提出三个定位领地，并写清每个领地的证据与风险。",
+        "请把我们的定位句改到具体可证明，不能用领先、高端、创新这类空词。",
+        "请做一张二维竞品定位图，但先让我确认坐标含义和数据来源。"
+      ],
+      "humanGate": "品牌负责人选择要占据的定位领地、接受的取舍，以及哪些证明点可以公开使用。",
+      "cannotInfer": [
+        "消费者已经认同该定位",
+        "定位一定能带来销售",
+        "未经证据支持的领先性",
+        "商标与广告法合规结论"
+      ],
+      "channels": [
+        "品牌策略",
+        "Campaign",
+        "销售沟通"
+      ],
+      "source": {
+        "type": "adapted",
+        "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+        "path": "skills/brand-positioning-cn",
+        "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+        "author": "Cofoundy / Open Marketing",
+        "authorUrl": "https://github.com/cofoundy",
+        "avatarUrl": "https://github.com/cofoundy.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-08-31",
+        "upstreamName": "brand-positioning",
+        "changesZh": "取消 brand.yaml 前置条件；增加中国品牌常见空泛词检查、证据编码、广告表达风险提醒和独立交付文件。",
+        "upstreamRepo": "https://github.com/cofoundy/brand-skills",
+        "upstreamPath": "skills/brand-positioning",
+        "upstreamCommit": "c50d6c9988e22b39031266924ae7d87f643e34bf",
+        "upstreamAuthor": "Cofoundy"
+      },
+      "installation": {
+        "codex": "npx skills add open-marketing-cn/open-marketing-agents -s brand-positioning-cn -a codex -y",
+        "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s brand-positioning-cn -a claude-code -y",
+        "download": "downloads/brand-positioning-cn.zip"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "独立读取用户资料，不要求 brand-context 或其他 Skill。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "等待中国品牌定位任务验证。"
+        }
+      },
+      "relatedSkillIds": [
+        "first-campaign-strategy",
+        "creative-brief"
+      ],
+      "installable": true
+    },
+    {
+      "id": "first-campaign-strategy",
+      "titleZh": "把第一次 Campaign 写成可测试策略",
+      "originalName": "first-campaign-strategy",
+      "summaryZh": "围绕一个首发目标，把人群、问题、承诺、证明、渠道角色、假设和成功标准写成策略稿。",
+      "growthStage": "zero_to_one",
+      "workspace": "strategy",
+      "audiences": [
+        "首次做品牌 Campaign 的团队",
+        "品牌负责人",
+        "代理商策略团队"
+      ],
+      "useCases": [
+        "品牌或新品第一次对外传播",
+        "把宽泛目标缩成一个可验证 Campaign",
+        "为创意与媒介团队建立统一策略"
+      ],
+      "inputs": [
+        "明确的业务与传播目标",
+        "优先人群和问题证据",
+        "定位与可用证明",
+        "预算、周期与渠道限制"
+      ],
+      "outputs": [
+        "campaign-strategy.md 首轮策略稿",
+        "hypothesis-scorecard.md 假设与指标",
+        "open-decisions.md 待决策问题"
+      ],
+      "promptExamples": [
+        "我们第一次发布这个品牌，请把目标、人群、单一承诺、证明和渠道角色写成一页策略。",
+        "请把这个‘提升知名度’目标改成可验证的 Campaign 假设和停止条件。",
+        "请比较三个首发策略方向，分别说明需要的证据、资源、风险和衡量方式。"
+      ],
+      "humanGate": "负责人必须选择单一优先目标、主承诺、可用证明、预算范围和成功或停止标准。",
+      "cannotInfer": [
+        "Campaign 一定有效",
+        "未确认的预算与排期",
+        "渠道真实转化率",
+        "未经授权的品牌或产品承诺"
+      ],
+      "channels": [
+        "Campaign",
+        "全渠道",
+        "策略工作坊"
+      ],
+      "source": {
+        "type": "original",
+        "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+        "path": "skills/first-campaign-strategy",
+        "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+        "author": "Open Marketing",
+        "authorUrl": "https://github.com/open-marketing-cn",
+        "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+        "license": "CC-BY-4.0",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add open-marketing-cn/open-marketing-agents -s first-campaign-strategy -a codex -y",
+        "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s first-campaign-strategy -a claude-code -y",
+        "download": "downloads/first-campaign-strategy.zip"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "独立策略任务、交付文件与人工门已定义。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "等待首轮品牌 Campaign 脱敏任务验证。"
+        }
+      },
+      "relatedSkillIds": [
+        "creative-brief",
+        "ads"
+      ],
+      "installable": true
+    },
+    {
+      "id": "product-marketing",
+      "titleZh": "把产品、人群与主张写进同一底稿",
+      "originalName": "product-marketing",
+      "summaryZh": "建立产品概览、目标受众、问题、竞争、差异、证明材料、异议与品牌声音的营销上下文。",
+      "growthStage": "zero_to_one",
+      "workspace": "strategy",
+      "audiences": [
+        "产品营销人员",
+        "SaaS 与互联网团队",
+        "创始团队"
+      ],
+      "useCases": [
+        "新项目建立产品营销上下文",
+        "减少团队反复解释基础信息",
+        "检查定位与信息缺口"
+      ],
+      "inputs": [
+        "产品说明",
+        "目标受众",
+        "问题与使用场景",
+        "竞争替代",
+        "差异与证明材料"
+      ],
+      "outputs": [
+        ".agents/product-marketing.md 产品营销上下文",
+        "信息缺口问题",
+        "待确认的主张与证据"
+      ],
+      "promptExamples": [
+        "请帮我建立这款产品的营销底稿，按产品、受众、问题、替代、差异和证据逐项提问。",
+        "请把现有 Brief 整理成 product-marketing.md，并把无法确认的内容放进缺口清单。",
+        "请更新这份产品营销上下文，只改我提供了新证据的部分，并标出冲突。"
+      ],
+      "humanGate": "产品或营销负责人确认目标受众、差异、证明材料、异议和允许团队复用的最终口径。",
+      "cannotInfer": [
+        "没有证据的产品优势",
+        "真实市场份额",
+        "未经验证的客户异议",
+        "法律和合规结论"
+      ],
+      "channels": [
+        "产品营销",
+        "团队协作",
+        "全渠道"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/product-marketing",
+        "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s product-marketing -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s product-marketing -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已核对其单独建立 product-marketing.md 的流程。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "尚未完成 Open Marketing 实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "first-campaign-strategy",
+        "copywriting"
+      ],
+      "installable": true
+    },
+    {
+      "id": "ad-creative",
+      "titleZh": "生成能进入测试的广告创意变体",
+      "originalName": "ad-creative",
+      "summaryZh": "围绕平台、受众、产品、优惠与约束，生成广告钩子、标题、正文和可比较的创意变体。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "audiences": [
+        "投放与增长团队",
+        "广告文案与设计人员",
+        "品牌负责人"
+      ],
+      "useCases": [
+        "从零生成广告变体",
+        "根据表现数据迭代素材",
+        "规划静态、UGC 或短视频创意方向"
+      ],
+      "inputs": [
+        "广告平台和格式",
+        "产品、优惠与受众",
+        "表现数据或已有素材",
+        "字数、合规和品牌限制"
+      ],
+      "outputs": [
+        "广告钩子与文案变体",
+        "创意方向和格式建议",
+        "测试变量矩阵",
+        "审批用创意说明"
+      ],
+      "promptExamples": [
+        "请为 Meta 冷启动广告写 12 个钩子，只改变问题角度，其他变量保持一致。",
+        "根据这份广告表现表，找出值得保留和应该停止的创意元素，再生成下一轮变体。",
+        "请为这个产品规划静态、UGC 和短视频三类创意方向，写清每类要验证什么。"
+      ],
+      "humanGate": "投放与品牌负责人确认产品事实、受众、平台规则、素材授权、预算和最终投放版本。",
+      "cannotInfer": [
+        "变体一定获胜",
+        "未经提供的历史表现",
+        "素材与音乐授权",
+        "广告平台审核和账户操作"
+      ],
+      "channels": [
+        "Meta",
+        "Google Ads",
+        "LinkedIn",
+        "短视频广告"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/ad-creative",
+        "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s ad-creative -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s ad-creative -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已核对生成、数据迭代和创意策略三类模式。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "尚未完成 Open Marketing 实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "ads",
+        "ab-testing"
+      ],
+      "installable": true
+    },
+    {
+      "id": "copywriting",
+      "titleZh": "写出清楚、具体、可行动的营销页面",
+      "originalName": "copywriting",
+      "summaryZh": "根据页面目标、受众、产品事实与上下文，起草或重写首页、落地页、定价页等营销文案。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "audiences": [
+        "品牌与内容人员",
+        "增长与网站团队",
+        "创业者"
+      ],
+      "useCases": [
+        "从空白起草落地页",
+        "重写不清楚的主页",
+        "改进标题、价值主张和行动按钮"
+      ],
+      "inputs": [
+        "页面类型与唯一目标",
+        "目标受众",
+        "产品或服务事实",
+        "可用证明与行动指引"
+      ],
+      "outputs": [
+        "页面信息结构",
+        "标题、副标题与正文草稿",
+        "CTA 文案",
+        "缺失事实与需要确认的问题"
+      ],
+      "promptExamples": [
+        "请为这个新品写一版首发落地页，优先说清楚人群、问题、价值和证据。",
+        "请重写这个首页首屏，避免空话，并给出三个明确的标题方向。",
+        "请检查这版产品页是否只写功能没有写用户结果，再给一版可审稿修改稿。"
+      ],
+      "humanGate": "品牌或产品负责人确认事实、主张、证据、价格、品牌声音和最终上线版本。",
+      "cannotInfer": [
+        "未提供的产品效果",
+        "虚构客户评价",
+        "未经确认的价格和优惠",
+        "文案上线后的转化表现"
+      ],
+      "channels": [
+        "官网",
+        "落地页",
+        "产品页"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/copywriting",
+        "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s copywriting -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s copywriting -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已核对页面文案输入、原则、结构和边界。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "尚未完成 Open Marketing 实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "image",
+        "ab-testing"
+      ],
+      "installable": true
+    },
+    {
+      "id": "creative-brief",
+      "titleZh": "把策略翻成创意团队能开工的 Brief",
+      "originalName": "creative-brief",
+      "summaryZh": "把 Campaign 策略转成受众张力、单一信息、必用证明、渠道规格、禁区和验收标准。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "audiences": [
+        "品牌与创意负责人",
+        "内容与设计团队",
+        "代理商客户团队"
+      ],
+      "useCases": [
+        "策略通过后启动创意",
+        "统一内部与外部创意团队口径",
+        "减少审稿时才暴露的事实和规格问题"
+      ],
+      "inputs": [
+        "已确认的 Campaign 目标",
+        "优先人群与洞察",
+        "品牌定位与证明",
+        "渠道、素材、时间和合规限制"
+      ],
+      "outputs": [
+        "creative-brief.md 创意任务书",
+        "mandatories-checklist.md 必须项与禁区",
+        "review-rubric.md 创意验收表"
+      ],
+      "promptExamples": [
+        "请把这份 Campaign 策略整理成一页创意 Brief，明确单一信息、证明和禁区。",
+        "我要同时给文案、设计和视频团队开工，请把共同信息和各渠道规格分开写。",
+        "请检查这份创意 Brief 是否含有空泛目标、缺失证据或无法验收的要求。"
+      ],
+      "humanGate": "品牌负责人确认单一信息、必用证明、不可使用的表达、素材授权和最终验收标准。",
+      "cannotInfer": [
+        "不存在的产品卖点",
+        "素材版权和肖像授权",
+        "平台审核结果",
+        "负责人尚未选择的创意方向"
+      ],
+      "channels": [
+        "创意",
+        "内容",
+        "设计",
+        "视频"
+      ],
+      "source": {
+        "type": "original",
+        "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+        "path": "skills/creative-brief",
+        "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+        "author": "Open Marketing",
+        "authorUrl": "https://github.com/open-marketing-cn",
+        "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+        "license": "CC-BY-4.0",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add open-marketing-cn/open-marketing-agents -s creative-brief -a codex -y",
+        "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s creative-brief -a claude-code -y",
+        "download": "downloads/creative-brief.zip"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "独立输入、三份交付物和验收边界已定义。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "等待脱敏创意启动任务验证。"
+        }
+      },
+      "relatedSkillIds": [
+        "copywriting",
+        "ad-creative",
+        "image"
+      ],
+      "installable": true
+    },
+    {
+      "id": "image",
+      "titleZh": "把营销图片需求变成制作与验收清单",
+      "originalName": "image",
+      "summaryZh": "根据图片目标选择生成、设计或优化方式，形成提示、规格、制作步骤和验收重点。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "audiences": [
+        "内容与设计团队",
+        "品牌营销人员",
+        "独立创作者"
+      ],
+      "useCases": [
+        "制作博客头图或社媒图片",
+        "规划产品效果图",
+        "优化图片尺寸、格式和分享预览"
+      ],
+      "inputs": [
+        "图片用途与渠道",
+        "品牌视觉信息",
+        "必须出现和禁止出现的元素",
+        "尺寸、格式和工具限制"
+      ],
+      "outputs": [
+        "图片创作方向",
+        "生成或设计提示",
+        "渠道规格清单",
+        "人工视觉与品牌验收项"
+      ],
+      "promptExamples": [
+        "请把这个 Campaign 概念转成三张社媒主视觉的制作说明和验收表。",
+        "我要做新品落地页头图，请比较 AI 生成、摄影和 3D 三种制作路径。",
+        "请检查这批图片的尺寸、格式、清晰度和 OG 分享要求，不要改动原图内容。"
+      ],
+      "humanGate": "设计或品牌负责人确认视觉方向、品牌一致性、人物与素材授权、生成工具使用和最终成片。",
+      "cannotInfer": [
+        "图片版权和肖像授权",
+        "品牌资产可被公开使用",
+        "生成内容绝对没有相似风险",
+        "视觉一定带来转化"
+      ],
+      "channels": [
+        "社媒",
+        "官网",
+        "电商",
+        "视觉内容"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/image",
+        "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s image -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s image -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已核对图片生成、设计工具和优化范围。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "尚未完成 Open Marketing 实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "creative-brief",
+        "ad-creative"
+      ],
+      "installable": true
+    },
+    {
+      "id": "ab-testing",
+      "titleZh": "把创意想法写成能衡量的测试",
+      "originalName": "ab-testing",
+      "summaryZh": "把改动转成假设、单一变量、样本、指标、运行时间与停止条件，形成实验记录。",
+      "growthStage": "zero_to_one",
+      "workspace": "media",
+      "audiences": [
+        "增长与投放团队",
+        "网站与产品营销人员",
+        "内容实验负责人"
+      ],
+      "useCases": [
+        "比较两版创意或页面",
+        "判断一个想法是否值得测试",
+        "建立首轮实验清单"
+      ],
+      "inputs": [
+        "要改变的内容",
+        "目标用户与行为",
+        "当前基线数据",
+        "主要指标、样本和实施限制"
+      ],
+      "outputs": [
+        "测试假设",
+        "控制组与变体定义",
+        "样本量与运行时长估算",
+        "停止规则和结果模板"
+      ],
+      "promptExamples": [
+        "请把这两个广告钩子写成只改变一个变量的 A/B 测试方案。",
+        "我们每周只有 800 个落地页访问，请判断这个测试是否值得做，并说明样本限制。",
+        "请把这 12 个增长想法整理成实验 backlog，用影响、把握和成本排序。"
+      ],
+      "humanGate": "实验负责人确认唯一变量、主要指标、最小可检测效果、运行条件和最终结论。",
+      "cannotInfer": [
+        "没有基线时的真实提升",
+        "统计显著等于业务重要",
+        "其他同时变化带来的影响",
+        "测试结果可自动推广到所有人群"
+      ],
+      "channels": [
+        "广告",
+        "官网",
+        "产品",
+        "增长实验"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/ab-testing",
+        "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s ab-testing -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s ab-testing -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已核对假设、变量、样本、统计和停止规则。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "尚未完成 Open Marketing 实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "analytics",
+        "campaign-retrospective"
+      ],
+      "installable": true
+    },
+    {
+      "id": "ads",
+      "titleZh": "把付费渠道、预算与账户结构排清楚",
+      "originalName": "ads",
+      "summaryZh": "围绕目标、受众、优惠和现状，规划平台选择、账户结构、定向、预算、竞价与优化边界。",
+      "growthStage": "zero_to_one",
+      "workspace": "media",
+      "audiences": [
+        "投放与增长人员",
+        "首次购买媒体的品牌团队",
+        "B2B 市场团队"
+      ],
+      "useCases": [
+        "判断是否适合开始付费广告",
+        "建立首轮广告计划和预算结构",
+        "检查已有广告计划的缺口"
+      ],
+      "inputs": [
+        "Campaign 目标",
+        "产品、优惠与受众",
+        "预算和周期",
+        "历史表现或当前账户状态"
+      ],
+      "outputs": [
+        "渠道选择与角色",
+        "Campaign 与广告组结构",
+        "预算分配框架",
+        "指标、优化和停止规则"
+      ],
+      "promptExamples": [
+        "我们只有 5 万元首发预算，请比较搜索、信息流和再营销的角色与取舍。",
+        "请为这款 B2B 产品设计 LinkedIn 广告账户结构、受众和预算框架。",
+        "请审阅这份投放计划，指出目标、人群、创意、落地页和测量之间的不一致。"
+      ],
+      "humanGate": "投放负责人决定真实预算、账户权限、受众排除、出价、上线和停止动作。",
+      "cannotInfer": [
+        "平台未来 CPA 或 ROAS",
+        "未提供的账户数据",
+        "广告审核结果",
+        "自动修改真实广告账户"
+      ],
+      "channels": [
+        "Google Ads",
+        "Meta",
+        "LinkedIn",
+        "付费媒体"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/ads",
+        "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s ads -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s ads -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已核对目标、渠道、结构、预算和优化内容。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "尚未完成 Open Marketing 实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "ad-creative",
+        "analytics"
+      ],
+      "installable": true
+    },
+    {
+      "id": "analytics",
+      "titleZh": "做一份上线前能验收的追踪方案",
+      "originalName": "analytics",
+      "summaryZh": "从业务问题出发定义事件、属性、命名、UTM、验证方法和数据质量检查。",
+      "growthStage": "zero_to_one",
+      "workspace": "media",
+      "audiences": [
+        "营销运营人员",
+        "增长与数据团队",
+        "网站和产品负责人"
+      ],
+      "useCases": [
+        "上线前建立追踪计划",
+        "审计 GA4 或埋点方案",
+        "统一 Campaign UTM 和事件命名"
+      ],
+      "inputs": [
+        "要回答的业务问题",
+        "用户旅程与关键动作",
+        "网站或产品技术环境",
+        "现有分析工具与事件"
+      ],
+      "outputs": [
+        "追踪计划表",
+        "事件和属性命名规范",
+        "UTM 规范",
+        "上线验证与数据质量清单"
+      ],
+      "promptExamples": [
+        "请为这次新品 Campaign 做一份从曝光到购买的追踪计划，先从业务问题开始。",
+        "请检查这份 GA4 事件表是否能回答渠道质量和转化问题，并指出缺口。",
+        "请为全团队制定一套 UTM 命名规则，包含示例、必填项和上线验收步骤。"
+      ],
+      "humanGate": "数据与业务负责人确认关键指标定义、事件实施成本、隐私合规和正式上线。",
+      "cannotInfer": [
+        "代码已正确部署",
+        "用户同意与隐私合规",
+        "跨平台数据天然一致",
+        "追踪数据等于业务因果"
+      ],
+      "channels": [
+        "GA4",
+        "GTM",
+        "网站",
+        "产品",
+        "广告"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/analytics",
+        "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s analytics -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s analytics -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已核对事件、属性、命名和质量检查范围。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "尚未完成 Open Marketing 实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "launch",
+        "campaign-retrospective"
+      ],
+      "installable": true
+    },
+    {
+      "id": "launch",
+      "titleZh": "把发布拆成可检查的五个阶段",
+      "originalName": "launch",
+      "summaryZh": "为产品、功能或品牌发布规划自有、借用和付费渠道，并按内部、Alpha、Beta、早期访问和正式发布分阶段。",
+      "growthStage": "zero_to_one",
+      "workspace": "media",
+      "audiences": [
+        "新品与产品营销负责人",
+        "创业团队",
+        "发布项目经理"
+      ],
+      "useCases": [
+        "准备品牌或产品首次发布",
+        "规划 Beta 与早期访问",
+        "建立发布就绪检查"
+      ],
+      "inputs": [
+        "发布对象和目标",
+        "目标受众与名单",
+        "可用渠道和伙伴",
+        "准备状态、日期和资源"
+      ],
+      "outputs": [
+        "分阶段发布计划",
+        "自有、借用和付费渠道表",
+        "发布就绪检查",
+        "每阶段目标与衡量方式"
+      ],
+      "promptExamples": [
+        "请把我们的首次产品发布拆成内部、Alpha、Beta、早期访问和正式发布五个阶段。",
+        "请用 Owned、Rented、Borrowed 三类渠道检查这份发布计划缺了什么。",
+        "距离上线还有两周，请生成发布就绪检查表，并把没有负责人或证据的项目标红。"
+      ],
+      "humanGate": "发布负责人确认真实日期、就绪状态、渠道承诺、名单使用、预算和最终公开动作。",
+      "cannotInfer": [
+        "产品已经可以上线",
+        "渠道伙伴已经承诺",
+        "发布一定形成增长",
+        "自动发布或修改真实账户"
+      ],
+      "channels": [
+        "产品发布",
+        "官网",
+        "社媒",
+        "伙伴渠道"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/launch",
+        "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s launch -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s launch -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已核对 ORB 框架、就绪门和五阶段方法。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "尚未完成 Open Marketing 实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "campaign-workback",
+        "content-asset-calendar"
+      ],
+      "installable": true
+    },
+    {
+      "id": "campaign-raci",
+      "titleZh": "让每个 Campaign 决策只有一个负责人",
+      "originalName": "campaign-raci",
+      "summaryZh": "把任务、交付物和决策映射到负责、批准、协作、知会角色，并暴露空缺与冲突。",
+      "growthStage": "zero_to_one",
+      "workspace": "operations",
+      "audiences": [
+        "Campaign 负责人",
+        "跨部门市场团队",
+        "代理商客户与执行团队"
+      ],
+      "useCases": [
+        "跨部门启动 Campaign",
+        "澄清品牌方和代理商职责",
+        "解决多人批准或无人负责"
+      ],
+      "inputs": [
+        "任务与交付物清单",
+        "团队成员和角色",
+        "关键决策与审批节点",
+        "外部供应商边界"
+      ],
+      "outputs": [
+        "campaign-raci.csv RACI 表",
+        "decision-rights.md 决策权说明",
+        "ownership-gaps.md 责任空缺与冲突"
+      ],
+      "promptExamples": [
+        "请为这次新品 Campaign 建 RACI，确保每个任务只有一个最终负责和一个批准人。",
+        "请检查品牌方、代理商和制作公司的职责是否重叠，并给出需要确认的问题。",
+        "请把内容、设计、法务、投放和数据的关键决策权单独列出来。"
+      ],
+      "humanGate": "项目发起人确认每项工作的最终负责人、批准人、升级路径和外部团队边界。",
+      "cannotInfer": [
+        "成员已经接受职责",
+        "组织里的真实汇报关系",
+        "合同包含的服务范围",
+        "自动分配或通知任务"
+      ],
+      "channels": [
+        "团队协作",
+        "代理商协作",
+        "项目管理"
+      ],
+      "source": {
+        "type": "original",
+        "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+        "path": "skills/campaign-raci",
+        "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+        "author": "Open Marketing",
+        "authorUrl": "https://github.com/open-marketing-cn",
+        "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+        "license": "CC-BY-4.0",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add open-marketing-cn/open-marketing-agents -s campaign-raci -a codex -y",
+        "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s campaign-raci -a claude-code -y",
+        "download": "downloads/campaign-raci.zip"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "RACI 唯一责任、决策权和冲突检查已定义。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "等待跨团队 Campaign 脱敏任务验证。"
+        }
+      },
+      "relatedSkillIds": [
+        "campaign-workback",
+        "content-asset-calendar"
+      ],
+      "installable": true
+    },
+    {
+      "id": "campaign-retrospective",
+      "titleZh": "把审稿、交接和结果沉淀成下一轮资产",
+      "originalName": "campaign-retrospective",
+      "summaryZh": "汇总版本、审批、上线证据、计划与实际结果，区分事实、解释和下一轮行动。",
+      "growthStage": "zero_to_one",
+      "workspace": "operations",
+      "audiences": [
+        "Campaign 负责人",
+        "品牌与增长团队",
+        "代理商客户团队"
+      ],
+      "useCases": [
+        "上线前完成最终交接",
+        "Campaign 结束后复盘",
+        "沉淀下轮可复用素材与决策"
+      ],
+      "inputs": [
+        "最终版本与审批记录",
+        "发布链接和上线证据",
+        "目标与实际结果",
+        "团队观察、异常和外部变化"
+      ],
+      "outputs": [
+        "release-handoff.md 上线交接记录",
+        "campaign-retro.md 事实与解释分层复盘",
+        "next-round-assets.md 可复用资产与下轮行动"
+      ],
+      "promptExamples": [
+        "请检查这次 Campaign 上线包是否含最终版本、审批人、追踪链接、回滚和负责人。",
+        "请把计划与实际结果做成复盘，严格区分观察事实、解释和下一轮假设。",
+        "请从这次复盘里提取可复用内容、有效素材、失败假设和下一轮最小测试。"
+      ],
+      "humanGate": "负责人确认正式结果口径、原因解释、责任边界、可公开内容和下一轮行动优先级。",
+      "cannotInfer": [
+        "相关性等于因果",
+        "缺失数据中的真实表现",
+        "个人责任或绩效结论",
+        "未经授权公开内部结果"
+      ],
+      "channels": [
+        "Campaign",
+        "复盘",
+        "审稿",
+        "团队交接"
+      ],
+      "source": {
+        "type": "original",
+        "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+        "path": "skills/campaign-retrospective",
+        "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+        "author": "Open Marketing",
+        "authorUrl": "https://github.com/open-marketing-cn",
+        "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+        "license": "CC-BY-4.0",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add open-marketing-cn/open-marketing-agents -s campaign-retrospective -a codex -y",
+        "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s campaign-retrospective -a claude-code -y",
+        "download": "downloads/campaign-retrospective.zip"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "审稿交接、证据层和复盘产出已定义。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "等待真实 Campaign 脱敏复盘验证。"
+        }
+      },
+      "relatedSkillIds": [
+        "consumer-language-insight",
+        "first-campaign-strategy"
+      ],
+      "installable": true
+    },
+    {
+      "id": "campaign-workback",
+      "titleZh": "从上线日倒排 Campaign 任务",
+      "originalName": "campaign-workback",
+      "summaryZh": "从不可移动的上线节点向前倒排策略、创意、制作、审批、追踪、交付和缓冲时间。",
+      "growthStage": "zero_to_one",
+      "workspace": "operations",
+      "audiences": [
+        "Campaign 项目经理",
+        "品牌与市场运营人员",
+        "小团队负责人"
+      ],
+      "useCases": [
+        "确定上线日后的全链路倒排",
+        "发现计划里的审批与依赖缺口",
+        "为周会生成可更新任务表"
+      ],
+      "inputs": [
+        "目标上线日与不可移动节点",
+        "交付物和渠道清单",
+        "团队和外部供应商",
+        "审批与制作周期"
+      ],
+      "outputs": [
+        "campaign-workback.csv 倒排表",
+        "critical-path.md 关键路径",
+        "risk-buffer.md 风险与缓冲说明"
+      ],
+      "promptExamples": [
+        "以 10 月 20 日上线为终点，为这次 Campaign 倒排策略、创意、制作、审批和投放任务。",
+        "请检查这份时间表的隐藏依赖、无人负责事项和没有缓冲的关键路径。",
+        "请把倒排计划改成每周可更新的状态表，保留原截止日期和变更原因。"
+      ],
+      "humanGate": "项目负责人确认日期、资源承诺、依赖、审批人、缓冲与任何改期决定。",
+      "cannotInfer": [
+        "团队成员已经承诺时间",
+        "供应商真实交付能力",
+        "审批一定按时完成",
+        "自动修改日历或任务系统"
+      ],
+      "channels": [
+        "项目管理",
+        "Campaign",
+        "团队协作"
+      ],
+      "source": {
+        "type": "original",
+        "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+        "path": "skills/campaign-workback",
+        "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+        "author": "Open Marketing",
+        "authorUrl": "https://github.com/open-marketing-cn",
+        "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+        "license": "CC-BY-4.0",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add open-marketing-cn/open-marketing-agents -s campaign-workback -a codex -y",
+        "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s campaign-workback -a claude-code -y",
+        "download": "downloads/campaign-workback.zip"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "单 Skill 倒排逻辑和三份交付物已核对。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "等待真实 Campaign 脱敏任务验证。"
+        }
+      },
+      "relatedSkillIds": [
+        "campaign-raci",
+        "content-asset-calendar"
+      ],
+      "installable": true
+    },
+    {
+      "id": "content-asset-calendar",
+      "titleZh": "把内容、素材和渠道放进一张日历",
+      "originalName": "content-asset-calendar",
+      "summaryZh": "把内容主题、渠道版本、素材规格、负责人、状态、审批和发布日期整理成可交接日历。",
+      "growthStage": "zero_to_one",
+      "workspace": "operations",
+      "audiences": [
+        "内容运营人员",
+        "品牌与社媒团队",
+        "小型营销团队"
+      ],
+      "useCases": [
+        "建立首月内容与素材计划",
+        "统一多渠道版本和素材状态",
+        "为周会准备可更新台账"
+      ],
+      "inputs": [
+        "Campaign 节奏与内容主题",
+        "渠道和发布频率",
+        "素材规格",
+        "负责人、审批人和状态"
+      ],
+      "outputs": [
+        "content-asset-calendar.csv 内容素材日历",
+        "asset-status.md 素材缺口",
+        "handoff-checklist.md 发布交接清单"
+      ],
+      "promptExamples": [
+        "请把这 4 周主题拆成小红书、公众号和短视频版本，做成内容素材日历。",
+        "请检查这张日历里没有素材规格、负责人、审批状态或来源链接的项目。",
+        "请为每个发布项增加母稿、渠道版本、封面、视频和最终链接的交接字段。"
+      ],
+      "humanGate": "内容负责人确认发布节奏、渠道版本、素材权利、审批状态和最终发布日期。",
+      "cannotInfer": [
+        "内容已经批准",
+        "素材已经完成或获得授权",
+        "最佳发布时间",
+        "自动发布或写入外部协作平台"
+      ],
+      "channels": [
+        "内容运营",
+        "社媒",
+        "公众号",
+        "短视频"
+      ],
+      "source": {
+        "type": "original",
+        "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+        "path": "skills/content-asset-calendar",
+        "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+        "author": "Open Marketing",
+        "authorUrl": "https://github.com/open-marketing-cn",
+        "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+        "license": "CC-BY-4.0",
+        "checkedAt": "2026-08-31"
+      },
+      "installation": {
+        "codex": "npx skills add open-marketing-cn/open-marketing-agents -s content-asset-calendar -a codex -y",
+        "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s content-asset-calendar -a claude-code -y",
+        "download": "downloads/content-asset-calendar.zip"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "内容、素材、状态与交接字段已定义。"
+        },
+        "installation": {
+          "status": "passed",
+          "checkedAt": "2026-08-31",
+          "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-08-31",
+          "noteZh": "等待真实内容运营脱敏任务验证。"
+        }
+      },
+      "relatedSkillIds": [
+        "campaign-workback",
+        "campaign-retrospective"
+      ],
+      "installable": true
+    }
+  ]
+}

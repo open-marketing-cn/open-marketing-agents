@@ -1,0 +1,45 @@
+name: 品牌 0→1 Skill 候选
+description: 提交一个独立、来源清楚的营销 Skill 候选
+title: "[Skill] "
+labels: ["skill-intake"]
+body:
+  - type: input
+    id: result
+    attributes:
+      label: 中文结果名
+      description: 用户最终会拿到什么，不写角色名。
+      placeholder: 把消费者原话整理成洞察卡
+    validations: { required: true }
+  - type: dropdown
+    id: workspace
+    attributes:
+      label: 0→1 阶段
+      options: [洞察研究, 品牌策略, 创意内容, 媒介与上线, 运营协作]
+    validations: { required: true }
+  - type: input
+    id: repo
+    attributes: { label: GitHub 仓库 }
+    validations: { required: true }
+  - type: input
+    id: path
+    attributes: { label: 真实 SKILL.md 路径, placeholder: "skills/example/SKILL.md" }
+    validations: { required: true }
+  - type: input
+    id: license
+    attributes: { label: 内容许可证与链接 }
+    validations: { required: true }
+  - type: textarea
+    id: task
+    attributes: { label: 使用者、输入、AI 动作、交付物和人工决定 }
+    validations: { required: true }
+  - type: checkboxes
+    id: independence
+    attributes:
+      label: 独立性确认
+      options:
+        - label: 当前 Skill 不要求先安装另一个 Skill
+          required: true
+        - label: 我没有执行或要求维护者执行候选仓库脚本
+          required: true
+        - label: 候选不自动发布、投放、付款或修改真实账户
+          required: true

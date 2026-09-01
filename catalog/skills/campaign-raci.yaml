@@ -1,0 +1,83 @@
+{
+  "id": "campaign-raci",
+  "titleZh": "让每个 Campaign 决策只有一个负责人",
+  "originalName": "campaign-raci",
+  "summaryZh": "把任务、交付物和决策映射到负责、批准、协作、知会角色，并暴露空缺与冲突。",
+  "growthStage": "zero_to_one",
+  "workspace": "operations",
+  "audiences": [
+    "Campaign 负责人",
+    "跨部门市场团队",
+    "代理商客户与执行团队"
+  ],
+  "useCases": [
+    "跨部门启动 Campaign",
+    "澄清品牌方和代理商职责",
+    "解决多人批准或无人负责"
+  ],
+  "inputs": [
+    "任务与交付物清单",
+    "团队成员和角色",
+    "关键决策与审批节点",
+    "外部供应商边界"
+  ],
+  "outputs": [
+    "campaign-raci.csv RACI 表",
+    "decision-rights.md 决策权说明",
+    "ownership-gaps.md 责任空缺与冲突"
+  ],
+  "promptExamples": [
+    "请为这次新品 Campaign 建 RACI，确保每个任务只有一个最终负责和一个批准人。",
+    "请检查品牌方、代理商和制作公司的职责是否重叠，并给出需要确认的问题。",
+    "请把内容、设计、法务、投放和数据的关键决策权单独列出来。"
+  ],
+  "humanGate": "项目发起人确认每项工作的最终负责人、批准人、升级路径和外部团队边界。",
+  "cannotInfer": [
+    "成员已经接受职责",
+    "组织里的真实汇报关系",
+    "合同包含的服务范围",
+    "自动分配或通知任务"
+  ],
+  "channels": [
+    "团队协作",
+    "代理商协作",
+    "项目管理"
+  ],
+  "source": {
+    "type": "original",
+    "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+    "path": "skills/campaign-raci",
+    "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+    "author": "Open Marketing",
+    "authorUrl": "https://github.com/open-marketing-cn",
+    "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+    "license": "CC-BY-4.0",
+    "checkedAt": "2026-08-31"
+  },
+  "installation": {
+    "codex": "npx skills add open-marketing-cn/open-marketing-agents -s campaign-raci -a codex -y",
+    "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s campaign-raci -a claude-code -y",
+    "download": "downloads/campaign-raci.zip"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "RACI 唯一责任、决策权和冲突检查已定义。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "等待跨团队 Campaign 脱敏任务验证。"
+    }
+  },
+  "relatedSkillIds": [
+    "campaign-workback",
+    "content-asset-calendar"
+  ]
+}

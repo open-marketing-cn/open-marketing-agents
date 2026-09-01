@@ -1,0 +1,85 @@
+{
+  "id": "customer-research",
+  "titleZh": "把用户研究整理成可用证据",
+  "originalName": "customer-research",
+  "summaryZh": "分析访谈、问卷、工单、评论与社区讨论，形成研究发现、客户语言和研究质量说明。",
+  "growthStage": "zero_to_one",
+  "workspace": "insights",
+  "audiences": [
+    "用户研究人员",
+    "产品营销人员",
+    "创始团队"
+  ],
+  "useCases": [
+    "分析已有访谈或问卷",
+    "设计新一轮用户访谈",
+    "从评论和社区中提取客户语言"
+  ],
+  "inputs": [
+    "研究目标",
+    "已有访谈、问卷、评论或工单",
+    "目标人群范围",
+    "时间与样本限制"
+  ],
+  "outputs": [
+    "研究摘要",
+    "客户语言与主题表",
+    "JTBD 或人物画像草稿",
+    "研究质量与缺口说明"
+  ],
+  "promptExamples": [
+    "请分析这 12 份访谈记录，整理客户任务、痛点、替代方案和原话证据。",
+    "我要访谈第一批付费用户，请为我设计招募条件、问题清单和记录模板。",
+    "请从这些支持工单中找出反复出现的使用阻力，并区分频率证据和推测。"
+  ],
+  "humanGate": "研究负责人确认样本代表性、问题是否带有诱导，以及哪些发现足以进入产品或营销决策。",
+  "cannotInfer": [
+    "未覆盖人群的态度",
+    "市场总体比例",
+    "用户陈述与真实行为之间的因果",
+    "不存在于材料中的事实"
+  ],
+  "channels": [
+    "访谈",
+    "问卷",
+    "社区",
+    "客服工单",
+    "评论"
+  ],
+  "source": {
+    "type": "upstream",
+    "repo": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/customer-research",
+    "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+    "author": "Corey Haines",
+    "authorUrl": "https://github.com/coreyhaines31",
+    "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+    "license": "MIT",
+    "checkedAt": "2026-08-31"
+  },
+  "installation": {
+    "codex": "npx skills add coreyhaines31/marketingskills -s customer-research -a codex -y",
+    "claudeCode": "npx skills add coreyhaines31/marketingskills -s customer-research -a claude-code -y"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已核对真实 SKILL.md、研究模式和质量边界。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "尚未完成 Open Marketing 实战复核。"
+    }
+  },
+  "relatedSkillIds": [
+    "consumer-language-insight",
+    "audience-problem-definition"
+  ]
+}

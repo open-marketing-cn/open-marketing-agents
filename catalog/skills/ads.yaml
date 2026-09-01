@@ -1,0 +1,84 @@
+{
+  "id": "ads",
+  "titleZh": "把付费渠道、预算与账户结构排清楚",
+  "originalName": "ads",
+  "summaryZh": "围绕目标、受众、优惠和现状，规划平台选择、账户结构、定向、预算、竞价与优化边界。",
+  "growthStage": "zero_to_one",
+  "workspace": "media",
+  "audiences": [
+    "投放与增长人员",
+    "首次购买媒体的品牌团队",
+    "B2B 市场团队"
+  ],
+  "useCases": [
+    "判断是否适合开始付费广告",
+    "建立首轮广告计划和预算结构",
+    "检查已有广告计划的缺口"
+  ],
+  "inputs": [
+    "Campaign 目标",
+    "产品、优惠与受众",
+    "预算和周期",
+    "历史表现或当前账户状态"
+  ],
+  "outputs": [
+    "渠道选择与角色",
+    "Campaign 与广告组结构",
+    "预算分配框架",
+    "指标、优化和停止规则"
+  ],
+  "promptExamples": [
+    "我们只有 5 万元首发预算，请比较搜索、信息流和再营销的角色与取舍。",
+    "请为这款 B2B 产品设计 LinkedIn 广告账户结构、受众和预算框架。",
+    "请审阅这份投放计划，指出目标、人群、创意、落地页和测量之间的不一致。"
+  ],
+  "humanGate": "投放负责人决定真实预算、账户权限、受众排除、出价、上线和停止动作。",
+  "cannotInfer": [
+    "平台未来 CPA 或 ROAS",
+    "未提供的账户数据",
+    "广告审核结果",
+    "自动修改真实广告账户"
+  ],
+  "channels": [
+    "Google Ads",
+    "Meta",
+    "LinkedIn",
+    "付费媒体"
+  ],
+  "source": {
+    "type": "upstream",
+    "repo": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/ads",
+    "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+    "author": "Corey Haines",
+    "authorUrl": "https://github.com/coreyhaines31",
+    "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+    "license": "MIT",
+    "checkedAt": "2026-08-31"
+  },
+  "installation": {
+    "codex": "npx skills add coreyhaines31/marketingskills -s ads -a codex -y",
+    "claudeCode": "npx skills add coreyhaines31/marketingskills -s ads -a claude-code -y"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已核对目标、渠道、结构、预算和优化内容。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "尚未完成 Open Marketing 实战复核。"
+    }
+  },
+  "relatedSkillIds": [
+    "ad-creative",
+    "analytics"
+  ]
+}

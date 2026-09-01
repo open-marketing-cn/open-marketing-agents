@@ -1,0 +1,85 @@
+{
+  "id": "creative-brief",
+  "titleZh": "把策略翻成创意团队能开工的 Brief",
+  "originalName": "creative-brief",
+  "summaryZh": "把 Campaign 策略转成受众张力、单一信息、必用证明、渠道规格、禁区和验收标准。",
+  "growthStage": "zero_to_one",
+  "workspace": "creative",
+  "audiences": [
+    "品牌与创意负责人",
+    "内容与设计团队",
+    "代理商客户团队"
+  ],
+  "useCases": [
+    "策略通过后启动创意",
+    "统一内部与外部创意团队口径",
+    "减少审稿时才暴露的事实和规格问题"
+  ],
+  "inputs": [
+    "已确认的 Campaign 目标",
+    "优先人群与洞察",
+    "品牌定位与证明",
+    "渠道、素材、时间和合规限制"
+  ],
+  "outputs": [
+    "creative-brief.md 创意任务书",
+    "mandatories-checklist.md 必须项与禁区",
+    "review-rubric.md 创意验收表"
+  ],
+  "promptExamples": [
+    "请把这份 Campaign 策略整理成一页创意 Brief，明确单一信息、证明和禁区。",
+    "我要同时给文案、设计和视频团队开工，请把共同信息和各渠道规格分开写。",
+    "请检查这份创意 Brief 是否含有空泛目标、缺失证据或无法验收的要求。"
+  ],
+  "humanGate": "品牌负责人确认单一信息、必用证明、不可使用的表达、素材授权和最终验收标准。",
+  "cannotInfer": [
+    "不存在的产品卖点",
+    "素材版权和肖像授权",
+    "平台审核结果",
+    "负责人尚未选择的创意方向"
+  ],
+  "channels": [
+    "创意",
+    "内容",
+    "设计",
+    "视频"
+  ],
+  "source": {
+    "type": "original",
+    "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+    "path": "skills/creative-brief",
+    "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+    "author": "Open Marketing",
+    "authorUrl": "https://github.com/open-marketing-cn",
+    "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+    "license": "CC-BY-4.0",
+    "checkedAt": "2026-08-31"
+  },
+  "installation": {
+    "codex": "npx skills add open-marketing-cn/open-marketing-agents -s creative-brief -a codex -y",
+    "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s creative-brief -a claude-code -y",
+    "download": "downloads/creative-brief.zip"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "独立输入、三份交付物和验收边界已定义。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "等待脱敏创意启动任务验证。"
+    }
+  },
+  "relatedSkillIds": [
+    "copywriting",
+    "ad-creative",
+    "image"
+  ]
+}

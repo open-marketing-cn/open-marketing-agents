@@ -1,0 +1,182 @@
+[
+  {
+    "id": "audience-problem-definition",
+    "titleZh": "把目标人群和真问题说清楚",
+    "originalName": "audience-problem-definition",
+    "workspace": "insights",
+    "sourceType": "original",
+    "installable": true,
+    "text": "把目标人群和真问题说清楚 audience-problem-definition 把证据整理成优先人群、关键场景、待解决问题和需要继续验证的假设。 创业者 品牌与产品负责人 市场研究人员 品牌 0→1 确定第一批人群 缩小过宽的目标市场 把洞察转成问题定义 产品或服务说明 已有用户研究或行为证据 竞争替代方案 当前业务限制 audience-priority.md 优先人群表 problem-statements.md 问题陈述 assumption-log.md 假设与验证清单 用户研究 策略工作坊 产品需求 open marketing"
+  },
+  {
+    "id": "competitor-profiling",
+    "titleZh": "把竞品公开资料做成可比画像",
+    "originalName": "competitor-profiling",
+    "workspace": "insights",
+    "sourceType": "upstream",
+    "installable": true,
+    "text": "把竞品公开资料做成可比画像 competitor-profiling 从竞品网址和公开资料建立结构一致、保留来源的竞品画像，便于横向比较。 品牌策略人员 产品营销人员 创业团队 进入新品类前做竞品扫描 建立竞品对照底稿 为定位讨论准备事实 竞品网址列表 需要比较的维度 市场和时间范围 允许使用的公开数据源 每个竞品一份 markdown 画像 来源链接与抓取日期 可比字段汇总 缺失与不确定信息 官网 搜索 公开资料 corey haines"
+  },
+  {
+    "id": "consumer-language-insight",
+    "titleZh": "把消费者原话整理成洞察卡",
+    "originalName": "consumer-language-insight",
+    "workspace": "insights",
+    "sourceType": "original",
+    "installable": true,
+    "text": "把消费者原话整理成洞察卡 consumer-language-insight 从评论、访谈或公开表达中保留原话证据，整理痛点、场景、顾虑与待验证判断。 品牌负责人 消费者洞察与策略人员 创业团队 新品定位前整理消费者语言 从电商评论和访谈中找共性问题 为创意 brief 准备可追溯证据 明确的品牌或品类范围 目标市场与时间窗口 至少一组评论、访谈或公开表达 需要回答的研究问题 consumer-quotes.csv 消费者原话表 insight-cards.md 洞察卡 evidence-gaps.md 样本限制与补数建议 小红书 抖音 电商评论 访谈 open marketing"
+  },
+  {
+    "id": "customer-research",
+    "titleZh": "把用户研究整理成可用证据",
+    "originalName": "customer-research",
+    "workspace": "insights",
+    "sourceType": "upstream",
+    "installable": true,
+    "text": "把用户研究整理成可用证据 customer-research 分析访谈、问卷、工单、评论与社区讨论，形成研究发现、客户语言和研究质量说明。 用户研究人员 产品营销人员 创始团队 分析已有访谈或问卷 设计新一轮用户访谈 从评论和社区中提取客户语言 研究目标 已有访谈、问卷、评论或工单 目标人群范围 时间与样本限制 研究摘要 客户语言与主题表 jtbd 或人物画像草稿 研究质量与缺口说明 访谈 问卷 社区 客服工单 评论 corey haines"
+  },
+  {
+    "id": "brand-context-cn",
+    "titleZh": "建立一份可复用的品牌底稿",
+    "originalName": "brand-context-cn",
+    "workspace": "strategy",
+    "sourceType": "adapted",
+    "installable": true,
+    "text": "建立一份可复用的品牌底稿 brand-context-cn 把品牌事实、受众、定位、个性、价值观、目标与待确认项整理成一份独立底稿。 品牌负责人 创业团队 代理商策略与客户团队 新品牌启动前统一口径 接手旧项目时整理已有资料 为后续策略和创意建立同一底稿 品牌与产品事实 目标人群证据 现有定位或主张 品牌个性、价值观与业务目标 brand-context.md 品牌底稿 source-register.md 来源登记 decision-queue.md 待负责人确认项 品牌底稿 策略工作坊 团队协作 cofoundy / open marketing"
+  },
+  {
+    "id": "brand-positioning-cn",
+    "titleZh": "找到可被证据支撑的品牌位置",
+    "originalName": "brand-positioning-cn",
+    "workspace": "strategy",
+    "sourceType": "adapted",
+    "installable": true,
+    "text": "找到可被证据支撑的品牌位置 brand-positioning-cn 比较品类、竞品、人群问题和自身证明，形成定位领地、定位句、证明点与取舍。 品牌策略人员 创始人 新品负责人 新品进入拥挤品类时找差异 重写过宽或空泛的定位 为首轮 campaign 确定核心信息 品牌事实与业务约束 优先人群和问题证据 竞品画像 可验证的产品或服务证明 positioning-territories.md 定位领地比较 positioning-statement.md 定位句 proof-points.md 证明点与证据缺口 trade-offs.md 明确不做什么 品牌策略 campaign 销售沟通 cofoundy / open marketing"
+  },
+  {
+    "id": "first-campaign-strategy",
+    "titleZh": "把第一次 Campaign 写成可测试策略",
+    "originalName": "first-campaign-strategy",
+    "workspace": "strategy",
+    "sourceType": "original",
+    "installable": true,
+    "text": "把第一次 campaign 写成可测试策略 first-campaign-strategy 围绕一个首发目标，把人群、问题、承诺、证明、渠道角色、假设和成功标准写成策略稿。 首次做品牌 campaign 的团队 品牌负责人 代理商策略团队 品牌或新品第一次对外传播 把宽泛目标缩成一个可验证 campaign 为创意与媒介团队建立统一策略 明确的业务与传播目标 优先人群和问题证据 定位与可用证明 预算、周期与渠道限制 campaign-strategy.md 首轮策略稿 hypothesis-scorecard.md 假设与指标 open-decisions.md 待决策问题 campaign 全渠道 策略工作坊 open marketing"
+  },
+  {
+    "id": "product-marketing",
+    "titleZh": "把产品、人群与主张写进同一底稿",
+    "originalName": "product-marketing",
+    "workspace": "strategy",
+    "sourceType": "upstream",
+    "installable": true,
+    "text": "把产品、人群与主张写进同一底稿 product-marketing 建立产品概览、目标受众、问题、竞争、差异、证明材料、异议与品牌声音的营销上下文。 产品营销人员 saas 与互联网团队 创始团队 新项目建立产品营销上下文 减少团队反复解释基础信息 检查定位与信息缺口 产品说明 目标受众 问题与使用场景 竞争替代 差异与证明材料 .agents/product-marketing.md 产品营销上下文 信息缺口问题 待确认的主张与证据 产品营销 团队协作 全渠道 corey haines"
+  },
+  {
+    "id": "ad-creative",
+    "titleZh": "生成能进入测试的广告创意变体",
+    "originalName": "ad-creative",
+    "workspace": "creative",
+    "sourceType": "upstream",
+    "installable": true,
+    "text": "生成能进入测试的广告创意变体 ad-creative 围绕平台、受众、产品、优惠与约束，生成广告钩子、标题、正文和可比较的创意变体。 投放与增长团队 广告文案与设计人员 品牌负责人 从零生成广告变体 根据表现数据迭代素材 规划静态、ugc 或短视频创意方向 广告平台和格式 产品、优惠与受众 表现数据或已有素材 字数、合规和品牌限制 广告钩子与文案变体 创意方向和格式建议 测试变量矩阵 审批用创意说明 meta google ads linkedin 短视频广告 corey haines"
+  },
+  {
+    "id": "copywriting",
+    "titleZh": "写出清楚、具体、可行动的营销页面",
+    "originalName": "copywriting",
+    "workspace": "creative",
+    "sourceType": "upstream",
+    "installable": true,
+    "text": "写出清楚、具体、可行动的营销页面 copywriting 根据页面目标、受众、产品事实与上下文，起草或重写首页、落地页、定价页等营销文案。 品牌与内容人员 增长与网站团队 创业者 从空白起草落地页 重写不清楚的主页 改进标题、价值主张和行动按钮 页面类型与唯一目标 目标受众 产品或服务事实 可用证明与行动指引 页面信息结构 标题、副标题与正文草稿 cta 文案 缺失事实与需要确认的问题 官网 落地页 产品页 corey haines"
+  },
+  {
+    "id": "creative-brief",
+    "titleZh": "把策略翻成创意团队能开工的 Brief",
+    "originalName": "creative-brief",
+    "workspace": "creative",
+    "sourceType": "original",
+    "installable": true,
+    "text": "把策略翻成创意团队能开工的 brief creative-brief 把 campaign 策略转成受众张力、单一信息、必用证明、渠道规格、禁区和验收标准。 品牌与创意负责人 内容与设计团队 代理商客户团队 策略通过后启动创意 统一内部与外部创意团队口径 减少审稿时才暴露的事实和规格问题 已确认的 campaign 目标 优先人群与洞察 品牌定位与证明 渠道、素材、时间和合规限制 creative-brief.md 创意任务书 mandatories-checklist.md 必须项与禁区 review-rubric.md 创意验收表 创意 内容 设计 视频 open marketing"
+  },
+  {
+    "id": "image",
+    "titleZh": "把营销图片需求变成制作与验收清单",
+    "originalName": "image",
+    "workspace": "creative",
+    "sourceType": "upstream",
+    "installable": true,
+    "text": "把营销图片需求变成制作与验收清单 image 根据图片目标选择生成、设计或优化方式，形成提示、规格、制作步骤和验收重点。 内容与设计团队 品牌营销人员 独立创作者 制作博客头图或社媒图片 规划产品效果图 优化图片尺寸、格式和分享预览 图片用途与渠道 品牌视觉信息 必须出现和禁止出现的元素 尺寸、格式和工具限制 图片创作方向 生成或设计提示 渠道规格清单 人工视觉与品牌验收项 社媒 官网 电商 视觉内容 corey haines"
+  },
+  {
+    "id": "ab-testing",
+    "titleZh": "把创意想法写成能衡量的测试",
+    "originalName": "ab-testing",
+    "workspace": "media",
+    "sourceType": "upstream",
+    "installable": true,
+    "text": "把创意想法写成能衡量的测试 ab-testing 把改动转成假设、单一变量、样本、指标、运行时间与停止条件，形成实验记录。 增长与投放团队 网站与产品营销人员 内容实验负责人 比较两版创意或页面 判断一个想法是否值得测试 建立首轮实验清单 要改变的内容 目标用户与行为 当前基线数据 主要指标、样本和实施限制 测试假设 控制组与变体定义 样本量与运行时长估算 停止规则和结果模板 广告 官网 产品 增长实验 corey haines"
+  },
+  {
+    "id": "ads",
+    "titleZh": "把付费渠道、预算与账户结构排清楚",
+    "originalName": "ads",
+    "workspace": "media",
+    "sourceType": "upstream",
+    "installable": true,
+    "text": "把付费渠道、预算与账户结构排清楚 ads 围绕目标、受众、优惠和现状，规划平台选择、账户结构、定向、预算、竞价与优化边界。 投放与增长人员 首次购买媒体的品牌团队 b2b 市场团队 判断是否适合开始付费广告 建立首轮广告计划和预算结构 检查已有广告计划的缺口 campaign 目标 产品、优惠与受众 预算和周期 历史表现或当前账户状态 渠道选择与角色 campaign 与广告组结构 预算分配框架 指标、优化和停止规则 google ads meta linkedin 付费媒体 corey haines"
+  },
+  {
+    "id": "analytics",
+    "titleZh": "做一份上线前能验收的追踪方案",
+    "originalName": "analytics",
+    "workspace": "media",
+    "sourceType": "upstream",
+    "installable": true,
+    "text": "做一份上线前能验收的追踪方案 analytics 从业务问题出发定义事件、属性、命名、utm、验证方法和数据质量检查。 营销运营人员 增长与数据团队 网站和产品负责人 上线前建立追踪计划 审计 ga4 或埋点方案 统一 campaign utm 和事件命名 要回答的业务问题 用户旅程与关键动作 网站或产品技术环境 现有分析工具与事件 追踪计划表 事件和属性命名规范 utm 规范 上线验证与数据质量清单 ga4 gtm 网站 产品 广告 corey haines"
+  },
+  {
+    "id": "launch",
+    "titleZh": "把发布拆成可检查的五个阶段",
+    "originalName": "launch",
+    "workspace": "media",
+    "sourceType": "upstream",
+    "installable": true,
+    "text": "把发布拆成可检查的五个阶段 launch 为产品、功能或品牌发布规划自有、借用和付费渠道，并按内部、alpha、beta、早期访问和正式发布分阶段。 新品与产品营销负责人 创业团队 发布项目经理 准备品牌或产品首次发布 规划 beta 与早期访问 建立发布就绪检查 发布对象和目标 目标受众与名单 可用渠道和伙伴 准备状态、日期和资源 分阶段发布计划 自有、借用和付费渠道表 发布就绪检查 每阶段目标与衡量方式 产品发布 官网 社媒 伙伴渠道 corey haines"
+  },
+  {
+    "id": "campaign-raci",
+    "titleZh": "让每个 Campaign 决策只有一个负责人",
+    "originalName": "campaign-raci",
+    "workspace": "operations",
+    "sourceType": "original",
+    "installable": true,
+    "text": "让每个 campaign 决策只有一个负责人 campaign-raci 把任务、交付物和决策映射到负责、批准、协作、知会角色，并暴露空缺与冲突。 campaign 负责人 跨部门市场团队 代理商客户与执行团队 跨部门启动 campaign 澄清品牌方和代理商职责 解决多人批准或无人负责 任务与交付物清单 团队成员和角色 关键决策与审批节点 外部供应商边界 campaign-raci.csv raci 表 decision-rights.md 决策权说明 ownership-gaps.md 责任空缺与冲突 团队协作 代理商协作 项目管理 open marketing"
+  },
+  {
+    "id": "campaign-retrospective",
+    "titleZh": "把审稿、交接和结果沉淀成下一轮资产",
+    "originalName": "campaign-retrospective",
+    "workspace": "operations",
+    "sourceType": "original",
+    "installable": true,
+    "text": "把审稿、交接和结果沉淀成下一轮资产 campaign-retrospective 汇总版本、审批、上线证据、计划与实际结果，区分事实、解释和下一轮行动。 campaign 负责人 品牌与增长团队 代理商客户团队 上线前完成最终交接 campaign 结束后复盘 沉淀下轮可复用素材与决策 最终版本与审批记录 发布链接和上线证据 目标与实际结果 团队观察、异常和外部变化 release-handoff.md 上线交接记录 campaign-retro.md 事实与解释分层复盘 next-round-assets.md 可复用资产与下轮行动 campaign 复盘 审稿 团队交接 open marketing"
+  },
+  {
+    "id": "campaign-workback",
+    "titleZh": "从上线日倒排 Campaign 任务",
+    "originalName": "campaign-workback",
+    "workspace": "operations",
+    "sourceType": "original",
+    "installable": true,
+    "text": "从上线日倒排 campaign 任务 campaign-workback 从不可移动的上线节点向前倒排策略、创意、制作、审批、追踪、交付和缓冲时间。 campaign 项目经理 品牌与市场运营人员 小团队负责人 确定上线日后的全链路倒排 发现计划里的审批与依赖缺口 为周会生成可更新任务表 目标上线日与不可移动节点 交付物和渠道清单 团队和外部供应商 审批与制作周期 campaign-workback.csv 倒排表 critical-path.md 关键路径 risk-buffer.md 风险与缓冲说明 项目管理 campaign 团队协作 open marketing"
+  },
+  {
+    "id": "content-asset-calendar",
+    "titleZh": "把内容、素材和渠道放进一张日历",
+    "originalName": "content-asset-calendar",
+    "workspace": "operations",
+    "sourceType": "original",
+    "installable": true,
+    "text": "把内容、素材和渠道放进一张日历 content-asset-calendar 把内容主题、渠道版本、素材规格、负责人、状态、审批和发布日期整理成可交接日历。 内容运营人员 品牌与社媒团队 小型营销团队 建立首月内容与素材计划 统一多渠道版本和素材状态 为周会准备可更新台账 campaign 节奏与内容主题 渠道和发布频率 素材规格 负责人、审批人和状态 content-asset-calendar.csv 内容素材日历 asset-status.md 素材缺口 handoff-checklist.md 发布交接清单 内容运营 社媒 公众号 短视频 open marketing"
+  }
+]

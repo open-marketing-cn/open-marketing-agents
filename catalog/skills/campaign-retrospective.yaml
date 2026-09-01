@@ -1,0 +1,84 @@
+{
+  "id": "campaign-retrospective",
+  "titleZh": "把审稿、交接和结果沉淀成下一轮资产",
+  "originalName": "campaign-retrospective",
+  "summaryZh": "汇总版本、审批、上线证据、计划与实际结果，区分事实、解释和下一轮行动。",
+  "growthStage": "zero_to_one",
+  "workspace": "operations",
+  "audiences": [
+    "Campaign 负责人",
+    "品牌与增长团队",
+    "代理商客户团队"
+  ],
+  "useCases": [
+    "上线前完成最终交接",
+    "Campaign 结束后复盘",
+    "沉淀下轮可复用素材与决策"
+  ],
+  "inputs": [
+    "最终版本与审批记录",
+    "发布链接和上线证据",
+    "目标与实际结果",
+    "团队观察、异常和外部变化"
+  ],
+  "outputs": [
+    "release-handoff.md 上线交接记录",
+    "campaign-retro.md 事实与解释分层复盘",
+    "next-round-assets.md 可复用资产与下轮行动"
+  ],
+  "promptExamples": [
+    "请检查这次 Campaign 上线包是否含最终版本、审批人、追踪链接、回滚和负责人。",
+    "请把计划与实际结果做成复盘，严格区分观察事实、解释和下一轮假设。",
+    "请从这次复盘里提取可复用内容、有效素材、失败假设和下一轮最小测试。"
+  ],
+  "humanGate": "负责人确认正式结果口径、原因解释、责任边界、可公开内容和下一轮行动优先级。",
+  "cannotInfer": [
+    "相关性等于因果",
+    "缺失数据中的真实表现",
+    "个人责任或绩效结论",
+    "未经授权公开内部结果"
+  ],
+  "channels": [
+    "Campaign",
+    "复盘",
+    "审稿",
+    "团队交接"
+  ],
+  "source": {
+    "type": "original",
+    "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+    "path": "skills/campaign-retrospective",
+    "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+    "author": "Open Marketing",
+    "authorUrl": "https://github.com/open-marketing-cn",
+    "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+    "license": "CC-BY-4.0",
+    "checkedAt": "2026-08-31"
+  },
+  "installation": {
+    "codex": "npx skills add open-marketing-cn/open-marketing-agents -s campaign-retrospective -a codex -y",
+    "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s campaign-retrospective -a claude-code -y",
+    "download": "downloads/campaign-retrospective.zip"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "审稿交接、证据层和复盘产出已定义。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "等待真实 Campaign 脱敏复盘验证。"
+    }
+  },
+  "relatedSkillIds": [
+    "consumer-language-insight",
+    "first-campaign-strategy"
+  ]
+}

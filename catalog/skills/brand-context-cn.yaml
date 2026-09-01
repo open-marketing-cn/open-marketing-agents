@@ -1,0 +1,89 @@
+{
+  "id": "brand-context-cn",
+  "titleZh": "建立一份可复用的品牌底稿",
+  "originalName": "brand-context-cn",
+  "summaryZh": "把品牌事实、受众、定位、个性、价值观、目标与待确认项整理成一份独立底稿。",
+  "growthStage": "zero_to_one",
+  "workspace": "strategy",
+  "audiences": [
+    "品牌负责人",
+    "创业团队",
+    "代理商策略与客户团队"
+  ],
+  "useCases": [
+    "新品牌启动前统一口径",
+    "接手旧项目时整理已有资料",
+    "为后续策略和创意建立同一底稿"
+  ],
+  "inputs": [
+    "品牌与产品事实",
+    "目标人群证据",
+    "现有定位或主张",
+    "品牌个性、价值观与业务目标"
+  ],
+  "outputs": [
+    "brand-context.md 品牌底稿",
+    "source-register.md 来源登记",
+    "decision-queue.md 待负责人确认项"
+  ],
+  "promptExamples": [
+    "请把这些零散品牌资料整理成一份可交接的品牌底稿，不确定的内容不要补成事实。",
+    "我们准备从 0 启动一个新品牌，请逐项问我受众、定位、个性、价值观和目标。",
+    "请检查这份品牌底稿里的冲突、缺口和过期信息，生成负责人确认清单。"
+  ],
+  "humanGate": "品牌负责人确认最终品牌事实、主张、价值观、目标，以及哪些假设可以暂时进入工作底稿。",
+  "cannotInfer": [
+    "未经确认的品牌使命",
+    "真实消费者认知",
+    "法律可用的品牌承诺",
+    "公司内部未公开的业务目标"
+  ],
+  "channels": [
+    "品牌底稿",
+    "策略工作坊",
+    "团队协作"
+  ],
+  "source": {
+    "type": "adapted",
+    "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+    "path": "skills/brand-context-cn",
+    "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+    "author": "Cofoundy / Open Marketing",
+    "authorUrl": "https://github.com/cofoundy",
+    "avatarUrl": "https://github.com/cofoundy.png?size=96",
+    "license": "MIT",
+    "checkedAt": "2026-08-31",
+    "upstreamName": "brand-context",
+    "changesZh": "移除共享 brand.yaml 与其他 Skill 前置依赖；改为单 Skill 内完成来源登记、中文提问、缺口标记和人工确认。",
+    "upstreamRepo": "https://github.com/cofoundy/brand-skills",
+    "upstreamPath": "skills/brand-context",
+    "upstreamCommit": "c50d6c9988e22b39031266924ae7d87f643e34bf",
+    "upstreamAuthor": "Cofoundy"
+  },
+  "installation": {
+    "codex": "npx skills add open-marketing-cn/open-marketing-agents -s brand-context-cn -a codex -y",
+    "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s brand-context-cn -a claude-code -y",
+    "download": "downloads/brand-context-cn.zip"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已改成不读取其他 Skill 的单目录安装包。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "等待中国品牌底稿任务验证。"
+    }
+  },
+  "relatedSkillIds": [
+    "brand-positioning-cn",
+    "creative-brief"
+  ]
+}
