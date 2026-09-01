@@ -4,6 +4,12 @@
 
 Open Marketing Skills 按 **洞察研究 → 品牌策略 → 创意内容 → 媒介增长 → 运营协作** 组织可单独安装的 Agent Skills。网站不在站内运行 AI；它帮助普通营销人先看清输入、交付物、人工决定、来源和验证记录，再复制安装命令到 Codex 或 Claude Code。
 
+## 在线预览
+
+[打开 Open Marketing Skills 网站](https://open-marketing-cn.github.io/open-marketing-agents/)
+
+网站由 GitHub Pages 从 `main` 分支自动部署；当前开发分支的本地预览地址仅供开发检查，不代表已公开上线。
+
 ## V2 当前状态
 
 - `23` 个公开 Skill，全部是外部原版；其中 `4` 个来自 Cola 精选、`1` 个来自高星 GitHub Skill 集合；
