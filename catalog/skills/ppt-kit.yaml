@@ -1,0 +1,50 @@
+{
+  "id": "ppt-kit",
+  "titleZh": "从视觉参考提炼设计系统并批量生成 Deck",
+  "originalName": "ppt-kit",
+  "summaryZh": "从 PDF、截图、图片、HTML 或 PPTX 参考中提取可复用 skin，再以自由页面和商务文档结构生产系列品牌材料。",
+  "growthStage": "zero_to_one",
+  "workspace": "creative",
+  "categoryId": "presentation-generation",
+  "comparisonGroupId": "ppt",
+  "methodType": "参考驱动型",
+  "practiceLevel": "source_verified",
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github", "community"],
+  "card": {"outcomeZh": "由参考提炼的 skin、HTML Deck 与 1:1 PDF", "previewImage": null, "previewLicense": null},
+  "audiences": ["需要制作客户提案的营销团队", "有成熟视觉参考的品牌方", "愿意投入判断和调校的高级操作者"],
+  "useCases": ["从一份参考材料提炼可复用视觉系统", "生产提案、报价、Brief 与结案报告", "为同一品牌连续生成一系列材料"],
+  "inputs": ["高质量 PDF、截图、图片、HTML 或 PPTX 参考", "提案目标、受众和材料类型", "品牌内容、数据和资产", "希望复用的图位、版式和组件规则"],
+  "outputs": ["可复用的 skin 与设计规则", "以 freeform 页面为主的完整 HTML Deck", "与 HTML 视觉一致的 1:1 PDF", "同品牌后续提案、Brief 和结案材料基础"],
+  "promptExamples": [
+    "请用 ppt-kit 分析这份参考 PDF，先提炼 skin 和页面规则，再生成一套客户提案。",
+    "请保持这组截图的视觉语言，把项目资料组织成报价、执行计划和结案三套品牌材料。",
+    "请先指出参考材料中不稳定的排版规则，再建立可复用组件，并按统一 Brief 生成整套 Deck。"
+  ],
+  "humanGate": "操作者必须选择高质量参考、判断视觉提取是否准确并逐轮调校；无设计判断或必须原生 PPTX 多人协作时不应勉强使用。",
+  "cannotInfer": ["参考材料的版权和可复用权限", "缺失内容与数据的真实性", "客户对视觉方向的最终接受度", "原生 PPTX 的协作与编辑兼容性"],
+  "channels": ["客户提案", "报价", "项目 Brief", "结案报告", "品牌系列材料"],
+  "source": {"type": "upstream", "repo": "https://github.com/0xyaoyun/ppt-kit", "path": "skill", "commit": "841dea74e21f08d7300f908cca6d916cd470f1a4", "author": "0xyaoyun", "authorUrl": "https://github.com/0xyaoyun", "license": "MIT", "checkedAt": "2026-09-01"},
+  "installation": {"codex": "请按上游 README 将 skill 目录链接到 Codex Skills 目录", "claudeCode": "请按上游 README 完成本地克隆、uv sync 与 skill 目录链接"},
+  "validation": {
+    "spec": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对 skill/SKILL.md、参考提取流程、交付结构和 MIT 许可证。"},
+    "installation": {"status": "pending", "checkedAt": "2026-09-01", "noteZh": "上游安装涉及本地运行环境与目录链接，尚未在隔离双端完成复测。"},
+    "practice": {"status": "pending", "checkedAt": "2026-09-01", "noteZh": "已有社区使用判断，尚缺同一 Brief 下可公开的双版本成果，不计入好用 Skill。"}
+  },
+  "comparisonProfile": {
+    "learningCurve": "high",
+    "outputConsistency": "medium",
+    "flexibility": "high",
+    "operatorDependency": "high",
+    "materialDependency": "high",
+    "workflowCompleteness": "high",
+    "bestForZh": ["有高质量参考并需要高度还原", "客户提案、报价、Brief 和结案材料", "想把视觉沉淀成可复用品牌系统"],
+    "notForZh": ["没有参考也没有设计判断", "必须交付原生可编辑 PPTX", "需要多人在线协作和快速套模板"]
+  },
+  "comparisonEvidence": [
+    {"type": "publisher", "summaryZh": "上游 README 与 SKILL.md 明确采用参考分析、skin 提取、freeform 页面以及 HTML 加 1:1 PDF 的完整流程。", "checkedAt": "2026-09-01", "sourceUrl": "https://github.com/0xyaoyun/ppt-kit/blob/841dea74e21f08d7300f908cca6d916cd470f1a4/skill/SKILL.md"},
+    {"type": "community_case", "summaryZh": "共创发起人的使用判断是：上手门槛与操作者、参考质量强相关，但掌握后自由度和系列化复用能力更高。", "checkedAt": "2026-09-01"}
+  ],
+  "relatedSkillIds": ["guizang-ppt-skill"]
+}

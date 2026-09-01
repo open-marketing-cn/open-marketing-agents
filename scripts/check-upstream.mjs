@@ -15,6 +15,12 @@ function githubSlug(repoUrl) {
   return url.pathname.replace(/^\//, '').replace(/\.git$/, '');
 }
 
+function rawSkillUrl(slug, commit, path) {
+  const normalized = String(path || '').replace(/^\//, '').replace(/\/$/, '');
+  const skillPath = normalized.endsWith('/SKILL.md') || normalized === 'SKILL.md' ? normalized : `${normalized}/SKILL.md`;
+  return `https://raw.githubusercontent.com/${slug}/${commit}/${skillPath}`;
+}
+
 async function getJson(url) {
   const response = await fetch(url, { headers });
   if (!response.ok) throw new Error(`${response.status} ${url}`);
@@ -40,8 +46,8 @@ for (const skill of upstream) {
     repoCache.set(slug, { repo, headCommit: commit.sha });
   }
   const { repo, headCommit } = repoCache.get(slug);
-  const pinnedUrl = `https://raw.githubusercontent.com/${slug}/${skill.source.commit}/${skill.source.path}/SKILL.md`;
-  const latestUrl = `https://raw.githubusercontent.com/${slug}/${headCommit}/${skill.source.path}/SKILL.md`;
+  const pinnedUrl = rawSkillUrl(slug, skill.source.commit, skill.source.path);
+  const latestUrl = rawSkillUrl(slug, headCommit, skill.source.path);
   const [pinnedResponse, latestResponse] = await Promise.all([fetch(pinnedUrl, { headers }), fetch(latestUrl, { headers })]);
   const [pinnedText, latestText] = await Promise.all([
     pinnedResponse.ok ? pinnedResponse.text() : Promise.resolve(''),

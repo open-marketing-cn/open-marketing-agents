@@ -3,16 +3,16 @@
   "growthStage": "zero_to_one",
   "catalogVersion": "2026-09-01",
   "stats": {
-    "total": 23,
+    "total": 25,
     "byWorkspace": {
       "insights": 3,
       "strategy": 3,
-      "creative": 8,
+      "creative": 10,
       "media": 6,
       "operations": 3
     },
     "bySource": {
-      "upstream": 23,
+      "upstream": 25,
       "adapted": 0,
       "original": 0
     },
@@ -111,6 +111,12 @@
         }
       },
       "relatedSkillIds": [],
+      "categoryId": "insights",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -206,6 +212,12 @@
         }
       },
       "relatedSkillIds": [],
+      "categoryId": "insights",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -303,6 +315,12 @@
         "previewImage": null,
         "previewLicense": null
       },
+      "categoryId": "insights",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -402,6 +420,12 @@
         "previewImage": null,
         "previewLicense": null
       },
+      "categoryId": "strategy",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -500,6 +524,12 @@
         "previewImage": null,
         "previewLicense": null
       },
+      "categoryId": "strategy",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -595,6 +625,12 @@
       "relatedSkillIds": [
         "copywriting"
       ],
+      "categoryId": "strategy",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -692,6 +728,12 @@
         "ads",
         "ab-testing"
       ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -790,6 +832,12 @@
         "previewImage": null,
         "previewLicense": null
       },
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -886,6 +934,12 @@
         "image",
         "ab-testing"
       ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -983,7 +1037,142 @@
         "baoyu-cover-image",
         "copywriting"
       ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
+    },
+    {
+      "id": "guizang-ppt-skill",
+      "titleZh": "用受控设计语言快速生成演讲型 PPT",
+      "originalName": "guizang-ppt-skill",
+      "summaryZh": "在两套内置设计语言和预制页面结构中生成可直接演示的网页 PPT，降低第一次做出稳定结果的门槛。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "categoryId": "presentation-generation",
+      "comparisonGroupId": "ppt",
+      "methodType": "受控设计型",
+      "practiceLevel": "source_verified",
+      "featured": true,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "community"
+      ],
+      "card": {
+        "outcomeZh": "固定设计语言下的演讲型网页 PPT",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "需要快速完成演讲材料的营销人",
+        "发布会与 Demo Day 主讲人",
+        "希望少做视觉判断的小团队"
+      ],
+      "useCases": [
+        "快速制作发布会或 Demo Day 演讲",
+        "把一份内容大纲整理成稳定页面结构",
+        "在缺少完整品牌参考时生成可演示版本"
+      ],
+      "inputs": [
+        "演讲目标、受众和时长",
+        "核心观点、事实材料和行动号召",
+        "希望采用的内置视觉方向",
+        "必须保留的品牌元素与禁用项"
+      ],
+      "outputs": [
+        "可直接演示的网页 PPT",
+        "预制页面结构与叙事顺序",
+        "动画、翻页和低功耗展示方式",
+        "可复用的整套模板与设计规则"
+      ],
+      "promptExamples": [
+        "请用 guizang-ppt-skill 把这份 10 分钟产品发布大纲做成一套可直接演示的网页 PPT。",
+        "请用瑞士国际主义风格重组这份 Demo Day 内容，先列页面结构，再完成整套演示稿。",
+        "请检查这套演讲稿的叙事弧、页面密度和发布会节奏，并在受控模板内完成修改。"
+      ],
+      "humanGate": "主讲人确认事实、叙事顺序、品牌适配和现场演示效果；如需原生可编辑 PPTX 或复杂协作，应改选其他工具。",
+      "cannotInfer": [
+        "未提供事实的真实性",
+        "现场观众的真实反应",
+        "品牌素材的授权状态",
+        "原生 PPTX 中的最终编辑体验"
+      ],
+      "channels": [
+        "发布会",
+        "Demo Day",
+        "路演",
+        "个人演讲"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/op7418/guizang-ppt-skill",
+        "path": "SKILL.md",
+        "commit": "c91369c449d34755d320a8b81d0734000d99d1ab",
+        "author": "op7418",
+        "authorUrl": "https://github.com/op7418",
+        "license": "AGPL-3.0",
+        "checkedAt": "2026-09-01"
+      },
+      "installation": {
+        "codex": "npx skills add https://github.com/op7418/guizang-ppt-skill --skill guizang-ppt-skill",
+        "claudeCode": "npx skills add https://github.com/op7418/guizang-ppt-skill --skill guizang-ppt-skill"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-01",
+          "noteZh": "已核对根目录独立 SKILL.md、任务结构和 AGPL-3.0 许可证。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-01",
+          "noteZh": "安装命令来自上游说明，尚未在隔离的 Codex 与 Claude Code 环境完成双端复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-01",
+          "noteZh": "已有社区使用判断，尚缺可公开成果和统一 Brief 复核，不计入好用 Skill。"
+        }
+      },
+      "comparisonProfile": {
+        "learningCurve": "low",
+        "outputConsistency": "high",
+        "flexibility": "medium",
+        "operatorDependency": "medium",
+        "materialDependency": "low",
+        "workflowCompleteness": "high",
+        "bestForZh": [
+          "想快速得到稳定演讲效果",
+          "没有高质量视觉参考",
+          "发布会、Demo Day 和个人演讲"
+        ],
+        "notForZh": [
+          "必须交付原生可编辑 PPTX",
+          "多人同时编辑",
+          "复杂表格和高度自定义品牌系统"
+        ]
+      },
+      "comparisonEvidence": [
+        {
+          "type": "publisher",
+          "summaryZh": "上游 SKILL.md 明确提供两套设计语言、预制页面结构和网页演示能力。",
+          "checkedAt": "2026-09-01",
+          "sourceUrl": "https://github.com/op7418/guizang-ppt-skill/blob/c91369c449d34755d320a8b81d0734000d99d1ab/SKILL.md"
+        },
+        {
+          "type": "community_case",
+          "summaryZh": "共创发起人的使用判断是：模板约束降低上手门槛，结果更稳定，但风格范围和复杂协作能力有限。",
+          "checkedAt": "2026-09-01"
+        }
+      ],
+      "relatedSkillIds": [
+        "ppt-kit"
+      ],
+      "installable": false
     },
     {
       "id": "gzh-design",
@@ -1079,6 +1268,12 @@
         "copywriting",
         "community-marketing"
       ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -1175,6 +1370,12 @@
       "relatedSkillIds": [
         "ad-creative"
       ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -1271,6 +1472,12 @@
         "baoyu-cover-image",
         "copywriting"
       ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -1368,7 +1575,143 @@
         "gbro-cover-design",
         "ad-creative"
       ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
+    },
+    {
+      "id": "ppt-kit",
+      "titleZh": "从视觉参考提炼设计系统并批量生成 Deck",
+      "originalName": "ppt-kit",
+      "summaryZh": "从 PDF、截图、图片、HTML 或 PPTX 参考中提取可复用 skin，再以自由页面和商务文档结构生产系列品牌材料。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "categoryId": "presentation-generation",
+      "comparisonGroupId": "ppt",
+      "methodType": "参考驱动型",
+      "practiceLevel": "source_verified",
+      "featured": true,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "community"
+      ],
+      "card": {
+        "outcomeZh": "由参考提炼的 skin、HTML Deck 与 1:1 PDF",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "需要制作客户提案的营销团队",
+        "有成熟视觉参考的品牌方",
+        "愿意投入判断和调校的高级操作者"
+      ],
+      "useCases": [
+        "从一份参考材料提炼可复用视觉系统",
+        "生产提案、报价、Brief 与结案报告",
+        "为同一品牌连续生成一系列材料"
+      ],
+      "inputs": [
+        "高质量 PDF、截图、图片、HTML 或 PPTX 参考",
+        "提案目标、受众和材料类型",
+        "品牌内容、数据和资产",
+        "希望复用的图位、版式和组件规则"
+      ],
+      "outputs": [
+        "可复用的 skin 与设计规则",
+        "以 freeform 页面为主的完整 HTML Deck",
+        "与 HTML 视觉一致的 1:1 PDF",
+        "同品牌后续提案、Brief 和结案材料基础"
+      ],
+      "promptExamples": [
+        "请用 ppt-kit 分析这份参考 PDF，先提炼 skin 和页面规则，再生成一套客户提案。",
+        "请保持这组截图的视觉语言，把项目资料组织成报价、执行计划和结案三套品牌材料。",
+        "请先指出参考材料中不稳定的排版规则，再建立可复用组件，并按统一 Brief 生成整套 Deck。"
+      ],
+      "humanGate": "操作者必须选择高质量参考、判断视觉提取是否准确并逐轮调校；无设计判断或必须原生 PPTX 多人协作时不应勉强使用。",
+      "cannotInfer": [
+        "参考材料的版权和可复用权限",
+        "缺失内容与数据的真实性",
+        "客户对视觉方向的最终接受度",
+        "原生 PPTX 的协作与编辑兼容性"
+      ],
+      "channels": [
+        "客户提案",
+        "报价",
+        "项目 Brief",
+        "结案报告",
+        "品牌系列材料"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/0xyaoyun/ppt-kit",
+        "path": "skill",
+        "commit": "841dea74e21f08d7300f908cca6d916cd470f1a4",
+        "author": "0xyaoyun",
+        "authorUrl": "https://github.com/0xyaoyun",
+        "license": "MIT",
+        "checkedAt": "2026-09-01"
+      },
+      "installation": {
+        "codex": "请按上游 README 将 skill 目录链接到 Codex Skills 目录",
+        "claudeCode": "请按上游 README 完成本地克隆、uv sync 与 skill 目录链接"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-01",
+          "noteZh": "已核对 skill/SKILL.md、参考提取流程、交付结构和 MIT 许可证。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-01",
+          "noteZh": "上游安装涉及本地运行环境与目录链接，尚未在隔离双端完成复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-01",
+          "noteZh": "已有社区使用判断，尚缺同一 Brief 下可公开的双版本成果，不计入好用 Skill。"
+        }
+      },
+      "comparisonProfile": {
+        "learningCurve": "high",
+        "outputConsistency": "medium",
+        "flexibility": "high",
+        "operatorDependency": "high",
+        "materialDependency": "high",
+        "workflowCompleteness": "high",
+        "bestForZh": [
+          "有高质量参考并需要高度还原",
+          "客户提案、报价、Brief 和结案材料",
+          "想把视觉沉淀成可复用品牌系统"
+        ],
+        "notForZh": [
+          "没有参考也没有设计判断",
+          "必须交付原生可编辑 PPTX",
+          "需要多人在线协作和快速套模板"
+        ]
+      },
+      "comparisonEvidence": [
+        {
+          "type": "publisher",
+          "summaryZh": "上游 README 与 SKILL.md 明确采用参考分析、skin 提取、freeform 页面以及 HTML 加 1:1 PDF 的完整流程。",
+          "checkedAt": "2026-09-01",
+          "sourceUrl": "https://github.com/0xyaoyun/ppt-kit/blob/841dea74e21f08d7300f908cca6d916cd470f1a4/skill/SKILL.md"
+        },
+        {
+          "type": "community_case",
+          "summaryZh": "共创发起人的使用判断是：上手门槛与操作者、参考质量强相关，但掌握后自由度和系列化复用能力更高。",
+          "checkedAt": "2026-09-01"
+        }
+      ],
+      "relatedSkillIds": [
+        "guizang-ppt-skill"
+      ],
+      "installable": false
     },
     {
       "id": "ab-testing",
@@ -1464,6 +1807,12 @@
       "relatedSkillIds": [
         "analytics"
       ],
+      "categoryId": "media",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -1561,6 +1910,12 @@
         "ad-creative",
         "analytics"
       ],
+      "categoryId": "media",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -1658,6 +2013,12 @@
       "relatedSkillIds": [
         "launch"
       ],
+      "categoryId": "media",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -1752,6 +2113,12 @@
         }
       },
       "relatedSkillIds": [],
+      "categoryId": "media",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -1850,6 +2217,12 @@
         "previewImage": null,
         "previewLicense": null
       },
+      "categoryId": "media",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -1948,6 +2321,12 @@
         "customer-research",
         "copywriting"
       ],
+      "categoryId": "media",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -2047,6 +2426,12 @@
         "previewImage": null,
         "previewLicense": null
       },
+      "categoryId": "operations",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -2146,6 +2531,12 @@
         "previewImage": null,
         "previewLicense": null
       },
+      "categoryId": "operations",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     },
     {
@@ -2245,6 +2636,12 @@
         "previewImage": null,
         "previewLicense": null
       },
+      "categoryId": "operations",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
       "installable": true
     }
   ]

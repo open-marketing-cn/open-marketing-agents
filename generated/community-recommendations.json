@@ -1,0 +1,24 @@
+{
+  "product": "Open Marketing Community Recommendations",
+  "generatedAt": "2026-09-01T13:47:54.000Z",
+  "source": {
+    "type": "feishu-public-view",
+    "view": "推荐广场"
+  },
+  "recommendations": [
+    {
+      "id": "OM-0002",
+      "name": "ppt-kit",
+      "originalAuthor": "0xyaoyun",
+      "category": "创意内容",
+      "scenario": "从品牌参考提炼视觉语言，并连续生成一整套提案 Deck",
+      "description": "参考驱动的 PPT 工作流，可提取设计系统并生成系列品牌材料",
+      "agent": "Codex",
+      "url": "https://github.com/0xyaoyun/ppt-kit",
+      "contributor": "Open Marketing 验收",
+      "submittedAt": "2026-09-01T13:47:54.000Z",
+      "status": "社区推荐 · 未核验",
+      "recommendationCount": 1
+    }
+  ]
+}

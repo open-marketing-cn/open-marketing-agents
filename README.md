@@ -1,126 +1,78 @@
 # Open Marketing Skills
 
-> 面向品牌 0→1 的独立营销 Skill 精选目录。
+> 帮助营销人发现、选择并真正用好经过实践的 Marketing Skills。
 
-Open Marketing Skills 按 **洞察研究 → 品牌策略 → 创意内容 → 媒介增长 → 运营协作** 组织可单独安装的 Agent Skills。网站不在站内运行 AI；它帮助普通营销人先看清输入、交付物、人工决定、来源和验证记录，再复制安装命令到 Codex 或 Claude Code。
+这里不是一个“好 Skill 链接榜”。我们把来源核验、安装、真实案例、弯路、边界和同类横评拆开记录，让你知道一个 Skill 适不适合当前任务，以及怎样从“能运行”走到“真正用好”。
 
-## 在线预览
+## 从这里开始
 
-[打开 Open Marketing Skills 网站](https://open-marketing-cn.github.io/open-marketing-agents/)
-
-网站由 GitHub Pages 从 `main` 分支自动部署；当前开发分支的本地预览地址仅供开发检查，不代表已公开上线。
-
-## V2 当前状态
-
-- `23` 个公开 Skill，全部是外部原版；其中 `4` 个来自 Cola 精选、`1` 个来自高星 GitHub Skill 集合；
-- 默认“精选”展示 `19` 个，全部目录展示通过资格检查的公开条目；
-- `23/23` 已核对独立安装命令，`0/23` 标记为实战验证，等待真实营销人用脱敏任务复核；
-- 原有 Open Marketing 原创与中国化改编内容保留在仓库，标记为 `paused_internal`，不会进入公开结果；
-- V2 不展示 Agent、Workflow、Connector，不登录、不保存模型 Key、不连接真实广告或协作账户。
-
-“技术安装已验证”和“真实营销任务已验证”是两个不同状态，网站会分别展示。
-
-## 五个工作区
-
-| 阶段 | 要回答的问题 | 典型交付 |
+| 你想做什么 | 入口 | 你会看到什么 |
 |---|---|---|
-| 洞察研究 | 人们到底在说什么？ | 原话表、研究摘要、竞品画像、问题定义 |
-| 品牌策略 | 我们要为谁占据什么？ | 品牌底稿、定位、营销上下文、首轮 Campaign 策略 |
-| 创意内容 | 怎样把策略变成表达？ | 创意 Brief、页面文案、广告变体、图片制作说明 |
-| 媒介增长 | 去哪里、怎么测、何时上？ | 渠道预算、实验方案、追踪计划、发布检查 |
-| 运营协作 | 谁在什么时候交付什么？ | 倒排表、RACI、素材日历、交接与复盘 |
+| 浏览已验证 Skill | [打开网站目录](https://open-marketing-cn.github.io/open-marketing-agents/#catalog) | 按营销任务筛选，查看来源、实践等级和交付物 |
+| 推荐一个 Skill | [打开公开飞书表单](https://my.feishu.cn/share/base/form/shrcnv4VQeLloz4grjMYELZrM1f) · [查看只读推荐广场](https://my.feishu.cn/share/base/webpage/shrcnFlduGlQoZFNk27XZceIQNY) | 默认代表实际用过；保留原作者名称，并填写场景、描述、适配 Agent 和链接 |
+| 判断是否值得收录 | [查看收录标准](#什么会被收录) | 硬门槛、实践证据、署名和隐私要求 |
 
-分类只是导航。`relatedSkillIds` 只推荐下一步，不会组合安装，也不会形成隐藏依赖。
+## 四步使用
 
-## 安装一个 Skill
+1. **按营销任务找 Skill**：先从当前要交付的结果出发，而不是从热度出发。
+2. **看同赛道差异和使用前提**：了解每个 Skill 把哪一段工作做深了，再看门槛、稳定性、自由度、操作者与素材依赖。
+3. **复制原作者安装方式**：安装状态未通过复测的条目只提供来源，不开放一键复制。
+4. **用完回来补实践**：仍用同一个推荐表，补充一个真实、脱敏的使用场景和你的判断。
 
-上游原版直接从原作者仓库安装：
+## 同类差异示例：同样是 PPT Skill，各自做深了什么
 
-```bash
-npx skills add coreyhaines31/marketingskills -s customer-research -a codex -y
-npx skills add coreyhaines31/marketingskills -s customer-research -a claude-code -y
-```
+| Skill | 它做深的环节 | 工作方式 |
+|---|---|---|
+| [`guizang-ppt-skill`](https://open-marketing-cn.github.io/open-marketing-agents/skills/guizang-ppt-skill/) | 演讲型 PPT 的快速稳定出稿 | 像一家有招牌风格的设计工作室：约束更多，上手更快，出品更稳定 |
+| [`ppt-kit`](https://open-marketing-cn.github.io/open-marketing-agents/skills/ppt-kit/) | 从参考提炼设计系统，再连续生产品牌材料 | 像自己的 PPT 工厂：自由度高、可复用，但更依赖参考质量与操作者判断 |
+| **共同边界** | 原生可编辑 PPTX、多人协作和复杂表格 | 两者当前都没有把这类交付当作核心工作流 |
 
-Open Marketing 原创或改编版从本仓库安装：
+上面的内容是在说明差异，不是在替使用者二选一。[打开完整 PPT 差异对比](https://open-marketing-cn.github.io/open-marketing-agents/compare/ppt/)可以查看六维画像、工作方式、主要交付、共同边界、证据类型和核验日期；统一 Brief 的成果与修改轮次进入飞书横评记录。
 
-```bash
-npx skills add open-marketing-cn/open-marketing-agents -s consumer-language-insight -a codex -y
-npx skills add open-marketing-cn/open-marketing-agents -s consumer-language-insight -a claude-code -y
-```
+## 怎样参与共创
 
-仓库维护的原创和改编版同时提供单 Skill ZIP；上游原版不复制进本仓库。
+[推荐一个 Skill](https://my.feishu.cn/share/base/form/shrcnv4VQeLloz4grjMYELZrM1f) · [查看公开推荐广场](https://my.feishu.cn/share/base/webpage/shrcnFlduGlQoZFNk27XZceIQNY)
 
-## 目录为何可信
+全部共创只使用这一个入口，共 8 题；提交即代表你实际使用过这个 Skill：
 
-每个公开 manifest 都必须说明：
+- **名称**：Skill 的公开名称；
+- **原作者名称**：作者、团队或组织的公开名称，和推荐人分开署名；
+- **分类**：洞察研究、品牌策略、创意内容、媒介增长、运营协作或其他；
+- **使用场景**：你在什么真实任务里使用；
+- **一句话描述**：它帮你得到什么结果；
+- **适配 Agent**：WorkBuddy / 豆包工作伙伴、Codex、Claude Code、ChatGPT、Cursor 等；
+- **Skill / 仓库链接**：原作者公开来源；
+- **贡献者署名**：选填，不填则匿名。编号由系统自动生成。
 
-1. 中文结果名和真实触发名；
-2. 适合谁、什么时候用；
-3. 使用前要提供什么；
-4. 三个可复制的中文请求；
-5. 会交付哪些文件、表格或内容；
-6. AI 做什么、人必须决定什么；
-7. 不能替用户判断什么；
-8. 原作者、仓库、路径、Commit、许可证和核验日期；
-9. Codex、Claude Code 与真实营销任务的独立验证记录。
+认领实测、统一 Brief、实践补证和同类横评不再设置公众分入口；维护者收到推荐后，再在飞书后台完成去重、邀请实测和评审。发现来源、许可证、边界或上游 Commit 变化时，也直接使用这个表单。
 
-外部内容分三类：
+投稿会立即以“社区推荐 · 未核验”进入只读推荐广场，但不等于正式收录。维护者完成来源、许可证、隐私和实践检查后，才进入 GitHub 正式版本与网站正式目录。
 
-- `upstream`：只推荐原版，不复制 `SKILL.md`；
-- `adapted`：许可证允许时维护独立中国化版本，保留 NOTICE、上游许可证、Commit 和改动；
-- `original`：Open Marketing 或贡献者原创，明确作者和内容许可证。
+## 什么会被收录
 
-没有许可证、找不到真实 `SKILL.md` 或安装失败的候选不会显示安装按钮。GitHub Star 只作为来源快照和发现信号，不替代许可证、独立性与安装核验。
+正式收录至少满足：
 
-## 数据与生成
+- 有真实公开仓库、独立 `SKILL.md`、清楚的作者和许可证；
+- 可以独立安装，并留下文件、表格、页面、清单等可交接结果；
+- 有真实或脱敏案例，以及同意公开的实践者署名方式；
+- 写清适用、不适用、踩过的弯路、最佳实践和进阶玩法；
+- 不自动发布、投放、付款、发消息或修改真实账户，关键决定由人确认。
 
-`catalog/skills/<id>.yaml` 是公开网站唯一数据源。运行生成器会验证 ID、五阶段、三种来源、三个示例请求、许可证、related ID、独立目录结构和改编版 NOTICE，然后生成：
+我们把状态分开显示：**被发现 → 来源核验 → 实践验证 → 多人复现 → 最佳实践**。GitHub Star、X 或小红书热度只决定优先评测什么，不决定是否公开，也不能代替许可证和真实实践。
 
-```text
-generated/registry.json
-generated/search-index.json
-generated/updates.json
-static/downloads/<local-skill>.zip
-```
+每周共同评审 5 个候选，每月公开不少于 10 个达到实践门槛的 Skill。未完成实践的条目可以作为“待认领”展示，但不计入好用 Skill。
 
-前台统计、列表、详情页、筛选和安装状态都来自生成结果，不再维护手写数组。
-GitHub Pages 构建时会用当前 `GITHUB_SHA` 填入原创与改编版的发布 Commit；上游原版继续使用人工核验后锁定的上游 Commit。
+详细评判方式见[评判协议](docs/evaluation-rubric.md)，实践资料可以参考[实战记录模板](docs/practice-evidence-template.md)。
 
-## 本地开发
+## 署名与隐私
 
-要求 Node.js 20 或更高版本：
+- 贡献者可以选择实名、昵称或角色匿名，也可以选择不公开署名；
+- 公开资料只展示贡献者明确授权的署名和脱敏案例；
+- 不公开联系方式、客户身份、内部路径、原始内部材料、Token 或未经许可的截图；
+- 第三方 Skill 始终保留原作者、仓库、许可证、核验 Commit 和日期。
 
-```bash
-git clone https://github.com/open-marketing-cn/open-marketing-agents.git
-cd open-marketing-agents
-npm install
-npm run dev
-```
+## 项目与技术入口
 
-检查与构建：
-
-```bash
-npm run verify
-```
-
-GitHub Pages 工作流在 `main` 更新后构建静态网站。旧 Tauri 安装器与 Agent 候选代码仍留在仓库作为非公开实验，不进入 V2 前台。
-
-## 项目结构
-
-```text
-catalog/skills/       公开与暂停的 manifest
-catalog/intake/       候选、外部发现快照与旧目录迁移记录
-skills/               本仓库维护的独立 Skill 包
-generated/            构建生成的 registry、更新与搜索数据
-schemas/              Skill manifest 等 schema
-src/                  SvelteKit 5 网站
-scripts/              目录生成、安全与上游核验
-docs/plans/           产品与开发依据
-src-tauri/            非公开桌面实验代码
-```
-
-## 参与贡献
-
-先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)、[GOVERNANCE.md](GOVERNANCE.md)、[SECURITY.md](SECURITY.md) 和 [DCO.md](DCO.md)。投稿先进入 `catalog/intake/`，不会因为 Star 或作者知名度直接上线。
+GitHub 是正式公开版本与审核记录，飞书只向社区提供一个“推荐一个 Skill”入口；认领、实践和横评在维护后台流转。目录数据、开发方式、schema、脚本和 PR 流程请读 [CONTRIBUTING.md](CONTRIBUTING.md)；审核排期、权限和自动化写入边界见[共同维护手册](docs/maintainer-playbook.md)。
 
 仓库代码使用 [Apache-2.0](LICENSE)，Open Marketing 原创内容使用 [CC BY 4.0](LICENSE-CONTENT)；第三方内容保留各自许可证与署名，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

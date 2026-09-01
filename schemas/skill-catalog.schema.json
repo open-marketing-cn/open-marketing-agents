@@ -17,6 +17,10 @@
     "summaryZh": { "type": "string", "minLength": 10 },
     "growthStage": { "const": "zero_to_one" },
     "workspace": { "enum": ["insights", "strategy", "creative", "media", "operations"] },
+    "categoryId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "comparisonGroupId": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "methodType": { "type": "string", "minLength": 2 },
+    "practiceLevel": { "enum": ["discovered", "source_verified", "practiced", "replicated", "best_practice"] },
     "featured": { "type": "boolean" },
     "visibility": { "enum": ["public", "candidate", "paused_internal", "withdrawn"] },
     "discoveredFrom": { "$ref": "#/$defs/nonEmptyStringArray" },
@@ -82,9 +86,73 @@
         "practice": { "$ref": "#/$defs/validation" }
       }
     },
+    "practiceEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "caseTitleZh", "contextZh", "inputZh", "outputZh", "evidenceUrl",
+        "practitionerRole", "attributionZh", "howToUseZh", "setupZh",
+        "expectedOutputZh", "pitfallsZh", "bestPracticesZh", "remixZh",
+        "scenariosZh", "boundaryZh", "notForZh", "depthPathZh"
+      ],
+      "properties": {
+        "caseTitleZh": { "type": "string", "minLength": 4 },
+        "contextZh": { "type": "string", "minLength": 8 },
+        "inputZh": { "type": "string", "minLength": 8 },
+        "outputZh": { "type": "string", "minLength": 8 },
+        "evidenceUrl": { "type": "string", "format": "uri" },
+        "practitionerRole": { "type": "string", "minLength": 2 },
+        "attributionZh": { "type": "string", "minLength": 4 },
+        "howToUseZh": { "type": "string", "minLength": 8 },
+        "setupZh": { "type": "string", "minLength": 8 },
+        "expectedOutputZh": { "type": "string", "minLength": 8 },
+        "pitfallsZh": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "bestPracticesZh": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "remixZh": { "type": "string", "minLength": 8 },
+        "scenariosZh": { "type": "array", "minItems": 2, "items": { "type": "string", "minLength": 8 } },
+        "boundaryZh": { "type": "string", "minLength": 8 },
+        "notForZh": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "depthPathZh": { "type": "string", "minLength": 8 }
+      }
+    },
+    "comparisonProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "learningCurve", "outputConsistency", "flexibility", "operatorDependency",
+        "materialDependency", "workflowCompleteness", "bestForZh", "notForZh"
+      ],
+      "properties": {
+        "learningCurve": { "$ref": "#/$defs/comparisonScale" },
+        "outputConsistency": { "$ref": "#/$defs/comparisonScale" },
+        "flexibility": { "$ref": "#/$defs/comparisonScale" },
+        "operatorDependency": { "$ref": "#/$defs/comparisonScale" },
+        "materialDependency": { "$ref": "#/$defs/comparisonScale" },
+        "workflowCompleteness": { "$ref": "#/$defs/comparisonScale" },
+        "bestForZh": { "$ref": "#/$defs/nonEmptyStringArray" },
+        "notForZh": { "$ref": "#/$defs/nonEmptyStringArray" }
+      }
+    },
+    "comparisonEvidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "summaryZh", "checkedAt"],
+        "properties": {
+          "type": { "enum": ["publisher", "maintainer_test", "community_case", "inference"] },
+          "summaryZh": { "type": "string", "minLength": 8 },
+          "checkedAt": { "type": "string", "format": "date" },
+          "sourceUrl": { "type": "string", "format": "uri" }
+        }
+      }
+    },
+    "submittedAt": { "type": "string", "format": "date-time" },
+    "publishedAt": { "type": "string", "format": "date-time" },
     "relatedSkillIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/properties/id" } }
   },
   "$defs": {
+    "comparisonScale": { "enum": ["low", "medium", "high"] },
     "nonEmptyStringArray": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
     "validation": {
       "type": "object",

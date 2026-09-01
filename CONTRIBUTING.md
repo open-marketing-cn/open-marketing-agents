@@ -2,6 +2,8 @@
 
 我们收的是能独立完成一个品牌 0→1 营销任务的 Skill，不是提示词收藏、Agent 角色列表或自动化流程。
 
+非技术贡献者不需要使用 GitHub：可以从 README 的飞书入口推荐、认领或提交案例。以下内容面向维护目录数据、脚本和网站的贡献者。
+
 ## 投稿先进入候选库
 
 1. 新建 `catalog/intake/<candidate>.yaml` 或提交候选 Issue。
@@ -57,11 +59,45 @@ GitHub Star、下载量、作者知名度和自动安全评分都不能替代人
 
 规范与安装通过后可以开放安装；实战徽章必须等真实任务完成，不能用作者自测、截图或页面状态代替。
 
+目录同时记录五级实践状态：`discovered`、`source_verified`、`practiced`、`replicated`、`best_practice`。只有 `practiced` 及以上并通过人工复核的条目，才计入每月“好用 Skill”。
+
+同类选择使用以下结构化字段：
+
+- `categoryId`：具体任务赛道，例如 `presentation-generation`；
+- `comparisonGroupId`：进入哪个同任务横评页，例如 `ppt`；没有可比较对象时留空；
+- `methodType`：工作方式，例如“受控设计型”或“参考驱动型”；
+- `comparisonProfile`：上手门槛、稳定性、自由度、操作者依赖、素材依赖、工作流完整度；
+- `comparisonEvidence`：结论的证据类型、摘要、来源链接和核验日期。
+
+比较结论必须标注 `publisher`、`maintainer_test`、`community_case` 或 `inference`，不得把项目方描述或待验证推断写成维护者实测。
+
 ## 本地检查
 
 ```bash
 npm run catalog:generate
 npm run verify
+```
+
+## 数据与目录结构
+
+`catalog/skills/<id>.yaml` 是公开网站唯一数据源；`catalog/intake/` 保存候选和发现信号。生成器会输出 `generated/registry.json`、`generated/search-index.json`、`generated/updates.json`，本地维护的 Skill 还会生成 ZIP。
+
+```text
+catalog/skills/       公开与暂停的 manifest
+catalog/intake/       候选与外部发现记录
+skills/               本仓库维护的独立 Skill 包
+generated/            构建生成的注册表、更新和搜索数据
+schemas/              manifest schema
+src/                  SvelteKit 网站
+scripts/              目录生成、安全、评判与上游核验
+docs/                 评判、实践和维护者资料
+```
+
+要求 Node.js 20 或更高版本：
+
+```bash
+npm install
+npm run dev
 ```
 
 PR 必须写明实际运行结果。所有提交使用 DCO：
