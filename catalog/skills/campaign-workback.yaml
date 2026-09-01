@@ -1,0 +1,87 @@
+{
+  "id": "campaign-workback",
+  "titleZh": "从上线日倒排 Campaign 任务",
+  "originalName": "campaign-workback",
+  "summaryZh": "从不可移动的上线节点向前倒排策略、创意、制作、审批、追踪、交付和缓冲时间。",
+  "growthStage": "zero_to_one",
+  "workspace": "operations",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "上线倒排表、关键路径和缓冲安排", "previewImage": null, "previewLicense": null},
+  "audiences": [
+    "Campaign 项目经理",
+    "品牌与市场运营人员",
+    "小团队负责人"
+  ],
+  "useCases": [
+    "确定上线日后的全链路倒排",
+    "发现计划里的审批与依赖缺口",
+    "为周会生成可更新任务表"
+  ],
+  "inputs": [
+    "目标上线日与不可移动节点",
+    "交付物和渠道清单",
+    "团队和外部供应商",
+    "审批与制作周期"
+  ],
+  "outputs": [
+    "campaign-workback.csv 倒排表",
+    "critical-path.md 关键路径",
+    "risk-buffer.md 风险与缓冲说明"
+  ],
+  "promptExamples": [
+    "以 10 月 20 日上线为终点，为这次 Campaign 倒排策略、创意、制作、审批和投放任务。",
+    "请检查这份时间表的隐藏依赖、无人负责事项和没有缓冲的关键路径。",
+    "请把倒排计划改成每周可更新的状态表，保留原截止日期和变更原因。"
+  ],
+  "humanGate": "项目负责人确认日期、资源承诺、依赖、审批人、缓冲与任何改期决定。",
+  "cannotInfer": [
+    "团队成员已经承诺时间",
+    "供应商真实交付能力",
+    "审批一定按时完成",
+    "自动修改日历或任务系统"
+  ],
+  "channels": [
+    "项目管理",
+    "Campaign",
+    "团队协作"
+  ],
+  "source": {
+    "type": "original",
+    "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+    "path": "skills/campaign-workback",
+    "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+    "author": "Open Marketing",
+    "authorUrl": "https://github.com/open-marketing-cn",
+    "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+    "license": "CC-BY-4.0",
+    "checkedAt": "2026-08-31"
+  },
+  "installation": {
+    "codex": "npx skills add open-marketing-cn/open-marketing-agents -s campaign-workback -a codex -y",
+    "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s campaign-workback -a claude-code -y",
+    "download": "downloads/campaign-workback.zip"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "单 Skill 倒排逻辑和三份交付物已核对。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "等待真实 Campaign 脱敏任务验证。"
+    }
+  },
+  "relatedSkillIds": [
+    "campaign-raci",
+    "content-asset-calendar"
+  ]
+}

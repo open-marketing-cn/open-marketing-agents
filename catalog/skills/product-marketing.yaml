@@ -1,0 +1,89 @@
+{
+  "id": "product-marketing",
+  "titleZh": "把产品、人群与主张写进同一底稿",
+  "originalName": "product-marketing",
+  "summaryZh": "建立产品概览、目标受众、问题、竞争、差异、证明材料、异议与品牌声音的营销上下文。",
+  "growthStage": "zero_to_one",
+  "workspace": "strategy",
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "产品、人群、差异和证明的营销底稿", "previewImage": null, "previewLicense": null},
+  "audiences": [
+    "产品营销人员",
+    "SaaS 与互联网团队",
+    "创始团队"
+  ],
+  "useCases": [
+    "新项目建立产品营销上下文",
+    "减少团队反复解释基础信息",
+    "检查定位与信息缺口"
+  ],
+  "inputs": [
+    "产品说明",
+    "目标受众",
+    "问题与使用场景",
+    "竞争替代",
+    "差异与证明材料"
+  ],
+  "outputs": [
+    ".agents/product-marketing.md 产品营销上下文",
+    "信息缺口问题",
+    "待确认的主张与证据"
+  ],
+  "promptExamples": [
+    "请帮我建立这款产品的营销底稿，按产品、受众、问题、替代、差异和证据逐项提问。",
+    "请把现有 Brief 整理成 product-marketing.md，并把无法确认的内容放进缺口清单。",
+    "请更新这份产品营销上下文，只改我提供了新证据的部分，并标出冲突。"
+  ],
+  "humanGate": "产品或营销负责人确认目标受众、差异、证明材料、异议和允许团队复用的最终口径。",
+  "cannotInfer": [
+    "没有证据的产品优势",
+    "真实市场份额",
+    "未经验证的客户异议",
+    "法律和合规结论"
+  ],
+  "channels": [
+    "产品营销",
+    "团队协作",
+    "全渠道"
+  ],
+  "source": {
+    "type": "upstream",
+    "repo": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/product-marketing",
+    "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+    "author": "Corey Haines",
+    "authorUrl": "https://github.com/coreyhaines31",
+    "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+    "license": "MIT",
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
+  },
+  "installation": {
+    "codex": "npx skills add coreyhaines31/marketingskills -s product-marketing -a codex -y",
+    "claudeCode": "npx skills add coreyhaines31/marketingskills -s product-marketing -a claude-code -y"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已核对其单独建立 product-marketing.md 的流程。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "尚未完成 Open Marketing 实战复核。"
+    }
+  },
+  "relatedSkillIds": [
+    "first-campaign-strategy",
+    "copywriting"
+  ]
+}

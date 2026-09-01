@@ -1,0 +1,90 @@
+{
+  "id": "ad-creative",
+  "titleZh": "生成能进入测试的广告创意变体",
+  "originalName": "ad-creative",
+  "summaryZh": "围绕平台、受众、产品、优惠与约束，生成广告钩子、标题、正文和可比较的创意变体。",
+  "growthStage": "zero_to_one",
+  "workspace": "creative",
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "广告钩子、文案变体和测试矩阵", "previewImage": null, "previewLicense": null},
+  "audiences": [
+    "投放与增长团队",
+    "广告文案与设计人员",
+    "品牌负责人"
+  ],
+  "useCases": [
+    "从零生成广告变体",
+    "根据表现数据迭代素材",
+    "规划静态、UGC 或短视频创意方向"
+  ],
+  "inputs": [
+    "广告平台和格式",
+    "产品、优惠与受众",
+    "表现数据或已有素材",
+    "字数、合规和品牌限制"
+  ],
+  "outputs": [
+    "广告钩子与文案变体",
+    "创意方向和格式建议",
+    "测试变量矩阵",
+    "审批用创意说明"
+  ],
+  "promptExamples": [
+    "请为 Meta 冷启动广告写 12 个钩子，只改变问题角度，其他变量保持一致。",
+    "根据这份广告表现表，找出值得保留和应该停止的创意元素，再生成下一轮变体。",
+    "请为这个产品规划静态、UGC 和短视频三类创意方向，写清每类要验证什么。"
+  ],
+  "humanGate": "投放与品牌负责人确认产品事实、受众、平台规则、素材授权、预算和最终投放版本。",
+  "cannotInfer": [
+    "变体一定获胜",
+    "未经提供的历史表现",
+    "素材与音乐授权",
+    "广告平台审核和账户操作"
+  ],
+  "channels": [
+    "Meta",
+    "Google Ads",
+    "LinkedIn",
+    "短视频广告"
+  ],
+  "source": {
+    "type": "upstream",
+    "repo": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/ad-creative",
+    "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+    "author": "Corey Haines",
+    "authorUrl": "https://github.com/coreyhaines31",
+    "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+    "license": "MIT",
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
+  },
+  "installation": {
+    "codex": "npx skills add coreyhaines31/marketingskills -s ad-creative -a codex -y",
+    "claudeCode": "npx skills add coreyhaines31/marketingskills -s ad-creative -a claude-code -y"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已核对生成、数据迭代和创意策略三类模式。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "尚未完成 Open Marketing 实战复核。"
+    }
+  },
+  "relatedSkillIds": [
+    "ads",
+    "ab-testing"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "community-marketing",
+  "titleZh": "把社区关系变成持续的营销动作",
+  "originalName": "community-marketing",
+  "summaryZh": "围绕社区目标、成员价值和互动节奏，整理可执行的社区营销与关系维护计划。",
+  "growthStage": "zero_to_one",
+  "workspace": "operations",
+  "audiences": ["社区负责人", "品牌与内容团队", "创业者"],
+  "useCases": ["设计首个社区营销计划", "为活动建立持续互动节奏", "区分社区价值与单次曝光"],
+  "inputs": ["社区目标与成员画像", "产品、内容或活动事实", "可用平台、团队和时间", "现有互动记录与成功标准"],
+  "outputs": ["社区定位与成员价值", "内容和互动节奏", "活动、伙伴与转化动作", "指标、风险和复盘问题"],
+  "promptExamples": [
+    "请根据这份成员资料设计一个月的社区营销计划，先写成员得到什么。",
+    "请把这次线下活动设计成活动前、中、后的社区互动动作。",
+    "请检查这份社区计划是不是只追求热闹，并补上可沉淀的成员、内容和线索资产。"
+  ],
+  "humanGate": "社区负责人确认成员价值、互动边界、内容事实、资源投入和是否进入商业转化。",
+  "cannotInfer": ["社区成员的真实关系强度", "互动一定带来销售", "未提供的成员反馈", "自动代表团队发言或建群"],
+  "channels": ["社区", "活动", "内容", "伙伴渠道"],
+  "source": {"type": "upstream", "repo": "https://github.com/coreyhaines31/marketingskills", "path": "skills/community-marketing", "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58", "author": "Corey Haines", "authorUrl": "https://github.com/coreyhaines31", "avatarUrl": "https://github.com/coreyhaines31.png?size=96", "license": "MIT", "checkedAt": "2026-09-01", "githubStars": 46347, "githubStarsCheckedAt": "2026-09-01"},
+  "installation": {"codex": "npx skills add coreyhaines31/marketingskills -s community-marketing -a codex -y", "claudeCode": "npx skills add coreyhaines31/marketingskills -s community-marketing -a claude-code -y"},
+  "validation": {"spec": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对社区目标、成员价值、互动和复盘内容。"}, "installation": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对上游独立安装命令与 Skill 路径。"}, "practice": {"status": "pending", "checkedAt": "2026-09-01", "noteZh": "尚未完成 Open Marketing 实战复核。"}},
+  "relatedSkillIds": ["emails", "copywriting", "customer-research"],
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github", "skills-sh"],
+  "card": {"outcomeZh": "社区定位、互动节奏和复盘指标", "previewImage": null, "previewLicense": null}
+}

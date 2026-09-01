@@ -1,0 +1,88 @@
+{
+  "id": "consumer-language-insight",
+  "titleZh": "把消费者原话整理成洞察卡",
+  "originalName": "consumer-language-insight",
+  "summaryZh": "从评论、访谈或公开表达中保留原话证据，整理痛点、场景、顾虑与待验证判断。",
+  "growthStage": "zero_to_one",
+  "workspace": "insights",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "消费者原话表、洞察卡和证据缺口", "previewImage": null, "previewLicense": null},
+  "audiences": [
+    "品牌负责人",
+    "消费者洞察与策略人员",
+    "创业团队"
+  ],
+  "useCases": [
+    "新品定位前整理消费者语言",
+    "从电商评论和访谈中找共性问题",
+    "为创意 Brief 准备可追溯证据"
+  ],
+  "inputs": [
+    "明确的品牌或品类范围",
+    "目标市场与时间窗口",
+    "至少一组评论、访谈或公开表达",
+    "需要回答的研究问题"
+  ],
+  "outputs": [
+    "consumer-quotes.csv 消费者原话表",
+    "insight-cards.md 洞察卡",
+    "evidence-gaps.md 样本限制与补数建议"
+  ],
+  "promptExamples": [
+    "请把这 80 条小红书评论整理成消费者原话洞察卡，保留链接和发布日期。",
+    "我在做一个睡眠新品，请从这些访谈记录里区分场景、痛点、顾虑和未满足需求。",
+    "请检查这批电商评论能支持哪些判断，哪些只能当假设，并列出下一轮补数建议。"
+  ],
+  "humanGate": "营销负责人必须确认样本是否足够、哪些判断可进入策略，以及是否继续补充新的平台或购买评论。",
+  "cannotInfer": [
+    "市场规模或人群比例",
+    "真实购买因果",
+    "整个平台或整体市场结论",
+    "未提供的身份、销量与商业关系"
+  ],
+  "channels": [
+    "小红书",
+    "抖音",
+    "电商评论",
+    "访谈"
+  ],
+  "source": {
+    "type": "original",
+    "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+    "path": "skills/consumer-language-insight",
+    "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+    "author": "Open Marketing",
+    "authorUrl": "https://github.com/open-marketing-cn",
+    "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+    "license": "CC-BY-4.0",
+    "checkedAt": "2026-08-31"
+  },
+  "installation": {
+    "codex": "npx skills add open-marketing-cn/open-marketing-agents -s consumer-language-insight -a codex -y",
+    "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s consumer-language-insight -a claude-code -y",
+    "download": "downloads/consumer-language-insight.zip"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "独立 SKILL.md 与两份内部 reference 已核对。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "等待脱敏中国消费品牌任务验证。"
+    }
+  },
+  "relatedSkillIds": [
+    "brand-context-cn",
+    "creative-brief"
+  ]
+}

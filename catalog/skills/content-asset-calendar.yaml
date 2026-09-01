@@ -1,0 +1,88 @@
+{
+  "id": "content-asset-calendar",
+  "titleZh": "把内容、素材和渠道放进一张日历",
+  "originalName": "content-asset-calendar",
+  "summaryZh": "把内容主题、渠道版本、素材规格、负责人、状态、审批和发布日期整理成可交接日历。",
+  "growthStage": "zero_to_one",
+  "workspace": "operations",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "内容素材日历和状态交接表", "previewImage": null, "previewLicense": null},
+  "audiences": [
+    "内容运营人员",
+    "品牌与社媒团队",
+    "小型营销团队"
+  ],
+  "useCases": [
+    "建立首月内容与素材计划",
+    "统一多渠道版本和素材状态",
+    "为周会准备可更新台账"
+  ],
+  "inputs": [
+    "Campaign 节奏与内容主题",
+    "渠道和发布频率",
+    "素材规格",
+    "负责人、审批人和状态"
+  ],
+  "outputs": [
+    "content-asset-calendar.csv 内容素材日历",
+    "asset-status.md 素材缺口",
+    "handoff-checklist.md 发布交接清单"
+  ],
+  "promptExamples": [
+    "请把这 4 周主题拆成小红书、公众号和短视频版本，做成内容素材日历。",
+    "请检查这张日历里没有素材规格、负责人、审批状态或来源链接的项目。",
+    "请为每个发布项增加母稿、渠道版本、封面、视频和最终链接的交接字段。"
+  ],
+  "humanGate": "内容负责人确认发布节奏、渠道版本、素材权利、审批状态和最终发布日期。",
+  "cannotInfer": [
+    "内容已经批准",
+    "素材已经完成或获得授权",
+    "最佳发布时间",
+    "自动发布或写入外部协作平台"
+  ],
+  "channels": [
+    "内容运营",
+    "社媒",
+    "公众号",
+    "短视频"
+  ],
+  "source": {
+    "type": "original",
+    "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+    "path": "skills/content-asset-calendar",
+    "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+    "author": "Open Marketing",
+    "authorUrl": "https://github.com/open-marketing-cn",
+    "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+    "license": "CC-BY-4.0",
+    "checkedAt": "2026-08-31"
+  },
+  "installation": {
+    "codex": "npx skills add open-marketing-cn/open-marketing-agents -s content-asset-calendar -a codex -y",
+    "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s content-asset-calendar -a claude-code -y",
+    "download": "downloads/content-asset-calendar.zip"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "内容、素材、状态与交接字段已定义。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "等待真实内容运营脱敏任务验证。"
+    }
+  },
+  "relatedSkillIds": [
+    "campaign-workback",
+    "campaign-retrospective"
+  ]
+}

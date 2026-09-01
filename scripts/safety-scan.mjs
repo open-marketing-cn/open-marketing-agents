@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
-import { extname, join, relative } from 'node:path';
+import { basename, extname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
@@ -45,13 +45,48 @@ function scanText(text, label, findings) {
   }
 }
 
+function scanGeneratedSkillZip(path, label, findings) {
+  const archive = readFileSync(path);
+  const expectedRoot = `${basename(path, '.zip')}/`;
+  let offset = 0;
+  let entries = 0;
+  while (offset + 30 <= archive.length && archive.readUInt32LE(offset) === 0x04034b50) {
+    const method = archive.readUInt16LE(offset + 8);
+    const size = archive.readUInt32LE(offset + 18);
+    const nameLength = archive.readUInt16LE(offset + 26);
+    const extraLength = archive.readUInt16LE(offset + 28);
+    const nameStart = offset + 30;
+    const dataStart = nameStart + nameLength + extraLength;
+    const dataEnd = dataStart + size;
+    const name = archive.subarray(nameStart, nameStart + nameLength).toString('utf8');
+    if (method !== 0 || dataEnd > archive.length) {
+      findings.push(`${label}: ZIP 不是生成器预期的未压缩格式`);
+      return;
+    }
+    if (!name.startsWith(expectedRoot) || name.includes('..') || name.startsWith('/')) {
+      findings.push(`${label}: ZIP 包含越界路径 ${name}`);
+    }
+    if (binaryExtensions.has(extname(name).toLocaleLowerCase('en-US'))) {
+      findings.push(`${label}: ZIP 内包含未审计二进制文件 ${name}`);
+    } else {
+      scanText(archive.subarray(dataStart, dataEnd).toString('utf8'), `${label}:${name}`, findings);
+    }
+    entries += 1;
+    offset = dataEnd;
+  }
+  if (entries === 0 || offset + 4 > archive.length || archive.readUInt32LE(offset) !== 0x02014b50) {
+    findings.push(`${label}: ZIP 目录结构无法核验`);
+  }
+}
+
 const findings = [];
 for (const path of walk(root)) {
   const label = relative(root, path);
   scanText(label, label, findings);
   const extension = extname(path).toLocaleLowerCase('en-US');
   if (binaryExtensions.has(extension)) {
-    if (!label.startsWith('src-tauri/icons/')) findings.push(`${label}: 不允许提交原始媒体或未审计二进制文件`);
+    if (label.startsWith('static/downloads/') && extension === '.zip') scanGeneratedSkillZip(path, label, findings);
+    else if (!label.startsWith('src-tauri/icons/')) findings.push(`${label}: 不允许提交原始媒体或未审计二进制文件`);
     continue;
   }
   const stats = statSync(path);

@@ -1,0 +1,89 @@
+{
+  "id": "competitor-profiling",
+  "titleZh": "把竞品公开资料做成可比画像",
+  "originalName": "competitor-profiling",
+  "summaryZh": "从竞品网址和公开资料建立结构一致、保留来源的竞品画像，便于横向比较。",
+  "growthStage": "zero_to_one",
+  "workspace": "insights",
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "结构一致、保留来源的竞品画像", "previewImage": null, "previewLicense": null},
+  "audiences": [
+    "品牌策略人员",
+    "产品营销人员",
+    "创业团队"
+  ],
+  "useCases": [
+    "进入新品类前做竞品扫描",
+    "建立竞品对照底稿",
+    "为定位讨论准备事实"
+  ],
+  "inputs": [
+    "竞品网址列表",
+    "需要比较的维度",
+    "市场和时间范围",
+    "允许使用的公开数据源"
+  ],
+  "outputs": [
+    "每个竞品一份 Markdown 画像",
+    "来源链接与抓取日期",
+    "可比字段汇总",
+    "缺失与不确定信息"
+  ],
+  "promptExamples": [
+    "请根据这 6 个官网做竞品画像，统一比较受众、承诺、价格、证据和渠道。",
+    "请先只记录公开事实，再单独列出对这三个竞品的判断，不要混在一起。",
+    "请把这些竞品页面整理成可复用的资料卡，并标注今天无法确认的字段。"
+  ],
+  "humanGate": "策略负责人确认竞品范围、比较口径和哪些判断可以进入定位决策。",
+  "cannotInfer": [
+    "竞品真实销量",
+    "未公开的投放金额",
+    "内部战略意图",
+    "网页变化之外的市场因果"
+  ],
+  "channels": [
+    "官网",
+    "搜索",
+    "公开资料"
+  ],
+  "source": {
+    "type": "upstream",
+    "repo": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/competitor-profiling",
+    "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+    "author": "Corey Haines",
+    "authorUrl": "https://github.com/coreyhaines31",
+    "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+    "license": "MIT",
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
+  },
+  "installation": {
+    "codex": "npx skills add coreyhaines31/marketingskills -s competitor-profiling -a codex -y",
+    "claudeCode": "npx skills add coreyhaines31/marketingskills -s competitor-profiling -a claude-code -y"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已核对输入网址、结构化画像和来源保留要求。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "尚未完成 Open Marketing 实战复核。"
+    }
+  },
+  "relatedSkillIds": [
+    "brand-positioning-cn",
+    "first-campaign-strategy"
+  ]
+}

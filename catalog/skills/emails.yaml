@@ -1,0 +1,28 @@
+{
+  "id": "emails",
+  "titleZh": "把邮件触达写成可执行序列",
+  "originalName": "emails",
+  "summaryZh": "围绕受众、触发场景和业务目标，规划邮件主题、内容、节奏与转化动作。",
+  "growthStage": "zero_to_one",
+  "workspace": "operations",
+  "audiences": ["增长与生命周期团队", "内容运营人员", "创业团队"],
+  "useCases": ["设计首轮欢迎或培育序列", "把一次活动拆成邮件节奏", "检查邮件是否有清楚的下一步"],
+  "inputs": ["邮件目标与受众", "产品事实、优惠和品牌语气", "触发条件与发送工具限制", "已有名单、表现或合规要求"],
+  "outputs": ["邮件序列与发送节奏", "主题、正文和行动按钮草稿", "分群与触发建议", "测试、审批和交付清单"],
+  "promptExamples": [
+    "请为首次注册用户设计 5 封欢迎邮件，写清每封要推动的下一步。",
+    "请根据这次活动资料写一组邮件，区分事实、承诺和需要审批的说法。",
+    "请审阅这条邮件序列，找出重复、断点和可能造成误解的地方。"
+  ],
+  "humanGate": "营销负责人确认名单来源、发送权限、产品承诺、频率和最终发送版本。",
+  "cannotInfer": ["用户一定会打开或购买", "名单的真实同意状态", "未提供的产品事实", "自动发送真实邮件"],
+  "channels": ["内容运营", "邮件", "产品", "全渠道"],
+  "source": {"type": "upstream", "repo": "https://github.com/coreyhaines31/marketingskills", "path": "skills/emails", "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58", "author": "Corey Haines", "authorUrl": "https://github.com/coreyhaines31", "avatarUrl": "https://github.com/coreyhaines31.png?size=96", "license": "MIT", "checkedAt": "2026-09-01", "githubStars": 46347, "githubStarsCheckedAt": "2026-09-01"},
+  "installation": {"codex": "npx skills add coreyhaines31/marketingskills -s emails -a codex -y", "claudeCode": "npx skills add coreyhaines31/marketingskills -s emails -a claude-code -y"},
+  "validation": {"spec": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对受众、触发、序列和交付内容。"}, "installation": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对上游独立安装命令与 Skill 路径。"}, "practice": {"status": "pending", "checkedAt": "2026-09-01", "noteZh": "尚未完成 Open Marketing 实战复核。"}},
+  "relatedSkillIds": ["copywriting", "analytics", "launch"],
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github", "skills-sh"],
+  "card": {"outcomeZh": "邮件序列、正文草稿和发送检查项", "previewImage": null, "previewLicense": null}
+}

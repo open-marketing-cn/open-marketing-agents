@@ -1,0 +1,31 @@
+name: Review upstream Skills
+
+on:
+  schedule:
+    - cron: '17 2 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Check pinned paths, licenses and upstream changes
+        run: npm run catalog:check-upstream
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Upload review-only report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: upstream-skill-review
+          path: generated/updates.json
+          retention-days: 30

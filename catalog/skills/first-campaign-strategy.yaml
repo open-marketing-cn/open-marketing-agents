@@ -1,0 +1,87 @@
+{
+  "id": "first-campaign-strategy",
+  "titleZh": "把第一次 Campaign 写成可测试策略",
+  "originalName": "first-campaign-strategy",
+  "summaryZh": "围绕一个首发目标，把人群、问题、承诺、证明、渠道角色、假设和成功标准写成策略稿。",
+  "growthStage": "zero_to_one",
+  "workspace": "strategy",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "首轮 Campaign 策略和假设评分表", "previewImage": null, "previewLicense": null},
+  "audiences": [
+    "首次做品牌 Campaign 的团队",
+    "品牌负责人",
+    "代理商策略团队"
+  ],
+  "useCases": [
+    "品牌或新品第一次对外传播",
+    "把宽泛目标缩成一个可验证 Campaign",
+    "为创意与媒介团队建立统一策略"
+  ],
+  "inputs": [
+    "明确的业务与传播目标",
+    "优先人群和问题证据",
+    "定位与可用证明",
+    "预算、周期与渠道限制"
+  ],
+  "outputs": [
+    "campaign-strategy.md 首轮策略稿",
+    "hypothesis-scorecard.md 假设与指标",
+    "open-decisions.md 待决策问题"
+  ],
+  "promptExamples": [
+    "我们第一次发布这个品牌，请把目标、人群、单一承诺、证明和渠道角色写成一页策略。",
+    "请把这个‘提升知名度’目标改成可验证的 Campaign 假设和停止条件。",
+    "请比较三个首发策略方向，分别说明需要的证据、资源、风险和衡量方式。"
+  ],
+  "humanGate": "负责人必须选择单一优先目标、主承诺、可用证明、预算范围和成功或停止标准。",
+  "cannotInfer": [
+    "Campaign 一定有效",
+    "未确认的预算与排期",
+    "渠道真实转化率",
+    "未经授权的品牌或产品承诺"
+  ],
+  "channels": [
+    "Campaign",
+    "全渠道",
+    "策略工作坊"
+  ],
+  "source": {
+    "type": "original",
+    "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+    "path": "skills/first-campaign-strategy",
+    "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+    "author": "Open Marketing",
+    "authorUrl": "https://github.com/open-marketing-cn",
+    "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+    "license": "CC-BY-4.0",
+    "checkedAt": "2026-08-31"
+  },
+  "installation": {
+    "codex": "npx skills add open-marketing-cn/open-marketing-agents -s first-campaign-strategy -a codex -y",
+    "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s first-campaign-strategy -a claude-code -y",
+    "download": "downloads/first-campaign-strategy.zip"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "独立策略任务、交付文件与人工门已定义。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "等待首轮品牌 Campaign 脱敏任务验证。"
+    }
+  },
+  "relatedSkillIds": [
+    "creative-brief",
+    "ads"
+  ]
+}

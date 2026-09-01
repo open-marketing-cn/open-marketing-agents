@@ -4,12 +4,12 @@ title: "[Validation] "
 labels: ["validation"]
 body:
   - type: input
-    id: agent
-    attributes: { label: Agent ID 与内容版本 }
+    id: skill
+    attributes: { label: Skill ID 与内容版本 }
     validations: { required: true }
   - type: input
     id: target
-    attributes: { label: 目标工具与版本, placeholder: "Codex ..." }
+    attributes: { label: 目标工具与版本, placeholder: "Codex / Claude Code ..." }
     validations: { required: true }
   - type: input
     id: role

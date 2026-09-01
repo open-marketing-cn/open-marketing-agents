@@ -1,0 +1,90 @@
+{
+  "id": "launch",
+  "titleZh": "把发布拆成可检查的五个阶段",
+  "originalName": "launch",
+  "summaryZh": "为产品、功能或品牌发布规划自有、借用和付费渠道，并按内部、Alpha、Beta、早期访问和正式发布分阶段。",
+  "growthStage": "zero_to_one",
+  "workspace": "media",
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "分阶段发布计划和渠道表", "previewImage": null, "previewLicense": null},
+  "audiences": [
+    "新品与产品营销负责人",
+    "创业团队",
+    "发布项目经理"
+  ],
+  "useCases": [
+    "准备品牌或产品首次发布",
+    "规划 Beta 与早期访问",
+    "建立发布就绪检查"
+  ],
+  "inputs": [
+    "发布对象和目标",
+    "目标受众与名单",
+    "可用渠道和伙伴",
+    "准备状态、日期和资源"
+  ],
+  "outputs": [
+    "分阶段发布计划",
+    "自有、借用和付费渠道表",
+    "发布就绪检查",
+    "每阶段目标与衡量方式"
+  ],
+  "promptExamples": [
+    "请把我们的首次产品发布拆成内部、Alpha、Beta、早期访问和正式发布五个阶段。",
+    "请用 Owned、Rented、Borrowed 三类渠道检查这份发布计划缺了什么。",
+    "距离上线还有两周，请生成发布就绪检查表，并把没有负责人或证据的项目标红。"
+  ],
+  "humanGate": "发布负责人确认真实日期、就绪状态、渠道承诺、名单使用、预算和最终公开动作。",
+  "cannotInfer": [
+    "产品已经可以上线",
+    "渠道伙伴已经承诺",
+    "发布一定形成增长",
+    "自动发布或修改真实账户"
+  ],
+  "channels": [
+    "产品发布",
+    "官网",
+    "社媒",
+    "伙伴渠道"
+  ],
+  "source": {
+    "type": "upstream",
+    "repo": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/launch",
+    "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+    "author": "Corey Haines",
+    "authorUrl": "https://github.com/coreyhaines31",
+    "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+    "license": "MIT",
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
+  },
+  "installation": {
+    "codex": "npx skills add coreyhaines31/marketingskills -s launch -a codex -y",
+    "claudeCode": "npx skills add coreyhaines31/marketingskills -s launch -a claude-code -y"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已核对 ORB 框架、就绪门和五阶段方法。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "尚未完成 Open Marketing 实战复核。"
+    }
+  },
+  "relatedSkillIds": [
+    "campaign-workback",
+    "content-asset-calendar"
+  ]
+}

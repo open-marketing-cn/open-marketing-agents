@@ -1,0 +1,90 @@
+{
+  "id": "ab-testing",
+  "titleZh": "把创意想法写成能衡量的测试",
+  "originalName": "ab-testing",
+  "summaryZh": "把改动转成假设、单一变量、样本、指标、运行时间与停止条件，形成实验记录。",
+  "growthStage": "zero_to_one",
+  "workspace": "media",
+  "featured": false,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "测试假设、变体定义和判定规则", "previewImage": null, "previewLicense": null},
+  "audiences": [
+    "增长与投放团队",
+    "网站与产品营销人员",
+    "内容实验负责人"
+  ],
+  "useCases": [
+    "比较两版创意或页面",
+    "判断一个想法是否值得测试",
+    "建立首轮实验清单"
+  ],
+  "inputs": [
+    "要改变的内容",
+    "目标用户与行为",
+    "当前基线数据",
+    "主要指标、样本和实施限制"
+  ],
+  "outputs": [
+    "测试假设",
+    "控制组与变体定义",
+    "样本量与运行时长估算",
+    "停止规则和结果模板"
+  ],
+  "promptExamples": [
+    "请把这两个广告钩子写成只改变一个变量的 A/B 测试方案。",
+    "我们每周只有 800 个落地页访问，请判断这个测试是否值得做，并说明样本限制。",
+    "请把这 12 个增长想法整理成实验 backlog，用影响、把握和成本排序。"
+  ],
+  "humanGate": "实验负责人确认唯一变量、主要指标、最小可检测效果、运行条件和最终结论。",
+  "cannotInfer": [
+    "没有基线时的真实提升",
+    "统计显著等于业务重要",
+    "其他同时变化带来的影响",
+    "测试结果可自动推广到所有人群"
+  ],
+  "channels": [
+    "广告",
+    "官网",
+    "产品",
+    "增长实验"
+  ],
+  "source": {
+    "type": "upstream",
+    "repo": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/ab-testing",
+    "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+    "author": "Corey Haines",
+    "authorUrl": "https://github.com/coreyhaines31",
+    "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+    "license": "MIT",
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
+  },
+  "installation": {
+    "codex": "npx skills add coreyhaines31/marketingskills -s ab-testing -a codex -y",
+    "claudeCode": "npx skills add coreyhaines31/marketingskills -s ab-testing -a claude-code -y"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已核对假设、变量、样本、统计和停止规则。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "尚未完成 Open Marketing 实战复核。"
+    }
+  },
+  "relatedSkillIds": [
+    "analytics",
+    "campaign-retrospective"
+  ]
+}

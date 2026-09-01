@@ -1,0 +1,91 @@
+{
+  "id": "analytics",
+  "titleZh": "做一份上线前能验收的追踪方案",
+  "originalName": "analytics",
+  "summaryZh": "从业务问题出发定义事件、属性、命名、UTM、验证方法和数据质量检查。",
+  "growthStage": "zero_to_one",
+  "workspace": "media",
+  "featured": false,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "追踪计划、事件命名和数据检查", "previewImage": null, "previewLicense": null},
+  "audiences": [
+    "营销运营人员",
+    "增长与数据团队",
+    "网站和产品负责人"
+  ],
+  "useCases": [
+    "上线前建立追踪计划",
+    "审计 GA4 或埋点方案",
+    "统一 Campaign UTM 和事件命名"
+  ],
+  "inputs": [
+    "要回答的业务问题",
+    "用户旅程与关键动作",
+    "网站或产品技术环境",
+    "现有分析工具与事件"
+  ],
+  "outputs": [
+    "追踪计划表",
+    "事件和属性命名规范",
+    "UTM 规范",
+    "上线验证与数据质量清单"
+  ],
+  "promptExamples": [
+    "请为这次新品 Campaign 做一份从曝光到购买的追踪计划，先从业务问题开始。",
+    "请检查这份 GA4 事件表是否能回答渠道质量和转化问题，并指出缺口。",
+    "请为全团队制定一套 UTM 命名规则，包含示例、必填项和上线验收步骤。"
+  ],
+  "humanGate": "数据与业务负责人确认关键指标定义、事件实施成本、隐私合规和正式上线。",
+  "cannotInfer": [
+    "代码已正确部署",
+    "用户同意与隐私合规",
+    "跨平台数据天然一致",
+    "追踪数据等于业务因果"
+  ],
+  "channels": [
+    "GA4",
+    "GTM",
+    "网站",
+    "产品",
+    "广告"
+  ],
+  "source": {
+    "type": "upstream",
+    "repo": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/analytics",
+    "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+    "author": "Corey Haines",
+    "authorUrl": "https://github.com/coreyhaines31",
+    "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+    "license": "MIT",
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
+  },
+  "installation": {
+    "codex": "npx skills add coreyhaines31/marketingskills -s analytics -a codex -y",
+    "claudeCode": "npx skills add coreyhaines31/marketingskills -s analytics -a claude-code -y"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已核对事件、属性、命名和质量检查范围。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "尚未完成 Open Marketing 实战复核。"
+    }
+  },
+  "relatedSkillIds": [
+    "launch",
+    "campaign-retrospective"
+  ]
+}

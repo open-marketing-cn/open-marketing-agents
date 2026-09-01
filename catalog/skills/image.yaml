@@ -1,0 +1,90 @@
+{
+  "id": "image",
+  "titleZh": "把营销图片需求变成制作与验收清单",
+  "originalName": "image",
+  "summaryZh": "根据图片目标选择生成、设计或优化方式，形成提示、规格、制作步骤和验收重点。",
+  "growthStage": "zero_to_one",
+  "workspace": "creative",
+  "featured": false,
+  "visibility": "public",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "图片方向、制作提示和验收重点", "previewImage": null, "previewLicense": null},
+  "audiences": [
+    "内容与设计团队",
+    "品牌营销人员",
+    "独立创作者"
+  ],
+  "useCases": [
+    "制作博客头图或社媒图片",
+    "规划产品效果图",
+    "优化图片尺寸、格式和分享预览"
+  ],
+  "inputs": [
+    "图片用途与渠道",
+    "品牌视觉信息",
+    "必须出现和禁止出现的元素",
+    "尺寸、格式和工具限制"
+  ],
+  "outputs": [
+    "图片创作方向",
+    "生成或设计提示",
+    "渠道规格清单",
+    "人工视觉与品牌验收项"
+  ],
+  "promptExamples": [
+    "请把这个 Campaign 概念转成三张社媒主视觉的制作说明和验收表。",
+    "我要做新品落地页头图，请比较 AI 生成、摄影和 3D 三种制作路径。",
+    "请检查这批图片的尺寸、格式、清晰度和 OG 分享要求，不要改动原图内容。"
+  ],
+  "humanGate": "设计或品牌负责人确认视觉方向、品牌一致性、人物与素材授权、生成工具使用和最终成片。",
+  "cannotInfer": [
+    "图片版权和肖像授权",
+    "品牌资产可被公开使用",
+    "生成内容绝对没有相似风险",
+    "视觉一定带来转化"
+  ],
+  "channels": [
+    "社媒",
+    "官网",
+    "电商",
+    "视觉内容"
+  ],
+  "source": {
+    "type": "upstream",
+    "repo": "https://github.com/coreyhaines31/marketingskills",
+    "path": "skills/image",
+    "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58",
+    "author": "Corey Haines",
+    "authorUrl": "https://github.com/coreyhaines31",
+    "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+    "license": "MIT",
+    "checkedAt": "2026-08-31",
+    "githubStars": 46347,
+    "githubStarsCheckedAt": "2026-09-01"
+  },
+  "installation": {
+    "codex": "npx skills add coreyhaines31/marketingskills -s image -a codex -y",
+    "claudeCode": "npx skills add coreyhaines31/marketingskills -s image -a claude-code -y"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已核对图片生成、设计工具和优化范围。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已在独立空白目录分别安装到 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "尚未完成 Open Marketing 实战复核。"
+    }
+  },
+  "relatedSkillIds": [
+    "creative-brief",
+    "ad-creative"
+  ]
+}

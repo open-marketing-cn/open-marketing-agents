@@ -1,0 +1,28 @@
+{
+  "id": "marketing-plan",
+  "titleZh": "把营销目标拆成一份可执行计划",
+  "originalName": "marketing-plan",
+  "summaryZh": "把业务目标、受众、定位、渠道、内容、预算和衡量方式整理成可执行的营销计划。",
+  "growthStage": "zero_to_one",
+  "workspace": "strategy",
+  "audiences": ["品牌负责人", "创业团队", "市场与增长人员"],
+  "useCases": ["从零写第一版营销计划", "检查计划是否缺少关键环节", "把策略讨论转成行动清单"],
+  "inputs": ["业务和营销目标", "目标受众与产品事实", "当前渠道、预算和团队限制", "已有研究、定位或内容资产"],
+  "outputs": ["营销目标与策略选择", "受众、渠道和内容计划", "预算与时间安排", "指标、风险和下一步行动"],
+  "promptExamples": [
+    "请根据这份产品资料写第一版营销计划，先列事实，再列需要验证的假设。",
+    "请检查这份营销计划里的目标、人群、渠道和指标是否互相对应。",
+    "我们只有两个人和一个月时间，请把计划收缩成能执行的首轮动作。"
+  ],
+  "humanGate": "业务负责人确认目标、预算、渠道优先级、资源投入和哪些假设进入首轮执行。",
+  "cannotInfer": ["目标一定能达成", "未提供的预算和团队能力", "渠道未来表现", "法律或财务审批结论"],
+  "channels": ["品牌策略", "内容", "付费媒体", "全渠道"],
+  "source": {"type": "upstream", "repo": "https://github.com/coreyhaines31/marketingskills", "path": "skills/marketing-plan", "commit": "e55de886fe7580ec75cdb7ded5092b33f7d4ed58", "author": "Corey Haines", "authorUrl": "https://github.com/coreyhaines31", "avatarUrl": "https://github.com/coreyhaines31.png?size=96", "license": "MIT", "checkedAt": "2026-09-01", "githubStars": 46347, "githubStarsCheckedAt": "2026-09-01"},
+  "installation": {"codex": "npx skills add coreyhaines31/marketingskills -s marketing-plan -a codex -y", "claudeCode": "npx skills add coreyhaines31/marketingskills -s marketing-plan -a claude-code -y"},
+  "validation": {"spec": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对目标、策略、行动和衡量字段。"}, "installation": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对上游独立安装命令与 Skill 路径。"}, "practice": {"status": "pending", "checkedAt": "2026-09-01", "noteZh": "尚未完成 Open Marketing 实战复核。"}},
+  "relatedSkillIds": ["product-marketing", "pricing", "copywriting"],
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github", "skills-sh"],
+  "card": {"outcomeZh": "一份带目标、动作、预算和指标的营销计划", "previewImage": null, "previewLicense": null}
+}

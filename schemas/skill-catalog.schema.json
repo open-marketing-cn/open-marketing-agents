@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://open-marketing.cn/schemas/skill-catalog.schema.json",
+  "title": "Open Marketing Skill Catalog Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "titleZh", "originalName", "summaryZh", "growthStage", "workspace",
+    "featured", "visibility", "discoveredFrom", "card",
+    "audiences", "useCases", "inputs", "outputs", "promptExamples", "humanGate",
+    "cannotInfer", "channels", "source", "installation", "validation", "relatedSkillIds"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "titleZh": { "type": "string", "minLength": 4 },
+    "originalName": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "summaryZh": { "type": "string", "minLength": 10 },
+    "growthStage": { "const": "zero_to_one" },
+    "workspace": { "enum": ["insights", "strategy", "creative", "media", "operations"] },
+    "featured": { "type": "boolean" },
+    "visibility": { "enum": ["public", "candidate", "paused_internal", "withdrawn"] },
+    "discoveredFrom": { "$ref": "#/$defs/nonEmptyStringArray" },
+    "card": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outcomeZh", "previewImage", "previewLicense"],
+      "properties": {
+        "outcomeZh": { "type": "string", "minLength": 10 },
+        "previewImage": { "type": ["string", "null"] },
+        "previewLicense": { "type": ["string", "null"] }
+      }
+    },
+    "audiences": { "$ref": "#/$defs/nonEmptyStringArray" },
+    "useCases": { "$ref": "#/$defs/nonEmptyStringArray" },
+    "inputs": { "$ref": "#/$defs/nonEmptyStringArray" },
+    "outputs": { "$ref": "#/$defs/nonEmptyStringArray" },
+    "promptExamples": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "string", "minLength": 8 } },
+    "humanGate": { "type": "string", "minLength": 8 },
+    "cannotInfer": { "$ref": "#/$defs/nonEmptyStringArray" },
+    "channels": { "$ref": "#/$defs/nonEmptyStringArray" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "repo", "path", "commit", "author", "license", "checkedAt"],
+      "properties": {
+        "type": { "enum": ["upstream", "adapted", "original"] },
+        "repo": { "type": "string", "format": "uri" },
+        "path": { "type": "string", "minLength": 1 },
+        "commit": { "type": "string", "pattern": "^[a-f0-9]{7,40}$" },
+        "author": { "type": "string", "minLength": 2 },
+        "authorUrl": { "type": "string", "format": "uri" },
+        "avatarUrl": { "type": "string" },
+        "license": { "type": "string", "minLength": 2 },
+        "checkedAt": { "type": "string", "format": "date" },
+        "githubStars": { "type": "integer", "minimum": 0 },
+        "githubStarsCheckedAt": { "type": "string", "format": "date" },
+        "upstreamName": { "type": "string" },
+        "upstreamRepo": { "type": "string", "format": "uri" },
+        "upstreamPath": { "type": "string" },
+        "upstreamCommit": { "type": "string", "pattern": "^[a-f0-9]{7,40}$" },
+        "upstreamAuthor": { "type": "string" },
+        "changesZh": { "type": "string" }
+      }
+    },
+    "installation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["codex", "claudeCode"],
+      "properties": {
+        "codex": { "type": "string", "minLength": 8 },
+        "claudeCode": { "type": "string", "minLength": 8 },
+        "download": { "type": "string" }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["spec", "installation", "practice"],
+      "properties": {
+        "spec": { "$ref": "#/$defs/validation" },
+        "installation": { "$ref": "#/$defs/validation" },
+        "practice": { "$ref": "#/$defs/validation" }
+      }
+    },
+    "relatedSkillIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/properties/id" } }
+  },
+  "$defs": {
+    "nonEmptyStringArray": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "checkedAt", "noteZh"],
+      "properties": {
+        "status": { "enum": ["passed", "pending", "failed"] },
+        "checkedAt": { "type": "string", "format": "date" },
+        "noteZh": { "type": "string", "minLength": 4 }
+      }
+    }
+  }
+}

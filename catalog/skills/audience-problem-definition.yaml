@@ -1,0 +1,87 @@
+{
+  "id": "audience-problem-definition",
+  "titleZh": "把目标人群和真问题说清楚",
+  "originalName": "audience-problem-definition",
+  "summaryZh": "把证据整理成优先人群、关键场景、待解决问题和需要继续验证的假设。",
+  "growthStage": "zero_to_one",
+  "workspace": "insights",
+  "featured": false,
+  "visibility": "paused_internal",
+  "discoveredFrom": ["github"],
+  "card": {"outcomeZh": "优先人群、问题陈述和假设清单", "previewImage": null, "previewLicense": null},
+  "audiences": [
+    "创业者",
+    "品牌与产品负责人",
+    "市场研究人员"
+  ],
+  "useCases": [
+    "品牌 0→1 确定第一批人群",
+    "缩小过宽的目标市场",
+    "把洞察转成问题定义"
+  ],
+  "inputs": [
+    "产品或服务说明",
+    "已有用户研究或行为证据",
+    "竞争替代方案",
+    "当前业务限制"
+  ],
+  "outputs": [
+    "audience-priority.md 优先人群表",
+    "problem-statements.md 问题陈述",
+    "assumption-log.md 假设与验证清单"
+  ],
+  "promptExamples": [
+    "请根据这些访谈，把首发人群从五类缩到一到两类，并说明取舍证据。",
+    "请把这些消费者痛点改写成问题陈述，区分场景、触发、当前替代和理想结果。",
+    "请检查我们写的 ICP 哪些是事实、哪些是想象，并生成下一轮验证问题。"
+  ],
+  "humanGate": "业务负责人决定优先服务谁、暂时放弃谁，以及哪些未经验证的假设允许进入下一轮测试。",
+  "cannotInfer": [
+    "目标人群一定会购买",
+    "总体市场规模",
+    "未提供的付费意愿",
+    "问题优先级背后的公司战略"
+  ],
+  "channels": [
+    "用户研究",
+    "策略工作坊",
+    "产品需求"
+  ],
+  "source": {
+    "type": "original",
+    "repo": "https://github.com/open-marketing-cn/open-marketing-agents",
+    "path": "skills/audience-problem-definition",
+    "commit": "11721f439e9ca38861fdfbe80e21f2f2b3b2ee1d",
+    "author": "Open Marketing",
+    "authorUrl": "https://github.com/open-marketing-cn",
+    "avatarUrl": "https://github.com/open-marketing-cn.png?size=96",
+    "license": "CC-BY-4.0",
+    "checkedAt": "2026-08-31"
+  },
+  "installation": {
+    "codex": "npx skills add open-marketing-cn/open-marketing-agents -s audience-problem-definition -a codex -y",
+    "claudeCode": "npx skills add open-marketing-cn/open-marketing-agents -s audience-problem-definition -a claude-code -y",
+    "download": "downloads/audience-problem-definition.zip"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "独立输入、输出与人工决策边界已定义。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-08-31",
+      "noteZh": "已从本仓库独立目录分别安装到空白 Codex 与 Claude Code；只选中当前 Skill。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-08-31",
+      "noteZh": "等待脱敏品牌 0→1 任务验证。"
+    }
+  },
+  "relatedSkillIds": [
+    "brand-positioning-cn",
+    "product-marketing"
+  ]
+}
