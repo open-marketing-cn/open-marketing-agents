@@ -15,3 +15,4 @@ coverage/
 *.log
 *.dmg
 *.app
+generated/candidate-evaluation.json

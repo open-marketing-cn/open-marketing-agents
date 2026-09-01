@@ -28,6 +28,26 @@ body:
     attributes: { label: 交付物是否有用？为什么？ }
     validations: { required: true }
   - type: input
+    id: evidence
+    attributes: { label: 脱敏案例证据链接 }
+    validations: { required: true }
+  - type: input
+    id: attribution
+    attributes: { label: 实践者署名（可匿名角色） }
+    validations: { required: true }
+  - type: textarea
+    id: scenarios
+    attributes: { label: 实际使用场景、适用边界和不适用反例 }
+    validations: { required: true }
+  - type: textarea
+    id: depth
+    attributes: { label: 从入门到进阶的玩法、踩坑和最佳实践 }
+    validations: { required: true }
+  - type: textarea
+    id: remix
+    attributes: { label: 二创改了什么、为什么改、与上游的边界 }
+    validations: { required: true }
+  - type: input
     id: date
     attributes: { label: 验证日期, placeholder: "YYYY-MM-DD" }
     validations: { required: true }

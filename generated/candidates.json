@@ -1,0 +1,812 @@
+{
+  "product": "Open Marketing Skill Candidates",
+  "generatedAt": "2026-09-01",
+  "stats": {
+    "total": 34,
+    "byBucket": {
+      "gather": 3,
+      "strategize": 9,
+      "write": 7,
+      "visual": 6,
+      "auto": 9
+    }
+  },
+  "buckets": [
+    {
+      "id": "gather",
+      "icon": "⌕",
+      "name": "调研洞察",
+      "tagline": "用户 / 竞品 / SEO / 数据",
+      "pair": "写内容前先校准真实问题"
+    },
+    {
+      "id": "strategize",
+      "icon": "◇",
+      "name": "定位策略",
+      "tagline": "定位 / 品牌故事 / 内容策略",
+      "pair": "把方向定清楚再生产素材"
+    },
+    {
+      "id": "write",
+      "icon": "✎",
+      "name": "内容写作",
+      "tagline": "文案 / 公众号 / 邮件 / 中文润色",
+      "pair": "把判断变成可以发布的表达"
+    },
+    {
+      "id": "visual",
+      "icon": "◉",
+      "name": "内容视觉化",
+      "tagline": "配图 / 封面 / 视频 / UI",
+      "pair": "让观点变成可传播资产"
+    },
+    {
+      "id": "auto",
+      "icon": "↗",
+      "name": "页面转化",
+      "tagline": "落地页 / SEO / CRO / 飞书",
+      "pair": "把内容接到转化和协作"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "xhs-viral-decoder",
+      "originalName": "xhs-viral-decoder",
+      "titleZh": "小红书爆款内容情报拆解",
+      "summaryZh": "用公开案例拆选题、开头钩子、内容结构和评论区需求，只做内容情报与方法拆解。",
+      "bucket": "gather",
+      "verificationStatus": "pending",
+      "sourceUrl": null,
+      "sourceLabelZh": "来源待补",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "xhs-viral-decoder",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "seo-audit",
+      "originalName": "seo-audit",
+      "titleZh": "扫描网站的 SEO 真问题",
+      "summaryZh": "品牌网站、博客或落地页有内容却没有流量时使用，输出带优先级的修复清单。",
+      "bucket": "gather",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "seo-audit",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "analytics-tracking",
+      "originalName": "analytics-tracking",
+      "titleZh": "营销数据和追踪检查",
+      "summaryZh": "规划或审计 GA4、GTM、事件、UTM 与转化追踪，回答怎样判断营销有没有效果。",
+      "bucket": "gather",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "analytics-tracking",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "positioning-messaging",
+      "originalName": "positioning-messaging",
+      "titleZh": "一页 Messaging Framework",
+      "summaryZh": "新产品、活动页或品牌升级时，先确定对谁说、说什么以及不说什么。",
+      "bucket": "strategize",
+      "verificationStatus": "pending",
+      "sourceUrl": null,
+      "sourceLabelZh": "来源待补",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "positioning-messaging",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "brand-storytelling",
+      "originalName": "brand-storytelling",
+      "titleZh": "把产品讲成故事",
+      "summaryZh": "为品牌介绍、案例页和活动复盘搭叙事骨架，避免最后只剩功能清单。",
+      "bucket": "strategize",
+      "verificationStatus": "pending",
+      "sourceUrl": null,
+      "sourceLabelZh": "来源待补",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "brand-storytelling",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "content-strategy",
+      "originalName": "content-strategy",
+      "titleZh": "规划内容主题和分发",
+      "summaryZh": "规划公众号、博客、短视频或 Newsletter 的主题、频率、渠道与转化路径。",
+      "bucket": "strategize",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "content-strategy",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "product-marketing-context",
+      "originalName": "product-marketing-context",
+      "titleZh": "产品营销上下文母版",
+      "summaryZh": "统一产品、受众、ICP、定位和 Messaging，供后续营销 Skill 复用。",
+      "bucket": "strategize",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "product-marketing-context",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "lead-magnets",
+      "originalName": "lead-magnets",
+      "titleZh": "设计可转化的 Lead Magnet",
+      "summaryZh": "用模板、清单或免费工具换取线索，适合营销服务、产品和活动转化。",
+      "bucket": "strategize",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "lead-magnets",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "content-marketing",
+      "originalName": "content-marketing",
+      "titleZh": "内容营销策略与栏目设计",
+      "summaryZh": "判断博客、公众号、SEO 或观点内容究竟服务品牌、获客还是信任。",
+      "bucket": "strategize",
+      "verificationStatus": "pending",
+      "sourceUrl": null,
+      "sourceLabelZh": "来源待补",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "content-marketing",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "launch-marketing",
+      "originalName": "launch-marketing",
+      "titleZh": "产品与活动发布营销",
+      "summaryZh": "为产品、功能、工作坊或案例设计发布节奏、信息内圈、渠道与素材清单。",
+      "bucket": "strategize",
+      "verificationStatus": "pending",
+      "sourceUrl": null,
+      "sourceLabelZh": "来源待补",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "launch-marketing",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "media-relations",
+      "originalName": "media-relations",
+      "titleZh": "媒体关系与 PR Pitch",
+      "summaryZh": "把产品发布转换成媒体、Newsletter、播客或行业账号会关心的新闻角度。",
+      "bucket": "strategize",
+      "verificationStatus": "pending",
+      "sourceUrl": null,
+      "sourceLabelZh": "来源待补",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "media-relations",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "community-building",
+      "originalName": "community-building",
+      "titleZh": "社区增长与用户共创",
+      "summaryZh": "把活动用户、早期客户、创作者或 AI 实践者组织成可持续的共创资产。",
+      "bucket": "strategize",
+      "verificationStatus": "pending",
+      "sourceUrl": null,
+      "sourceLabelZh": "来源待补",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "community-building",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "copy-editing",
+      "originalName": "copy-editing",
+      "titleZh": "已有文案打磨",
+      "summaryZh": "删除冗余、替换空泛表达，让官网、公众号和落地页文案更紧、更具体。",
+      "bucket": "write",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "copy-editing",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "social-content",
+      "originalName": "social-content",
+      "titleZh": "社媒内容延展",
+      "summaryZh": "把一份内容重组为社媒帖子、短视频钩子、Thread 和内容日历。",
+      "bucket": "write",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "social-content",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "interflowai-koubo-script",
+      "originalName": "interflowai-koubo-script",
+      "titleZh": "真实业务口播脚本",
+      "summaryZh": "把业务 Know-how、会议观点和品牌案例改成第一人称、可直接录制的短视频口播稿。",
+      "bucket": "write",
+      "verificationStatus": "pending",
+      "sourceUrl": null,
+      "sourceLabelZh": "来源待补",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "interflowai-koubo-script",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "cold-email",
+      "originalName": "cold-email",
+      "titleZh": "B2B 冷邮件",
+      "summaryZh": "用于合作、销售和 BD 外联，让第一句话不像群发，CTA 保持低门槛。",
+      "bucket": "write",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "cold-email",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "email-sequence",
+      "originalName": "email-sequence",
+      "titleZh": "邮件序列与 Lifecycle",
+      "summaryZh": "创建 Welcome、Nurture、Drip、Re-engagement 等自动化邮件序列。",
+      "bucket": "write",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "email-sequence",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "wewrite",
+      "originalName": "wewrite",
+      "titleZh": "公众号文章全流程",
+      "summaryZh": "把热点、活动、访谈和观点整理为有现场感的中文公众号文章。",
+      "bucket": "write",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/oaker-io/wewrite",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "wewrite",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "humanizer-zh",
+      "originalName": "humanizer-zh",
+      "titleZh": "中文去 AI 味",
+      "summaryZh": "删除模板句、空泛表达、过度三段式和 AI 连接词，让对外文案更像真人写作。",
+      "bucket": "write",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/op7418/Humanizer-zh",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "humanizer-zh",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "video",
+      "originalName": "video",
+      "titleZh": "视频内容框架与 Prompt",
+      "summaryZh": "用于产品 Demo、活动宣传、短视频脚本和 AI 视频生成提示词。",
+      "bucket": "visual",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "video",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "baoyu-article-illustrator",
+      "originalName": "baoyu-article-illustrator",
+      "titleZh": "文章正文配图",
+      "summaryZh": "把中文文章转成一组解释图、观点图和方法论配图。",
+      "bucket": "visual",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/jimliu/baoyu-skills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "baoyu-article-illustrator",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "ian-xiaohei-illustrations",
+      "originalName": "ian-xiaohei-illustrations",
+      "titleZh": "小黑怪诞正文配图",
+      "summaryZh": "先抓文章认知锚点，再做成白底手绘、角色参与核心动作的解释图。",
+      "bucket": "visual",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/helloianneo/ian-xiaohei-illustrations",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "ian-xiaohei-illustrations",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "interflowai-editorial-line-illustrations",
+      "originalName": "interflowai-editorial-line-illustrations",
+      "titleZh": "文章转美式线描配图",
+      "summaryZh": "为长文、飞书文档和公众号规划一张头图与一至两张正文线描插画。",
+      "bucket": "visual",
+      "verificationStatus": "pending",
+      "sourceUrl": null,
+      "sourceLabelZh": "来源待补",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "interflowai-editorial-line-illustrations",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "taste-design",
+      "originalName": "taste-design",
+      "titleZh": "设计品味与 UI 方向",
+      "summaryZh": "页面或视觉过于模板化时，用它校准品牌页、作品页和活动页的视觉判断。",
+      "bucket": "visual",
+      "verificationStatus": "pending",
+      "sourceUrl": null,
+      "sourceLabelZh": "来源待补",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "taste-design",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "premium-ui-design",
+      "originalName": "premium-ui-design",
+      "titleZh": "高端 UI 与页面视觉",
+      "summaryZh": "为 Landing Page、Hero、作品集和品牌展示页生成更有辨识度的视觉方向。",
+      "bucket": "visual",
+      "verificationStatus": "pending",
+      "sourceUrl": null,
+      "sourceLabelZh": "来源待补",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "premium-ui-design",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "site-architecture",
+      "originalName": "site-architecture",
+      "titleZh": "网站结构规划",
+      "summaryZh": "规划官网、专题页、资源库和博客的信息架构、页面层级与内部链接。",
+      "bucket": "auto",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "site-architecture",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "brand-landingpage",
+      "originalName": "brand-landingpage",
+      "titleZh": "品牌落地页生成",
+      "summaryZh": "快速制作品牌页、产品页与活动页，适合现场 Demo 和网站原型。",
+      "bucket": "auto",
+      "verificationStatus": "pending",
+      "sourceUrl": null,
+      "sourceLabelZh": "来源待补",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "brand-landingpage",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "page-cro",
+      "originalName": "page-cro",
+      "titleZh": "落地页转化诊断",
+      "summaryZh": "页面有流量但转化低时，从首屏到 CTA 给出改动优先级。",
+      "bucket": "auto",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "page-cro",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "ab-test-setup",
+      "originalName": "ab-test-setup",
+      "titleZh": "A/B 测试设计",
+      "summaryZh": "为 Hero、价格、CTA、邮件主题和报名页设计可判断结果的实验。",
+      "bucket": "auto",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "ab-test-setup",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "ai-seo",
+      "originalName": "ai-seo",
+      "titleZh": "AI 搜索可见性",
+      "summaryZh": "审计品牌内容被 AI 搜索与 LLM Answers 发现、理解和引用的可能性。",
+      "bucket": "auto",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/coreyhaines31/marketingskills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "ai-seo",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "web-quality-audit",
+      "originalName": "web-quality-audit",
+      "titleZh": "网站质量与 Core Web Vitals",
+      "summaryZh": "品牌页上线前检查性能、可访问性、SEO、移动端与体验质量。",
+      "bucket": "auto",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/addyosmani/web-quality-skills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "web-quality-audit",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "baoyu-markdown-to-html",
+      "originalName": "baoyu-markdown-to-html",
+      "titleZh": "Markdown 转网页",
+      "summaryZh": "把文章、活动复盘和方案草稿快速转成可以展示的单页 HTML。",
+      "bucket": "auto",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/jimliu/baoyu-skills",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "baoyu-markdown-to-html",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "generative-ui",
+      "originalName": "generative-ui",
+      "titleZh": "生成式 UI 原型",
+      "summaryZh": "把结构化内容或 JSON 快速渲染为页面和产品展示原型。",
+      "bucket": "auto",
+      "verificationStatus": "pending",
+      "sourceUrl": "https://github.com/vercel-labs/json-render",
+      "sourceLabelZh": "github.com",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "generative-ui",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    },
+    {
+      "id": "feishu-cli",
+      "originalName": "feishu-cli",
+      "titleZh": "把内容沉淀进飞书",
+      "summaryZh": "把方案、活动复盘、内容简报和任务进度写入飞书文档或多维表格。",
+      "bucket": "auto",
+      "verificationStatus": "pending",
+      "sourceUrl": null,
+      "sourceLabelZh": "来源待补",
+      "origin": {
+        "repo": "https://github.com/Jeorrysyd/brand-marketing-skills",
+        "commit": "2bc81bb02b9bcb697f4bb4336f5e66ced546ba6a",
+        "catalogId": "feishu-cli",
+        "checkedAt": "2026-09-01"
+      },
+      "missingChecksZh": [
+        "真实 SKILL.md 路径",
+        "内容许可证",
+        "独立安装与触发",
+        "真实使用案例与署名"
+      ],
+      "recommendationReasonZh": "来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。"
+    }
+  ]
+}

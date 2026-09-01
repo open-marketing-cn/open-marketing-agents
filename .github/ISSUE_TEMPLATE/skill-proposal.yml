@@ -32,6 +32,18 @@ body:
     id: task
     attributes: { label: 使用者、输入、AI 动作、交付物和人工决定 }
     validations: { required: true }
+  - type: textarea
+    id: scenarios
+    attributes: { label: 至少两个具体使用场景与明确不适用边界 }
+    validations: { required: true }
+  - type: textarea
+    id: practice
+    attributes: { label: 已实践案例、证据链接、弯路、最佳实践和二创说明 }
+    validations: { required: true }
+  - type: input
+    id: attribution
+    attributes: { label: 上游作者与实践者署名（可匿名角色） }
+    validations: { required: true }
   - type: checkboxes
     id: independence
     attributes:

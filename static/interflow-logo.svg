@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1640 738" role="img" aria-labelledby="title desc">
+  <title id="title">互通有无 Interflow</title>
+  <desc id="desc">蓝色底板上由彩色圆形和白色中英文品牌字组成的 Interflow 标志。</desc>
+  <rect width="1640" height="738" fill="#0d6fd6"/>
+  <circle cx="164" cy="126" r="245" fill="#ff5a0a"/>
+  <circle cx="300" cy="480" r="108" fill="#ffd20a"/>
+  <circle cx="1358" cy="250" r="124" fill="#08dfac"/>
+  <circle cx="1512" cy="642" r="230" fill="#ff918d"/>
+  <g fill="#fff" font-family="Arial Rounded MT Bold, Arial, PingFang SC, sans-serif" font-weight="700">
+    <text x="500" y="425" font-size="210" letter-spacing="-15">inflow</text>
+    <text x="640" y="558" font-size="195" letter-spacing="-12">ter</text>
+    <text x="870" y="275" font-size="74" letter-spacing="5">互通有无</text>
+  </g>
+</svg>

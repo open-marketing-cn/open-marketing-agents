@@ -22,10 +22,19 @@ jobs:
         run: npm run catalog:check-upstream
         env:
           GITHUB_TOKEN: ${{ github.token }}
+      - name: Evaluate candidate evidence without executing candidates
+        run: npm run catalog:evaluate -- --offline --include-public
       - name: Upload review-only report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: upstream-skill-review
           path: generated/updates.json
+          retention-days: 30
+      - name: Upload candidate evaluation
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate-skill-evaluation
+          path: generated/candidate-evaluation.json
           retention-days: 30

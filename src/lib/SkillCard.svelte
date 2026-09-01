@@ -1,7 +1,7 @@
 <script lang="ts">
   import { base } from '$app/paths';
   import { ArrowUpRight } from '@lucide/svelte';
-  import { formatGithubStars, SOURCE_LABELS, WORKSPACES, skillHref, type Skill } from '$lib/skills';
+  import { formatGithubStars, PRACTICE_LEVEL_LABELS, SOURCE_LABELS, WORKSPACES, skillHref, type Skill } from '$lib/skills';
 
   let { skill }: { skill: Skill } = $props();
   const workspace = $derived(WORKSPACES.find((item) => item.id === skill.workspace)!);
@@ -13,12 +13,15 @@
     <div class="card-topline">
       <span class="workspace-tag">{workspace.name}</span>
       <span class="source-badge">{SOURCE_LABELS[skill.source.type]}</span>
+      <span class:practice-verified={skill.practiceLevel === 'practiced' || skill.practiceLevel === 'replicated' || skill.practiceLevel === 'best_practice'} class="practice-badge">{PRACTICE_LEVEL_LABELS[skill.practiceLevel]}</span>
     </div>
 
     <div class="card-title">
       <h3>{skill.titleZh}</h3>
       <code>{skill.originalName}</code>
     </div>
+
+    <p class="method-type">{skill.methodType}</p>
 
     <p class="skill-summary">{skill.card.outcomeZh}</p>
 

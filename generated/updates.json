@@ -3,9 +3,9 @@
   "catalogVersion": "2026-09-01",
   "policy": "上游更新只生成复审记录，不自动覆盖中文介绍或本仓库改编版。",
   "summary": {
-    "total": 23,
+    "total": 25,
     "current": 10,
-    "reviewRequired": 13,
+    "reviewRequired": 15,
     "blocked": 0
   },
   "sources": [
@@ -140,6 +140,14 @@
       "reviewStatus": "pending_remote_review"
     },
     {
+      "id": "guizang-ppt-skill",
+      "repo": "https://github.com/op7418/guizang-ppt-skill",
+      "path": "SKILL.md",
+      "pinnedCommit": "c91369c449d34755d320a8b81d0734000d99d1ab",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
       "id": "gzh-design",
       "repo": "https://github.com/isjiamu/gzh-design-skill",
       "path": "SKILL.md",
@@ -182,6 +190,14 @@
       "pinnedCommit": "de607fedfff647eaf5400e0aa43085787d7d1fca",
       "githubStars": 2133,
       "githubStarsCheckedAt": "2026-09-01",
+      "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "ppt-kit",
+      "repo": "https://github.com/0xyaoyun/ppt-kit",
+      "path": "skill",
+      "pinnedCommit": "841dea74e21f08d7300f908cca6d916cd470f1a4",
       "checkedAt": "2026-09-01",
       "reviewStatus": "pending_remote_review"
     },

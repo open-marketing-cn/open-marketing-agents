@@ -1,14 +1,59 @@
 import registryData from '../../generated/registry.json';
+import candidateData from '../../generated/candidates.json';
+import workflowData from '../../generated/workflow-examples.json';
+import communityData from '../../generated/community-recommendations.json';
 
 export type WorkspaceId = 'insights' | 'strategy' | 'creative' | 'media' | 'operations';
 export type SourceType = 'upstream' | 'adapted' | 'original';
 export type ValidationStatus = 'passed' | 'pending' | 'failed';
 export type Visibility = 'public' | 'candidate' | 'paused_internal' | 'withdrawn';
+export type PracticeLevel = 'discovered' | 'source_verified' | 'practiced' | 'replicated' | 'best_practice';
+export type ComparisonScale = 'low' | 'medium' | 'high';
+export type ComparisonEvidenceType = 'publisher' | 'maintainer_test' | 'community_case' | 'inference';
+export type CatalogBucketId = 'gather' | 'strategize' | 'write' | 'visual' | 'auto';
 
 export type ValidationRecord = {
   status: ValidationStatus;
   checkedAt: string;
   noteZh: string;
+};
+
+export type PracticeEvidence = {
+  caseTitleZh: string;
+  contextZh: string;
+  inputZh: string;
+  outputZh: string;
+  evidenceUrl: string;
+  practitionerRole: string;
+  attributionZh: string;
+  howToUseZh: string;
+  setupZh: string;
+  expectedOutputZh: string;
+  pitfallsZh: string[];
+  bestPracticesZh: string[];
+  remixZh: string;
+  scenariosZh: string[];
+  boundaryZh: string;
+  notForZh: string[];
+  depthPathZh: string;
+};
+
+export type ComparisonProfile = {
+  learningCurve: ComparisonScale;
+  outputConsistency: ComparisonScale;
+  flexibility: ComparisonScale;
+  operatorDependency: ComparisonScale;
+  materialDependency: ComparisonScale;
+  workflowCompleteness: ComparisonScale;
+  bestForZh: string[];
+  notForZh: string[];
+};
+
+export type ComparisonEvidence = {
+  type: ComparisonEvidenceType;
+  summaryZh: string;
+  checkedAt: string;
+  sourceUrl?: string;
 };
 
 export type Skill = {
@@ -18,6 +63,10 @@ export type Skill = {
   summaryZh: string;
   growthStage: 'zero_to_one';
   workspace: WorkspaceId;
+  categoryId: string;
+  comparisonGroupId: string | null;
+  methodType: string;
+  practiceLevel: PracticeLevel;
   featured: boolean;
   visibility: Visibility;
   discoveredFrom: string[];
@@ -63,6 +112,11 @@ export type Skill = {
     installation: ValidationRecord;
     practice: ValidationRecord;
   };
+  practiceEvidence?: PracticeEvidence;
+  comparisonProfile: ComparisonProfile | null;
+  comparisonEvidence: ComparisonEvidence[];
+  submittedAt?: string;
+  publishedAt?: string;
   relatedSkillIds: string[];
   installable: boolean;
 };
@@ -81,9 +135,101 @@ export type Registry = {
   skills: Skill[];
 };
 
+export type CandidateSkill = {
+  id: string;
+  originalName: string;
+  titleZh: string;
+  summaryZh: string;
+  bucket: CatalogBucketId;
+  verificationStatus: 'pending';
+  sourceUrl: string | null;
+  sourceLabelZh: string;
+  origin: { repo: string; commit: string; catalogId: string; checkedAt: string };
+  missingChecksZh: string[];
+  recommendationReasonZh: string;
+};
+
+export type CatalogBucket = {
+  id: CatalogBucketId;
+  icon: string;
+  name: string;
+  tagline: string;
+  pair: string;
+};
+
+export type WorkflowExample = {
+  id: string;
+  titleZh: string;
+  subtitleZh: string;
+  descriptionZh: string;
+  composition: Array<{ id: string; status: 'verified' | 'pending' }>;
+  steps: string[];
+  outputZh: string;
+};
+
+export type CommunityRecommendation = {
+  id: string;
+  name: string;
+  originalAuthor: string;
+  category: string;
+  scenario: string;
+  description: string;
+  agent: string;
+  url: string;
+  contributor: string | null;
+  submittedAt: string;
+  status: string;
+  recommendationCount: number;
+};
+
 export const registry = registryData as Registry;
+export const candidateRegistry = candidateData as {
+  product: string;
+  generatedAt: string;
+  stats: { total: number; byBucket: Record<CatalogBucketId, number> };
+  buckets: CatalogBucket[];
+  candidates: CandidateSkill[];
+};
+export const workflowRegistry = workflowData as { product: string; generatedAt: string; evidenceStatus: 'scenario_example'; examples: WorkflowExample[] };
+export const communityRegistry = communityData as { product: string; generatedAt: string | null; recommendations: CommunityRecommendation[] };
 
 export const publicSkills = registry.skills.filter((skill) => skill.visibility === 'public' && skill.source.type === 'upstream');
+export const pendingSkills = candidateRegistry.candidates;
+export const CATALOG_BUCKETS = candidateRegistry.buckets;
+export const workflowExamples = workflowRegistry.examples;
+export const communityRecommendations = communityRegistry.recommendations;
+
+const FORMAL_BUCKET_BY_ID: Record<string, CatalogBucketId> = {
+  'customer-research': 'gather',
+  'competitor-profiling': 'gather',
+  last30days: 'gather',
+  analytics: 'gather',
+  'marketing-plan': 'strategize',
+  pricing: 'strategize',
+  'product-marketing': 'strategize',
+  launch: 'strategize',
+  'community-marketing': 'strategize',
+  'sales-enablement': 'strategize',
+  copywriting: 'write',
+  'ad-creative': 'write',
+  emails: 'write',
+  image: 'visual',
+  'baoyu-cover-image': 'visual',
+  'gbro-cover-design': 'visual',
+  'guizang-ppt-skill': 'visual',
+  'gzh-design': 'visual',
+  'ip-as-logo': 'visual',
+  'mono-color': 'visual',
+  'ppt-kit': 'visual',
+  'ab-testing': 'auto',
+  ads: 'auto',
+  'qiaomu-seo': 'auto',
+  'yao-geo-page-audit': 'auto'
+};
+
+export function catalogBucketForSkill(skill: Pick<Skill, 'id' | 'workspace'>): CatalogBucketId {
+  return FORMAL_BUCKET_BY_ID[skill.id] ?? ({ insights: 'gather', strategy: 'strategize', creative: 'write', media: 'auto', operations: 'auto' } as const)[skill.workspace];
+}
 
 export const WORKSPACES: Array<{
   id: WorkspaceId;
@@ -106,8 +252,33 @@ export const SOURCE_LABELS: Record<SourceType, string> = {
   original: 'Open Marketing 原创'
 };
 
+export const PRACTICE_LEVEL_LABELS: Record<PracticeLevel, string> = {
+  discovered: '被发现',
+  source_verified: '来源核验',
+  practiced: '实践验证',
+  replicated: '多人复现',
+  best_practice: '最佳实践'
+};
+
+export const COMPARISON_SCALE_LABELS: Record<ComparisonScale, string> = {
+  low: '低',
+  medium: '中',
+  high: '高'
+};
+
+export const COMPARISON_EVIDENCE_LABELS: Record<ComparisonEvidenceType, string> = {
+  publisher: '项目方说明',
+  maintainer_test: '维护者实测',
+  community_case: '社区案例',
+  inference: '待验证推断'
+};
+
 export function skillHref(id: string, base = '') {
   return `${base}/skills/${id}/`;
+}
+
+export function comparisonHref(id: string, base = '') {
+  return `${base}/compare/${id}/`;
 }
 
 export function formatGithubStars(value?: number) {

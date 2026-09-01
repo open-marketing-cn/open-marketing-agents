@@ -1,0 +1,143 @@
+{
+  "product": "Open Marketing Workflow Examples",
+  "generatedAt": "2026-09-01",
+  "evidenceStatus": "scenario_example",
+  "examples": [
+    {
+      "id": "website",
+      "titleZh": "做品牌 / 项目网站",
+      "subtitleZh": "定位 → 结构 → 视觉 → 上线检查",
+      "descriptionZh": "先把定位和受众讲清楚，再生成页面结构与视觉方向，最后检查 SEO、速度、可访问性和转化。",
+      "composition": [
+        {
+          "id": "positioning-messaging",
+          "status": "pending"
+        },
+        {
+          "id": "site-architecture",
+          "status": "pending"
+        },
+        {
+          "id": "premium-ui-design",
+          "status": "pending"
+        },
+        {
+          "id": "web-quality-audit",
+          "status": "pending"
+        }
+      ],
+      "steps": [
+        "定位目标用户与一句话价值",
+        "规划导航、页面顺序和信息层级",
+        "生成页面视觉方向与组件结构",
+        "完成上线前质量检查"
+      ],
+      "outputZh": "页面 Brief、页面结构、视觉方向、首屏文案、CTA 与检查清单"
+    },
+    {
+      "id": "article",
+      "titleZh": "做公众号 / 长文内容",
+      "subtitleZh": "内容目标 → 成稿 → 配图 → 中文润色",
+      "descriptionZh": "先判断内容服务什么目标，再写成长文、补正文配图并完成中文润色。",
+      "composition": [
+        {
+          "id": "content-marketing",
+          "status": "pending"
+        },
+        {
+          "id": "wewrite",
+          "status": "pending"
+        },
+        {
+          "id": "interflowai-editorial-line-illustrations",
+          "status": "pending"
+        },
+        {
+          "id": "baoyu-article-illustrator",
+          "status": "pending"
+        },
+        {
+          "id": "humanizer-zh",
+          "status": "pending"
+        }
+      ],
+      "steps": [
+        "判断内容服务品牌、获客还是信任",
+        "把素材整理成中文长文",
+        "规划封面与正文解释图",
+        "删除模板感和 AI 连接词"
+      ],
+      "outputZh": "文章正文、标题候选、正文配图 Shot List 与润色版本"
+    },
+    {
+      "id": "conversion",
+      "titleZh": "提升落地页转化",
+      "subtitleZh": "用户语言 → 文案 → CRO → 发布",
+      "descriptionZh": "先读取用户真实语言，再改页面文案，把改动接入一次可发布、可测量、可复盘的 Launch。",
+      "composition": [
+        {
+          "id": "customer-research",
+          "status": "verified"
+        },
+        {
+          "id": "copywriting",
+          "status": "verified"
+        },
+        {
+          "id": "page-cro",
+          "status": "pending"
+        },
+        {
+          "id": "launch-marketing",
+          "status": "pending"
+        },
+        {
+          "id": "media-relations",
+          "status": "pending"
+        }
+      ],
+      "steps": [
+        "提炼用户真实痛点词",
+        "改写 Hero、CTA 和模块说明",
+        "找出漏转化点并排序",
+        "设计发布节奏与传播角度"
+      ],
+      "outputZh": "页面改动清单、新文案、CRO 优先级、发布节奏与 PR Pitch"
+    },
+    {
+      "id": "visual",
+      "titleZh": "把内容视觉化",
+      "subtitleZh": "观点 → 封面 → 正文图 → 页面视觉",
+      "descriptionZh": "把文章、案例和活动观点做成封面、正文配图、社媒图与展示页面，而不是停留在文字。",
+      "composition": [
+        {
+          "id": "copywriting",
+          "status": "verified"
+        },
+        {
+          "id": "baoyu-cover-image",
+          "status": "verified"
+        },
+        {
+          "id": "interflowai-editorial-line-illustrations",
+          "status": "pending"
+        },
+        {
+          "id": "ian-xiaohei-illustrations",
+          "status": "pending"
+        },
+        {
+          "id": "premium-ui-design",
+          "status": "pending"
+        }
+      ],
+      "steps": [
+        "压缩核心观点",
+        "规划封面主视觉",
+        "制作正文解释图",
+        "扩展为展示页面或 Hero"
+      ],
+      "outputZh": "封面方向、正文配图 Shot List、页面视觉方向与生成 Prompt"
+    }
+  ]
+}

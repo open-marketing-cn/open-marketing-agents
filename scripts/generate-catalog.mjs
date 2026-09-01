@@ -3,6 +3,8 @@ import { join, relative, resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
 const manifestsDir = join(root, 'catalog', 'skills');
+const intakeDir = join(root, 'catalog', 'intake');
+const legacyCatalogFile = join(root, 'catalog', 'legacy-catalog.json');
 const localSkillsDir = join(root, 'skills');
 const generatedDir = join(root, 'generated');
 const downloadsDir = join(root, 'static', 'downloads');
@@ -10,6 +12,9 @@ const workspaces = ['insights', 'strategy', 'creative', 'media', 'operations'];
 const sourceTypes = ['upstream', 'adapted', 'original'];
 const validationStatuses = ['passed', 'pending', 'failed'];
 const visibilityValues = ['public', 'candidate', 'paused_internal', 'withdrawn'];
+const practiceLevels = ['discovered', 'source_verified', 'practiced', 'replicated', 'best_practice'];
+const comparisonScales = ['low', 'medium', 'high'];
+const comparisonEvidenceTypes = ['publisher', 'maintainer_test', 'community_case', 'inference'];
 const defaultFeaturedIds = new Set([
   'customer-research', 'competitor-profiling', 'last30days',
   'product-marketing', 'marketing-plan', 'pricing',
@@ -19,6 +24,16 @@ const defaultFeaturedIds = new Set([
   'ip-as-logo', 'gzh-design', 'gbro-cover-design', 'mono-color'
 ]);
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+
+function normalizeSkillSourceKey(source) {
+  let repo = source.repo.trim().replace(/\/+$/, '').replace(/\.git$/i, '').toLocaleLowerCase('en-US');
+  try {
+    const url = new URL(repo);
+    repo = `${url.hostname.toLocaleLowerCase('en-US')}${url.pathname.replace(/\/+$/, '').replace(/\.git$/i, '').toLocaleLowerCase('en-US')}`;
+  } catch {}
+  const path = source.path.trim().replace(/^\/+|\/+$/g, '').replace(/\/?SKILL\.md$/i, '').toLocaleLowerCase('en-US');
+  return `${repo}|${path}`;
+}
 
 function fail(message) { throw new Error(`[catalog] ${message}`); }
 function requireString(value, label) {
@@ -33,6 +48,32 @@ function validateStatus(record, label) {
   requireString(record.checkedAt, `${label}.checkedAt`);
   requireString(record.noteZh, `${label}.noteZh`);
 }
+function validatePracticeEvidence(evidence, label) {
+  if (!evidence || typeof evidence !== 'object') fail(`${label} is required when practice validation passes`);
+  for (const field of ['caseTitleZh', 'contextZh', 'inputZh', 'outputZh', 'evidenceUrl', 'practitionerRole', 'attributionZh', 'howToUseZh', 'setupZh', 'expectedOutputZh', 'boundaryZh', 'depthPathZh', 'remixZh']) {
+    requireString(evidence[field], `${label}.${field}`);
+  }
+  requireStringArray(evidence.scenariosZh, `${label}.scenariosZh`);
+  if (evidence.scenariosZh.length < 2) fail(`${label}.scenariosZh must contain at least 2 items`);
+  for (const field of ['pitfallsZh', 'bestPracticesZh', 'notForZh']) requireStringArray(evidence[field], `${label}.${field}`);
+}
+function validateComparisonProfile(profile, label) {
+  if (!profile || typeof profile !== 'object') fail(`${label} must be an object`);
+  for (const field of ['learningCurve', 'outputConsistency', 'flexibility', 'operatorDependency', 'materialDependency', 'workflowCompleteness']) {
+    if (!comparisonScales.includes(profile[field])) fail(`${label}.${field} is invalid`);
+  }
+  requireStringArray(profile.bestForZh, `${label}.bestForZh`);
+  requireStringArray(profile.notForZh, `${label}.notForZh`);
+}
+function validateComparisonEvidence(evidence, label) {
+  if (!Array.isArray(evidence)) fail(`${label} must be an array`);
+  for (const [index, item] of evidence.entries()) {
+    if (!item || !comparisonEvidenceTypes.includes(item.type)) fail(`${label}[${index}].type is invalid`);
+    requireString(item.summaryZh, `${label}[${index}].summaryZh`);
+    requireString(item.checkedAt, `${label}[${index}].checkedAt`);
+    if (item.sourceUrl !== undefined) requireString(item.sourceUrl, `${label}[${index}].sourceUrl`);
+  }
+}
 function validateManifest(skill, filename) {
   requireString(skill.id, `${filename}.id`);
   if (!slugPattern.test(skill.id) || `${skill.id}.yaml` !== filename) fail(`${filename} must match a valid skill id`);
@@ -40,6 +81,10 @@ function validateManifest(skill, filename) {
   if (!slugPattern.test(skill.originalName)) fail(`${skill.id}.originalName is invalid`);
   if (skill.growthStage !== 'zero_to_one') fail(`${skill.id}.growthStage must be zero_to_one`);
   if (!workspaces.includes(skill.workspace)) fail(`${skill.id}.workspace is invalid`);
+  if (skill.categoryId !== undefined && !slugPattern.test(skill.categoryId)) fail(`${skill.id}.categoryId is invalid`);
+  if (skill.comparisonGroupId !== undefined && !slugPattern.test(skill.comparisonGroupId)) fail(`${skill.id}.comparisonGroupId is invalid`);
+  if (skill.methodType !== undefined) requireString(skill.methodType, `${skill.id}.methodType`);
+  if (skill.practiceLevel !== undefined && !practiceLevels.includes(skill.practiceLevel)) fail(`${skill.id}.practiceLevel is invalid`);
   for (const field of ['audiences', 'useCases', 'inputs', 'outputs', 'cannotInfer', 'channels']) requireStringArray(skill[field], `${skill.id}.${field}`);
   requireStringArray(skill.promptExamples, `${skill.id}.promptExamples`, 3);
   if (!skill.source || !sourceTypes.includes(skill.source.type)) fail(`${skill.id}.source.type is invalid`);
@@ -52,6 +97,7 @@ function validateManifest(skill, filename) {
   validateStatus(skill.validation?.spec, `${skill.id}.validation.spec`);
   validateStatus(skill.validation?.installation, `${skill.id}.validation.installation`);
   validateStatus(skill.validation?.practice, `${skill.id}.validation.practice`);
+  if (skill.validation.practice.status === 'passed') validatePracticeEvidence(skill.practiceEvidence, `${skill.id}.practiceEvidence`);
   if (!Array.isArray(skill.relatedSkillIds) || skill.relatedSkillIds.includes(skill.id)) fail(`${skill.id}.relatedSkillIds is invalid`);
   if (skill.visibility !== undefined && !visibilityValues.includes(skill.visibility)) fail(`${skill.id}.visibility is invalid`);
   if (skill.featured !== undefined && typeof skill.featured !== 'boolean') fail(`${skill.id}.featured must be boolean`);
@@ -61,6 +107,8 @@ function validateManifest(skill, filename) {
     if (skill.card.previewImage !== null && skill.card.previewImage !== undefined) requireString(skill.card.previewImage, `${skill.id}.card.previewImage`);
     if (skill.card.previewLicense !== null && skill.card.previewLicense !== undefined) requireString(skill.card.previewLicense, `${skill.id}.card.previewLicense`);
   }
+  if (skill.comparisonProfile !== undefined) validateComparisonProfile(skill.comparisonProfile, `${skill.id}.comparisonProfile`);
+  if (skill.comparisonEvidence !== undefined) validateComparisonEvidence(skill.comparisonEvidence, `${skill.id}.comparisonEvidence`);
 }
 
 async function walk(dir) {
@@ -151,9 +199,14 @@ skills.sort((left, right) => {
   return stageDelta || left.id.localeCompare(right.id);
 });
 const ids = new Set();
+const sourceKeys = new Map();
 for (const skill of skills) {
   if (ids.has(skill.id)) fail(`duplicate id ${skill.id}`);
   ids.add(skill.id);
+  const sourceKey = normalizeSkillSourceKey(skill.source);
+  const duplicateId = sourceKeys.get(sourceKey);
+  if (duplicateId) fail(`${skill.id} duplicates source repo + Skill path already used by ${duplicateId}`);
+  sourceKeys.set(sourceKey, skill.id);
 }
 for (const skill of skills) {
   for (const related of skill.relatedSkillIds) if (!ids.has(related)) fail(`${skill.id} references missing related skill ${related}`);
@@ -164,6 +217,12 @@ const catalogVersion = skills.map((skill) => skill.source.checkedAt).sort().at(-
 const buildCommit = /^[a-f0-9]{40}$/.test(process.env.GITHUB_SHA ?? '') ? process.env.GITHUB_SHA : null;
 const normalizedSkills = skills.map((skill) => ({
   ...skill,
+  categoryId: skill.categoryId ?? skill.workspace,
+  comparisonGroupId: skill.comparisonGroupId ?? null,
+  methodType: skill.methodType ?? '通用任务型',
+  practiceLevel: skill.practiceLevel ?? (skill.validation.practice.status === 'passed' ? 'practiced' : skill.validation.spec.status === 'passed' ? 'source_verified' : 'discovered'),
+  comparisonProfile: skill.comparisonProfile ?? null,
+  comparisonEvidence: skill.comparisonEvidence ?? [],
   featured: skill.featured ?? defaultFeaturedIds.has(skill.id),
   visibility: skill.visibility ?? (skill.source.type === 'upstream' ? 'public' : 'paused_internal'),
   discoveredFrom: skill.discoveredFrom ?? ['github'],
@@ -185,11 +244,85 @@ const stats = {
 const registry = { product: 'Open Marketing Skills', growthStage: 'zero_to_one', catalogVersion, stats, skills: publicSkills };
 const searchIndex = publicSkills.map((skill) => ({
   id: skill.id, titleZh: skill.titleZh, originalName: skill.originalName, workspace: skill.workspace,
+  categoryId: skill.categoryId, comparisonGroupId: skill.comparisonGroupId, methodType: skill.methodType, practiceLevel: skill.practiceLevel,
   sourceType: skill.source.type, installable: skill.installable, featured: skill.featured,
-  text: [skill.titleZh, skill.originalName, skill.summaryZh, skill.card.outcomeZh, ...skill.audiences, ...skill.useCases, ...skill.inputs, ...skill.outputs, ...skill.channels, skill.source.author].join(' ').toLocaleLowerCase('zh-CN')
+  text: [skill.titleZh, skill.originalName, skill.summaryZh, skill.card.outcomeZh, skill.categoryId, skill.methodType, ...skill.audiences, ...skill.useCases, ...skill.inputs, ...skill.outputs, ...skill.channels, ...(skill.comparisonProfile?.bestForZh ?? []), ...(skill.comparisonProfile?.notForZh ?? []), skill.source.author].join(' ').toLocaleLowerCase('zh-CN')
 }));
 await writeFile(join(generatedDir, 'registry.json'), `${JSON.stringify(registry, null, 2)}\n`);
 await writeFile(join(generatedDir, 'search-index.json'), `${JSON.stringify(searchIndex, null, 2)}\n`);
+
+const legacyCatalog = JSON.parse(await readFile(legacyCatalogFile, 'utf8'));
+if (!Array.isArray(legacyCatalog.skills) || !Array.isArray(legacyCatalog.buckets) || !Array.isArray(legacyCatalog.workflowExamples)) {
+  fail('catalog/legacy-catalog.json must contain skills, buckets and workflowExamples arrays');
+}
+const legacyIds = new Set();
+for (const item of legacyCatalog.skills) {
+  for (const field of ['id', 'bucket', 'titleZh', 'summaryZh']) requireString(item[field], `legacy.${item.id ?? 'unknown'}.${field}`);
+  if (legacyIds.has(item.id)) fail(`duplicate legacy catalog id ${item.id}`);
+  legacyIds.add(item.id);
+}
+const bucketIds = new Set(legacyCatalog.buckets.map((bucket) => bucket.id));
+for (const item of legacyCatalog.skills) if (!bucketIds.has(item.bucket)) fail(`legacy ${item.id} uses unknown bucket ${item.bucket}`);
+
+const intakeFiles = (await readdir(intakeDir)).filter((name) => name.endsWith('.yaml') && name !== 'external-discovery-2026-09-01.yaml').sort();
+const intakeById = new Map();
+for (const filename of intakeFiles) {
+  const record = JSON.parse(await readFile(join(intakeDir, filename), 'utf8'));
+  if (record.id) intakeById.set(record.id, record);
+}
+const publicIds = new Set(publicSkills.map((skill) => skill.id));
+const candidates = legacyCatalog.skills
+  .filter((item) => !publicIds.has(item.id))
+  .map((item) => {
+    const intake = intakeById.get(item.id) ?? {};
+    const review = intake.review ?? {};
+    const missingChecksZh = [];
+    if (review.path !== 'verified') missingChecksZh.push('真实 SKILL.md 路径');
+    if (review.license === 'pending') missingChecksZh.push('内容许可证');
+    if (review.independent !== 'verified') missingChecksZh.push('独立安装与触发');
+    missingChecksZh.push('真实使用案例与署名');
+    const sourceUrl = typeof intake.claimedSource === 'string' && /^https?:\/\//.test(intake.claimedSource) ? intake.claimedSource : null;
+    return {
+      id: item.id,
+      originalName: item.id,
+      titleZh: item.titleZh,
+      summaryZh: item.summaryZh,
+      bucket: item.bucket,
+      verificationStatus: 'pending',
+      sourceUrl,
+      sourceLabelZh: sourceUrl ? new URL(sourceUrl).hostname.replace(/^www\./, '') : '来源待补',
+      origin: {
+        repo: legacyCatalog.source.repo,
+        commit: legacyCatalog.source.commit,
+        catalogId: item.id,
+        checkedAt: legacyCatalog.source.checkedAt
+      },
+      missingChecksZh,
+      recommendationReasonZh: '来自旧版 Brand Marketing Skills 的场景策展；正式收录前仍需完成来源、安装与实践核验。'
+    };
+  });
+
+const candidateRegistry = {
+  product: 'Open Marketing Skill Candidates',
+  generatedAt: catalogVersion,
+  stats: {
+    total: candidates.length,
+    byBucket: Object.fromEntries(legacyCatalog.buckets.map((bucket) => [bucket.id, candidates.filter((item) => item.bucket === bucket.id).length]))
+  },
+  buckets: legacyCatalog.buckets,
+  candidates
+};
+const workflowRegistry = {
+  product: 'Open Marketing Workflow Examples',
+  generatedAt: catalogVersion,
+  evidenceStatus: 'scenario_example',
+  examples: legacyCatalog.workflowExamples.map((workflow) => ({
+    ...workflow,
+    composition: workflow.composition.map((id) => ({ id, status: publicIds.has(id) ? 'verified' : 'pending' }))
+  }))
+};
+await writeFile(join(generatedDir, 'candidates.json'), `${JSON.stringify(candidateRegistry, null, 2)}\n`);
+await writeFile(join(generatedDir, 'workflow-examples.json'), `${JSON.stringify(workflowRegistry, null, 2)}\n`);
 let previousUpdates = null;
 try { previousUpdates = JSON.parse(await readFile(join(generatedDir, 'updates.json'), 'utf8')); } catch {}
 const previousSources = new Map((previousUpdates?.sources ?? []).map((source) => [source.id, source]));

@@ -1,0 +1,50 @@
+{
+  "id": "guizang-ppt-skill",
+  "titleZh": "用受控设计语言快速生成演讲型 PPT",
+  "originalName": "guizang-ppt-skill",
+  "summaryZh": "在两套内置设计语言和预制页面结构中生成可直接演示的网页 PPT，降低第一次做出稳定结果的门槛。",
+  "growthStage": "zero_to_one",
+  "workspace": "creative",
+  "categoryId": "presentation-generation",
+  "comparisonGroupId": "ppt",
+  "methodType": "受控设计型",
+  "practiceLevel": "source_verified",
+  "featured": true,
+  "visibility": "public",
+  "discoveredFrom": ["github", "community"],
+  "card": {"outcomeZh": "固定设计语言下的演讲型网页 PPT", "previewImage": null, "previewLicense": null},
+  "audiences": ["需要快速完成演讲材料的营销人", "发布会与 Demo Day 主讲人", "希望少做视觉判断的小团队"],
+  "useCases": ["快速制作发布会或 Demo Day 演讲", "把一份内容大纲整理成稳定页面结构", "在缺少完整品牌参考时生成可演示版本"],
+  "inputs": ["演讲目标、受众和时长", "核心观点、事实材料和行动号召", "希望采用的内置视觉方向", "必须保留的品牌元素与禁用项"],
+  "outputs": ["可直接演示的网页 PPT", "预制页面结构与叙事顺序", "动画、翻页和低功耗展示方式", "可复用的整套模板与设计规则"],
+  "promptExamples": [
+    "请用 guizang-ppt-skill 把这份 10 分钟产品发布大纲做成一套可直接演示的网页 PPT。",
+    "请用瑞士国际主义风格重组这份 Demo Day 内容，先列页面结构，再完成整套演示稿。",
+    "请检查这套演讲稿的叙事弧、页面密度和发布会节奏，并在受控模板内完成修改。"
+  ],
+  "humanGate": "主讲人确认事实、叙事顺序、品牌适配和现场演示效果；如需原生可编辑 PPTX 或复杂协作，应改选其他工具。",
+  "cannotInfer": ["未提供事实的真实性", "现场观众的真实反应", "品牌素材的授权状态", "原生 PPTX 中的最终编辑体验"],
+  "channels": ["发布会", "Demo Day", "路演", "个人演讲"],
+  "source": {"type": "upstream", "repo": "https://github.com/op7418/guizang-ppt-skill", "path": "SKILL.md", "commit": "c91369c449d34755d320a8b81d0734000d99d1ab", "author": "op7418", "authorUrl": "https://github.com/op7418", "license": "AGPL-3.0", "checkedAt": "2026-09-01"},
+  "installation": {"codex": "npx skills add https://github.com/op7418/guizang-ppt-skill --skill guizang-ppt-skill", "claudeCode": "npx skills add https://github.com/op7418/guizang-ppt-skill --skill guizang-ppt-skill"},
+  "validation": {
+    "spec": {"status": "passed", "checkedAt": "2026-09-01", "noteZh": "已核对根目录独立 SKILL.md、任务结构和 AGPL-3.0 许可证。"},
+    "installation": {"status": "pending", "checkedAt": "2026-09-01", "noteZh": "安装命令来自上游说明，尚未在隔离的 Codex 与 Claude Code 环境完成双端复测。"},
+    "practice": {"status": "pending", "checkedAt": "2026-09-01", "noteZh": "已有社区使用判断，尚缺可公开成果和统一 Brief 复核，不计入好用 Skill。"}
+  },
+  "comparisonProfile": {
+    "learningCurve": "low",
+    "outputConsistency": "high",
+    "flexibility": "medium",
+    "operatorDependency": "medium",
+    "materialDependency": "low",
+    "workflowCompleteness": "high",
+    "bestForZh": ["想快速得到稳定演讲效果", "没有高质量视觉参考", "发布会、Demo Day 和个人演讲"],
+    "notForZh": ["必须交付原生可编辑 PPTX", "多人同时编辑", "复杂表格和高度自定义品牌系统"]
+  },
+  "comparisonEvidence": [
+    {"type": "publisher", "summaryZh": "上游 SKILL.md 明确提供两套设计语言、预制页面结构和网页演示能力。", "checkedAt": "2026-09-01", "sourceUrl": "https://github.com/op7418/guizang-ppt-skill/blob/c91369c449d34755d320a8b81d0734000d99d1ab/SKILL.md"},
+    {"type": "community_case", "summaryZh": "共创发起人的使用判断是：模板约束降低上手门槛，结果更稳定，但风格范围和复杂协作能力有限。", "checkedAt": "2026-09-01"}
+  ],
+  "relatedSkillIds": ["ppt-kit"]
+}

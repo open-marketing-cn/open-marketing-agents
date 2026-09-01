@@ -3,6 +3,8 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '23 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -24,6 +26,14 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Sync public community recommendations
+        # Missing credentials keep the last checked-in public snapshot so a first deploy is still possible.
+        # Once all three secrets exist, any Feishu/API failure remains fatal and blocks the deployment.
+        run: npm run community:sync -- --allow-fixture
+        env:
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          FEISHU_PUBLIC_VIEW_ID: ${{ secrets.FEISHU_PUBLIC_VIEW_ID }}
       - name: Build static catalog
         run: npm run build
         env:
