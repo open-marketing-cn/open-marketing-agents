@@ -1,6 +1,6 @@
 {
   "product": "Open Marketing Workflow Examples",
-  "generatedAt": "2026-09-01",
+  "generatedAt": "2026-09-03",
   "evidenceStatus": "scenario_example",
   "examples": [
     {
@@ -11,19 +11,19 @@
       "composition": [
         {
           "id": "positioning-messaging",
-          "status": "pending"
+          "status": "verified"
         },
         {
           "id": "site-architecture",
-          "status": "pending"
+          "status": "verified"
         },
         {
           "id": "premium-ui-design",
-          "status": "pending"
+          "status": "verified"
         },
         {
           "id": "web-quality-audit",
-          "status": "pending"
+          "status": "verified"
         }
       ],
       "steps": [
@@ -42,11 +42,11 @@
       "composition": [
         {
           "id": "content-marketing",
-          "status": "pending"
+          "status": "verified"
         },
         {
           "id": "wewrite",
-          "status": "pending"
+          "status": "verified"
         },
         {
           "id": "interflowai-editorial-line-illustrations",
@@ -54,11 +54,11 @@
         },
         {
           "id": "baoyu-article-illustrator",
-          "status": "pending"
+          "status": "verified"
         },
         {
           "id": "humanizer-zh",
-          "status": "pending"
+          "status": "verified"
         }
       ],
       "steps": [
@@ -85,7 +85,7 @@
         },
         {
           "id": "page-cro",
-          "status": "pending"
+          "status": "verified"
         },
         {
           "id": "launch-marketing",
@@ -93,7 +93,7 @@
         },
         {
           "id": "media-relations",
-          "status": "pending"
+          "status": "verified"
         }
       ],
       "steps": [
@@ -124,11 +124,11 @@
         },
         {
           "id": "ian-xiaohei-illustrations",
-          "status": "pending"
+          "status": "verified"
         },
         {
           "id": "premium-ui-design",
-          "status": "pending"
+          "status": "verified"
         }
       ],
       "steps": [

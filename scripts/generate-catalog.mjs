@@ -272,7 +272,12 @@ for (const filename of intakeFiles) {
 }
 const publicIds = new Set(publicSkills.map((skill) => skill.id));
 const candidates = legacyCatalog.skills
-  .filter((item) => !publicIds.has(item.id))
+  .filter((item) => {
+    if (publicIds.has(item.id)) return false;
+    const review = intakeById.get(item.id)?.review ?? {};
+    const mappedPublicId = typeof review.publicSkillId === 'string' ? review.publicSkillId : '';
+    return !['public', 'public_alternative'].includes(review.decision) || !publicIds.has(mappedPublicId);
+  })
   .map((item) => {
     const intake = intakeById.get(item.id) ?? {};
     const review = intake.review ?? {};
