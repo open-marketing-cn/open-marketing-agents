@@ -1,11 +1,11 @@
 {
   "generatedAt": "2026-08-31T16:10:45.519Z",
-  "catalogVersion": "2026-09-01",
+  "catalogVersion": "2026-09-03",
   "policy": "上游更新只生成复审记录，不自动覆盖中文介绍或本仓库改编版。",
   "summary": {
-    "total": 25,
+    "total": 46,
     "current": 10,
-    "reviewRequired": 15,
+    "reviewRequired": 36,
     "blocked": 0
   },
   "sources": [
@@ -52,6 +52,46 @@
       "reviewStatus": "pending_remote_review"
     },
     {
+      "id": "seo-audit",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/seo-audit",
+      "pinnedCommit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+      "githubStars": 46650,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "content-marketing",
+      "repo": "https://github.com/LeadMagic/gtm-skills",
+      "path": "skills/inbound/content-marketing",
+      "pinnedCommit": "130b4332691f9f05065d9af0ed23ca6e4ee1bac8",
+      "githubStars": 46,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "content-strategy",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/content-strategy",
+      "pinnedCommit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+      "githubStars": 46650,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "lead-magnets",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/lead-magnets",
+      "pinnedCommit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+      "githubStars": 46650,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
       "id": "marketing-plan",
       "repo": "https://github.com/coreyhaines31/marketingskills",
       "path": "skills/marketing-plan",
@@ -59,6 +99,16 @@
       "githubStars": 46347,
       "githubStarsCheckedAt": "2026-09-01",
       "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "positioning-messaging",
+      "repo": "https://github.com/senlindesign/product-marketing-skill",
+      "path": "positioning-messaging",
+      "pinnedCommit": "a8c52b90c74b4b19cdbaa6d7d6f84b09a89a8f41",
+      "githubStars": 5,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
       "reviewStatus": "pending_remote_review"
     },
     {
@@ -104,6 +154,16 @@
       "githubStarsCheckedAt": "2026-09-01"
     },
     {
+      "id": "baoyu-article-illustrator",
+      "repo": "https://github.com/JimLiu/baoyu-skills",
+      "path": "skills/baoyu-article-illustrator",
+      "pinnedCommit": "6b7a2e417500561a5ecdd0b168332f4142584617",
+      "githubStars": 25599,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
       "id": "baoyu-cover-image",
       "repo": "https://github.com/JimLiu/baoyu-skills",
       "path": "skills/baoyu-cover-image",
@@ -111,6 +171,36 @@
       "githubStars": 25524,
       "githubStarsCheckedAt": "2026-09-01",
       "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "baoyu-markdown-to-html",
+      "repo": "https://github.com/JimLiu/baoyu-skills",
+      "path": "skills/baoyu-markdown-to-html",
+      "pinnedCommit": "6b7a2e417500561a5ecdd0b168332f4142584617",
+      "githubStars": 25599,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "cold-email",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/cold-email",
+      "pinnedCommit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+      "githubStars": 46650,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "copy-editing",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/copy-editing",
+      "pinnedCommit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+      "githubStars": 46650,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
       "reviewStatus": "pending_remote_review"
     },
     {
@@ -158,6 +248,26 @@
       "reviewStatus": "pending_remote_review"
     },
     {
+      "id": "humanizer-zh",
+      "repo": "https://github.com/op7418/Humanizer-zh",
+      "path": "SKILL.md",
+      "pinnedCommit": "91f3d394db8419c20d67ebe22a96cf8fee0a404b",
+      "githubStars": 16539,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "ian-xiaohei-illustrations",
+      "repo": "https://github.com/helloianneo/ian-xiaohei-illustrations",
+      "path": "ian-xiaohei-illustrations",
+      "pinnedCommit": "91b560849e8f883922cc2fa8a358a668caa94105",
+      "githubStars": 10917,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
       "id": "image",
       "repo": "https://github.com/coreyhaines31/marketingskills",
       "path": "skills/image",
@@ -202,6 +312,56 @@
       "reviewStatus": "pending_remote_review"
     },
     {
+      "id": "premium-ui-design",
+      "repo": "https://github.com/saifyxpro/ui-ux-design-pro-skill",
+      "path": "skills/ui-ux-design-pro",
+      "pinnedCommit": "7c98f97767f00dee333635c59c42e9db229f6a1f",
+      "githubStars": 71,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "social-content",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/social",
+      "pinnedCommit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+      "githubStars": 46650,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "taste-design",
+      "repo": "https://github.com/Leonxlnx/taste-skill",
+      "path": "skills/taste-skill",
+      "pinnedCommit": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+      "githubStars": 83746,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "video",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/video",
+      "pinnedCommit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+      "githubStars": 46650,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "wewrite",
+      "repo": "https://github.com/imraywang/wewrite",
+      "path": "skills/wewrite",
+      "pinnedCommit": "bbf6d1a0f7255d137e3e61ffb7b02df4d627481a",
+      "githubStars": 3224,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
       "id": "ab-testing",
       "repo": "https://github.com/coreyhaines31/marketingskills",
       "path": "skills/ab-testing",
@@ -232,6 +392,16 @@
       "reviewStatus": "current",
       "githubStars": 46347,
       "githubStarsCheckedAt": "2026-09-01"
+    },
+    {
+      "id": "ai-seo",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/ai-seo",
+      "pinnedCommit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+      "githubStars": 46650,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
     },
     {
       "id": "analytics",
@@ -270,6 +440,26 @@
       "githubStarsCheckedAt": "2026-09-01"
     },
     {
+      "id": "media-relations",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/public-relations",
+      "pinnedCommit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+      "githubStars": 46650,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "page-cro",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/cro",
+      "pinnedCommit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+      "githubStars": 46650,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
       "id": "qiaomu-seo",
       "repo": "https://github.com/joeseesun/qiaomu-seo",
       "path": "SKILL.md",
@@ -277,6 +467,26 @@
       "githubStars": 399,
       "githubStarsCheckedAt": "2026-09-01",
       "checkedAt": "2026-09-01",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "site-architecture",
+      "repo": "https://github.com/coreyhaines31/marketingskills",
+      "path": "skills/site-architecture",
+      "pinnedCommit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+      "githubStars": 46650,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
+      "reviewStatus": "pending_remote_review"
+    },
+    {
+      "id": "web-quality-audit",
+      "repo": "https://github.com/addyosmani/web-quality-skills",
+      "path": "skills/web-quality-audit",
+      "pinnedCommit": "afa8da942115f2961fdbfa80807ea0b232ff6c00",
+      "githubStars": 2741,
+      "githubStarsCheckedAt": "2026-09-03",
+      "checkedAt": "2026-09-03",
       "reviewStatus": "pending_remote_review"
     },
     {

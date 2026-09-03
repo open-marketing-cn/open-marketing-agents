@@ -1,18 +1,18 @@
 {
   "product": "Open Marketing Skills",
   "growthStage": "zero_to_one",
-  "catalogVersion": "2026-09-01",
+  "catalogVersion": "2026-09-03",
   "stats": {
-    "total": 25,
+    "total": 46,
     "byWorkspace": {
-      "insights": 3,
-      "strategy": 3,
-      "creative": 10,
-      "media": 6,
+      "insights": 4,
+      "strategy": 7,
+      "creative": 21,
+      "media": 11,
       "operations": 3
     },
     "bySource": {
-      "upstream": 25,
+      "upstream": 46,
       "adapted": 0,
       "original": 0
     },
@@ -324,6 +324,423 @@
       "installable": true
     },
     {
+      "id": "seo-audit",
+      "titleZh": "扫描网站的 SEO 真问题",
+      "originalName": "seo-audit",
+      "summaryZh": "审计品牌网站、博客或落地页的 SEO 状态，输出带证据和优先级的修复清单。",
+      "growthStage": "zero_to_one",
+      "workspace": "insights",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "带证据、优先级和下一步的 SEO 审计清单",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "品牌网站负责人",
+        "内容与 SEO 人员",
+        "创业团队"
+      ],
+      "useCases": [
+        "上线前做 SEO 健康检查",
+        "排查流量或排名下降原因",
+        "审计页面、索引和 Core Web Vitals 问题"
+      ],
+      "inputs": [
+        "网站 URL 或页面清单",
+        "SEO 目标与重点关键词",
+        "已知问题和近期变更",
+        "可访问的 Search Console 或分析数据"
+      ],
+      "outputs": [
+        "SEO 问题与页面证据",
+        "修复优先级清单",
+        "技术、页面和内容改进建议",
+        "需要人工确认的数据缺口"
+      ],
+      "promptExamples": [
+        "请审计这个品牌网站的 SEO，逐条附上页面证据和修复优先级。",
+        "最近自然流量下降，请从索引、页面内容、技术和 Core Web Vitals 分层排查。",
+        "请把这份 SEO 审计整理成两周内能执行的修复 backlog，并标出需要开发确认的项。"
+      ],
+      "humanGate": "网站负责人确认业务优先级、技术改动范围、内容事实和上线排期。",
+      "cannotInfer": [
+        "未来搜索排名",
+        "没有权限访问的数据",
+        "代码已经正确部署",
+        "业务结果一定由 SEO 改动造成"
+      ],
+      "channels": [
+        "网站",
+        "搜索",
+        "博客",
+        "落地页"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/seo-audit",
+        "commit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 46650,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s seo-audit -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s seo-audit -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、审计范围和证据边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "qiaomu-seo",
+        "analytics"
+      ],
+      "categoryId": "insights",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
+      "id": "content-marketing",
+      "titleZh": "内容营销策略与栏目设计",
+      "originalName": "content-marketing",
+      "summaryZh": "围绕 SEO/AEO、主题页、内容到 Pipeline 的映射，建立能承接业务目标的内容营销策略。",
+      "growthStage": "zero_to_one",
+      "workspace": "strategy",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "内容战略、主题与转化路径、优先级计划",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "B2B 内容团队",
+        "增长负责人",
+        "创业者"
+      ],
+      "useCases": [
+        "规划内容驱动的获客路径",
+        "建立 SEO/AEO 和主题页策略",
+        "把内容栏目接到线索和 Pipeline"
+      ],
+      "inputs": [
+        "业务与 Pipeline 目标",
+        "理想客户和购买阶段",
+        "已有内容、关键词和分发能力",
+        "品牌上下文与内容限制"
+      ],
+      "outputs": [
+        "内容战略和主题架构",
+        "内容到受众与阶段的映射",
+        "SEO/AEO 与分发优先级",
+        "内容到转化的衡量计划"
+      ],
+      "promptExamples": [
+        "请根据我们的业务目标和理想客户，设计一个能承接 Pipeline 的内容营销策略。",
+        "请把这些客户问题和关键词整理成主题页、内容支柱和发布优先级。",
+        "请为每种内容定义受众阶段、下一步 CTA 和不应夸大的结果承诺。"
+      ],
+      "humanGate": "营销负责人确认客户和业务事实、内容公开范围、资源排期、衡量口径和最终发布计划。",
+      "cannotInfer": [
+        "内容一定产生 Pipeline",
+        "关键词一定带来有效流量",
+        "AI 搜索一定引用内容",
+        "没有提供的客户证据和业务指标"
+      ],
+      "channels": [
+        "博客",
+        "SEO/AEO",
+        "Newsletter",
+        "社交媒体"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/LeadMagic/gtm-skills",
+        "path": "skills/inbound/content-marketing",
+        "commit": "130b4332691f9f05065d9af0ed23ca6e4ee1bac8",
+        "author": "LeadMagic",
+        "authorUrl": "https://github.com/LeadMagic",
+        "avatarUrl": "https://github.com/LeadMagic.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 46,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add LeadMagic/gtm-skills -s content-marketing -a codex -y",
+        "claudeCode": "npx skills add LeadMagic/gtm-skills -s content-marketing -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、内容到 Pipeline 范围和证据边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "content-strategy",
+        "lead-magnets",
+        "ai-seo"
+      ],
+      "categoryId": "strategy",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
+      "id": "content-strategy",
+      "titleZh": "规划内容主题和分发",
+      "originalName": "content-strategy",
+      "summaryZh": "从业务目标、客户问题和竞争空白出发，规划可搜索、可分享并能承接转化的内容。",
+      "growthStage": "zero_to_one",
+      "workspace": "strategy",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "内容支柱、主题地图、优先级和分发计划",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "内容营销人员",
+        "品牌与增长团队",
+        "创业团队"
+      ],
+      "useCases": [
+        "确定接下来该写什么",
+        "建立主题集群和编辑计划",
+        "把内容接到流量、线索或品牌目标"
+      ],
+      "inputs": [
+        "业务目标和理想客户",
+        "客户问题、销售异议或支持记录",
+        "已有内容和资源",
+        "竞品内容与可用分发渠道"
+      ],
+      "outputs": [
+        "内容支柱与主题地图",
+        "主题优先级与理由",
+        "内容形式和编辑节奏",
+        "分发与衡量计划"
+      ],
+      "promptExamples": [
+        "请根据我们的理想客户和业务目标，规划三个月的内容主题地图。",
+        "把这些客户问题、销售异议和现有文章整理成内容支柱与优先级。",
+        "请为每个主题安排合适的内容形式、分发渠道和下一步 CTA。"
+      ],
+      "humanGate": "内容负责人确认客户事实、品牌立场、资源排期、渠道权限和最终选题。",
+      "cannotInfer": [
+        "客户一定会搜索或分享某个主题",
+        "内容一定带来线索",
+        "没有提供的客户语言",
+        "团队能否按计划持续生产"
+      ],
+      "channels": [
+        "博客",
+        "公众号",
+        "Newsletter",
+        "社交媒体"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/content-strategy",
+        "commit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 46650,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s content-strategy -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s content-strategy -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、策略输入和输出范围。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "marketing-plan",
+        "product-marketing"
+      ],
+      "categoryId": "strategy",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
+      "id": "lead-magnets",
+      "titleZh": "设计可转化的 Lead Magnet",
+      "originalName": "lead-magnets",
+      "summaryZh": "把模板、清单、指南或免费工具设计成能换取线索并自然承接产品采用的内容资产。",
+      "growthStage": "zero_to_one",
+      "workspace": "strategy",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "Lead Magnet 方案、交付资产和承接路径",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "增长与内容团队",
+        "营销服务提供者",
+        "创业者"
+      ],
+      "useCases": [
+        "设计邮箱获客资源",
+        "把已有知识打包成下载资产",
+        "优化资源页和内容升级"
+      ],
+      "inputs": [
+        "目标受众和阶段",
+        "业务目标与承接产品",
+        "可复用的内容或专业经验",
+        "分发、表单和交付约束"
+      ],
+      "outputs": [
+        "Lead Magnet 主题与形式",
+        "资源内容结构和制作清单",
+        "分发与表单承接方案",
+        "后续培育路径"
+      ],
+      "promptExamples": [
+        "请为面向品牌运营者的服务设计三个 Lead Magnet，并说明各自换取什么线索。",
+        "把这份内部方法论改造成可公开的检查清单，列出需要脱敏和补证的地方。",
+        "请检查这个下载资源从主题、承诺到 CTA 是否能自然承接下一步咨询。"
+      ],
+      "humanGate": "营销负责人确认公开范围、客户隐私、资源承诺、表单字段和后续触达方式。",
+      "cannotInfer": [
+        "下载者一定是合格线索",
+        "资源一定提升转化",
+        "用户同意接收后续营销",
+        "内容中的业务案例可以公开"
+      ],
+      "channels": [
+        "资源库",
+        "落地页",
+        "邮件",
+        "社交媒体"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/lead-magnets",
+        "commit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 46650,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s lead-magnets -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s lead-magnets -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、获客资产范围和人工边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "content-strategy",
+        "copywriting"
+      ],
+      "categoryId": "strategy",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
       "id": "marketing-plan",
       "titleZh": "把营销目标拆成一份可执行计划",
       "originalName": "marketing-plan",
@@ -427,6 +844,111 @@
       "comparisonProfile": null,
       "comparisonEvidence": [],
       "installable": true
+    },
+    {
+      "id": "positioning-messaging",
+      "titleZh": "一页 Messaging Framework",
+      "originalName": "positioning-messaging",
+      "summaryZh": "引导用户明确目标客户、问题、差异化和核心信息，并输出可继续讨论的定位与信息体系。",
+      "growthStage": "zero_to_one",
+      "workspace": "strategy",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "定位框架、Messaging Matrix 和网站文案骨架",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "产品营销负责人",
+        "品牌创始人",
+        "B2B 营销团队"
+      ],
+      "useCases": [
+        "为新产品建立定位和信息体系",
+        "准备官网或发布前的核心主张",
+        "把客户问题、价值和竞品差异整理成框架"
+      ],
+      "inputs": [
+        "产品描述和目标客户",
+        "客户问题与当前替代方案",
+        "竞争者和差异化证据",
+        "语言、渠道和输出格式"
+      ],
+      "outputs": [
+        "定位与价值主张框架",
+        "Messaging Matrix",
+        "竞争定位和异议回应",
+        "网站文案骨架与可导出的工作簿"
+      ],
+      "promptExamples": [
+        "请根据这个产品 Brief，先问清目标客户、问题和替代方案，再建立定位框架。",
+        "请把这组客户痛点映射到价值主张、功能收益和证明点，标出没有证据的地方。",
+        "请为官网生成三组核心信息，并说明每组适用的受众、场景和取舍。"
+      ],
+      "humanGate": "产品或品牌负责人确认客户事实、竞争判断、差异化主张、品牌语气和最终公开信息。",
+      "cannotInfer": [
+        "客户一定认同定位",
+        "竞争者信息完整准确",
+        "没有证据的差异化主张",
+        "定位成立等于市场需求成立"
+      ],
+      "channels": [
+        "官网",
+        "产品发布",
+        "销售材料",
+        "品牌内容"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/senlindesign/product-marketing-skill",
+        "path": "positioning-messaging",
+        "commit": "a8c52b90c74b4b19cdbaa6d7d6f84b09a89a8f41",
+        "author": "senlindesign",
+        "authorUrl": "https://github.com/senlindesign",
+        "avatarUrl": "https://github.com/senlindesign.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 5,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add senlindesign/product-marketing-skill -s positioning-messaging -a codex -y",
+        "claudeCode": "npx skills add senlindesign/product-marketing-skill -s positioning-messaging -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、定位方法和工作簿输出。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "product-marketing",
+        "marketing-plan",
+        "copywriting"
+      ],
+      "categoryId": "strategy",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
     },
     {
       "id": "pricing",
@@ -737,6 +1259,110 @@
       "installable": true
     },
     {
+      "id": "baoyu-article-illustrator",
+      "titleZh": "文章正文配图",
+      "originalName": "baoyu-article-illustrator",
+      "summaryZh": "分析文章结构，找出需要视觉辅助的位置，并用统一的类型、风格和配色规划正文插图。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "文章认知锚点、配图位置和生成方案",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "内容运营人员",
+        "品牌与设计团队",
+        "独立创作者"
+      ],
+      "useCases": [
+        "为长文规划正文插图",
+        "把方法、流程和观点转成解释图",
+        "统一一组文章插图的视觉语言"
+      ],
+      "inputs": [
+        "文章正文或提纲",
+        "目标读者与发布渠道",
+        "品牌素材和视觉约束",
+        "希望解释的观点或流程"
+      ],
+      "outputs": [
+        "配图位置和理由",
+        "每张图的类型、风格与配色",
+        "生成提示词和画面说明",
+        "生成后的质量检查项"
+      ],
+      "promptExamples": [
+        "请阅读这篇文章，只挑出真正需要解释的认知锚点并给出正文配图位置。",
+        "请为这篇中文方法论文章设计三张 16:9 正文插图，写清画面动作和统一风格。",
+        "请检查这组文章配图是否重复、难读或偏离文章观点，并列出修改项。"
+      ],
+      "humanGate": "作者或设计负责人确认文章事实、画面含义、素材版权、品牌气质和最终图片。",
+      "cannotInfer": [
+        "图片素材的授权状态",
+        "生成结果一定可读或准确",
+        "插图一定提升阅读或转化",
+        "没有提供的文章事实"
+      ],
+      "channels": [
+        "公众号",
+        "博客",
+        "长文",
+        "社交媒体"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/JimLiu/baoyu-skills",
+        "path": "skills/baoyu-article-illustrator",
+        "commit": "6b7a2e417500561a5ecdd0b168332f4142584617",
+        "author": "宝玉",
+        "authorUrl": "https://github.com/JimLiu",
+        "avatarUrl": "https://github.com/JimLiu.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 25599,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add JimLiu/baoyu-skills -s baoyu-article-illustrator -a codex -y",
+        "claudeCode": "npx skills add JimLiu/baoyu-skills -s baoyu-article-illustrator -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、配图工作流和版权边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "baoyu-cover-image",
+        "image"
+      ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
       "id": "baoyu-cover-image",
       "titleZh": "把文章主题变成可制作的封面方案",
       "originalName": "baoyu-cover-image",
@@ -839,6 +1465,317 @@
       "comparisonProfile": null,
       "comparisonEvidence": [],
       "installable": true
+    },
+    {
+      "id": "baoyu-markdown-to-html",
+      "titleZh": "Markdown 转网页",
+      "originalName": "baoyu-markdown-to-html",
+      "summaryZh": "把 Markdown 转成带主题和内联样式的 HTML，适配公众号等发布场景，并保留代码、数学和图表处理边界。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "可预览、可粘贴的样式化 HTML 和检查结果",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "公众号运营者",
+        "内容编辑",
+        "品牌与内容团队"
+      ],
+      "useCases": [
+        "把 Markdown 转成公众号 HTML",
+        "为活动复盘或方案生成单页预览",
+        "检查代码、图片、图表和引用处理"
+      ],
+      "inputs": [
+        "Markdown 文件或正文",
+        "目标平台与主题偏好",
+        "图片、代码和图表需求",
+        "外链引用与发布限制"
+      ],
+      "outputs": [
+        "带内联样式的 HTML",
+        "主题和结构选择说明",
+        "代码、图片和图表处理结果",
+        "发布前兼容性检查"
+      ],
+      "promptExamples": [
+        "请把这篇 Markdown 转成适合公众号粘贴的 HTML，保留标题层级和原文事实。",
+        "请为这份活动复盘选择一个克制的主题，输出可直接预览的单页 HTML。",
+        "请检查这份转换后的 HTML，找出平台可能过滤或导致掉格式的部分。"
+      ],
+      "humanGate": "编辑确认文章事实、图片和外链授权、主题气质、平台渲染和最终发布内容。",
+      "cannotInfer": [
+        "外链或图片拥有发布授权",
+        "目标平台一定按预期渲染",
+        "转换后的 HTML 没有事实错误",
+        "发布后的阅读和转化效果"
+      ],
+      "channels": [
+        "微信公众号",
+        "博客",
+        "活动复盘",
+        "内容营销"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/JimLiu/baoyu-skills",
+        "path": "skills/baoyu-markdown-to-html",
+        "commit": "6b7a2e417500561a5ecdd0b168332f4142584617",
+        "author": "宝玉",
+        "authorUrl": "https://github.com/JimLiu",
+        "avatarUrl": "https://github.com/JimLiu.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 25599,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add JimLiu/baoyu-skills -s baoyu-markdown-to-html -a codex -y",
+        "claudeCode": "npx skills add JimLiu/baoyu-skills -s baoyu-markdown-to-html -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、转换范围和发布前人工边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "gzh-design",
+        "copywriting"
+      ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
+      "id": "cold-email",
+      "titleZh": "B2B 冷邮件",
+      "originalName": "cold-email",
+      "summaryZh": "围绕具体对象、问题、价值和低门槛 CTA，写出更像同行沟通的 B2B 外联邮件与跟进序列。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "主题、首封邮件和多触点跟进序列",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "B2B 创业者",
+        "销售与 BD",
+        "营销服务团队"
+      ],
+      "useCases": [
+        "发起合作或销售外联",
+        "为目标客户写个性化首封邮件",
+        "设计低压力跟进序列"
+      ],
+      "inputs": [
+        "目标对象与公司背景",
+        "希望得到的下一步",
+        "具体价值和证据",
+        "公开研究信号与合规约束"
+      ],
+      "outputs": [
+        "主题行和开头候选",
+        "首封外联邮件",
+        "多触点跟进序列",
+        "个性化依据与风险提示"
+      ],
+      "promptExamples": [
+        "请根据这个客户公开的业务信号，写一封不超过 120 字的合作冷邮件。",
+        "为这项 B2B 服务写三组主题行、首封邮件和两次低压力跟进。",
+        "请检查这封销售邮件是否像群发，指出缺少的具体价值和证据。"
+      ],
+      "humanGate": "发送人确认对象、公开信息、价值主张、退订与隐私合规，并逐封决定是否发送。",
+      "cannotInfer": [
+        "收件人一定感兴趣",
+        "公开信息可以无限制使用",
+        "发送一定带来回复",
+        "邮件已经获得同意或符合当地法规"
+      ],
+      "channels": [
+        "邮件",
+        "销售外联",
+        "合作 BD"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/cold-email",
+        "commit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 46650,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s cold-email -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s cold-email -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、外联范围和发送前人工边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "sales-enablement",
+        "emails"
+      ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
+      "id": "copy-editing",
+      "titleZh": "已有文案打磨",
+      "originalName": "copy-editing",
+      "summaryZh": "在保留核心信息和作者声音的前提下，分轮改善营销文案的清晰度、具体性和转化表达。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "逐轮文案修改、修改理由和待确认项",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "品牌编辑",
+        "内容营销人员",
+        "产品营销团队"
+      ],
+      "useCases": [
+        "打磨官网或落地页文案",
+        "审阅过时内容",
+        "找出冗余、模糊和不一致表达"
+      ],
+      "inputs": [
+        "现有文案和页面上下文",
+        "目标受众与转化目标",
+        "品牌语气和禁用表达",
+        "事实、证据和必须保留的信息"
+      ],
+      "outputs": [
+        "按维度分轮的修改稿",
+        "逐条修改理由",
+        "事实与证据待核清单",
+        "可直接交接的最终版本"
+      ],
+      "promptExamples": [
+        "请保留这段文案的核心事实，按清晰度、具体性和 CTA 分三轮修改。",
+        "请审阅这版落地页，标出空泛承诺、重复表达和需要证据的句子。",
+        "请在不改变作者声音的前提下，把这篇文章改得更紧、更像真人写的。"
+      ],
+      "humanGate": "内容或品牌负责人确认事实、语气、法律表述、核心主张和最终发布版本。",
+      "cannotInfer": [
+        "文案中的业务事实",
+        "用户真实偏好",
+        "修改后一定提升转化",
+        "未提供的品牌语气和证据"
+      ],
+      "channels": [
+        "官网",
+        "落地页",
+        "公众号",
+        "广告"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/copy-editing",
+        "commit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 46650,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s copy-editing -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s copy-editing -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、分轮编辑方法和事实边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "copywriting",
+        "humanizer-zh"
+      ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
     },
     {
       "id": "copywriting",
@@ -1275,6 +2212,214 @@
       "comparisonProfile": null,
       "comparisonEvidence": [],
       "installable": true
+    },
+    {
+      "id": "humanizer-zh",
+      "titleZh": "中文去 AI 味",
+      "originalName": "humanizer-zh",
+      "summaryZh": "识别并减少模板化、空泛和过度公式化的中文表达，在保留事实和语气的前提下让文本更自然。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "问题片段、修改稿和事实保留检查",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "中文内容团队",
+        "品牌编辑",
+        "创作者"
+      ],
+      "useCases": [
+        "审阅 AI 辅助写作的中文稿",
+        "减少宣传腔和模板句",
+        "保留作者声音地打磨对外内容"
+      ],
+      "inputs": [
+        "原始中文文本",
+        "目标读者与语气",
+        "必须保留的事实和术语",
+        "不可使用的表达或品牌规范"
+      ],
+      "outputs": [
+        "AI 写作模式诊断",
+        "自然化修改稿",
+        "修改理由和需核实事实",
+        "语气与信息保留检查"
+      ],
+      "promptExamples": [
+        "请保留所有事实和作者语气，找出这篇中文稿里的模板句并逐条改写。",
+        "请把这段品牌文案去掉宣传腔、空泛连接词和过度排比，不要添加新事实。",
+        "请审阅这版公众号文章，列出哪些句子像 AI 生成、为什么以及怎么改。"
+      ],
+      "humanGate": "作者或编辑确认事实、语气、敏感表述、品牌立场和最终发布稿。",
+      "cannotInfer": [
+        "文本事实是否真实",
+        "改写后一定更受欢迎",
+        "作者真正想表达的立场",
+        "品牌法律与合规要求"
+      ],
+      "channels": [
+        "公众号",
+        "官网",
+        "社交媒体",
+        "邮件"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/op7418/Humanizer-zh",
+        "path": "SKILL.md",
+        "commit": "91f3d394db8419c20d67ebe22a96cf8fee0a404b",
+        "author": "op7418",
+        "authorUrl": "https://github.com/op7418",
+        "avatarUrl": "https://github.com/op7418.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 16539,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add op7418/Humanizer-zh -a codex -y",
+        "claudeCode": "npx skills add op7418/Humanizer-zh -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的根目录 SKILL.md、中文编辑范围和事实保留边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "copy-editing",
+        "copywriting"
+      ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
+      "id": "ian-xiaohei-illustrations",
+      "titleZh": "小黑怪诞正文配图",
+      "originalName": "ian-xiaohei-illustrations",
+      "summaryZh": "把中文文章中的关键判断、流程、状态或隐喻规划成清爽、怪诞、可读的手绘解释图。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "认知锚点、16:9 配图策略和生成提示词",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "中文内容运营者",
+        "品牌与设计团队",
+        "知识型创作者"
+      ],
+      "useCases": [
+        "为长文找真正需要配图的段落",
+        "把流程或观点转成手绘解释图",
+        "规划统一的小黑视觉系列"
+      ],
+      "inputs": [
+        "中文文章或帖子",
+        "核心观点与读者",
+        "品牌和视觉限制",
+        "目标平台和图片比例"
+      ],
+      "outputs": [
+        "认知锚点与 shot list",
+        "构图、角色动作和标注说明",
+        "生成提示词",
+        "生成后可读性与一致性检查"
+      ],
+      "promptExamples": [
+        "请从这篇文章中挑出三个认知锚点，给出小黑风格的 16:9 正文配图方案。",
+        "请把这个输入到输出的流程变成一张小黑参与核心动作的手绘解释图。",
+        "请检查这组正文配图是否真的解释了观点，而不是只做装饰。"
+      ],
+      "humanGate": "作者或设计负责人确认文章事实、隐喻含义、IP 使用范围、文字可读性和最终图片。",
+      "cannotInfer": [
+        "生成图片中的文字一定正确",
+        "IP 或素材的商业授权",
+        "插图一定提升传播效果",
+        "没有提供的文章事实"
+      ],
+      "channels": [
+        "公众号",
+        "小红书",
+        "博客",
+        "飞书文档"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/helloianneo/ian-xiaohei-illustrations",
+        "path": "ian-xiaohei-illustrations",
+        "commit": "91b560849e8f883922cc2fa8a358a668caa94105",
+        "author": "Ian",
+        "authorUrl": "https://github.com/helloianneo",
+        "avatarUrl": "https://github.com/helloianneo.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 10917,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add helloianneo/ian-xiaohei-illustrations -s ian-xiaohei-illustrations -a codex -y",
+        "claudeCode": "npx skills add helloianneo/ian-xiaohei-illustrations -s ian-xiaohei-illustrations -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、配图工作流和 IP 使用边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "baoyu-article-illustrator",
+        "image"
+      ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
     },
     {
       "id": "image",
@@ -1714,6 +2859,527 @@
       "installable": false
     },
     {
+      "id": "premium-ui-design",
+      "titleZh": "高质量 UI/UX 与页面视觉",
+      "originalName": "ui-ux-design-pro",
+      "summaryZh": "为落地页、SaaS 和复杂界面建立更完整的设计系统，结合模式检索、可访问性和实现细节做视觉判断。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "页面方向、设计系统、模式参考和质量检查",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "品牌与产品设计师",
+        "前端团队",
+        "网站和产品负责人"
+      ],
+      "useCases": [
+        "规划品牌落地页视觉方向",
+        "建立颜色、字体和组件系统",
+        "审计已有 UI 的质量与可访问性"
+      ],
+      "inputs": [
+        "页面或产品 Brief",
+        "目标受众与品牌资产",
+        "技术栈与组件限制",
+        "参考页面和质量要求"
+      ],
+      "outputs": [
+        "页面视觉方向",
+        "设计 tokens 与组件建议",
+        "参考模式和实现要点",
+        "可访问性与质量检查清单"
+      ],
+      "promptExamples": [
+        "请根据这个产品 Brief，提出三种落地页视觉方向并说明各自的取舍。",
+        "请为这个 SaaS 页面建立轻量设计系统，包含颜色、字体、间距和按钮状态。",
+        "请审计这版 UI，区分视觉偏好、可访问性问题和有证据的实现缺陷。"
+      ],
+      "humanGate": "设计或产品负责人确认品牌资产、用户任务、技术成本、可访问性和最终视觉方向。",
+      "cannotInfer": [
+        "高端视觉一定提升转化",
+        "参考页面可以直接复制",
+        "没有提供的品牌和用户约束",
+        "UI 方案已经完成工程实现"
+      ],
+      "channels": [
+        "落地页",
+        "官网",
+        "SaaS",
+        "产品界面"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/saifyxpro/ui-ux-design-pro-skill",
+        "path": "skills/ui-ux-design-pro",
+        "commit": "7c98f97767f00dee333635c59c42e9db229f6a1f",
+        "author": "saifyxpro",
+        "authorUrl": "https://github.com/saifyxpro",
+        "avatarUrl": "https://github.com/saifyxpro.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 71,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add saifyxpro/ui-ux-design-pro-skill -s ui-ux-design-pro -a codex -y",
+        "claudeCode": "npx skills add saifyxpro/ui-ux-design-pro-skill -s ui-ux-design-pro -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、页面设计范围和实现边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "baoyu-cover-image",
+        "web-quality-audit"
+      ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
+      "id": "social-content",
+      "titleZh": "社媒内容延展",
+      "originalName": "social",
+      "summaryZh": "把一份核心内容重组为社交媒体帖子、短视频钩子、轮播内容和可持续的分发计划。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "平台化社媒内容、钩子、CTA 和分发清单",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "社媒运营者",
+        "创始人 IP 团队",
+        "内容营销人员"
+      ],
+      "useCases": [
+        "把长文或观点改成社媒内容",
+        "设计 LinkedIn、X、小红书或短视频钩子",
+        "规划内容重组和分发节奏"
+      ],
+      "inputs": [
+        "核心内容或观点",
+        "目标平台与受众",
+        "品牌语气和可用素材",
+        "业务目标与下一步 CTA"
+      ],
+      "outputs": [
+        "平台化帖子或脚本",
+        "钩子、标题和 CTA 候选",
+        "轮播或短视频结构",
+        "分发与互动检查项"
+      ],
+      "promptExamples": [
+        "请把这篇长文改成 LinkedIn 帖子、X Thread 和小红书内容，保留事实边界。",
+        "请为这个产品观点设计五个短视频开头，并说明各自适合的平台。",
+        "请规划一周的社媒内容重组，写清每条内容的目标、素材和下一步动作。"
+      ],
+      "humanGate": "内容负责人确认平台规则、事实、版权、品牌语气、互动范围和最终发布内容；Skill 不自动发布或私信。",
+      "cannotInfer": [
+        "平台一定推荐或带来增长",
+        "内容一定真实有效",
+        "图片、音乐和引用已获授权",
+        "用户互动代表购买意向"
+      ],
+      "channels": [
+        "LinkedIn",
+        "X",
+        "小红书",
+        "短视频"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/social",
+        "commit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 46650,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s social -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s social -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、社媒内容范围和不自动发布边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "copywriting",
+        "content-strategy",
+        "video"
+      ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
+      "id": "taste-design",
+      "titleZh": "设计品味与页面方向",
+      "originalName": "design-taste-frontend",
+      "summaryZh": "先读页面 Brief、受众、参考与约束，再为落地页、作品集和改版选择不模板化的设计方向并做上线前检查。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "页面设计方向、变体判断和反模板检查",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "品牌创始人",
+        "设计与前端团队",
+        "作品集和落地页负责人"
+      ],
+      "useCases": [
+        "为品牌页寻找合适的视觉方向",
+        "审计模板化或缺少辨识度的页面",
+        "在改版前梳理参考、受众和限制"
+      ],
+      "inputs": [
+        "页面类型和 Brief",
+        "受众、品牌资产和参考",
+        "体验、性能和可访问性约束",
+        "现有页面或设计实现"
+      ],
+      "outputs": [
+        "视觉方向和变体选择",
+        "页面布局与交互建议",
+        "品牌资产和约束清单",
+        "上线前设计质量检查"
+      ],
+      "promptExamples": [
+        "请先读这个页面 Brief 和参考，再提出三种不模板化的视觉方向并说明适用边界。",
+        "请审计这个落地页为什么像默认模板，区分审美偏好和真实体验问题。",
+        "请在保留品牌资产的前提下，为这版页面提出更有辨识度但可实现的改版方案。"
+      ],
+      "humanGate": "设计或品牌负责人确认受众、品牌资产、实现成本、可访问性和最终视觉方向。",
+      "cannotInfer": [
+        "某种风格一定更高级或更转化",
+        "参考页面可以直接复制",
+        "没有提供的品牌偏好",
+        "设计建议已经完成工程实现"
+      ],
+      "channels": [
+        "落地页",
+        "品牌网站",
+        "作品集",
+        "产品页"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/Leonxlnx/taste-skill",
+        "path": "skills/taste-skill",
+        "commit": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+        "author": "Leonxlnx",
+        "authorUrl": "https://github.com/Leonxlnx",
+        "avatarUrl": "https://github.com/Leonxlnx.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 83746,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add Leonxlnx/taste-skill -s taste-skill -a codex -y",
+        "claudeCode": "npx skills add Leonxlnx/taste-skill -s taste-skill -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、页面方向工作流和约束优先级。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "premium-ui-design",
+        "copywriting",
+        "web-quality-audit"
+      ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
+      "id": "video",
+      "titleZh": "视频内容框架与制作",
+      "originalName": "video",
+      "summaryZh": "根据目标、渠道、素材和预算选择 AI、真人或程序化制作路径，形成可交接的视频生产方案。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "视频方向、脚本结构、制作路径和检查项",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "产品营销人员",
+        "内容与视频团队",
+        "独立创作者"
+      ],
+      "useCases": [
+        "制作产品 Demo 或解释视频",
+        "规划短视频、广告或社媒视频",
+        "选择 AI、真人和程序化制作方式"
+      ],
+      "inputs": [
+        "视频目标和渠道",
+        "长度、预算和时间",
+        "产品素材、品牌资产和参考",
+        "工具、模型与 API 条件"
+      ],
+      "outputs": [
+        "视频概念与脚本结构",
+        "镜头和素材清单",
+        "制作路径与工具选择",
+        "发布前质量和版权检查"
+      ],
+      "promptExamples": [
+        "请为这个产品写一版 60 秒 Demo 视频结构，逐镜头说明画面、旁白和 CTA。",
+        "同一主题要做官网解释视频和短视频，请比较两种时长、节奏和素材策略。",
+        "请根据现有截图、Logo 和预算，给出可执行的视频制作路径与风险清单。"
+      ],
+      "humanGate": "视频负责人确认产品事实、素材版权、人物肖像、工具预算、最终剪辑和发布动作。",
+      "cannotInfer": [
+        "生成视频一定可用",
+        "素材和音乐拥有商业授权",
+        "观众一定完成观看或转化",
+        "AI 工具未来价格与能力"
+      ],
+      "channels": [
+        "官网",
+        "YouTube",
+        "短视频",
+        "广告"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/video",
+        "commit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 46650,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s video -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s video -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、视频规划范围和素材边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "ad-creative",
+        "image"
+      ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
+      "id": "wewrite",
+      "titleZh": "公众号文章全流程",
+      "originalName": "wewrite",
+      "summaryZh": "围绕公众号完成选题、素材、写作和审稿，并把配图、排版和发布保持为需要明确确认的独立动作。",
+      "growthStage": "zero_to_one",
+      "workspace": "creative",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "选题、文章初稿、审稿意见和本地可交接稿",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "公众号运营者",
+        "中文内容团队",
+        "品牌创始人"
+      ],
+      "useCases": [
+        "把热点、活动或访谈整理成公众号文章",
+        "先完成审稿和本地稿再决定是否排版",
+        "把选题、写作、视觉和复盘分成可控模块"
+      ],
+      "inputs": [
+        "选题目标和读者",
+        "原始素材、访谈或会议记录",
+        "品牌语气和事实证据",
+        "是否需要配图、排版或草稿箱动作"
+      ],
+      "outputs": [
+        "选题与文章结构",
+        "中文文章初稿和审稿稿",
+        "事实、引用和配图待确认项",
+        "本地可交接稿及后续动作清单"
+      ],
+      "promptExamples": [
+        "请把这些活动素材整理成一篇公众号文章，先列出事实缺口再写初稿。",
+        "请审阅这篇公众号文章，区分事实、推断、引用和需要作者确认的内容。",
+        "请完成文章后给出配图、排版和是否进入草稿箱的独立选项，不要自动发布。"
+      ],
+      "humanGate": "作者或编辑确认事实、素材版权、文章语气、图片和外链授权，并明确决定是否排版、写入草稿箱或发布。",
+      "cannotInfer": [
+        "素材事实真实完整",
+        "图片和外链已获授权",
+        "用户一定喜欢或转发",
+        "草稿箱或发布动作已被批准"
+      ],
+      "channels": [
+        "微信公众号",
+        "公众号草稿箱",
+        "内容运营"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/imraywang/wewrite",
+        "path": "skills/wewrite",
+        "commit": "bbf6d1a0f7255d137e3e61ffb7b02df4d627481a",
+        "author": "imraywang",
+        "authorUrl": "https://github.com/imraywang",
+        "avatarUrl": "https://github.com/imraywang.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 3224,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add imraywang/wewrite -s wewrite -a codex -y",
+        "claudeCode": "npx skills add imraywang/wewrite -s wewrite -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、公众号流程和发布确认边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "copywriting",
+        "gzh-design"
+      ],
+      "categoryId": "creative",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
       "id": "ab-testing",
       "titleZh": "把创意想法写成能衡量的测试",
       "originalName": "ab-testing",
@@ -1919,6 +3585,110 @@
       "installable": true
     },
     {
+      "id": "ai-seo",
+      "titleZh": "AI 搜索可见性",
+      "originalName": "ai-seo",
+      "summaryZh": "帮助品牌内容被 AI 搜索和回答系统发现、理解与引用，区分可观测证据与未来推断。",
+      "growthStage": "zero_to_one",
+      "workspace": "media",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "AI 搜索可见性审计、内容改进项和引用证据计划",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "品牌与内容负责人",
+        "SEO/GEO 人员",
+        "产品营销团队"
+      ],
+      "useCases": [
+        "审计品牌是否出现在 AI 答案中",
+        "优化可被提取和引用的内容",
+        "规划 AI 搜索可见性基线"
+      ],
+      "inputs": [
+        "目标查询与受众",
+        "品牌网站和内容资产",
+        "竞品与当前引用情况",
+        "已有 SEO、结构化数据和分析信息"
+      ],
+      "outputs": [
+        "AI 搜索可见性基线",
+        "页面和内容改进建议",
+        "查询、引用和证据记录方案",
+        "人工验证与持续复查清单"
+      ],
+      "promptExamples": [
+        "请针对这些业务查询检查品牌在 AI 搜索中的可见性，并把观察到的引用附上来源。",
+        "请审计这篇页面是否容易被 AI 系统理解和引用，区分事实、建议和未知项。",
+        "请为我们的 GEO 目标设计一份可重复的查询、竞品和引用记录表。"
+      ],
+      "humanGate": "品牌和内容负责人确认事实、公开主张、引用来源、业务优先级和内容发布范围。",
+      "cannotInfer": [
+        "AI 搜索未来一定引用",
+        "没有实际查询的可见性",
+        "排名或流量保证",
+        "内容修改一定造成业务增长"
+      ],
+      "channels": [
+        "AI 搜索",
+        "网站",
+        "搜索",
+        "内容"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/ai-seo",
+        "commit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 46650,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s ai-seo -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s ai-seo -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、AI 搜索范围和可观测性边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "qiaomu-seo",
+        "seo-audit"
+      ],
+      "categoryId": "media",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
       "id": "analytics",
       "titleZh": "做一份上线前能验收的追踪方案",
       "originalName": "analytics",
@@ -2122,6 +3892,215 @@
       "installable": true
     },
     {
+      "id": "media-relations",
+      "titleZh": "媒体关系与 PR Pitch",
+      "originalName": "public-relations",
+      "summaryZh": "把产品、发布或观点整理成记者、播客和 Newsletter 可能关心的新闻角度与外联方案。",
+      "growthStage": "zero_to_one",
+      "workspace": "media",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "媒体角度、Pitch、目标名单和跟进计划",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "创始人",
+        "品牌与 PR 团队",
+        "产品营销负责人"
+      ],
+      "useCases": [
+        "准备产品发布的媒体角度",
+        "寻找记者、播客或 Newsletter 机会",
+        "把观点整理成可发送的 PR Pitch"
+      ],
+      "inputs": [
+        "产品或事件事实",
+        "目标受众和新闻价值",
+        "可引用的证据与发言人",
+        "目标媒体、记者和合规限制"
+      ],
+      "outputs": [
+        "新闻角度与选题判断",
+        "媒体或记者筛选标准",
+        "Pitch 和跟进节奏",
+        "事实、引用和隐私检查项"
+      ],
+      "promptExamples": [
+        "请把这个产品发布整理成三个记者可能关心的新闻角度，并说明证据。",
+        "请根据目标行业和受众设计一封简短的媒体 Pitch，不要夸大结果。",
+        "请把这份媒体名单按相关性、公开信号和跟进优先级整理出来。"
+      ],
+      "humanGate": "创始人或 PR 负责人确认事实、引用授权、媒体名单、联系人使用边界和最终发送动作。",
+      "cannotInfer": [
+        "记者一定回复或报道",
+        "新闻角度一定成立",
+        "联系人信息可以无限制使用",
+        "报道一定带来转化"
+      ],
+      "channels": [
+        "媒体",
+        "Newsletter",
+        "播客",
+        "产品发布"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/public-relations",
+        "commit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 46650,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s public-relations -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s public-relations -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、媒体范围和发送前人工边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "launch",
+        "cold-email"
+      ],
+      "categoryId": "media",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
+      "id": "page-cro",
+      "titleZh": "落地页转化诊断",
+      "originalName": "cro",
+      "summaryZh": "从页面类型、转化目标和流量上下文出发，诊断营销页面或表单的转化障碍并提出可执行改动。",
+      "growthStage": "zero_to_one",
+      "workspace": "media",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "转化障碍、证据假设和改动优先级",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "增长与营销团队",
+        "网站负责人",
+        "产品营销人员"
+      ],
+      "useCases": [
+        "审计首页、落地页或定价页",
+        "找出表单放弃和 CTA 问题",
+        "为转化实验建立优先级"
+      ],
+      "inputs": [
+        "页面 URL 或页面内容",
+        "主要转化目标",
+        "流量来源和受众",
+        "已有转化数据与业务限制"
+      ],
+      "outputs": [
+        "页面结构和信息问题",
+        "转化假设与证据缺口",
+        "文案、设计和表单改动清单",
+        "实验优先级与衡量建议"
+      ],
+      "promptExamples": [
+        "请审阅这个落地页，按首屏、价值主张、信任、CTA 和表单列出转化问题。",
+        "请根据目标转化和流量来源，给这页提出三条可测试的改动假设。",
+        "请区分页面观察、数据证据和推断，给出一个按影响与成本排序的 CRO backlog。"
+      ],
+      "humanGate": "页面负责人确认用户、业务目标、数据口径、品牌与合规要求，并决定是否实施或测试改动。",
+      "cannotInfer": [
+        "页面问题一定造成低转化",
+        "改动一定提升转化率",
+        "没有提供的用户和实验数据",
+        "流量质量与页面本身无关"
+      ],
+      "channels": [
+        "官网",
+        "落地页",
+        "定价页",
+        "表单"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/cro",
+        "commit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 46650,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s cro -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s cro -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、页面诊断范围和实验边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "copywriting",
+        "ab-testing",
+        "analytics"
+      ],
+      "categoryId": "media",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
       "id": "qiaomu-seo",
       "titleZh": "做一份搜索与 AI 搜索审计",
       "originalName": "qiaomu-seo",
@@ -2224,6 +4203,214 @@
       "comparisonProfile": null,
       "comparisonEvidence": [],
       "installable": true
+    },
+    {
+      "id": "site-architecture",
+      "titleZh": "网站结构规划",
+      "originalName": "site-architecture",
+      "summaryZh": "规划官网、专题页、资源库和博客的页面层级、导航、URL 结构与内部链接。",
+      "growthStage": "zero_to_one",
+      "workspace": "media",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "页面层级、导航、URL 和内部链接方案",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "网站负责人",
+        "产品与内容团队",
+        "品牌创业者"
+      ],
+      "useCases": [
+        "从零规划品牌网站",
+        "重构已有网站的信息架构",
+        "把页面结构接到 SEO 和转化目标"
+      ],
+      "inputs": [
+        "业务目标和主要受众",
+        "现有或计划页面",
+        "需要保留的 URL",
+        "内容库存与未来扩展计划"
+      ],
+      "outputs": [
+        "页面层级和导航方案",
+        "URL 与重定向建议",
+        "页面与内部链接清单",
+        "缺失内容与下一步 backlog"
+      ],
+      "promptExamples": [
+        "请根据我们的受众和业务目标，规划一个品牌网站的页面层级和导航。",
+        "把这份页面清单整理成信息架构，指出重复、缺失和不该放进主导航的内容。",
+        "请为这组页面设计 URL、面包屑和内部链接建议，并标出需要保留的旧地址。"
+      ],
+      "humanGate": "网站负责人确认业务优先级、页面事实、技术约束、旧 URL 兼容和最终上线排期。",
+      "cannotInfer": [
+        "用户一定能理解导航",
+        "SEO 排名保证",
+        "没有盘点过的页面与内容",
+        "重定向已经部署"
+      ],
+      "channels": [
+        "官网",
+        "博客",
+        "资源库",
+        "落地页"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/coreyhaines31/marketingskills",
+        "path": "skills/site-architecture",
+        "commit": "d4ff28a9c8d56c06809860bf2800d4f5224b52db",
+        "author": "Corey Haines",
+        "authorUrl": "https://github.com/coreyhaines31",
+        "avatarUrl": "https://github.com/coreyhaines31.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 46650,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add coreyhaines31/marketingskills -s site-architecture -a codex -y",
+        "claudeCode": "npx skills add coreyhaines31/marketingskills -s site-architecture -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、结构规划范围和上线边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "seo-audit",
+        "copywriting"
+      ],
+      "categoryId": "media",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
+    },
+    {
+      "id": "web-quality-audit",
+      "titleZh": "网站质量与 Core Web Vitals",
+      "originalName": "web-quality-audit",
+      "summaryZh": "用浏览器和源码证据检查网站的性能、可访问性、SEO、最佳实践和 Agent 浏览体验。",
+      "growthStage": "zero_to_one",
+      "workspace": "media",
+      "featured": false,
+      "visibility": "public",
+      "discoveredFrom": [
+        "github",
+        "legacy-catalog"
+      ],
+      "card": {
+        "outcomeZh": "带证据、影响级别和置信度的网站质量报告",
+        "previewImage": null,
+        "previewLicense": null
+      },
+      "audiences": [
+        "网站与产品负责人",
+        "前端与 SEO 团队",
+        "品牌创业者"
+      ],
+      "useCases": [
+        "上线前做网站质量审计",
+        "排查性能、可访问性或 SEO 问题",
+        "复测改动后的真实页面体验"
+      ],
+      "inputs": [
+        "代表性 URL 和用户旅程",
+        "桌面或移动端范围",
+        "公开或登录状态",
+        "源码、浏览器或 Lighthouse 证据"
+      ],
+      "outputs": [
+        "性能和 Core Web Vitals 发现",
+        "可访问性、SEO 和最佳实践问题",
+        "按影响和置信度排序的修复建议",
+        "复测清单与仍需人工验证项"
+      ],
+      "promptExamples": [
+        "请审计这个网站的性能、可访问性、SEO 和最佳实践，逐条附证据。",
+        "请从一个真实用户旅程开始检查首页，区分浏览器实测问题和源码推断。",
+        "修复这些问题后，请按相同设备和页面范围重新检查，并列出仍未验证的部分。"
+      ],
+      "humanGate": "网站负责人确认代表性页面、业务优先级、技术改动范围、隐私边界和最终上线决定。",
+      "cannotInfer": [
+        "聚合分数等于真实质量",
+        "未测页面没有问题",
+        "修复一定提升业务结果",
+        "没有现场或访问权限的性能数据"
+      ],
+      "channels": [
+        "官网",
+        "落地页",
+        "产品页",
+        "博客"
+      ],
+      "source": {
+        "type": "upstream",
+        "repo": "https://github.com/addyosmani/web-quality-skills",
+        "path": "skills/web-quality-audit",
+        "commit": "afa8da942115f2961fdbfa80807ea0b232ff6c00",
+        "author": "Addy Osmani",
+        "authorUrl": "https://github.com/addyosmani",
+        "avatarUrl": "https://github.com/addyosmani.png?size=96",
+        "license": "MIT",
+        "checkedAt": "2026-09-03",
+        "githubStars": 2741,
+        "githubStarsCheckedAt": "2026-09-03"
+      },
+      "installation": {
+        "codex": "npx skills add addyosmani/web-quality-skills -s web-quality-audit -a codex -y",
+        "claudeCode": "npx skills add addyosmani/web-quality-skills -s web-quality-audit -a claude-code -y"
+      },
+      "validation": {
+        "spec": {
+          "status": "passed",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已核对上游固定 Commit 的独立 SKILL.md、审计类别和实测证据边界。"
+        },
+        "installation": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "已记录上游独立安装命令，尚未完成 Codex 与 Claude Code 双端隔离复测。"
+        },
+        "practice": {
+          "status": "pending",
+          "checkedAt": "2026-09-03",
+          "noteZh": "尚未完成 Open Marketing 脱敏实战复核。"
+        }
+      },
+      "relatedSkillIds": [
+        "seo-audit",
+        "qiaomu-seo"
+      ],
+      "categoryId": "media",
+      "comparisonGroupId": null,
+      "methodType": "通用任务型",
+      "practiceLevel": "source_verified",
+      "comparisonProfile": null,
+      "comparisonEvidence": [],
+      "installable": false
     },
     {
       "id": "yao-geo-page-audit",
