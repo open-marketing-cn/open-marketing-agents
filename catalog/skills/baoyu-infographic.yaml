@@ -1,0 +1,89 @@
+{
+  "id": "baoyu-infographic",
+  "titleZh": "把复杂内容做成信息图",
+  "originalName": "baoyu-infographic",
+  "summaryZh": "将流程、对比和数据整理为信息图方案，选择布局与视觉风格，再交给生图工具渲染。",
+  "growthStage": "zero_to_one",
+  "workspace": "creative",
+  "featured": false,
+  "visibility": "public",
+  "discoveredFrom": [
+    "colaskill",
+    "github"
+  ],
+  "card": {
+    "outcomeZh": "信息结构与布局方案、可复用的生图提示词",
+    "previewImage": null,
+    "previewLicense": null
+  },
+  "audiences": [
+    "品牌内容运营者",
+    "独立创作者",
+    "小团队"
+  ],
+  "useCases": [
+    "解释产品工作原理",
+    "把研究结论做成一张图"
+  ],
+  "inputs": [
+    "已核对的文章或数据",
+    "信息层级和目标读者",
+    "可用的生图工具"
+  ],
+  "outputs": [
+    "信息结构与布局方案",
+    "可复用的生图提示词",
+    "信息图与生成记录"
+  ],
+  "promptExamples": [
+    "请用 baoyu-infographic 处理我提供的材料，先说明输入是否齐全。",
+    "本次任务是解释产品工作原理，请先给出方案和需要我确认的内容。",
+    "请根据我确认的方案，输出信息结构与布局方案，标出仍需人工检查的部分。"
+  ],
+  "humanGate": "由内容负责人确认原始材料授权、事实、品牌表达及最终成品，再自行发布。",
+  "cannotInfer": [
+    "真实传播或转化效果",
+    "原始材料是否完整准确",
+    "素材授权与平台审核结果"
+  ],
+  "channels": [
+    "内容营销",
+    "社交媒体"
+  ],
+  "source": {
+    "type": "upstream",
+    "repo": "https://github.com/JimLiu/baoyu-skills",
+    "path": "skills/baoyu-infographic/SKILL.md",
+    "commit": "1567581c26ec29f4216c6e6835415bf30343b0e3",
+    "author": "JimLiu",
+    "authorUrl": "https://github.com/JimLiu",
+    "avatarUrl": "https://github.com/JimLiu.png?size=96",
+    "license": "MIT",
+    "checkedAt": "2026-09-15"
+  },
+  "installation": {
+    "codex": "npx skills add JimLiu/baoyu-skills --skill baoyu-infographic -a codex -y",
+    "claudeCode": "npx skills add JimLiu/baoyu-skills --skill baoyu-infographic -a claude-code -y"
+  },
+  "validation": {
+    "spec": {
+      "status": "passed",
+      "checkedAt": "2026-09-15",
+      "noteZh": "核对固定 Commit 的独立 SKILL.md、引用目录与 MIT 许可证；仅链接原作者，不复制技能源码。"
+    },
+    "installation": {
+      "status": "passed",
+      "checkedAt": "2026-09-15",
+      "noteZh": "固定 Commit 的本地检出已在临时目录使用 skills CLI 安装到 Codex 与 Claude Code。尚未验证未来上游版本。"
+    },
+    "practice": {
+      "status": "pending",
+      "checkedAt": "2026-09-15",
+      "noteZh": "尚未完成端到端内容产出实测；不承诺质量、节省时间或传播效果。"
+    }
+  },
+  "relatedSkillIds": [
+    "baoyu-article-illustrator",
+    "baoyu-xhs-images"
+  ]
+}

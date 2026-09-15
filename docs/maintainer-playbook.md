@@ -9,7 +9,9 @@
 
 自动化只能新增推荐信号、回写机器检查结果或更新上游快照。它不得覆盖人工案例、实践经验、公开授权、退回原因或最终审核结论。同一候选以“标准化仓库 URL + Skill 路径”去重，重复推荐只追加信号。
 
-网站推荐预览按小时读取“推荐广场”视图。仓库必须配置 `FEISHU_APP_ID`、`FEISHU_APP_SECRET` 和 `FEISHU_PUBLIC_VIEW_ID`；密钥只放 GitHub Actions Secrets。首次未配置完整密钥时部署沿用仓库内最后一次安全快照；一旦三项齐全，任何同步失败都会停止本次部署，避免发布空数据。
+推荐广场每 15 分钟调度一次，读取飞书“推荐广场”公开视图的全部分页，只投影白名单字段，去重后生成 `generated/community-recommendations.json` 和可在 GitHub 直接阅读的 `.md`。Pages 构建成功后提交两份公开快照，再部署网站。GitHub 排队会导致延迟，不承诺秒级展示。
+
+仓库必须配置 `FEISHU_APP_ID`、`FEISHU_APP_SECRET` 和 `FEISHU_PUBLIC_VIEW_ID`；密钥只放 GitHub Actions Secrets。缺少配置时保留最近一次成功快照并发出 Actions 警告，不能声称自动同步已启用。配置齐全后的接口失败会阻止本次部署。记录未变时不会新增同步提交。内部候选池不再出现在前台；社区推荐可以显示，但不改变正式目录和实践结论。
 
 ## 同类 Skill 怎么对比
 

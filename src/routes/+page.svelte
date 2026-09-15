@@ -1,9 +1,9 @@
 <script lang="ts">
   import SiteHeader from '$lib/SiteHeader.svelte';
-  import HandbookCatalog from '$lib/HandbookCatalog.svelte';
+  import { articles } from '$lib/articles';
   import { base } from '$app/paths';
   import { communityRecommendations, communityRegistry } from '$lib/skills';
-  const plaza = 'https://my.feishu.cn/share/base/webpage/shrcnFlduGlQoZFNk27XZceIQNY';
+  const plaza = `${base}/recommendations/`;
   const recommend = 'https://my.feishu.cn/share/base/form/shrcnv4VQeLloz4grjMYELZrM1f';
 </script>
 <svelte:head><title>Open Marketing｜实践手册、开源工具与推荐广场</title><meta name="description" content="学习 AI 产品与营销方法，寻找适合任务的开源工具，交流真实的使用经验。"/></svelte:head>
@@ -23,14 +23,14 @@
       <a href={`${base}/tools/`}><span class="path-icon" aria-hidden="true">⌘</span><div><h2>找到工具</h2><p>按任务挑选 Skill，了解怎么用。</p></div><span aria-hidden="true">↗</span></a>
       <a href="#recommendations"><span class="path-icon" aria-hidden="true">✳</span><div><h2>交换经验</h2><p>社区推荐、适用场景与使用心得。</p></div><span aria-hidden="true">↗</span></a>
     </section>
-    <section id="directory" class="explore-section" aria-labelledby="explore-title"><div class="explore-heading"><h2 id="explore-title">从你正在做的事开始</h2><p>带着问题读，也带着工具去试。</p></div><HandbookCatalog/></section>
+    <section id="directory" class="explore-section" aria-labelledby="explore-title"><div class="explore-heading"><h2 id="explore-title">从你正在做的事开始</h2><p>带着问题读，也带着工具去试。</p></div><div class="entry-paths">{#each articles as article}<a href={`${base}/articles/${article.slug}/`}><span class="small-tag">第 {article.order} 章</span><div><h2>{article.topic}</h2><p>{article.outcome}</p></div><span aria-hidden="true">↗</span></a>{/each}</div></section>
     <section id="recommendations" class="plaza-section" aria-labelledby="plaza-title">
-      <div class="plaza-heading"><div><span class="small-tag">一起发现</span><h2 id="plaza-title">推荐广场</h2><p>看看别人用什么，也说说你用得怎么样。</p></div><a class="button button-secondary" href={plaza} target="_blank" rel="noreferrer">查看全部推荐 ↗</a></div>
+      <div class="plaza-heading"><div><span class="small-tag">一起发现</span><h2 id="plaza-title">推荐广场</h2><p>看看别人用什么，也说说你用得怎么样。</p></div><a class="button button-secondary" href={plaza}>查看全部推荐 ↗</a></div>
       <div class="plaza-grid">
-        {#each communityRecommendations.slice(0, 2) as item}<a class="community-pick" href={item.url} target="_blank" rel="noreferrer"><span class="small-tag">社区推荐 · 未核验</span><h3>{item.name} <span aria-hidden="true">↗</span></h3><p>{item.description}</p><div class="pick-context"><span>适合场景</span><p>{item.scenario}</p></div><footer>原作者 · {item.originalAuthor}<span>{item.agent}</span></footer></a>{/each}
+        {#each communityRecommendations.slice(0, 2) as item}<a class="community-pick" href={item.url ?? undefined} target="_blank" rel="noreferrer"><span class="small-tag">社区推荐</span><h3>{item.name} <span aria-hidden="true">↗</span></h3><p>{item.description}</p>{#if !item.url}<p class="small-tag">来源链接待补</p>{/if}<div class="pick-context"><span>适合场景</span><p>{item.scenario}</p></div><footer>原作者 · {item.originalAuthor}<span>{item.agent}</span></footer></a>{/each}
         <div class="community-invite"><span class="path-icon" aria-hidden="true">＋</span><h3>你用过的好工具，<br>可能正是别人需要的。</h3><p>留下工具、具体任务和使用经验，让下一位实践者有据可参考。</p><a class="button button-primary" href={recommend} target="_blank" rel="noreferrer">推荐一个 Skill ↗</a></div>
       </div>
-      <p class="plaza-footnote">社区推荐与正式收录分开展示。{#if communityRegistry.generatedAt}此处为 {communityRegistry.generatedAt.slice(0,10)} 的推荐预览，最新内容见公开广场。{/if}</p>
+      <p class="plaza-footnote">社区推荐与正式收录分开展示。{#if communityRegistry.generatedAt}此处为 {communityRegistry.generatedAt.slice(0,10)} 的同步记录，全部内容见站内推荐广场。{/if}</p>
     </section>
     <section class="reading-guide"><div><span class="small-tag">给正在实践的你</span><h2>不必从第一页开始。</h2></div><div><p>还没决定做什么，从第一章开始；已经有方向，进入第二、三章；产品可以使用后，用第四章设计下一次增长实验。每章都有可以带走的工作模板。</p><a href={`${base}/articles/`}>查看全书导读 →</a></div></section>
   </main>

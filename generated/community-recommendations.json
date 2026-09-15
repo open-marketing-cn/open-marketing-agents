@@ -1,11 +1,53 @@
 {
   "product": "Open Marketing Community Recommendations",
-  "generatedAt": "2026-09-01T13:47:54.000Z",
+  "generatedAt": "2026-09-15T08:50:50.359Z",
   "source": {
     "type": "feishu-public-view",
     "view": "推荐广场"
   },
   "recommendations": [
+    {
+      "id": "OM-0005",
+      "name": "songyue-insight",
+      "originalAuthor": "宋玥 / Songyue",
+      "category": "洞察研究",
+      "scenario": "洞察挖掘",
+      "description": "给 AI 一个还不完整的需求，让它从真实的消费者表达、行为和选择中找线索，讲清楚为什么，最后给出朴实、锐利、尽量简短的洞察。这个 Skill 把工作重点放在 现象 → 关键推导 → 洞察。既不只交付几句结论，也不默认展开完整营销策略。",
+      "agent": "Codex、WorkBuddy / 豆包工作伙伴、Claude Code",
+      "url": "https://github.com/83songyue/songyue-insight",
+      "contributor": null,
+      "submittedAt": "2026-09-09T05:33:09.000Z",
+      "status": "社区推荐 · 未核验",
+      "recommendationCount": 1
+    },
+    {
+      "id": "OM-0004",
+      "name": "广告4A定性分析",
+      "originalAuthor": "阿祖不看TVC",
+      "category": "洞察研究",
+      "scenario": "有可回到原始语境的消费者表达或品牌内容，需要形成消费者、品牌、沟通或品类判断的任务",
+      "description": "面向社媒笔记、评论、搜索词、开放题、访谈摘录与品牌内容的定性决策分析 Skill",
+      "agent": "Codex、Claude Code、WorkBuddy / 豆包工作伙伴",
+      "url": "https://github.com/thePlannerIvan/planners-quali-box",
+      "contributor": null,
+      "submittedAt": "2026-09-04T08:09:17.000Z",
+      "status": "社区推荐 · 未核验",
+      "recommendationCount": 1
+    },
+    {
+      "id": "OM-0003",
+      "name": "site-architecture",
+      "originalAuthor": "互通有无",
+      "category": "品牌策略",
+      "scenario": "工作",
+      "description": "campaign page搭建",
+      "agent": "WorkBuddy / 豆包工作伙伴",
+      "url": null,
+      "contributor": null,
+      "submittedAt": "2026-09-02T09:35:16.000Z",
+      "status": "社区推荐 · 未核验",
+      "recommendationCount": 1
+    },
     {
       "id": "OM-0002",
       "name": "ppt-kit",

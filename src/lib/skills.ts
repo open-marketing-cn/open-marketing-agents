@@ -175,7 +175,7 @@ export type CommunityRecommendation = {
   scenario: string;
   description: string;
   agent: string;
-  url: string;
+  url: string | null;
   contributor: string | null;
   submittedAt: string;
   status: string;
@@ -237,6 +237,9 @@ const FORMAL_BUCKET_BY_ID: Record<string, CatalogBucketId> = {
   image: 'visual',
   'baoyu-cover-image': 'visual',
   'gbro-cover-design': 'visual',
+  'baoyu-infographic': 'visual',
+  'baoyu-xhs-images': 'visual',
+  'writing-dna-skill': 'write',
   'guizang-ppt-skill': 'visual',
   'gzh-design': 'visual',
   'ip-as-logo': 'visual',

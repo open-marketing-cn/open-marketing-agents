@@ -1,21 +1,18 @@
 <script lang="ts">
   import { base } from '$app/paths';
-  import { ArrowLeft, ArrowRight, ArrowUpRight, Layers3, Search, Sparkles } from '@lucide/svelte';
-  import CandidateCard from '$lib/CandidateCard.svelte';
+  import { ArrowLeft, ArrowRight, ArrowUpRight, Layers3, Search } from '@lucide/svelte';
   import SiteHeader from '$lib/SiteHeader.svelte';
   import SkillCard from '$lib/SkillCard.svelte';
   import {
-    CATALOG_BUCKETS, candidateRegistry, catalogBucketForSkill, communityRecommendations,
-    comparisonHref, pendingSkills, publicSkills, registry, skillHref, workflowExamples,
+    CATALOG_BUCKETS, catalogBucketForSkill,
+    comparisonHref, publicSkills, registry, skillHref, workflowExamples,
     type CatalogBucketId
   } from '$lib/skills';
 
-  type CatalogMode = 'verified' | 'pending';
   const pageSize = 12;
   const recommendFormHref = 'https://my.feishu.cn/share/base/form/shrcnv4VQeLloz4grjMYELZrM1f';
-  const recommendationPlazaHref = 'https://my.feishu.cn/share/base/webpage/shrcnFlduGlQoZFNk27XZceIQNY';
+  const recommendationPlazaHref = `${base}/recommendations/`;
   const curatorName = ['Joy', 'ce'].join('');
-  let activeMode = $state<CatalogMode>('verified');
   let bucket = $state<CatalogBucketId | 'all'>('all');
   let query = $state('');
   let currentPage = $state(1);
@@ -33,28 +30,17 @@
     });
   });
 
-  let pendingFiltered = $derived.by(() => {
-    const needle = query.trim().toLocaleLowerCase('zh-CN');
-    return pendingSkills.filter((skill) => {
-      if (bucket !== 'all' && skill.bucket !== bucket) return false;
-      if (!needle) return true;
-      return [skill.titleZh, skill.originalName, skill.summaryZh, skill.sourceLabelZh].join(' ').toLocaleLowerCase('zh-CN').includes(needle);
-    });
-  });
-
-  const filteredCount = $derived(activeMode === 'verified' ? verifiedFiltered.length : pendingFiltered.length);
+  const filteredCount = $derived(verifiedFiltered.length);
   const totalPages = $derived(Math.max(1, Math.ceil(filteredCount / pageSize)));
   const visibleVerified = $derived(verifiedFiltered.slice((currentPage - 1) * pageSize, currentPage * pageSize));
-  const visiblePending = $derived(pendingFiltered.slice((currentPage - 1) * pageSize, currentPage * pageSize));
 
-  $effect(() => { activeMode; bucket; query; currentPage = 1; });
+  $effect(() => { bucket; query; currentPage = 1; });
 
   function selectBucket(id: CatalogBucketId | 'all') { bucket = bucket === id ? 'all' : id; }
-  function resetFilters() { activeMode = 'verified'; bucket = 'all'; query = ''; }
+  function resetFilters() { bucket = 'all'; query = ''; }
   function bucketCount(id: CatalogBucketId) {
-    return activeMode === 'verified' ? publicSkills.filter((skill) => catalogBucketForSkill(skill) === id).length : pendingSkills.filter((skill) => skill.bucket === id).length;
+    return publicSkills.filter((skill) => catalogBucketForSkill(skill) === id).length;
   }
-  function formatDate(value: string) { return new Intl.DateTimeFormat('zh-CN', { month: 'numeric', day: 'numeric' }).format(new Date(value)); }
 </script>
 
 <svelte:head>
@@ -71,7 +57,7 @@
         <h1 id="hero-title">像搭乐高一样，<br /><em>组合你的营销工作流。</em></h1>
         <p class="hero-lead">不是再收藏一份 Skill 清单。这里讲清它适合什么场景、与同类有什么区别、怎样组合，以及真实使用还缺什么证据。</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#catalog">浏览 {registry.stats.total + candidateRegistry.stats.total} 个 Skill</a>
+          <a class="button button-primary" href="#catalog">浏览 {registry.stats.total} 个 Skill</a>
           <a class="button button-secondary" href={recommendFormHref} target="_blank" rel="noreferrer">推荐一个 Skill <ArrowUpRight size={16} /></a>
           <a class="text-link" href="https://github.com/open-marketing-cn/open-marketing-agents/blob/main/README.md#什么会被收录" target="_blank" rel="noreferrer">查看收录标准</a>
         </div>
@@ -85,11 +71,7 @@
     </section>
 
     <section class="catalog-section" id="catalog" aria-labelledby="catalog-title">
-      <div class="section-heading catalog-heading"><div><p class="section-label">SKILL DIRECTORY</p><h2 id="catalog-title">按营销任务找，不按热度盲选</h2></div><p>正式收录和待核验严格分开。待核验代表值得研究，不代表已经好用。</p></div>
-      <div class="catalog-tabs" role="tablist" aria-label="目录状态">
-        <button class:active={activeMode === 'verified'} type="button" role="tab" aria-selected={activeMode === 'verified'} onclick={() => (activeMode = 'verified')}>正式收录 <span>{registry.stats.total}</span></button>
-        <button class:active={activeMode === 'pending'} type="button" role="tab" aria-selected={activeMode === 'pending'} onclick={() => (activeMode = 'pending')}>待核验 <span>{candidateRegistry.stats.total}</span></button>
-      </div>
+      <div class="section-heading catalog-heading"><div><p class="section-label">SKILL DIRECTORY</p><h2 id="catalog-title">按营销任务找，不按热度盲选</h2></div><p>按任务查看来源、使用前提与实践记录，选择适合本次交付的工具。</p></div>
       <div class="catalog-toolbar"><label class="search-field"><Search size={18} aria-hidden="true" /><span class="sr-only">搜索任务、Skill 或作者</span><input bind:value={query} type="search" placeholder="搜索任务、Skill 或作者" /></label><span class="result-count">{filteredCount} 个结果</span></div>
       <div class="category-row" aria-label="按营销任务分类">
         <button class:active={bucket === 'all'} type="button" aria-pressed={bucket === 'all'} onclick={() => selectBucket('all')}>全部</button>
@@ -97,14 +79,7 @@
       </div>
       {#if filteredCount}
         <div class="skill-grid">
-          {#if activeMode === 'verified'}
-            {#each visibleVerified as skill (skill.id)}<SkillCard {skill} />{/each}
-          {:else}
-            {#each visiblePending as skill (skill.id)}
-              {@const candidateBucket = CATALOG_BUCKETS.find((item) => item.id === skill.bucket)!}
-              <CandidateCard {skill} bucket={candidateBucket} claimHref={recommendFormHref} />
-            {/each}
-          {/if}
+          {#each visibleVerified as skill (skill.id)}<SkillCard {skill} />{/each}
         </div>
         {#if totalPages > 1}<nav class="pagination" aria-label="目录分页"><button type="button" disabled={currentPage === 1} onclick={() => (currentPage -= 1)} aria-label="上一页"><ArrowLeft size={16} /></button><span>第 {currentPage} / {totalPages} 页</span><button type="button" disabled={currentPage === totalPages} onclick={() => (currentPage += 1)} aria-label="下一页"><ArrowRight size={16} /></button></nav>{/if}
       {:else}
@@ -119,7 +94,7 @@
           <article class="workflow-card">
             <header><span>PLAY {String(index + 1).padStart(2, '0')}</span><Layers3 size={18} /></header>
             <h3>{workflow.titleZh}</h3><p class="workflow-subtitle">{workflow.subtitleZh}</p><p class="workflow-description">{workflow.descriptionZh}</p>
-            <div class="workflow-composition">{#each workflow.composition as item}{#if item.status === 'verified' && publicById.has(item.id)}<a href={skillHref(item.id, base)}>{item.id}<i>已核验</i></a>{:else}<span>{item.id}<i>待核验</i></span>{/if}{/each}</div>
+            <div class="workflow-composition">{#each workflow.composition as item}{#if item.status === 'verified' && publicById.has(item.id)}<a href={skillHref(item.id, base)}>{item.id}<i>已核验</i></a>{/if}{/each}</div>
             <ol>{#each workflow.steps as step}<li>{step}</li>{/each}</ol>
             <footer><span>留下的资产</span><strong>{workflow.outputZh}</strong></footer>
           </article>
@@ -145,13 +120,8 @@
     </section>
 
     <section class="community-section" id="community" aria-labelledby="community-title">
-      <div class="section-heading"><div><p class="section-label">COMMUNITY SIGNALS</p><h2 id="community-title">大家最近推荐了什么</h2></div><p>提交后立即进入飞书公开广场，网站展示最新的去重预览。社区推荐不等于正式收录。</p></div>
-      {#if communityRecommendations.length}
-        <div class="recommendation-grid">{#each communityRecommendations as item}<a href={item.url} target="_blank" rel="noreferrer"><span>{item.category} · {formatDate(item.submittedAt)}</span><h3>{item.name}</h3><p class="recommendation-author">原作者 · {item.originalAuthor}</p><p>{item.description}</p><dl><div><dt>场景</dt><dd>{item.scenario}</dd></div><div><dt>适配</dt><dd>{item.agent}</dd></div></dl><footer>推荐人 · {item.contributor ?? '匿名贡献者'}{#if item.recommendationCount > 1}<b>{item.recommendationCount} 人推荐</b>{/if}<ArrowUpRight size={15} /></footer></a>{/each}</div>
-      {:else}
-        <div class="community-empty"><Sparkles size={22} /><h3>公开推荐广场正在开放</h3><p>推荐一个你实际用过的 Marketing Skill，并写清它在哪个场景里帮了你。</p></div>
-      {/if}
-      <div class="community-actions"><a class="button button-primary" href={recommendFormHref} target="_blank" rel="noreferrer">推荐一个 Skill <ArrowUpRight size={16} /></a><a class="button button-secondary" href={recommendationPlazaHref} target="_blank" rel="noreferrer">查看全部推荐 <ArrowUpRight size={16} /></a></div>
+      <div class="section-heading"><div><p class="section-label">COMMUNITY</p><h2 id="community-title">看看大家在用什么</h2></div><p>推荐广场集中展示真实投稿、使用场景与作者来源。</p></div>
+      <div class="community-actions"><a class="button button-primary" href={recommendationPlazaHref}>进入推荐广场 <ArrowRight size={16} /></a><a class="button button-secondary" href={recommendFormHref} target="_blank" rel="noreferrer">推荐一个 Skill <ArrowUpRight size={16} /></a></div>
     </section>
 
     <section class="layers-section" aria-labelledby="layers-title">
