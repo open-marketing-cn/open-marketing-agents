@@ -47,7 +47,7 @@ function isoTime(value) {
 }
 
 export function buildCommunityPreview(records, options = {}) {
-  const limit = options.limit ?? 6;
+  const limit = options.limit ?? Number.POSITIVE_INFINITY;
   const grouped = new Map();
   for (const record of records) {
     const fields = record.fields ?? {};
@@ -55,8 +55,9 @@ export function buildCommunityPreview(records, options = {}) {
     if (status && !publicStatuses.has(status)) continue;
     if (requiredFields.some((field) => !textValue(fields[field]))) continue;
     const url = safeHttpUrl(fields['Skill / 仓库链接']);
-    const canonicalUrl = canonicalizeSkillUrl(url);
-    if (!url || !canonicalUrl) continue;
+    const rawUrl = textValue(fields['Skill / 仓库链接']);
+    if (!url && /^(?:[a-z][a-z0-9+.-]*:|\[)/i.test(rawUrl)) continue;
+    const canonicalUrl = canonicalizeSkillUrl(url) ?? `record:${record.record_id}`;
     const submittedAt = isoTime(fields['提交时间'] ?? record.created_time) ?? '1970-01-01T00:00:00.000Z';
     const item = {
       id: textValue(fields['编号']) || record.record_id,
@@ -82,6 +83,12 @@ export function buildCommunityPreview(records, options = {}) {
   return [...grouped.values()]
     .sort((left, right) => right.submittedAt.localeCompare(left.submittedAt))
     .slice(0, limit);
+}
+
+export function renderCommunityMarkdown(payload) {
+  const escape = (value) => String(value ?? '').replace(/[&<>]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' })[char]).replace(/[\\`*_{}\[\]()#+.!|~-]/g, '\\$&').replace(/\r?\n/g, ' ');
+  const rows = payload.recommendations.map(item => `## ${escape(item.name)}\n\n${escape(item.description)}\n\n- 使用场景：${escape(item.scenario)}\n- 原作者：${escape(item.originalAuthor)}\n- 适配：${escape(item.agent)}\n- 推荐人：${escape(item.contributor || '匿名贡献者')}\n- 推荐次数：${item.recommendationCount}\n- 来源：${item.url ? `[打开原作者链接](<${item.url.replace(/[<>]/g, c => encodeURIComponent(c))}>)` : '来源链接待补'}\n`);
+  return `# 推荐广场\n\n[在网站浏览](https://open-marketing-cn.github.io/open-marketing-agents/recommendations/) · [推荐一个 Skill](https://my.feishu.cn/share/base/form/shrcnv4VQeLloz4grjMYELZrM1f)\n\n最近成功同步：${payload.generatedAt || '尚未同步'}。社区投稿不代表平台实测结论；仅公开表单中的公开字段。\n\n${rows.join('\n')}`;
 }
 
 async function requestJson(url, options) {
@@ -131,20 +138,25 @@ export async function syncCommunityRecommendations(options = {}) {
   const token = await fetchTenantToken(appId, appSecret);
   const records = await fetchRecords({ token, baseToken, tableId, viewId });
   const recommendations = buildCommunityPreview(records);
+  const previous = await readFile(output, 'utf8').then(JSON.parse).catch(error => { if (error.code === 'ENOENT') return null; throw error; });
+  const unchanged = JSON.stringify(previous?.recommendations) === JSON.stringify(recommendations);
   const payload = {
     product: 'Open Marketing Community Recommendations',
-    generatedAt: new Date().toISOString(),
+    generatedAt: unchanged ? previous.generatedAt : new Date().toISOString(),
     source: { type: 'feishu-public-view', view: '推荐广场' },
     recommendations
   };
   await mkdir(dirname(output), { recursive: true });
   await writeFile(output, `${JSON.stringify(payload, null, 2)}\n`);
+  await writeFile(join(dirname(output), 'community-recommendations.md'), renderCommunityMarkdown(payload));
   return payload;
 }
 
 async function main() {
   if (process.argv.includes('--allow-fixture') && (!process.env.FEISHU_APP_ID || !process.env.FEISHU_APP_SECRET || !process.env.FEISHU_PUBLIC_VIEW_ID)) {
     const fixture = JSON.parse(await readFile(defaultOutput, 'utf8'));
+    await writeFile(join(dirname(defaultOutput), 'community-recommendations.md'), renderCommunityMarkdown(fixture));
+    console.warn('::warning::Feishu credentials incomplete; retaining the last successful snapshot. Automatic submission sync is not active.');
     console.log(`Using local community fixture with ${fixture.recommendations?.length ?? 0} recommendations.`);
     return;
   }

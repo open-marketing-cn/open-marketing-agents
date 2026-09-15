@@ -1,22 +1,35 @@
 # Open Marketing
 
-> 从产品与营销实践出发，分享深度文章、具体案例和开源工具。
+> AI 产品与营销开源实践库：读方法、拿模板、找工具、交流实测。
 
 本站包含深度文章与开源工具两个入口。文章保留背景、实际动作、结果与限制；工具保留作者、许可证及实践状态。
 
-## 实践文章
+## 首页与主要入口
 
-文章源码位于 `content/articles/`，站点入口为 `/articles/`。首批四篇采用图文手册形式，默认呈现结论、步骤和案例，完整解释可展开；嘉宾原始材料不随站点发布。旧有工具目录位于 `/tools/`，已有工具详情地址保持不变。
+**[打开 Open Marketing 首页](https://open-marketing-cn.github.io/open-marketing-agents/)**
 
-这里不是一个“好 Skill 链接榜”。我们把来源核验、安装、真实案例、弯路、边界和同类横评拆开记录，让你知道一个 Skill 适不适合当前任务，以及怎样从“能运行”走到“真正用好”。
-
-## 从这里开始
-
-| 你想做什么 | 入口 | 你会看到什么 |
+| 你现在要做什么 | 直接入口 | 可以带走什么 |
 |---|---|---|
-| 浏览已验证 Skill | [打开网站目录](https://open-marketing-cn.github.io/open-marketing-agents/tools/) | 按营销任务筛选，查看来源、实践等级和交付物 |
-| 推荐一个 Skill | [打开公开飞书表单](https://my.feishu.cn/share/base/form/shrcnv4VQeLloz4grjMYELZrM1f) · [查看只读推荐广场](https://my.feishu.cn/share/base/webpage/shrcnFlduGlQoZFNk27XZceIQNY) | 默认代表实际用过；保留原作者名称，并填写场景、描述、适配 Agent 和链接 |
-| 判断是否值得收录 | [查看收录标准](#什么会被收录) | 硬门槛、实践证据、署名和隐私要求 |
+| 理清产品与营销的下一步 | [实践手册](https://open-marketing-cn.github.io/open-marketing-agents/articles/) | 从需求到增长的四章方法与工作模板 |
+| 为具体任务选择 Skill | [开源工具](https://open-marketing-cn.github.io/open-marketing-agents/tools/) | 输入要求、交付物、作者来源、安装方式与实践记录 |
+| 看别人推荐了什么 | [推荐广场](https://open-marketing-cn.github.io/open-marketing-agents/recommendations/) · [在 GitHub 阅读](generated/community-recommendations.md) | 具体使用场景、原作者与推荐人 |
+| 分享自己实际用过的 Skill | [唯一推荐表单](https://my.feishu.cn/share/base/form/shrcnv4VQeLloz4grjMYELZrM1f) | 下一次成功同步后进入站内广场和仓库记录 |
+
+## 这次更新了什么
+
+Open Marketing 从营销 Skill 目录扩展为 **AI 产品与营销开源实践库**：方法、模板、工具与社区经验相互连接。网站帮助独立创作者、品牌运营和小团队从一个真实任务出发，找到下一步和可交接的成果。
+
+这是项目内容与使用路径的升级；当前网页用于阅读、选工具和分享经验，Skill 仍由你自己的 Agent 执行。桌面工作台代码保留在仓库中，但不能据此称网页已具备在线执行能力。
+
+首页负责导航与精选，文章页只展示实践手册，工具页负责完整筛选与同类对比，推荐广场集中展示投稿。公开工具目录已移除候选池入口；内部候选资料保留用于后续复核。
+
+文章源码位于 `content/articles/`。原始嘉宾材料不随站点发布；文章保留方法、场景和限制。既有 `/articles/`、`/tools/`、`/skills/` 与对比详情链接继续有效。
+
+## 为什么使用
+
+- **省去从零找方法的步骤**：按当前问题读章节，带走可填写的模板。
+- **先判断工具是否适合**：查看需要什么材料、输出什么、有什么限制，再安装到自己的 Agent。
+- **让经验可复用**：分享具体使用场景，后来的人直接在网站或 GitHub 查看。
 
 ## 四步使用
 
@@ -37,7 +50,7 @@
 
 ## 怎样参与共创
 
-[推荐一个 Skill](https://my.feishu.cn/share/base/form/shrcnv4VQeLloz4grjMYELZrM1f) · [查看公开推荐广场](https://my.feishu.cn/share/base/webpage/shrcnFlduGlQoZFNk27XZceIQNY)
+[推荐一个 Skill](https://my.feishu.cn/share/base/form/shrcnv4VQeLloz4grjMYELZrM1f) · [查看公开推荐广场](https://open-marketing-cn.github.io/open-marketing-agents/recommendations/)
 
 全部共创只使用这一个入口，共 8 题；提交即代表你实际使用过这个 Skill：
 
@@ -52,11 +65,11 @@
 
 认领实测、统一 Brief、实践补证和同类横评不再设置公众分入口；维护者收到推荐后，再在飞书后台完成去重、邀请实测和评审。发现来源、许可证、边界或上游 Commit 变化时，也直接使用这个表单。
 
-投稿会立即以“社区推荐 · 未核验”进入只读推荐广场，但不等于正式收录。维护者完成来源、许可证、隐私和实践检查后，才进入 GitHub 正式版本与网站正式目录。
+投稿在下一次成功同步后进入站内推荐广场及 GitHub 推荐记录；自动任务每 15 分钟检查一次，实际显示时间受 GitHub 排队和飞书接口影响。投稿不自动变成正式 Skill，来源、安装与实测记录分别保留。链接未填完整的投稿会提示补充来源，不能直接安装。
 
 ## 什么会被收录
 
-正式收录至少满足：
+收录时先检查来源与安装；完成实践验证还需要相应案例证据：
 
 - 有真实公开仓库、独立 `SKILL.md`、清楚的作者和许可证；
 - 可以独立安装，并留下文件、表格、页面、清单等可交接结果；
@@ -66,7 +79,7 @@
 
 我们把状态分开显示：**被发现 → 来源核验 → 实践验证 → 多人复现 → 最佳实践**。GitHub Star、X 或小红书热度只决定优先评测什么，不决定是否公开，也不能代替许可证和真实实践。
 
-每周共同评审 5 个候选，每月公开不少于 10 个达到实践门槛的 Skill。未完成实践的条目可以作为“待认领”展示，但不计入好用 Skill。
+来源核验、安装验证和实战验证分别记录。仅通过来源与安装检查的条目不承诺使用效果；完整实践证据是持续补充的维护目标。
 
 详细评判方式见[评判协议](docs/evaluation-rubric.md)，实践资料可以参考[实战记录模板](docs/practice-evidence-template.md)。
 
@@ -82,3 +95,8 @@
 GitHub 是正式公开版本与审核记录，飞书只向社区提供一个“推荐一个 Skill”入口；认领、实践和横评在维护后台流转。目录数据、开发方式、schema、脚本和 PR 流程请读 [CONTRIBUTING.md](CONTRIBUTING.md)；审核排期、权限和自动化写入边界见[共同维护手册](docs/maintainer-playbook.md)。
 
 仓库代码使用 [Apache-2.0](LICENSE)，Open Marketing 原创内容使用 [CC BY 4.0](LICENSE-CONTENT)；第三方内容保留各自许可证与署名，详见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
+## 维护与推广
+
+- [本次更新与两周推广计划](docs/launch-plan-2026-09-15.md)
+- [Cola Skill 本轮选取与核验记录](docs/cola-selection-2026-09-15.md)

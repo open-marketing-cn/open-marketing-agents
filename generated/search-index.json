@@ -196,6 +196,20 @@
     "text": "把文章主题变成可制作的封面方案 baoyu-cover-image 根据文章主题、受众和渠道规格，形成可制作的封面构图、文字层级与视觉方向。 封面构图、标题层级和制作检查项 creative 通用任务型 内容运营人员 品牌与设计团队 独立创作者 为文章或社媒制作封面 把主题转成清晰的视觉方向 检查封面是否适配发布渠道 文章或内容主题 目标受众与发布渠道 品牌素材、字体和色彩约束 尺寸、文字和版权限制 封面构图与视觉方向 标题和信息层级建议 制作提示与规格 发布前检查项 内容 社媒 公众号 小红书 宝玉"
   },
   {
+    "id": "baoyu-infographic",
+    "titleZh": "把复杂内容做成信息图",
+    "originalName": "baoyu-infographic",
+    "workspace": "creative",
+    "categoryId": "creative",
+    "comparisonGroupId": null,
+    "methodType": "通用任务型",
+    "practiceLevel": "source_verified",
+    "sourceType": "upstream",
+    "installable": true,
+    "featured": false,
+    "text": "把复杂内容做成信息图 baoyu-infographic 将流程、对比和数据整理为信息图方案，选择布局与视觉风格，再交给生图工具渲染。 信息结构与布局方案、可复用的生图提示词 creative 通用任务型 品牌内容运营者 独立创作者 小团队 解释产品工作原理 把研究结论做成一张图 已核对的文章或数据 信息层级和目标读者 可用的生图工具 信息结构与布局方案 可复用的生图提示词 信息图与生成记录 内容营销 社交媒体 jimliu"
+  },
+  {
     "id": "baoyu-markdown-to-html",
     "titleZh": "Markdown 转网页",
     "originalName": "baoyu-markdown-to-html",
@@ -208,6 +222,20 @@
     "installable": false,
     "featured": false,
     "text": "markdown 转网页 baoyu-markdown-to-html 把 markdown 转成带主题和内联样式的 html，适配公众号等发布场景，并保留代码、数学和图表处理边界。 可预览、可粘贴的样式化 html 和检查结果 creative 通用任务型 公众号运营者 内容编辑 品牌与内容团队 把 markdown 转成公众号 html 为活动复盘或方案生成单页预览 检查代码、图片、图表和引用处理 markdown 文件或正文 目标平台与主题偏好 图片、代码和图表需求 外链引用与发布限制 带内联样式的 html 主题和结构选择说明 代码、图片和图表处理结果 发布前兼容性检查 微信公众号 博客 活动复盘 内容营销 宝玉"
+  },
+  {
+    "id": "baoyu-xhs-images",
+    "titleZh": "把一篇内容拆成小红书图卡",
+    "originalName": "baoyu-xhs-images",
+    "workspace": "creative",
+    "categoryId": "creative",
+    "comparisonGroupId": null,
+    "methodType": "通用任务型",
+    "practiceLevel": "source_verified",
+    "sourceType": "upstream",
+    "installable": true,
+    "featured": false,
+    "text": "把一篇内容拆成小红书图卡 baoyu-xhs-images 把已有内容拆成适合连续阅读的图卡，规划每页信息、版式和画面提示词，再生成系列图片。 图卡分镜与页面大纲、逐页图片提示词 creative 通用任务型 品牌内容运营者 独立创作者 小团队 将长文改成小红书教程 将产品使用步骤拆成多页图解 文章或明确主题 目标读者与品牌风格 可用的生图工具 图卡分镜与页面大纲 逐页图片提示词 系列图卡 内容营销 社交媒体 jimliu"
   },
   {
     "id": "cold-email",
@@ -446,6 +474,20 @@
     "installable": false,
     "featured": false,
     "text": "公众号文章全流程 wewrite 围绕公众号完成选题、素材、写作和审稿，并把配图、排版和发布保持为需要明确确认的独立动作。 选题、文章初稿、审稿意见和本地可交接稿 creative 通用任务型 公众号运营者 中文内容团队 品牌创始人 把热点、活动或访谈整理成公众号文章 先完成审稿和本地稿再决定是否排版 把选题、写作、视觉和复盘分成可控模块 选题目标和读者 原始素材、访谈或会议记录 品牌语气和事实证据 是否需要配图、排版或草稿箱动作 选题与文章结构 中文文章初稿和审稿稿 事实、引用和配图待确认项 本地可交接稿及后续动作清单 微信公众号 公众号草稿箱 内容运营 imraywang"
+  },
+  {
+    "id": "writing-dna-skill",
+    "titleZh": "把品牌旧文章整理成写作规范",
+    "originalName": "writing-dna-skill",
+    "workspace": "creative",
+    "categoryId": "creative",
+    "comparisonGroupId": null,
+    "methodType": "通用任务型",
+    "practiceLevel": "source_verified",
+    "sourceType": "upstream",
+    "installable": true,
+    "featured": false,
+    "text": "把品牌旧文章整理成写作规范 writing-dna-skill 从至少 20 篇完整文章梳理语言、结构、选题和视觉规律，形成可持续复用的品牌写作规范。 writing-dna.md、语言与文章结构规范 creative 通用任务型 品牌内容运营者 独立创作者 小团队 统一多人协作时的品牌表达 整理账号长期写作经验 至少 20 篇自有或已获授权的完整文章 文章日期与主题 本次写作任务 writing-dna.md 语言与文章结构规范 选题与视觉风格指南 内容营销 社交媒体 larashero3-dotcom"
   },
   {
     "id": "ab-testing",

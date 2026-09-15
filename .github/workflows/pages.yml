@@ -4,11 +4,11 @@ on:
   push:
     branches: [main]
   schedule:
-    - cron: '23 * * * *'
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -38,6 +38,15 @@ jobs:
         run: npm run build
         env:
           BASE_PATH: /${{ github.event.repository.name }}
+      - name: Persist public recommendations in GitHub
+        run: |
+          git add generated/community-recommendations.json generated/community-recommendations.md
+          if ! git diff --cached --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -s -m "chore: sync public community recommendations"
+            git push origin HEAD:main
+          fi
       - uses: actions/upload-pages-artifact@v4
         with:
           path: build
