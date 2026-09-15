@@ -1,0 +1,3 @@
+<script lang="ts">import SiteHeader from '$lib/SiteHeader.svelte';import HandbookCatalog from '$lib/HandbookCatalog.svelte';</script>
+<svelte:head><title>从需求到增长：AI 产品与营销实践手册｜Open Marketing</title></svelte:head>
+<div class="page-shell"><SiteHeader/><main class="handbook-main"><header class="book-intro"><span class="card-kicker">THE OPEN MARKETING HANDBOOK</span><h1>从需求到增长</h1><p class="book-subtitle">AI 产品与营销实践手册</p><p>写给独立创作者、品牌运营与小团队。用一个真实项目贯穿四章：验证是否值得做，决定先做什么，把首版交付，再找到用户。</p><details class="guide-details" open><summary>阅读指南</summary><p>这本手册按决策顺序组织，也允许从当前问题进入。第一章完成验证计划，第二章完成需求取舍，第三章约定交付与验收，第四章记录增长实验。章节中的建议是工作方法，不是对经营结果的保证。</p><p>先读方法，再填写模板；遇到未知，记录待验证项。教学假设与匿名实践分开标注，模板空白处无需为了完整而填入猜测。</p></details></header><HandbookCatalog/></main></div>

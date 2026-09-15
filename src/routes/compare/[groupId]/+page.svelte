@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-  <title>{group.taskZh} Skill 对比｜Open Marketing Skills</title>
+  <title>{group.taskZh} Skill 对比｜Open Marketing</title>
   <meta name="description" content={group.introZh} />
 </svelte:head>
 
@@ -126,8 +126,8 @@
   </main>
 
   <footer>
-    <div class="brand-lockup light"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span><strong>OPEN MARKETING</strong><small>SKILLS DIRECTORY</small></span></div>
+    <div class="brand-lockup light"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span><strong>OPEN MARKETING</strong><small>OPEN TOOLS</small></span></div>
         <p>按任务说明差异 · 不做脱离场景的总分榜</p>
-    <a href={`${base}/#catalog`}>返回 Skill 目录 <ArrowRight size={16} /></a>
+    <a href={`${base}/tools/#catalog`}>返回 Skill 目录 <ArrowRight size={16} /></a>
   </footer>
 </div>

@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { basename, extname, join, relative } from 'node:path';
@@ -80,13 +81,25 @@ function scanGeneratedSkillZip(path, label, findings) {
 }
 
 const findings = [];
+const reviewedImages = JSON.parse(readFileSync(join(root, 'content/illustrations.json'), 'utf8')).files;
+function reviewedImage(path, label) {
+  if (!/^static\/assets\/[a-z-]+-illustrations\/[a-z0-9-]+\.png$/.test(label)) return false;
+  const expected = reviewedImages[label]?.sha256;
+  if (!expected || !/^[a-f0-9]{64}$/.test(expected)) return false;
+  const bytes = readFileSync(path);
+  return bytes.subarray(0, 8).equals(Buffer.from([137,80,78,71,13,10,26,10]))
+    && createHash('sha256').update(bytes).digest('hex') === expected;
+}
+for (const label of Object.keys(reviewedImages)) {
+  if (!existsSync(join(root, label)) || !reviewedImage(join(root, label), label)) findings.push(`${label}: 配图缺失或不匹配已审阅的校验值`);
+}
 for (const path of walk(root)) {
   const label = relative(root, path);
   scanText(label, label, findings);
   const extension = extname(path).toLocaleLowerCase('en-US');
   if (binaryExtensions.has(extension)) {
     if (label.startsWith('static/downloads/') && extension === '.zip') scanGeneratedSkillZip(path, label, findings);
-    else if (!label.startsWith('src-tauri/icons/')) findings.push(`${label}: 不允许提交原始媒体或未审计二进制文件`);
+    else if (!reviewedImage(path, label) && !label.startsWith('src-tauri/icons/')) findings.push(`${label}: 不允许提交原始媒体或未审计二进制文件`);
     continue;
   }
   const stats = statSync(path);
@@ -116,4 +129,4 @@ if (findings.length > 0) {
   process.exit(1);
 }
 
-console.log(`安全扫描通过：${walk(root).length} 个文件，未发现拒绝词、凭证或原始媒体。`);
+console.log(`安全扫描通过：${walk(root).length} 个文件，未发现拒绝词、凭证或未审计媒体。`);

@@ -2,16 +2,16 @@
   "name": "open-marketing",
   "version": "0.1.0-alpha.1",
   "private": true,
-  "description": "面向品牌 0→1 的独立营销 Skill 精选目录。",
+  "description": "来自产品与营销实践的深度文章、案例与开源工具。",
   "type": "module",
   "scripts": {
     "catalog:generate": "node scripts/generate-catalog.mjs",
     "catalog:check-upstream": "node scripts/check-upstream.mjs",
     "catalog:evaluate": "node scripts/evaluate-candidates.mjs",
     "community:sync": "node scripts/sync-community-recommendations.mjs",
-    "predev": "npm run catalog:generate",
+    "predev": "npm run catalog:generate && npm run articles:generate",
     "dev": "vite dev",
-    "prebuild": "npm run catalog:generate",
+    "prebuild": "npm run catalog:generate && npm run articles:generate",
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -22,7 +22,8 @@
     "verify": "npm run catalog:generate && npm run catalog:evaluate -- --offline --include-public && npm run safety && npm run check && npm run test:catalog && npm test && npm run build",
     "tauri": "tauri",
     "tauri:dev": "tauri dev",
-    "tauri:build": "tauri build"
+    "tauri:build": "tauri build",
+    "articles:generate": "node scripts/generate-articles.mjs"
   },
   "dependencies": {
     "@lucide/svelte": "^1.31.0",

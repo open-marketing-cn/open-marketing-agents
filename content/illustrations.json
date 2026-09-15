@@ -1,0 +1,37 @@
+{
+  "description": "Original generated editorial illustrations, visually reviewed for public use. Only these exact PNG bytes are allowed.",
+  "files": {
+    "static/assets/before-building-illustrations/01-task-first.png": {
+      "sha256": "620bff438f72830dd607d9f5f4d5cac72fec1afc722269641c77052c89c9d49b",
+      "purpose": "Public handbook illustration; no source recordings or private material"
+    },
+    "static/assets/before-building-illustrations/02-evidence.png": {
+      "sha256": "a6210ac1fb30a27de0b59a12f53a5867e021cd35c54069062086a5879dc313ca",
+      "purpose": "Public handbook illustration; no source recordings or private material"
+    },
+    "static/assets/finding-real-demand-illustrations/01-choose.png": {
+      "sha256": "7992f0a5402776d4a94b5a678c1dd0b8b6c9ec97848d4f455c113f084d02219a",
+      "purpose": "Public handbook illustration; no source recordings or private material"
+    },
+    "static/assets/finding-real-demand-illustrations/02-missing-condition.png": {
+      "sha256": "64c756f913147493e65e9ed7c1dc8b5d5299c5a7cefe260b845771a0265551f4",
+      "purpose": "Public handbook illustration; no source recordings or private material"
+    },
+    "static/assets/from-demo-to-delivery-illustrations/01-demo.png": {
+      "sha256": "fb27220e96ffc2e365cca003b341d65c0ee6ee8192ce37edd77724f6bab8f7e5",
+      "purpose": "Public handbook illustration; no source recordings or private material"
+    },
+    "static/assets/from-demo-to-delivery-illustrations/02-check.png": {
+      "sha256": "399649a332c4b22271b64c2be4aac75a5e102aea5fdce7de0a9d99fc663b0475",
+      "purpose": "Public handbook illustration; no source recordings or private material"
+    },
+    "static/assets/growth-with-evidence-illustrations/01-interest.png": {
+      "sha256": "b271b7de8a4fb2b8946670ab870ac6d3442fac7b914d704e7d0b01163d38960b",
+      "purpose": "Public handbook illustration; no source recordings or private material"
+    },
+    "static/assets/growth-with-evidence-illustrations/02-repeat.png": {
+      "sha256": "de99ed15f3ae9bc90fc07dc729183973313bb09308c371fb2e42990bd7660fee",
+      "purpose": "Public handbook illustration; no source recordings or private material"
+    }
+  }
+}

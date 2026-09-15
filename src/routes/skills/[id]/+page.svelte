@@ -38,7 +38,7 @@
 </script>
 
 <svelte:head>
-  <title>{skill.titleZh}｜Open Marketing Skills</title>
+  <title>{skill.titleZh}｜Open Marketing</title>
   <meta name="description" content={skill.summaryZh} />
 </svelte:head>
 

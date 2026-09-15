@@ -1,0 +1,50 @@
+/* Editorial reading: a short main path, with the complete explanation on demand. */
+.chapter-content .article-body{font-size:17px;line-height:1.85;color:#303840;overflow-wrap:anywhere}
+.chapter-content .article-body>h2{font-size:25px;line-height:1.45;margin:52px 0 20px;letter-spacing:-.035em;color:#152534;scroll-margin-top:28px}
+.chapter-content .article-body p{margin:16px 0}
+.chapter-content .article-body strong{font-weight:650;color:#182c3b}
+.chapter-content .article-body li{margin:10px 0}
+.chapter-content .article-body .block-label{font-size:14px;line-height:1.5;font-weight:650;letter-spacing:.02em;color:#237eaf;margin:0 0 14px}
+.article-takeaways{background:#f0f7fb;border:1px solid #e0edf5;border-radius:18px;padding:26px 30px;margin:28px 0 0}
+.article-takeaways ul{list-style:none;padding:0!important;margin:0!important}
+.article-takeaways li{position:relative;padding-left:20px}
+.article-takeaways li::before{content:'';position:absolute;left:0;top:.8em;width:5px;height:5px;border-radius:50%;background:#2597d0}
+.chapter-content .article-takeaways>p:last-child{font-size:15px;margin:19px 0 0;padding-top:17px;border-top:1px solid #d8e7f0;color:#536675}
+.article-figure{margin:30px 0 34px}
+.article-figure img{display:block;width:100%;height:auto;aspect-ratio:1672/941;object-fit:contain;border-radius:12px;background:#fff}
+.article-figure figcaption{margin:9px 0 0;padding:0 16px;text-align:center;font-size:14px;line-height:1.65;color:#626e78}
+.article-more{border-top:1px solid #e1e8ee;border-bottom:1px solid #e1e8ee;margin:25px 0;background:#fff}
+.article-more summary,.worksheet-preview summary{cursor:pointer;min-height:48px;padding:13px 0;color:#516c80;font-size:15px;line-height:1.65;list-style-position:inside}
+.article-more summary:hover,.worksheet-preview summary:hover{color:#197bac}
+.article-more[open] summary{color:#197bac}
+.article-more-body{padding:0 0 8px}
+.chapter-content .article-more-body p{color:#46535e}
+.article-case{border-left:3px solid #2597d0;background:#f7fafc;margin:26px 0;padding:23px 26px;border-radius:0 14px 14px 0}
+.chapter-content .article-case>p:last-child{margin-bottom:0}
+.article-steps{margin:28px 0}
+.article-steps ol{counter-reset:reading-step;list-style:none;padding:0!important;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:0!important}
+.article-steps li{counter-increment:reading-step;position:relative;border:1px solid #e2eaf0;border-radius:12px;padding:17px 17px 17px 46px;margin:0!important;line-height:1.75}
+.article-steps li::before{content:counter(reading-step,decimal-leading-zero);position:absolute;left:15px;top:19px;color:#2785b6;font:13px/1.6 ui-monospace,monospace}
+.chapter-content .article-body .table-scroll{max-width:100%;overflow-x:auto;margin:23px 0;border:1px solid #e1e8ee;border-radius:12px}
+.chapter-content .article-body table{width:100%;border-collapse:collapse;font-size:16px;line-height:1.75;margin:0}
+.chapter-content .article-body th{background:#eff5f9;color:#324f65;font-weight:600;text-align:left}
+.chapter-content .article-body th,.chapter-content .article-body td{border:0;border-bottom:1px solid #e5ebf0;padding:14px 16px;vertical-align:top}
+.chapter-content .article-body tr:last-child td{border-bottom:0}
+.chapter-toc{padding:17px 0}
+.chapter-toc:not([open]) summary{margin:0}
+.worksheet-preview{border-top:1px solid #dce6ee}
+.worksheet-preview pre{max-height:none;overflow:visible;font-size:14px}
+.worksheet-actions a{padding:10px 0;line-height:1.5}
+@media(max-width:760px){
+ .chapter-content .article-body{font-size:16px;line-height:1.9}
+ .chapter-content .article-body>h2{font-size:22px;margin-top:38px}
+ .article-takeaways{padding:20px;margin-top:22px;border-radius:14px}
+ .article-steps ol{grid-template-columns:1fr}
+ .article-case{padding:20px}
+ .article-figure{margin:24px 0 28px}
+ .article-figure figcaption{padding:0 4px;font-size:14px}
+ .article-more summary,.worksheet-preview summary{font-size:16px}
+ .chapter-content .article-body table{font-size:16px;min-width:460px}
+ .chapter-content .article-body th,.chapter-content .article-body td{padding:12px 14px}
+ .worksheet-preview pre{font-size:14px}
+}

@@ -1,6 +1,12 @@
-# Open Marketing Skills
+# Open Marketing
 
-> 帮助营销人发现、选择并真正用好经过实践的 Marketing Skills。
+> 从产品与营销实践出发，分享深度文章、具体案例和开源工具。
+
+本站包含深度文章与开源工具两个入口。文章保留背景、实际动作、结果与限制；工具保留作者、许可证及实践状态。
+
+## 实践文章
+
+文章源码位于 `content/articles/`，站点入口为 `/articles/`。首批四篇采用图文手册形式，默认呈现结论、步骤和案例，完整解释可展开；嘉宾原始材料不随站点发布。旧有工具目录位于 `/tools/`，已有工具详情地址保持不变。
 
 这里不是一个“好 Skill 链接榜”。我们把来源核验、安装、真实案例、弯路、边界和同类横评拆开记录，让你知道一个 Skill 适不适合当前任务，以及怎样从“能运行”走到“真正用好”。
 
@@ -8,7 +14,7 @@
 
 | 你想做什么 | 入口 | 你会看到什么 |
 |---|---|---|
-| 浏览已验证 Skill | [打开网站目录](https://open-marketing-cn.github.io/open-marketing-agents/#catalog) | 按营销任务筛选，查看来源、实践等级和交付物 |
+| 浏览已验证 Skill | [打开网站目录](https://open-marketing-cn.github.io/open-marketing-agents/tools/) | 按营销任务筛选，查看来源、实践等级和交付物 |
 | 推荐一个 Skill | [打开公开飞书表单](https://my.feishu.cn/share/base/form/shrcnv4VQeLloz4grjMYELZrM1f) · [查看只读推荐广场](https://my.feishu.cn/share/base/webpage/shrcnFlduGlQoZFNk27XZceIQNY) | 默认代表实际用过；保留原作者名称，并填写场景、描述、适配 Agent 和链接 |
 | 判断是否值得收录 | [查看收录标准](#什么会被收录) | 硬门槛、实践证据、署名和隐私要求 |
 
