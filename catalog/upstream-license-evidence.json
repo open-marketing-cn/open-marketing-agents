@@ -1,0 +1,20 @@
+[
+  {
+    "repo": "https://github.com/pyang5166/gbro-cover-design",
+    "commit": "8d1a0a5487e9ee6539b2b0a471b58469aadfedd6",
+    "path": "LICENSE",
+    "license": "MIT",
+    "sha256": "89fe5ae8d5faeda939e392638d21ef1ab5084b3ecb8df96c8bbcb38416291958",
+    "checkedAt": "2026-10-04",
+    "reviewNoteZh": "固定版本根目录 LICENSE 明确授予 MIT；保留原始字节 SHA256，不复制上游 Skill。"
+  },
+  {
+    "repo": "https://github.com/isjiamu/gzh-design-skill",
+    "commit": "ba1f4175519b481cb3566616c9e5178705067904",
+    "path": "LICENSE",
+    "license": "AGPL-3.0-or-later",
+    "sha256": "50a026dd82963794599f540477cd913345a42eb1028c53c1b53f772abec4c191",
+    "checkedAt": "2026-10-04",
+    "reviewNoteZh": "固定版本根目录 LICENSE 授权前言明确允许 AGPL 第 3 版或以后版本；保留原始字节 SHA256，不复制上游 Skill。"
+  }
+]

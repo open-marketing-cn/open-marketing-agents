@@ -15,7 +15,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "test:catalog": "node --test scripts/evaluate-candidates.node.mjs scripts/sync-community-recommendations.node.mjs",
+    "test:catalog": "node --test scripts/check-upstream.node.mjs scripts/evaluate-candidates.node.mjs scripts/sync-community-recommendations.node.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "safety": "node scripts/safety-scan.mjs",
