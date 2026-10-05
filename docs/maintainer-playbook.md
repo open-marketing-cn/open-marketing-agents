@@ -74,3 +74,13 @@
 6. 若网站发布失败，飞书不得提前显示“已发布”。
 
 公众视图不得包含联系方式、内部评语、机器原始日志和未授权材料。分享权限变化后必须用匿名窗口验证；“维护者本人能打开”不等于公众可访问。
+
+## 上游许可证自动复核
+
+`npm run catalog:check-upstream` 读取公开仓库和固定版本的文本，不执行候选仓库代码。已识别的 GitHub SPDX 与目录记录冲突时继续阻止安装；`NOASSERTION` 或缺失标签表示自动分类未能核验，不直接等同于许可证变更。
+
+人工核验固定版本的许可证后，可在 `catalog/upstream-license-evidence.json` 登记仓库、完整 Commit、许可证文件路径、精确 SPDX、原始字节 SHA256 和日期。回退要求记录与 manifest 完全匹配，并且固定版本与本次上游 head 的同路径许可证文件都匹配该哈希。文件缺失、取回失败、证据失配或任何文本变化都阻止安装，需人工重新核验；不能只凭许可证关键词放行，也不能使用目录自己的标签代替远端证据。
+
+报告 `generated/updates.json` 保留 API 标签、核验方式、文件 URL、预期及实际哈希和失败原因。上游版本变化仍进入 `review_required`，新增风险与路径检查继续执行；本脚本只生成审查报告，不自动更新公开目录或安装权限。回归测试包含成功回退、未知/真实变化拦截、证据失配和路径/风险检查，随 `npm run verify` 执行。
+
+当前两份证据来源为 [GBro 固定 LICENSE](https://github.com/pyang5166/gbro-cover-design/blob/8d1a0a5487e9ee6539b2b0a471b58469aadfedd6/LICENSE) 和 [公众号排版固定 LICENSE](https://github.com/isjiamu/gzh-design-skill/blob/ba1f4175519b481cb3566616c9e5178705067904/LICENSE)。公众号排版授权明确允许第 3 版或以后版本，目录采用精确标识 `AGPL-3.0-or-later`，只推荐上游版本。

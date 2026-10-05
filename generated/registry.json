@@ -2367,7 +2367,7 @@
         "author": "isjiamu / 甲木 × 摸鱼小李",
         "authorUrl": "https://github.com/isjiamu",
         "avatarUrl": "https://github.com/isjiamu.png?size=96",
-        "license": "AGPL-3.0",
+        "license": "AGPL-3.0-or-later",
         "checkedAt": "2026-09-01",
         "githubStars": 3432,
         "githubStarsCheckedAt": "2026-09-01"
